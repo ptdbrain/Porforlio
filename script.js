@@ -131,6 +131,38 @@ const portfolioContent = {
         ['RAG', 'LangChain, Vector DB'],
         ['Deploy', 'Docker, API, VPS'],
       ],
+      educationTitle: 'Nền tảng cá nhân',
+      educationIntro: 'Phần này dùng để kể rõ hơn về quá trình học tập, môi trường đào tạo và những sở thích tạo nên cách tôi tiếp cận công nghệ.',
+      educationStages: [
+        {
+          id: 'high-school',
+          label: 'Cấp 3',
+          title: 'Trường THPT đang cập nhật',
+          body: 'Giai đoạn xây nền tư duy học tập, làm quen với toán, tin học và cách tự học các chủ đề kỹ thuật.',
+          image: { src: '', alt: '' },
+        },
+        {
+          id: 'university',
+          label: 'Đại học',
+          title: 'Trường đại học đang cập nhật',
+          body: 'Môi trường giúp tôi hệ thống hóa kiến thức về lập trình, dữ liệu, hệ thống phần mềm và các môn nền tảng của ngành.',
+          image: { src: '', alt: '' },
+        },
+        {
+          id: 'major',
+          label: 'Chuyên ngành',
+          title: 'Chuyên ngành đang cập nhật',
+          body: 'Định hướng chuyên sâu vào AI, Computer Vision, Deep Learning, RAG/LLM và cách triển khai mô hình thành sản phẩm thực tế.',
+          image: { src: '', alt: '' },
+        },
+      ],
+      hobbiesTitle: 'Sở thích',
+      hobbies: [
+        'Đọc và ghi chú kiến thức AI, Deep Learning, bảo mật',
+        'Xây dựng project nhỏ để kiểm chứng ý tưởng kỹ thuật',
+        'Tìm hiểu sản phẩm công nghệ và cách triển khai thực tế',
+        'Thiết kế giao diện, animation và trải nghiệm người dùng',
+      ],
     },
     direction: {
       title: 'Định hướng nghề nghiệp',
@@ -201,6 +233,38 @@ const portfolioContent = {
         ['CV', 'YOLO, OCR, segmentation'],
         ['RAG', 'LangChain, Vector DB'],
         ['Deploy', 'Docker, API, VPS'],
+      ],
+      educationTitle: 'Personal Foundation',
+      educationIntro: 'This area gives more context about my education, training environment and interests that shape how I approach technology.',
+      educationStages: [
+        {
+          id: 'high-school',
+          label: 'High school',
+          title: 'High school to be updated',
+          body: 'A foundation stage for learning habits, mathematics, informatics and self-study around technical topics.',
+          image: { src: '', alt: '' },
+        },
+        {
+          id: 'university',
+          label: 'University',
+          title: 'University to be updated',
+          body: 'The academic environment where I organize knowledge in programming, data, software systems and core computing subjects.',
+          image: { src: '', alt: '' },
+        },
+        {
+          id: 'major',
+          label: 'Major',
+          title: 'Major to be updated',
+          body: 'A specialization direction around AI, Computer Vision, Deep Learning, RAG/LLM and model deployment into real products.',
+          image: { src: '', alt: '' },
+        },
+      ],
+      hobbiesTitle: 'Interests',
+      hobbies: [
+        'Reading and writing notes about AI, Deep Learning and security',
+        'Building small projects to validate technical ideas',
+        'Studying technology products and real deployment workflows',
+        'Designing interfaces, animation and user experience',
       ],
     },
     direction: {
@@ -333,6 +397,34 @@ function renderAbout(content) {
     <div class="direction">
       <h3>${escapeHtml(content.direction.title)}</h3>
       <p>${escapeHtml(content.direction.body)}</p>
+    </div>
+    <div class="about-details">
+      <div class="section-heading compact-heading">
+        <p class="eyebrow">${escapeHtml(content.about.educationTitle)}</p>
+        <h3>${escapeHtml(content.about.educationIntro)}</h3>
+      </div>
+      <div class="education-grid">
+        ${content.about.educationStages.map((stage, index) => `
+          <article class="education-stage">
+            <div class="stage-media ${stage.image.src ? 'has-image' : ''}">
+              ${stage.image.src
+                ? `<img src="${escapeHtml(stage.image.src)}" alt="${escapeHtml(stage.image.alt)}">`
+                : `<span>${String(index + 1).padStart(2, '0')}</span>`}
+            </div>
+            <div class="stage-copy">
+              <p class="mini-label">${escapeHtml(stage.label)}</p>
+              <h3>${escapeHtml(stage.title)}</h3>
+              <p>${escapeHtml(stage.body)}</p>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+      <div class="hobby-panel">
+        <h3>${escapeHtml(content.about.hobbiesTitle)}</h3>
+        <div class="hobby-list">
+          ${content.about.hobbies.map((hobby) => `<span>${escapeHtml(hobby)}</span>`).join('')}
+        </div>
+      </div>
     </div>
   `;
 }

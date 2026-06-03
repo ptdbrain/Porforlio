@@ -36,3 +36,17 @@ test('hides contact links without configured values', () => {
 
   assert.deepEqual(links.map((link) => link.key), ['email', 'linkedin']);
 });
+
+test('about section includes education stages with empty image slots', () => {
+  const stages = portfolioContent.vi.about.educationStages;
+
+  assert.equal(stages.length, 3);
+  assert.deepEqual(stages.map((stage) => stage.id), ['high-school', 'university', 'major']);
+  assert.ok(stages.every((stage) => stage.image.src === ''));
+  assert.ok(stages.every((stage) => stage.image.alt === ''));
+});
+
+test('about section includes bilingual hobbies', () => {
+  assert.ok(portfolioContent.vi.about.hobbies.length >= 4);
+  assert.equal(portfolioContent.en.about.hobbies.length, portfolioContent.vi.about.hobbies.length);
+});
