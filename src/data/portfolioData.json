@@ -1,0 +1,719 @@
+{
+  "portfolioContent": {
+    "vi": {
+      "metaTitle": "Phan Trọng Đạt | AI Engineer Portfolio",
+      "nav": [
+        "Trang chủ",
+        "Giới thiệu",
+        "Kỹ năng",
+        "Dự án",
+        "Hành trình",
+        "Ghi chú",
+        "Liên hệ"
+      ],
+      "hero": {
+        "name": "Phan Trọng Đạt",
+        "role": "AI Engineer | Computer Vision | RAG/LLM | Full-stack AI Products",
+        "headline": "Từ mô hình AI đến hệ thống ứng dụng thực tế.",
+        "body": "Tôi xây dựng hệ thống AI hoàn chỉnh: từ xử lý dữ liệu, huấn luyện mô hình, đánh giá kết quả, xây dựng API, thiết kế giao diện đến triển khai sản phẩm.",
+        "primaryCta": "Xem dự án",
+        "secondaryCta": "Liên hệ"
+      },
+      "about": {
+        "eyebrow": "AI systems builder",
+        "title": "Tôi tập trung vào AI có khả năng ứng dụng thật.",
+        "body": "Tôi định hướng trở thành AI Engineer, tập trung vào Computer Vision, Deep Learning, RAG/LLM và triển khai các hệ thống AI có giao diện sử dụng được. Điểm mạnh của tôi là học nhanh, đào sâu bản chất kỹ thuật và kết hợp AI với phần mềm thực tế.",
+        "stats": [
+          [
+            "6+",
+            "project nổi bật"
+          ],
+          [
+            "CV",
+            "YOLO, OCR, segmentation"
+          ],
+          [
+            "RAG",
+            "LangChain, Vector DB"
+          ],
+          [
+            "Deploy",
+            "Docker, API, VPS"
+          ]
+        ],
+        "educationTitle": "Nền tảng cá nhân",
+        "educationIntro": "Phần này dùng để kể rõ hơn về quá trình học tập, môi trường đào tạo và những sở thích tạo nên cách tôi tiếp cận công nghệ.",
+        "educationStages": [
+          {
+            "id": "high-school",
+            "label": "Cấp 3",
+            "title": "Trường THPT đang cập nhật",
+            "body": "Giai đoạn xây nền tư duy học tập, làm quen với toán, tin học và cách tự học các chủ đề kỹ thuật.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          },
+          {
+            "id": "university",
+            "label": "Đại học",
+            "title": "Trường đại học đang cập nhật",
+            "body": "Môi trường giúp tôi hệ thống hóa kiến thức về lập trình, dữ liệu, hệ thống phần mềm và các môn nền tảng của ngành.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          },
+          {
+            "id": "major",
+            "label": "Chuyên ngành",
+            "title": "Chuyên ngành đang cập nhật",
+            "body": "Định hướng chuyên sâu vào AI, Computer Vision, Deep Learning, RAG/LLM và cách triển khai mô hình thành sản phẩm thực tế.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          }
+        ],
+        "hobbiesTitle": "Sở thích",
+        "hobbies": [
+          "Đọc và ghi chú kiến thức AI, Deep Learning, bảo mật",
+          "Xây dựng project nhỏ để kiểm chứng ý tưởng kỹ thuật",
+          "Tìm hiểu sản phẩm công nghệ và cách triển khai thực tế",
+          "Thiết kế giao diện, animation và trải nghiệm người dùng"
+        ]
+      },
+      "direction": {
+        "title": "Định hướng nghề nghiệp",
+        "body": "Ngắn hạn, tôi nâng cao năng lực Deep Learning, Computer Vision, RAG/LLM, Backend API và Deployment. Dài hạn, tôi muốn phát triển các sản phẩm AI hoàn chỉnh kết hợp mô hình học sâu, dữ liệu đa phương thức, giao diện người dùng và hệ thống triển khai ổn định."
+      },
+      "skills": {
+        "title": "Kỹ năng",
+        "groups": [
+          [
+            "AI / Machine Learning",
+            [
+              "Python",
+              "NumPy",
+              "Pandas",
+              "Scikit-learn",
+              "PyTorch",
+              "TensorFlow"
+            ]
+          ],
+          [
+            "Computer Vision",
+            [
+              "YOLO",
+              "CNN",
+              "UNet",
+              "OCR",
+              "Object Detection",
+              "Image Segmentation"
+            ]
+          ],
+          [
+            "GenAI / RAG / LLM",
+            [
+              "LangChain",
+              "RAG Pipeline",
+              "Vector Database",
+              "FAISS",
+              "Hybrid Search"
+            ]
+          ],
+          [
+            "Backend / Web",
+            [
+              "FastAPI",
+              "Flask",
+              "REST API",
+              "WebSocket",
+              "SQLAlchemy",
+              "MySQL"
+            ]
+          ],
+          [
+            "Frontend",
+            [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "Vue",
+              "UI Animation"
+            ]
+          ],
+          [
+            "Deployment / Tools",
+            [
+              "Docker",
+              "Git",
+              "GitHub",
+              "VPS",
+              "Linux",
+              "Conda"
+            ]
+          ],
+          [
+            "Security",
+            [
+              "SQL Injection",
+              "XSS",
+              "CSRF",
+              "JWT",
+              "CORS",
+              "Cryptography Basics"
+            ]
+          ]
+        ]
+      },
+      "projects": {
+        "title": "Dự án nổi bật",
+        "intro": "Các dự án cho thấy cách tôi đi từ model, dữ liệu, thuật toán đến sản phẩm có thể sử dụng.",
+        "stackLabel": "Công nghệ",
+        "featureLabel": "Điểm chính"
+      },
+      "journey": {
+        "title": "Hành trình học tập",
+        "items": [
+          [
+            "01",
+            "Python & Data Processing",
+            "Nền tảng xử lý dữ liệu, làm sạch dữ liệu và xây pipeline thử nghiệm."
+          ],
+          [
+            "02",
+            "OpenCV & Computer Vision",
+            "Xử lý ảnh, video, feature extraction và bài toán thị giác máy tính."
+          ],
+          [
+            "03",
+            "CNN, YOLO, UNet",
+            "Huấn luyện và đánh giá mô hình detection, segmentation, OCR."
+          ],
+          [
+            "04",
+            "RAG, LLM, Vector Database",
+            "Thiết kế pipeline hỏi đáp tài liệu và tìm kiếm lai."
+          ],
+          [
+            "05",
+            "Backend, API, Deployment",
+            "Biến mô hình thành API, giao diện và hệ thống triển khai được."
+          ]
+        ]
+      },
+      "notes": {
+        "title": "Technical Notes & Research",
+        "items": [
+          [
+            "Deep Learning",
+            "Activation, Backpropagation, CNN, Optimizer"
+          ],
+          [
+            "Object Detection",
+            "YOLOv2, YOLOv3, RoI Pooling, Bounding Box"
+          ],
+          [
+            "GenAI",
+            "VAE, GAN, RAG, Transformer, LLM"
+          ],
+          [
+            "Security",
+            "SQLi, XSS, CSRF, JWT, Cryptography"
+          ],
+          [
+            "DevOps",
+            "Docker, Linux, VPS, Deployment"
+          ],
+          [
+            "Big Data",
+            "Hadoop, HDFS, Kafka"
+          ]
+        ]
+      },
+      "contact": {
+        "title": "Cùng xây dựng hệ thống AI thông minh.",
+        "body": "Tôi mở với các cơ hội AI Engineer, Computer Vision, Backend AI, RAG/LLM và full-stack AI product.",
+        "empty": "Thông tin liên hệ có thể được cập nhật trong script.js."
+      }
+    },
+    "en": {
+      "metaTitle": "Dat Brain | AI Engineer Portfolio",
+      "nav": [
+        "Home",
+        "About",
+        "Skills",
+        "Projects",
+        "Journey",
+        "Notes",
+        "Contact"
+      ],
+      "hero": {
+        "name": "Dat Brain",
+        "role": "AI Engineer | Computer Vision | RAG/LLM | Full-stack AI Products",
+        "headline": "From AI models to real-world systems.",
+        "body": "I build end-to-end AI systems: from data preprocessing, model training and evaluation to backend APIs, interface design and deployment.",
+        "primaryCta": "View Projects",
+        "secondaryCta": "Contact"
+      },
+      "about": {
+        "eyebrow": "AI systems builder",
+        "title": "I focus on AI that can become real software.",
+        "body": "I am developing toward AI Engineering with a focus on Computer Vision, Deep Learning, RAG/LLM and usable AI systems. My strength is learning quickly, studying technical fundamentals deeply and combining AI with practical software.",
+        "stats": [
+          [
+            "6+",
+            "featured projects"
+          ],
+          [
+            "CV",
+            "YOLO, OCR, segmentation"
+          ],
+          [
+            "RAG",
+            "LangChain, Vector DB"
+          ],
+          [
+            "Deploy",
+            "Docker, API, VPS"
+          ]
+        ],
+        "educationTitle": "Personal Foundation",
+        "educationIntro": "This area gives more context about my education, training environment and interests that shape how I approach technology.",
+        "educationStages": [
+          {
+            "id": "high-school",
+            "label": "High school",
+            "title": "High school to be updated",
+            "body": "A foundation stage for learning habits, mathematics, informatics and self-study around technical topics.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          },
+          {
+            "id": "university",
+            "label": "University",
+            "title": "University to be updated",
+            "body": "The academic environment where I organize knowledge in programming, data, software systems and core computing subjects.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          },
+          {
+            "id": "major",
+            "label": "Major",
+            "title": "Major to be updated",
+            "body": "A specialization direction around AI, Computer Vision, Deep Learning, RAG/LLM and model deployment into real products.",
+            "image": {
+              "src": "",
+              "alt": ""
+            }
+          }
+        ],
+        "hobbiesTitle": "Interests",
+        "hobbies": [
+          "Reading and writing notes about AI, Deep Learning and security",
+          "Building small projects to validate technical ideas",
+          "Studying technology products and real deployment workflows",
+          "Designing interfaces, animation and user experience"
+        ]
+      },
+      "direction": {
+        "title": "Career Direction",
+        "body": "In the short term, I am strengthening Deep Learning, Computer Vision, RAG/LLM, Backend API and Deployment. In the long term, I want to build complete AI products that combine deep models, multimodal data, user interfaces and stable deployment."
+      },
+      "skills": {
+        "title": "Skills",
+        "groups": [
+          [
+            "AI / Machine Learning",
+            [
+              "Python",
+              "NumPy",
+              "Pandas",
+              "Scikit-learn",
+              "PyTorch",
+              "TensorFlow"
+            ]
+          ],
+          [
+            "Computer Vision",
+            [
+              "YOLO",
+              "CNN",
+              "UNet",
+              "OCR",
+              "Object Detection",
+              "Image Segmentation"
+            ]
+          ],
+          [
+            "GenAI / RAG / LLM",
+            [
+              "LangChain",
+              "RAG Pipeline",
+              "Vector Database",
+              "FAISS",
+              "Hybrid Search"
+            ]
+          ],
+          [
+            "Backend / Web",
+            [
+              "FastAPI",
+              "Flask",
+              "REST API",
+              "WebSocket",
+              "SQLAlchemy",
+              "MySQL"
+            ]
+          ],
+          [
+            "Frontend",
+            [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "Vue",
+              "UI Animation"
+            ]
+          ],
+          [
+            "Deployment / Tools",
+            [
+              "Docker",
+              "Git",
+              "GitHub",
+              "VPS",
+              "Linux",
+              "Conda"
+            ]
+          ],
+          [
+            "Security",
+            [
+              "SQL Injection",
+              "XSS",
+              "CSRF",
+              "JWT",
+              "CORS",
+              "Cryptography Basics"
+            ]
+          ]
+        ]
+      },
+      "projects": {
+        "title": "Featured Projects",
+        "intro": "Projects that show how I move from models, data and algorithms into usable software.",
+        "stackLabel": "Stack",
+        "featureLabel": "Highlights"
+      },
+      "journey": {
+        "title": "Learning Journey",
+        "items": [
+          [
+            "01",
+            "Python & Data Processing",
+            "Data foundations, cleaning workflows and experimental pipelines."
+          ],
+          [
+            "02",
+            "OpenCV & Computer Vision",
+            "Image, video, feature extraction and computer vision problem solving."
+          ],
+          [
+            "03",
+            "CNN, YOLO, UNet",
+            "Training and evaluating detection, segmentation and OCR models."
+          ],
+          [
+            "04",
+            "RAG, LLM, Vector Database",
+            "Question-answering pipelines and hybrid retrieval over documents."
+          ],
+          [
+            "05",
+            "Backend, API, Deployment",
+            "Turning models into APIs, interfaces and deployable systems."
+          ]
+        ]
+      },
+      "notes": {
+        "title": "Technical Notes & Research",
+        "items": [
+          [
+            "Deep Learning",
+            "Activation, Backpropagation, CNN, Optimizer"
+          ],
+          [
+            "Object Detection",
+            "YOLOv2, YOLOv3, RoI Pooling, Bounding Box"
+          ],
+          [
+            "GenAI",
+            "VAE, GAN, RAG, Transformer, LLM"
+          ],
+          [
+            "Security",
+            "SQLi, XSS, CSRF, JWT, Cryptography"
+          ],
+          [
+            "DevOps",
+            "Docker, Linux, VPS, Deployment"
+          ],
+          [
+            "Big Data",
+            "Hadoop, HDFS, Kafka"
+          ]
+        ]
+      },
+      "contact": {
+        "title": "Let us build intelligent systems together.",
+        "body": "I am open to AI Engineer, Computer Vision, Backend AI, RAG/LLM and full-stack AI product opportunities.",
+        "empty": "Contact details can be updated in script.js."
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "parking",
+      "categories": [
+        "computer-vision",
+        "web-app",
+        "deep-learning"
+      ],
+      "vi": {
+        "title": "Vision-Language IoT Parking System",
+        "description": "Hệ thống bãi đỗ xe thông minh sử dụng Computer Vision, OCR và AI để nhận diện xe, biển số, trạng thái bãi đỗ và hỗ trợ quản lý theo thời gian thực.",
+        "points": [
+          "Nhận diện xe và biển số",
+          "Theo dõi slot realtime",
+          "Backend FastAPI và WebSocket"
+        ]
+      },
+      "en": {
+        "title": "Vision-Language IoT Parking System",
+        "description": "A smart parking system using Computer Vision, OCR and AI to detect vehicles, plates, parking states and realtime operations.",
+        "points": [
+          "Vehicle and plate detection",
+          "Realtime slot tracking",
+          "FastAPI and WebSocket backend"
+        ]
+      },
+      "stack": [
+        "YOLO",
+        "OCR",
+        "FastAPI",
+        "MySQL",
+        "WebSocket",
+        "Docker"
+      ]
+    },
+    {
+      "id": "lane",
+      "categories": [
+        "computer-vision",
+        "deep-learning"
+      ],
+      "vi": {
+        "title": "Road Lane Detection with Deep Learning",
+        "description": "Dự án phát hiện làn đường từ ảnh hoặc video bằng mô hình học sâu, hướng đến bài toán xe tự hành và phân tích giao thông.",
+        "points": [
+          "Xử lý video đầu vào",
+          "Segment làn đường",
+          "Mở rộng được cho realtime inference"
+        ]
+      },
+      "en": {
+        "title": "Road Lane Detection with Deep Learning",
+        "description": "Detects road lanes from images or video with deep learning for autonomous-driving and traffic-analysis scenarios.",
+        "points": [
+          "Video input processing",
+          "Lane segmentation",
+          "Ready for realtime inference extension"
+        ]
+      },
+      "stack": [
+        "Python",
+        "OpenCV",
+        "UNet",
+        "Deep Learning"
+      ]
+    },
+    {
+      "id": "yolo",
+      "categories": [
+        "computer-vision",
+        "deep-learning"
+      ],
+      "vi": {
+        "title": "Custom YOLO Object Detection System",
+        "description": "Huấn luyện mô hình YOLO trên dữ liệu tùy chỉnh, từ chuẩn bị dataset, annotation, training, evaluation đến inference.",
+        "points": [
+          "Fine-tune YOLO",
+          "Đánh giá mAP, Precision, Recall",
+          "Xuất kết quả ảnh và video"
+        ]
+      },
+      "en": {
+        "title": "Custom YOLO Object Detection System",
+        "description": "Trains custom YOLO detectors from dataset preparation and annotation to evaluation and inference.",
+        "points": [
+          "YOLO fine-tuning",
+          "mAP, Precision and Recall evaluation",
+          "Image and video outputs"
+        ]
+      },
+      "stack": [
+        "YOLOv8",
+        "PyTorch",
+        "OpenCV",
+        "Roboflow"
+      ]
+    },
+    {
+      "id": "pathfinding",
+      "categories": [
+        "data-visualization",
+        "web-app"
+      ],
+      "vi": {
+        "title": "A* and Dijkstra Pathfinding Visualization",
+        "description": "Ứng dụng mô phỏng thuật toán tìm đường trên dữ liệu bản đồ thực, trực quan hóa node, cạnh và đường đi ngắn nhất.",
+        "points": [
+          "Trích xuất graph từ bản đồ",
+          "Animation quá trình duyệt node",
+          "Hỗ trợ blocked edges"
+        ]
+      },
+      "en": {
+        "title": "A* and Dijkstra Pathfinding Visualization",
+        "description": "Visualizes shortest-path algorithms on real map data with nodes, edges and optimal routes.",
+        "points": [
+          "Map graph extraction",
+          "Animated node traversal",
+          "Blocked-edge support"
+        ]
+      },
+      "stack": [
+        "Python",
+        "OSMnx",
+        "NetworkX",
+        "Leaflet",
+        "A*",
+        "Dijkstra"
+      ]
+    },
+    {
+      "id": "branddna",
+      "categories": [
+        "rag-llm",
+        "web-app"
+      ],
+      "vi": {
+        "title": "BrandDNA RAG Copilot",
+        "description": "Chatbot RAG giúp doanh nghiệp đọc hiểu tài liệu thương hiệu, phân tích phong cách, văn hóa và định hướng truyền thông.",
+        "points": [
+          "Text, image và OCR RAG",
+          "Hybrid Search và reranking",
+          "Web chatbot deployment"
+        ]
+      },
+      "en": {
+        "title": "BrandDNA RAG Copilot",
+        "description": "A RAG chatbot for understanding brand documents, voice, culture and communication direction.",
+        "points": [
+          "Text, image and OCR RAG",
+          "Hybrid Search and reranking",
+          "Web chatbot deployment"
+        ]
+      },
+      "stack": [
+        "RAG",
+        "LangChain",
+        "Vector DB",
+        "Hybrid Search",
+        "LLM"
+      ]
+    },
+    {
+      "id": "research",
+      "categories": [
+        "deep-learning"
+      ],
+      "vi": {
+        "title": "Deep Learning Model for Research Paper Reproduction",
+        "description": "Dự án đọc hiểu bài báo khoa học, xây pipeline dữ liệu, thử nghiệm mô hình học sâu và đánh giá hiệu năng.",
+        "points": [
+          "Phân tích paper gốc",
+          "Thiết kế pipeline tiền xử lý",
+          "Tối ưu chỉ số AUC"
+        ]
+      },
+      "en": {
+        "title": "Deep Learning Model for Research Paper Reproduction",
+        "description": "Reimplements a research-paper pipeline with data processing, deep learning experiments and model evaluation.",
+        "points": [
+          "Original paper analysis",
+          "Preprocessing pipeline design",
+          "AUC optimization"
+        ]
+      },
+      "stack": [
+        "Python",
+        "Pandas",
+        "Deep Learning",
+        "AUC"
+      ]
+    }
+  ],
+  "categoryOptions": [
+    {
+      "id": "all",
+      "vi": "Tất cả",
+      "en": "All"
+    },
+    {
+      "id": "computer-vision",
+      "vi": "Computer Vision",
+      "en": "Computer Vision"
+    },
+    {
+      "id": "deep-learning",
+      "vi": "Deep Learning",
+      "en": "Deep Learning"
+    },
+    {
+      "id": "rag-llm",
+      "vi": "RAG/LLM",
+      "en": "RAG/LLM"
+    },
+    {
+      "id": "web-app",
+      "vi": "Web App",
+      "en": "Web App"
+    },
+    {
+      "id": "security",
+      "vi": "Security",
+      "en": "Security"
+    },
+    {
+      "id": "data-visualization",
+      "vi": "Data Visualization",
+      "en": "Data Visualization"
+    }
+  ],
+  "contactConfig": {
+    "email": "",
+    "github": "",
+    "linkedin": "",
+    "facebook": "",
+    "cv": ""
+  }
+}

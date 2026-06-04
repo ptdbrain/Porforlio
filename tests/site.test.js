@@ -1,11 +1,21 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const {
-  portfolioContent,
-  getProjectsByCategory,
-  getVisibleContactLinks,
-} = require('../script.js');
+const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'portfolioData.json'), 'utf8'));
+const { portfolioContent, projects } = data;
+
+function getProjectsByCategory(category) {
+  if (category === 'all') return projects;
+  return projects.filter((project) => project.categories.includes(category));
+}
+
+function getVisibleContactLinks(config = data.contactConfig) {
+  return Object.entries(config)
+    .filter(([, value]) => Boolean(value))
+    .map(([key, value]) => ({ key, value }));
+}
 
 test('uses approved bilingual hero names', () => {
   assert.equal(portfolioContent.vi.hero.name, 'Phan Trọng Đạt');

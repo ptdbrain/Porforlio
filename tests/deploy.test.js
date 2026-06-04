@@ -21,19 +21,18 @@ test('vercel config deploys the generated dist directory', () => {
 test('package scripts expose local verification and Vercel build commands', () => {
   const pkg = readJson('package.json');
 
-  assert.equal(pkg.scripts.build, 'node scripts/build.mjs');
+  assert.equal(pkg.scripts.build, 'vite build');
   assert.equal(pkg.scripts.test, 'node --test tests/*.test.js');
+  assert.equal(pkg.scripts.dev, 'vite --host 127.0.0.1');
+  assert.equal(pkg.dependencies.react, '^18.3.1');
+  assert.equal(pkg.dependencies.vite, '^6.0.0');
 });
 
-test('build script writes the deployable static files', () => {
-  execFileSync('node', ['scripts/build.mjs'], { cwd: root, stdio: 'pipe' });
+test('vite build writes the deployable static files', () => {
+  execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe', shell: true });
 
-  const requiredFiles = ['index.html', 'styles.css', 'script.js'];
-  for (const fileName of requiredFiles) {
-    assert.equal(fs.existsSync(path.join(root, 'dist', fileName)), true, `${fileName} should exist in dist`);
-  }
+  assert.equal(fs.existsSync(path.join(root, 'dist', 'index.html')), true, 'index.html should exist in dist');
 
   const html = fs.readFileSync(path.join(root, 'dist', 'index.html'), 'utf8');
-  assert.equal(html.includes('styles.css'), true);
-  assert.equal(html.includes('script.js'), true);
+  assert.equal(html.includes('/assets/'), true);
 });

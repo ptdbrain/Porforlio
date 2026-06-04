@@ -1,3 +1,5 @@
 .superpowers/
 .vercel/
 dist/
+node_modules/
+*.log

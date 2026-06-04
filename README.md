@@ -1,13 +1,15 @@
 # Porforlio
 
-Static bilingual portfolio for Phan Trong Dat / Dat Brain, focused on AI Engineering, Computer Vision, RAG/LLM, and full-stack AI products.
+React and Vite bilingual portfolio for Phan Trong Dat / Dat Brain, focused on AI Engineering, Computer Vision, RAG/LLM, and full-stack AI products.
 
 ## Run Locally
 
-Open `index.html` directly in a browser, or use the build and preview flow:
+Install dependencies, then use the Vite workflow:
 
 ```powershell
+npm install
 npm test
+npm run dev
 npm run build
 npm run preview
 ```
@@ -48,16 +50,21 @@ For a domain managed outside Vercel, update DNS at your domain registrar. For a 
 ## Customize
 
 - Update contact values in `script.js` inside `contactConfig`.
+- Edit the opening intro in `src/components/BrainIntro.jsx`.
+- Edit the portfolio page in `src/components/PortfolioHome.jsx`.
+- Update portfolio data in `src/data/portfolioData.json`.
 - Add a CV file to `assets/` later and set the `cv` value.
 - Add real GitHub or demo URLs to project data when available.
 
 ## Structure
 
-- `index.html`: page shell and sections.
-- `styles.css`: Digital AI Lab visual system and responsive layout.
-- `script.js`: bilingual content, rendering, filters, and interactions.
+- `index.html`: Vite HTML entry.
+- `src/main.jsx`: React entry.
+- `src/App.jsx`: switches from `BrainIntro` to `PortfolioHome`.
+- `src/components/BrainIntro.jsx`: full-screen neural brain intro animation.
+- `src/components/PortfolioHome.jsx`: portfolio page.
+- `src/data/portfolioData.json`: bilingual content and project data.
+- `styles.css`: Digital AI Lab visual system, intro animation, and responsive layout.
 - `vercel.json`: Vercel build and routing configuration.
-- `scripts/build.mjs`: copies static files into `dist/`.
-- `scripts/preview.mjs`: serves `dist/` locally after build.
 - `tests/site.test.js`: Node tests for content and behavior.
 - `tests/deploy.test.js`: Node tests for deploy configuration and build output.
