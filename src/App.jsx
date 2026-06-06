@@ -10,8 +10,8 @@ export default function App() {
 
   return (
     <>
+      <PortfolioHome visible />
       {!introComplete && <BrainIntro onComplete={handleIntroComplete} />}
-      <PortfolioHome visible={introComplete} />
     </>
   );
 }

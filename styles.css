@@ -22,6 +22,12 @@
   scroll-behavior: smooth;
 }
 
+@property --portal-reveal {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -93,11 +99,12 @@ button {
   place-items: center;
   color: var(--text);
   background:
-    radial-gradient(circle at 50% 45%, oklch(0.46 0.16 195 / 0.22), transparent 22rem),
-    radial-gradient(circle at 70% 35%, oklch(0.5 0.14 292 / 0.2), transparent 24rem),
+    radial-gradient(circle at 50% 45%, oklch(0.48 0.17 195 / 0.24), transparent 22rem),
+    radial-gradient(circle at 70% 35%, oklch(0.5 0.16 292 / 0.2), transparent 24rem),
     linear-gradient(145deg, oklch(0.06 0.024 252), oklch(0.1 0.03 245) 52%, oklch(0.06 0.02 265));
   overflow: hidden;
   isolation: isolate;
+  perspective: 1200px;
 }
 
 .brain-intro::before {
@@ -117,7 +124,9 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0 16%, oklch(0.05 0.02 250 / 0.5) 78%);
+  background:
+    radial-gradient(circle at center, transparent 0 18%, oklch(0.05 0.02 250 / 0.46) 76%),
+    conic-gradient(from 90deg at 50% 50%, transparent, oklch(0.76 0.16 195 / 0.045), transparent, oklch(0.67 0.13 292 / 0.05), transparent);
   pointer-events: none;
 }
 
@@ -146,8 +155,10 @@ button {
   border: 1px solid oklch(0.76 0.16 195 / 0.72);
   background: oklch(0.76 0.16 195 / 0.2);
   box-shadow: 0 0 18px oklch(0.76 0.16 195 / 0.48);
-  clip-path: polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%);
-  animation: fragment-assemble 4.3s cubic-bezier(0.16, 1, 0.3, 1) var(--delay) both;
+  clip-path: polygon(50% 0, 100% 38%, 84% 100%, 16% 100%, 0 38%);
+  transform-origin: center;
+  animation: fragment-assemble 4.8s cubic-bezier(0.16, 1, 0.3, 1) var(--delay) both;
+  will-change: transform, opacity;
 }
 
 .intro-fragment:nth-child(3n) {
@@ -161,10 +172,11 @@ button {
   z-index: 2;
   display: grid;
   place-items: center;
-  width: min(78vw, 560px);
-  aspect-ratio: 1.22;
+  width: min(82vw, 640px);
+  aspect-ratio: 1.27;
   transform-origin: center;
-  animation: brain-breathe 2.8s ease-in-out infinite;
+  animation: brain-breathe 3.1s ease-in-out infinite;
+  will-change: transform, filter;
 }
 
 .brain-stage::before,
@@ -192,51 +204,244 @@ button {
   filter: drop-shadow(0 0 22px oklch(0.76 0.16 195 / 0.5));
 }
 
+.hemisphere {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 900ms ease-out;
+  will-change: transform, opacity, filter;
+}
+
+.phase-boot .hemisphere-left {
+  opacity: 0.08;
+  transform: translate3d(-170px, 8px, 0) rotate(-8deg) scale(0.68);
+}
+
+.phase-boot .hemisphere-right {
+  opacity: 0.08;
+  transform: translate3d(170px, 8px, 0) rotate(8deg) scale(0.68);
+}
+
+.phase-forming .hemisphere-left {
+  opacity: 0.76;
+  transform: translate3d(-68px, 2px, 0) rotate(-3deg) scale(0.9);
+}
+
+.phase-forming .hemisphere-right {
+  opacity: 0.76;
+  transform: translate3d(68px, 2px, 0) rotate(3deg) scale(0.9);
+}
+
+.phase-syncing .hemisphere-left {
+  opacity: 1;
+  transform: translate3d(-27px, 0, 0) rotate(-1deg) scale(0.98);
+  filter: brightness(1.08);
+}
+
+.phase-syncing .hemisphere-right {
+  opacity: 1;
+  transform: translate3d(27px, 0, 0) rotate(1deg) scale(0.98);
+  filter: brightness(1.08);
+}
+
+.phase-complete .hemisphere-left {
+  animation: hemisphere-lock-left 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.phase-complete .hemisphere-right {
+  animation: hemisphere-lock-right 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.brain-surface {
+  stroke: none;
+  opacity: 0.82;
+}
+
+.left-surface {
+  fill: url("#leftBrainFill");
+}
+
+.right-surface {
+  fill: url("#rightBrainFill");
+  stroke: oklch(0.67 0.13 292 / 0.3);
+  stroke-width: 1;
+}
+
+.brain-halo ellipse {
+  fill: none;
+  stroke: oklch(0.76 0.16 195 / 0.16);
+  stroke-width: 1.2;
+  stroke-dasharray: 12 18;
+  transform-origin: 210px 160px;
+  animation: halo-rotate 12s linear infinite;
+}
+
+.brain-halo ellipse:nth-child(2) {
+  stroke: oklch(0.67 0.13 292 / 0.18);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
 .brain-outline,
 .brain-stem,
-.brain-core,
-.neural-lines path {
+.brain-seam,
+.brain-folds path,
+.circuit-traces path,
+.neural-lines path,
+.neural-energy path {
   fill: none;
   stroke: var(--cyan);
-  stroke-width: 4;
+  stroke-width: 3.5;
   stroke-linecap: round;
   stroke-linejoin: round;
   filter: url("#brainGlow");
   stroke-dasharray: 720;
   stroke-dashoffset: 720;
-  animation: draw-brain 3.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: draw-brain 4.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.brain-outline.right,
-.brain-core.delay {
+.brain-outline.right {
   stroke: var(--violet);
-  animation-delay: 650ms;
+  animation-delay: 780ms;
 }
 
 .brain-stem,
-.brain-core.delay-2 {
+.brain-seam {
   stroke: var(--green);
-  animation-delay: 1.3s;
+  animation-delay: 1.4s;
+}
+
+.brain-folds path {
+  stroke-width: 3.4;
+  opacity: 0.92;
+  animation-delay: 1.05s;
+}
+
+.brain-folds.left-folds path {
+  stroke: oklch(0.19 0.07 220 / 0.94);
+  filter: drop-shadow(0 0 6px oklch(0.76 0.16 195 / 0.42));
+}
+
+.brain-folds.right-folds path {
+  stroke: oklch(0.67 0.13 292);
+  stroke-width: 1.8;
+  opacity: 0.56;
+  animation-delay: 1.18s;
+}
+
+.circuit-traces path {
+  stroke-width: 1.7;
+  stroke: oklch(0.9 0.045 210);
+  opacity: 0.78;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation-delay: 2.15s;
 }
 
 .neural-lines path {
-  stroke-width: 2.5;
-  animation-delay: 1.65s;
+  stroke-width: 1.8;
+  stroke: oklch(0.76 0.16 195 / 0.78);
+  animation-delay: 1.7s;
 }
 
-.neural-nodes circle {
+.neural-energy path {
+  stroke: oklch(0.93 0.04 210);
+  stroke-width: 2.6;
+  stroke-dasharray: 1 58;
+  stroke-dashoffset: 80;
+  opacity: 0;
+  animation: energy-flow 1.9s linear 4.65s infinite;
+  filter: url("#brainGlow");
+}
+
+.organic-nodes circle {
   fill: var(--cyan);
   filter: url("#brainGlow");
   opacity: 0;
-  animation: node-ignite 2.2s ease-out 1.75s forwards, node-pulse 1.6s ease-in-out 3.5s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation:
+    node-ignite 900ms cubic-bezier(0.16, 1, 0.3, 1) var(--node-delay) forwards,
+    node-pulse 1.8s ease-in-out 4.2s infinite;
 }
 
-.neural-nodes circle:nth-child(2n) {
+.organic-nodes circle:nth-child(2n) {
   fill: var(--violet);
 }
 
-.neural-nodes circle:nth-child(3n) {
+.organic-nodes circle:nth-child(3n) {
   fill: var(--green);
+}
+
+.right-nodes circle {
+  fill: oklch(0.86 0.1 205);
+}
+
+.neural-core-network {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scaleX(0.42);
+  transition:
+    opacity 800ms ease-out,
+    transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phase-syncing .neural-core-network,
+.phase-complete .neural-core-network {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.neural-bridges path {
+  fill: none;
+  stroke: oklch(0.91 0.04 205);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 86;
+  stroke-dashoffset: 86;
+  filter: url("#brainGlow");
+}
+
+.phase-complete .neural-bridges path {
+  animation: draw-bridge 640ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.phase-complete .neural-bridges path:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.phase-complete .neural-bridges path:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.portal-node {
+  fill: oklch(0.95 0.04 210) !important;
+  animation:
+    node-ignite 700ms cubic-bezier(0.16, 1, 0.3, 1) 1.55s forwards,
+    portal-node-pulse 1.5s ease-in-out 4.8s infinite !important;
+}
+
+.portal-slit {
+  fill: oklch(0.92 0.045 205);
+  opacity: 0;
+  filter: url("#brainGlow");
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scaleY(0.08);
+}
+
+.phase-complete .portal-slit {
+  animation: portal-slit-charge 820ms cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
+}
+
+.portal-core {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: portal-core-prime 1.4s ease-out 5.95s forwards;
 }
 
 .intro-copy {
@@ -247,6 +452,15 @@ button {
   z-index: 3;
   display: grid;
   gap: 12px;
+}
+
+.intro-kicker {
+  margin: 0 0 4px;
+  color: oklch(0.76 0.16 195 / 0.72);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .intro-status {
@@ -282,12 +496,102 @@ button {
   transition: width 90ms linear;
 }
 
+.intro-skip {
+  justify-self: start;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid oklch(0.76 0.16 195 / 0.24);
+  border-radius: var(--radius);
+  color: var(--dim);
+  background: oklch(0.08 0.022 252 / 0.42);
+  cursor: pointer;
+}
+
+.intro-skip:hover {
+  color: var(--text);
+  border-color: oklch(0.76 0.16 195 / 0.58);
+}
+
+.portal-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.portal-aperture {
+  width: clamp(10px, 1.1vmin, 18px);
+  height: min(50vmin, 410px);
+  border-radius: 999px;
+  background:
+    linear-gradient(to right, oklch(0.67 0.13 292 / 0.48), oklch(0.97 0.02 205), oklch(0.76 0.16 195 / 0.68));
+  box-shadow:
+    0 0 26px oklch(0.96 0.03 205 / 0.92),
+    0 0 78px oklch(0.76 0.16 195 / 0.82),
+    0 0 150px oklch(0.67 0.13 292 / 0.58);
+  transform: translateY(-3%) scale3d(0.2, 0.06, 1);
+}
+
+.portal-speed {
+  position: absolute;
+  width: 1px;
+  height: 44vh;
+  background: linear-gradient(to bottom, transparent, oklch(0.76 0.16 195 / 0.84), transparent);
+  transform-origin: 50% 100%;
+  opacity: 0;
+}
+
+.speed-a { --angle: 18deg; transform: rotate(18deg) translateY(12vh); }
+.speed-b { --angle: 72deg; transform: rotate(72deg) translateY(8vh); background: linear-gradient(to bottom, transparent, oklch(0.67 0.13 292 / 0.76), transparent); }
+.speed-c { --angle: 132deg; transform: rotate(132deg) translateY(10vh); }
+
 .brain-intro.is-warping {
-  animation: intro-warp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation:
+    portal-mask-reveal 1.5s cubic-bezier(0.76, 0, 0.24, 1) forwards,
+    intro-hold 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 0 var(--portal-reveal),
+    oklch(0 0 0 / 0.92) calc(var(--portal-reveal) + 2.5%)
+  );
+  mask-image: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 0 var(--portal-reveal),
+    oklch(0 0 0 / 0.92) calc(var(--portal-reveal) + 2.5%)
+  );
 }
 
 .brain-intro.is-warping .brain-stage {
-  animation: brain-portal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: brain-portal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brain-intro.is-warping .intro-grid {
+  animation: grid-rush 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brain-intro.is-warping .intro-fragment {
+  animation: fragment-rush 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brain-intro.is-warping .portal-transition {
+  opacity: 1;
+}
+
+.brain-intro.is-warping .portal-aperture {
+  animation: portal-open 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brain-intro.is-warping .portal-speed {
+  animation: speed-streak 760ms ease-out 180ms 2;
+}
+
+.brain-intro.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 260ms ease-out, visibility 260ms ease-out;
 }
 
 .site-header {
@@ -1006,7 +1310,7 @@ h3 {
 @keyframes fragment-assemble {
   0% {
     opacity: 0;
-    transform: translate3d(var(--tx), var(--ty), 0) rotate(70deg) scale(0.4);
+    transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rotate)) scale(0.32);
   }
   32% {
     opacity: 0.88;
@@ -1021,6 +1325,17 @@ h3 {
   }
 }
 
+@keyframes fragment-rush {
+  0% {
+    opacity: 0.42;
+    transform: translate3d(0, 0, 0) scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--tx) * -0.95), calc(var(--ty) * -0.95), 460px) scale(3.6);
+  }
+}
+
 @keyframes draw-brain {
   0% {
     opacity: 0.05;
@@ -1032,6 +1347,59 @@ h3 {
   100% {
     opacity: 1;
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hemisphere-lock-left {
+  0% {
+    opacity: 1;
+    transform: translate3d(-27px, 0, 0) rotate(-1deg) scale(0.98);
+  }
+  58% {
+    transform: translate3d(7px, 0, 0) rotate(0.4deg) scale(1.02);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+    filter: brightness(1.14);
+  }
+}
+
+@keyframes hemisphere-lock-right {
+  0% {
+    opacity: 1;
+    transform: translate3d(27px, 0, 0) rotate(1deg) scale(0.98);
+  }
+  58% {
+    transform: translate3d(-7px, 0, 0) rotate(-0.4deg) scale(1.02);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+    filter: brightness(1.14);
+  }
+}
+
+@keyframes draw-bridge {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes portal-slit-charge {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.08);
+  }
+  55% {
+    opacity: 1;
+    transform: scaleY(1.08);
+  }
+  100% {
+    opacity: 0.82;
+    transform: scaleY(1);
   }
 }
 
@@ -1057,6 +1425,32 @@ h3 {
   }
 }
 
+@keyframes portal-node-pulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.75);
+  }
+}
+
+@keyframes portal-core-prime {
+  0% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+  60% {
+    opacity: 0.48;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.28);
+  }
+}
+
 @keyframes brain-breathe {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.025); }
@@ -1067,34 +1461,111 @@ h3 {
   to { transform: rotate(360deg) scale(1.04); }
 }
 
-@keyframes brain-portal {
-  0% {
-    transform: scale(1);
-    filter: brightness(1);
-  }
-  42% {
-    transform: scale(1.22);
-    filter: brightness(1.9);
-  }
-  100% {
-    transform: scale(7.5);
-    filter: brightness(2.8) blur(8px);
-  }
+@keyframes halo-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes intro-warp {
+@keyframes energy-flow {
   0% {
-    opacity: 1;
-    filter: blur(0);
+    opacity: 0;
+    stroke-dashoffset: 88;
   }
-  55% {
-    opacity: 1;
-    filter: blur(2px);
+  20% {
+    opacity: 0.95;
   }
   100% {
     opacity: 0;
-    filter: blur(22px);
-    visibility: hidden;
+    stroke-dashoffset: -88;
+  }
+}
+
+@keyframes brain-portal {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: brightness(1);
+  }
+  34% {
+    transform: translate3d(0.8%, 2.4%, 0) scale(1.32);
+    filter: brightness(1.72);
+  }
+  68% {
+    transform: translate3d(2.8%, 6.2%, 0) scale(3.4);
+    filter: brightness(2.05);
+  }
+  100% {
+    transform: translate3d(9%, 20%, 0) scale(10.5);
+    filter: brightness(2.8) blur(2px);
+  }
+}
+
+@keyframes intro-hold {
+  0% {
+    opacity: 1;
+    filter: saturate(1);
+  }
+  72% {
+    opacity: 1;
+    filter: saturate(1.35);
+  }
+  100% {
+    opacity: 1;
+    filter: saturate(1.1);
+  }
+}
+
+@keyframes grid-rush {
+  0% {
+    background-size: 56px 56px;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    background-size: 118px 118px;
+    transform: scale(2.6);
+    opacity: 0.24;
+  }
+}
+
+@keyframes portal-open {
+  0% {
+    opacity: 0;
+    transform: translateY(-3%) scale3d(0.18, 0.04, 1);
+  }
+  26% {
+    opacity: 1;
+    transform: translateY(-3%) scale3d(1, 1, 1);
+  }
+  52% {
+    opacity: 1;
+    transform: translateY(-3%) scale3d(10, 1.35, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-3%) scale3d(150, 4.2, 1);
+  }
+}
+
+@keyframes portal-mask-reveal {
+  0%, 24% {
+    --portal-reveal: 0%;
+  }
+  100% {
+    --portal-reveal: 84%;
+  }
+}
+
+@keyframes speed-streak {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle, 18deg)) translateY(-8vh) scaleY(0.4);
+  }
+  30% {
+    opacity: 0.82;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle, 18deg)) translateY(42vh) scaleY(2.8);
   }
 }
 
@@ -1221,6 +1692,22 @@ h3 {
 
   .brain-stage {
     width: 96vw;
+  }
+
+  .phase-boot .hemisphere-left {
+    transform: translate3d(-118px, 5px, 0) rotate(-7deg) scale(0.72);
+  }
+
+  .phase-boot .hemisphere-right {
+    transform: translate3d(118px, 5px, 0) rotate(7deg) scale(0.72);
+  }
+
+  .phase-forming .hemisphere-left {
+    transform: translate3d(-48px, 0, 0) rotate(-2deg) scale(0.9);
+  }
+
+  .phase-forming .hemisphere-right {
+    transform: translate3d(48px, 0, 0) rotate(2deg) scale(0.9);
   }
 }
 
