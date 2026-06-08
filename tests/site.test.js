@@ -53,6 +53,16 @@ test('contact directory includes core details and relevant professional networks
   assert.ok(ids.includes('kaggle'));
 });
 
+test('primary contact details are directly actionable', () => {
+  const email = data.contactConfig.find((item) => item.id === 'email');
+  const phone = data.contactConfig.find((item) => item.id === 'phone');
+
+  assert.equal(email.value, 'phandat20052009@gmail.com');
+  assert.equal(email.href, 'mailto:phandat20052009@gmail.com');
+  assert.equal(phone.value, '0382 977 551');
+  assert.equal(phone.href, 'tel:+84382977551');
+});
+
 test('about section includes education stages with empty image slots', () => {
   const stages = portfolioContent.vi.about.educationStages;
 

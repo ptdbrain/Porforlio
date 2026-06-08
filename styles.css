@@ -1244,10 +1244,24 @@ h3 {
   grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
   gap: clamp(30px, 6vw, 76px);
   align-items: center;
-  padding: clamp(26px, 5vw, 48px);
+  width: 100%;
+  margin: 0 auto;
+  padding:
+    clamp(64px, 9vw, 116px)
+    max(16px, calc((100vw - var(--max)) / 2));
+  border: 0;
+  border-radius: 0;
   background:
-    radial-gradient(circle at 86% 18%, oklch(0.76 0.16 195 / 0.16), transparent 16rem),
-    var(--surface-strong);
+    linear-gradient(90deg, oklch(0.11 0.032 240), oklch(0.16 0.055 220) 58%, oklch(0.14 0.052 275));
+  box-shadow: none;
+}
+
+#contact.section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(54px, 8vw, 96px) 0 0;
+  background: linear-gradient(to bottom, transparent, oklch(0.07 0.024 250 / 0.78));
 }
 
 .contact-panel h2 {
@@ -1370,9 +1384,14 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
-  width: min(calc(100% - 32px), var(--max));
+  width: 100%;
   margin: 0 auto;
-  padding: 28px 0 36px;
+  padding:
+    28px
+    max(16px, calc((100vw - var(--max)) / 2))
+    36px;
+  border-top: 1px solid var(--line);
+  background: oklch(0.08 0.022 252);
   color: var(--dim);
   font-size: 0.9rem;
 }
