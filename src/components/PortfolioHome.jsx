@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   categoryOptions,
   contactConfig,
@@ -16,6 +16,7 @@ function Tags({ tags }) {
 }
 
 export default function PortfolioHome({ visible }) {
+  const appRef = useRef(null);
   const [language, setLanguage] = useState('vi');
   const [category, setCategory] = useState('all');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,8 +27,39 @@ export default function PortfolioHome({ visible }) {
   document.title = content.metaTitle;
   document.documentElement.lang = language;
 
+  useEffect(() => {
+    const app = appRef.current;
+    if (!app) return undefined;
+
+    const revealItems = app.querySelectorAll('[data-reveal]:not(.is-revealed)');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    app.classList.add('reveal-ready');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-revealed'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -10% 0px',
+      },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [language, category]);
+
   return (
-    <div className={`portfolio-app ${visible ? 'is-visible' : ''}`}>
+    <div ref={appRef} className={`portfolio-app ${visible ? 'is-visible' : ''}`}>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Go to home">
           <span className="brand-mark">DB</span>
@@ -99,13 +131,13 @@ export default function PortfolioHome({ visible }) {
         </section>
 
         <section id="about" className="section">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal="up">
             <p className="eyebrow">{content.about.eyebrow}</p>
             <h2>{content.about.title}</h2>
           </div>
           <div className="about-grid">
-            <p>{content.about.body}</p>
-            <div className="stat-grid">
+            <p data-reveal="left">{content.about.body}</p>
+            <div className="stat-grid" data-reveal="right">
               {content.about.stats.map(([value, label]) => (
                 <div className="stat" key={`${value}-${label}`}>
                   <strong>{value}</strong>
@@ -114,18 +146,23 @@ export default function PortfolioHome({ visible }) {
               ))}
             </div>
           </div>
-          <div className="direction">
+          <div className="direction" data-reveal="up">
             <h3>{content.direction.title}</h3>
             <p>{content.direction.body}</p>
           </div>
           <div className="about-details">
-            <div className="section-heading compact-heading">
+            <div className="section-heading compact-heading" data-reveal="up">
               <p className="eyebrow">{content.about.educationTitle}</p>
               <h3>{content.about.educationIntro}</h3>
             </div>
             <div className="education-grid">
               {content.about.educationStages.map((stage, index) => (
-                <article className="education-stage" key={stage.id}>
+                <article
+                  className="education-stage"
+                  data-reveal={index % 2 === 0 ? 'left' : 'right'}
+                  style={{ '--reveal-delay': `${index * 80}ms` }}
+                  key={stage.id}
+                >
                   <div className={`stage-media ${stage.image.src ? 'has-image' : ''}`}>
                     {stage.image.src ? (
                       <img src={stage.image.src} alt={stage.image.alt} />
@@ -141,7 +178,7 @@ export default function PortfolioHome({ visible }) {
                 </article>
               ))}
             </div>
-            <div className="hobby-panel">
+            <div className="hobby-panel" data-reveal="up">
               <h3>{content.about.hobbiesTitle}</h3>
               <div className="hobby-list">
                 {content.about.hobbies.map((hobby) => <span key={hobby}>{hobby}</span>)}
@@ -151,13 +188,18 @@ export default function PortfolioHome({ visible }) {
         </section>
 
         <section id="skills" className="section">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal="up">
             <p className="eyebrow">Capabilities</p>
             <h2>{content.skills.title}</h2>
           </div>
           <div className="skill-grid">
-            {content.skills.groups.map(([title, skills]) => (
-              <article className="skill-card" key={title}>
+            {content.skills.groups.map(([title, skills], index) => (
+              <article
+                className="skill-card"
+                data-reveal="up"
+                style={{ '--reveal-delay': `${(index % 3) * 80}ms` }}
+                key={title}
+              >
                 <h3>{title}</h3>
                 <Tags tags={skills} />
               </article>
@@ -166,12 +208,12 @@ export default function PortfolioHome({ visible }) {
         </section>
 
         <section id="projects" className="section">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal="up">
             <p className="eyebrow">Selected work</p>
             <h2>{content.projects.title}</h2>
             <p>{content.projects.intro}</p>
           </div>
-          <div className="project-filters" aria-label="Project filters">
+          <div className="project-filters" data-reveal="up" aria-label="Project filters">
             {categoryOptions.map((option) => (
               <button
                 className={`filter-button ${category === option.id ? 'active' : ''}`}
@@ -187,7 +229,12 @@ export default function PortfolioHome({ visible }) {
             {projects.map((project, index) => {
               const localized = project[language];
               return (
-                <article className="project-card" style={{ '--delay': `${index * 70}ms` }} key={project.id}>
+                <article
+                  className="project-card"
+                  data-reveal="up"
+                  style={{ '--reveal-delay': `${(index % 3) * 90}ms` }}
+                  key={project.id}
+                >
                   <div className="project-index">{String(index + 1).padStart(2, '0')}</div>
                   <h3>{localized.title}</h3>
                   <p>{localized.description}</p>
@@ -208,13 +255,18 @@ export default function PortfolioHome({ visible }) {
         </section>
 
         <section id="journey" className="section">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal="up">
             <p className="eyebrow">Learning path</p>
             <h2>{content.journey.title}</h2>
           </div>
           <div className="timeline">
-            {content.journey.items.map(([number, title, body]) => (
-              <article className="timeline-item" key={number}>
+            {content.journey.items.map(([number, title, body], index) => (
+              <article
+                className="timeline-item"
+                data-reveal="left"
+                style={{ '--reveal-delay': `${index * 70}ms` }}
+                key={number}
+              >
                 <span>{number}</span>
                 <div>
                   <h3>{title}</h3>
@@ -226,13 +278,18 @@ export default function PortfolioHome({ visible }) {
         </section>
 
         <section id="notes" className="section">
-          <div className="section-heading">
+          <div className="section-heading" data-reveal="up">
             <p className="eyebrow">Research memory</p>
             <h2>{content.notes.title}</h2>
           </div>
           <div className="notes-grid">
-            {content.notes.items.map(([title, body]) => (
-              <article className="note-card" key={title}>
+            {content.notes.items.map(([title, body], index) => (
+              <article
+                className="note-card"
+                data-reveal="up"
+                style={{ '--reveal-delay': `${(index % 3) * 80}ms` }}
+                key={title}
+              >
                 <h3>{title}</h3>
                 <p>{body}</p>
               </article>
@@ -242,7 +299,7 @@ export default function PortfolioHome({ visible }) {
 
         <section id="contact" className="section">
           <div className="contact-panel">
-            <div>
+            <div data-reveal="left">
               <p className="eyebrow">{content.contact.eyebrow}</p>
               <h2>{content.contact.title}</h2>
               <p>{content.contact.body}</p>
@@ -254,7 +311,7 @@ export default function PortfolioHome({ visible }) {
                 </div>
               </div>
             </div>
-            <div className="contact-directory">
+            <div className="contact-directory" data-reveal="right">
               {contactLinks.map((item) => {
                 const label = item.label[language];
                 const value = typeof item.value === 'object' ? item.value[language] : item.value;

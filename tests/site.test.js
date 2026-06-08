@@ -63,6 +63,17 @@ test('primary contact details are directly actionable', () => {
   assert.equal(phone.href, 'tel:+84382977551');
 });
 
+test('portfolio uses intersection observer scroll reveals', () => {
+  const component = fs.readFileSync(
+    path.join(__dirname, '..', 'src', 'components', 'PortfolioHome.jsx'),
+    'utf8',
+  );
+
+  assert.match(component, /IntersectionObserver/);
+  assert.match(component, /data-reveal/);
+  assert.match(component, /prefers-reduced-motion/);
+});
+
 test('about section includes education stages with empty image slots', () => {
   const stages = portfolioContent.vi.about.educationStages;
 
