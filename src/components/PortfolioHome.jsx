@@ -243,24 +243,62 @@ export default function PortfolioHome({ visible }) {
         <section id="contact" className="section">
           <div className="contact-panel">
             <div>
-              <p className="eyebrow">Contact</p>
+              <p className="eyebrow">{content.contact.eyebrow}</p>
               <h2>{content.contact.title}</h2>
               <p>{content.contact.body}</p>
+              <div className="contact-availability">
+                <span className="availability-dot" aria-hidden="true" />
+                <div>
+                  <strong>{content.contact.availability}</strong>
+                  <span>{content.contact.response}</span>
+                </div>
+              </div>
             </div>
-            <div className="contact-links">
-              {contactLinks.length ? contactLinks.map((link) => (
-                <a href={link.value} key={link.key}>{link.key}</a>
-              )) : (
-                <p className="muted">{content.contact.empty}</p>
-              )}
+            <div className="contact-directory">
+              {contactLinks.map((item) => {
+                const label = item.label[language];
+                const value = typeof item.value === 'object' ? item.value[language] : item.value;
+                const contentValue = value || content.contact.unavailable;
+                const itemContent = (
+                  <>
+                    <span className="contact-code" aria-hidden="true">{item.code}</span>
+                    <span className="contact-detail">
+                      <small>{label}</small>
+                      <strong>{contentValue}</strong>
+                    </span>
+                    {item.href && <span className="contact-arrow" aria-hidden="true">↗</span>}
+                  </>
+                );
+
+                return item.href ? (
+                  <a
+                    className="contact-item is-link"
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                    key={item.id}
+                  >
+                    {itemContent}
+                  </a>
+                ) : (
+                  <div className={`contact-item ${value ? '' : 'is-pending'}`} key={item.id}>
+                    {itemContent}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
       </main>
 
       <footer className="site-footer">
-        <span>Dat Brain Portfolio</span>
-        <span>AI Engineer | Computer Vision | RAG/LLM</span>
+        <div>
+          <strong>Dat Brain Portfolio</strong>
+          <span>AI Engineer | Computer Vision | RAG/LLM</span>
+        </div>
+        <a href="https://github.com/ptdbrain" target="_blank" rel="noreferrer">
+          github.com/ptdbrain ↗
+        </a>
       </footer>
     </div>
   );

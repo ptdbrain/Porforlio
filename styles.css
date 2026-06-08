@@ -1241,8 +1241,8 @@ h3 {
 
 .contact-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+  gap: clamp(30px, 6vw, 76px);
   align-items: center;
   padding: clamp(26px, 5vw, 48px);
   background:
@@ -1250,22 +1250,119 @@ h3 {
     var(--surface-strong);
 }
 
-.contact-links {
-  display: grid;
-  gap: 10px;
+.contact-panel h2 {
+  max-width: 12ch;
 }
 
-.contact-links a {
-  padding: 12px 14px;
+.contact-panel > div:first-child > p {
+  max-width: 62ch;
+}
+
+.contact-availability {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.availability-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 18px oklch(0.74 0.13 156 / 0.8);
+  animation: availability-pulse 2.4s ease-in-out infinite;
+}
+
+.contact-availability div {
+  display: grid;
+  gap: 3px;
+}
+
+.contact-availability strong {
+  color: var(--text);
+  font-size: 0.94rem;
+}
+
+.contact-availability span:last-child {
+  color: var(--dim);
+  font-size: 0.84rem;
+}
+
+.contact-directory {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 24px;
+  gap: 13px;
+  align-items: center;
+  min-height: 76px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  transition:
+    color 180ms ease-out,
+    padding 180ms ease-out,
+    background 180ms ease-out;
+}
+
+.contact-code {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  color: var(--text);
-  background: oklch(0.1 0.024 245 / 0.56);
+  color: var(--cyan);
+  background: oklch(0.1 0.024 245 / 0.66);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 0.72rem;
+  font-weight: 900;
 }
 
-.contact-links a:hover {
-  border-color: var(--line-strong);
+.contact-detail {
+  display: grid;
+  min-width: 0;
+}
+
+.contact-detail small {
+  color: var(--dim);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.contact-detail strong {
+  overflow: hidden;
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-arrow {
   color: var(--cyan);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.contact-item.is-pending .contact-code,
+.contact-item.is-pending .contact-detail strong {
+  color: var(--dim);
+}
+
+.contact-item.is-link:hover {
+  padding-right: 8px;
+  padding-left: 8px;
+  color: var(--cyan);
+  background: oklch(0.76 0.16 195 / 0.06);
 }
 
 .site-footer {
@@ -1280,9 +1377,38 @@ h3 {
   font-size: 0.9rem;
 }
 
+.site-footer div {
+  display: grid;
+  gap: 2px;
+}
+
+.site-footer strong {
+  color: var(--text);
+}
+
+.site-footer a {
+  align-self: center;
+  color: var(--muted);
+}
+
+.site-footer a:hover {
+  color: var(--cyan);
+}
+
 @keyframes scan {
   0% { transform: translateY(-12px); }
   100% { transform: translateY(12px); }
+}
+
+@keyframes availability-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
 }
 
 @keyframes sweep {
@@ -1606,6 +1732,14 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .contact-panel {
+    gap: 32px;
+  }
+
+  .contact-panel h2 {
+    max-width: 16ch;
+  }
+
   .hero {
     min-height: auto;
     padding-top: 122px;
@@ -1694,6 +1828,25 @@ h3 {
     width: 96vw;
   }
 
+  .contact-item {
+    grid-template-columns: 38px minmax(0, 1fr) 20px;
+    min-height: 68px;
+  }
+
+  .contact-code {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-detail strong {
+    font-size: 0.88rem;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .phase-boot .hemisphere-left {
     transform: translate3d(-118px, 5px, 0) rotate(-7deg) scale(0.72);
   }
@@ -1712,6 +1865,10 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .brain-intro {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {

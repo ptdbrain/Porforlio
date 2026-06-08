@@ -8,7 +8,5 @@ export function getProjectsByCategory(category) {
 }
 
 export function getVisibleContactLinks(config = contactConfig) {
-  return Object.entries(config)
-    .filter(([, value]) => Boolean(value))
-    .map(([key, value]) => ({ key, value }));
+  return config.filter((item) => item.featured || Boolean(item.href));
 }

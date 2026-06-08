@@ -236,7 +236,10 @@
       "contact": {
         "title": "Cùng xây dựng hệ thống AI thông minh.",
         "body": "Tôi mở với các cơ hội AI Engineer, Computer Vision, Backend AI, RAG/LLM và full-stack AI product.",
-        "empty": "Thông tin liên hệ có thể được cập nhật trong script.js."
+        "eyebrow": "Kết nối & hợp tác",
+        "availability": "Sẵn sàng trao đổi về cơ hội thực tập, việc làm và dự án AI.",
+        "response": "Thời gian phản hồi dự kiến: trong vòng 24–48 giờ.",
+        "unavailable": "Đang cập nhật"
       }
     },
     "en": {
@@ -475,7 +478,10 @@
       "contact": {
         "title": "Let us build intelligent systems together.",
         "body": "I am open to AI Engineer, Computer Vision, Backend AI, RAG/LLM and full-stack AI product opportunities.",
-        "empty": "Contact details can be updated in script.js."
+        "eyebrow": "Contact & collaboration",
+        "availability": "Open to internships, full-time opportunities and AI project collaboration.",
+        "response": "Typical response time: within 24–48 hours.",
+        "unavailable": "Updating"
       }
     }
   },
@@ -709,11 +715,119 @@
       "en": "Data Visualization"
     }
   ],
-  "contactConfig": {
-    "email": "",
-    "github": "",
-    "linkedin": "",
-    "facebook": "",
-    "cv": ""
-  }
+  "contactConfig": [
+    {
+      "id": "email",
+      "code": "@",
+      "label": {
+        "vi": "Email",
+        "en": "Email"
+      },
+      "value": "",
+      "href": "",
+      "featured": true
+    },
+    {
+      "id": "phone",
+      "code": "TEL",
+      "label": {
+        "vi": "Số điện thoại",
+        "en": "Phone"
+      },
+      "value": "",
+      "href": "",
+      "featured": true
+    },
+    {
+      "id": "location",
+      "code": "VN",
+      "label": {
+        "vi": "Địa điểm",
+        "en": "Location"
+      },
+      "value": {
+        "vi": "Việt Nam",
+        "en": "Vietnam"
+      },
+      "href": "",
+      "featured": true
+    },
+    {
+      "id": "github",
+      "code": "GH",
+      "label": {
+        "vi": "GitHub",
+        "en": "GitHub"
+      },
+      "value": "github.com/ptdbrain",
+      "href": "https://github.com/ptdbrain",
+      "featured": true
+    },
+    {
+      "id": "linkedin",
+      "code": "IN",
+      "label": {
+        "vi": "LinkedIn",
+        "en": "LinkedIn"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    },
+    {
+      "id": "facebook",
+      "code": "FB",
+      "label": {
+        "vi": "Facebook",
+        "en": "Facebook"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    },
+    {
+      "id": "zalo",
+      "code": "ZA",
+      "label": {
+        "vi": "Zalo",
+        "en": "Zalo"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    },
+    {
+      "id": "huggingface",
+      "code": "HF",
+      "label": {
+        "vi": "Hugging Face",
+        "en": "Hugging Face"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    },
+    {
+      "id": "kaggle",
+      "code": "KG",
+      "label": {
+        "vi": "Kaggle",
+        "en": "Kaggle"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    },
+    {
+      "id": "cv",
+      "code": "CV",
+      "label": {
+        "vi": "Hồ sơ năng lực",
+        "en": "Resume"
+      },
+      "value": "",
+      "href": "",
+      "featured": false
+    }
+  ]
 }

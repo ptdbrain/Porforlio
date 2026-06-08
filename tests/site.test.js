@@ -12,9 +12,7 @@ function getProjectsByCategory(category) {
 }
 
 function getVisibleContactLinks(config = data.contactConfig) {
-  return Object.entries(config)
-    .filter(([, value]) => Boolean(value))
-    .map(([key, value]) => ({ key, value }));
+  return config.filter((item) => item.featured || Boolean(item.href));
 }
 
 test('uses approved bilingual hero names', () => {
@@ -35,16 +33,24 @@ test('filters projects by category and keeps all projects available', () => {
   assert.ok(cvProjects.every((project) => project.categories.includes('computer-vision')));
 });
 
-test('hides contact links without configured values', () => {
-  const links = getVisibleContactLinks({
-    email: 'dat@example.com',
-    github: '',
-    linkedin: 'https://linkedin.com/in/datbrain',
-    facebook: '',
-    cv: '',
-  });
+test('shows featured contact fields and configured social links', () => {
+  const links = getVisibleContactLinks([
+    { id: 'email', featured: true, href: '' },
+    { id: 'github', featured: true, href: 'https://github.com/ptdbrain' },
+    { id: 'linkedin', featured: false, href: 'https://linkedin.com/in/datbrain' },
+    { id: 'facebook', featured: false, href: '' },
+  ]);
 
-  assert.deepEqual(links.map((link) => link.key), ['email', 'linkedin']);
+  assert.deepEqual(links.map((link) => link.id), ['email', 'github', 'linkedin']);
+});
+
+test('contact directory includes core details and relevant professional networks', () => {
+  const ids = data.contactConfig.map((item) => item.id);
+
+  assert.deepEqual(ids.slice(0, 4), ['email', 'phone', 'location', 'github']);
+  assert.ok(ids.includes('linkedin'));
+  assert.ok(ids.includes('huggingface'));
+  assert.ok(ids.includes('kaggle'));
 });
 
 test('about section includes education stages with empty image slots', () => {
