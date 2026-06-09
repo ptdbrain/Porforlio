@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   categoryOptions,
   contactConfig,
@@ -20,7 +21,7 @@ function ProjectDetail({ project, language, labels, isOpen, onClose }) {
 
   const localized = project[language];
 
-  return (
+  return createPortal(
     <div
       className={`project-detail-layer ${isOpen ? 'is-open' : ''}`}
       role="presentation"
@@ -92,7 +93,8 @@ function ProjectDetail({ project, language, labels, isOpen, onClose }) {
           </div>
         </div>
       </section>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

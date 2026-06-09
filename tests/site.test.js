@@ -91,9 +91,19 @@ test('project cards open an accessible animated detail viewer', () => {
 
   assert.match(component, /aria-haspopup="dialog"/);
   assert.match(component, /role="dialog"/);
+  assert.match(component, /createPortal/);
+  assert.match(component, /document\.body/);
   assert.match(component, /event\.key === 'Escape'/);
   assert.match(component, /project\.links\.demo/);
   assert.match(component, /project\.links\.github/);
+});
+
+test('project viewer remains fixed to the viewport', () => {
+  const styles = fs.readFileSync(path.join(__dirname, '..', 'styles.css'), 'utf8');
+
+  assert.match(styles, /\.portfolio-app\.is-visible\s*\{[^}]*transform:\s*none/s);
+  assert.match(styles, /\.project-detail-layer\s*\{[^}]*position:\s*fixed/s);
+  assert.match(styles, /\.project-detail-layer\s*\{[^}]*height:\s*100dvh/s);
 });
 
 test('about section includes education stages with empty image slots', () => {

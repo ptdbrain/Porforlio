@@ -83,7 +83,7 @@ button {
 
 .portfolio-app.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .reveal-ready [data-reveal] {
@@ -1280,6 +1280,8 @@ h3 {
   z-index: 80;
   display: grid;
   place-items: center;
+  width: 100vw;
+  height: 100dvh;
   padding: clamp(16px, 4vw, 48px);
   background: oklch(0.04 0.018 250 / 0.18);
   opacity: 0;
@@ -1301,7 +1303,7 @@ h3 {
   display: grid;
   grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
   width: min(1120px, 100%);
-  max-height: min(820px, calc(100vh - 32px));
+  max-height: min(820px, calc(100dvh - 32px));
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: oklch(0.105 0.032 245);
@@ -2149,7 +2151,7 @@ h3 {
   }
 
   .project-detail {
-    max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px);
   }
 
   .project-preview {
