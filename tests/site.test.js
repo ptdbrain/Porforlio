@@ -72,6 +72,8 @@ test('portfolio uses intersection observer scroll reveals', () => {
   assert.match(component, /IntersectionObserver/);
   assert.match(component, /data-reveal/);
   assert.match(component, /prefers-reduced-motion/);
+  assert.match(component, /classList\.toggle\('is-revealed', entry\.isIntersecting\)/);
+  assert.doesNotMatch(component, /observer\.unobserve/);
 });
 
 test('about section includes education stages with empty image slots', () => {

@@ -31,7 +31,7 @@ export default function PortfolioHome({ visible }) {
     const app = appRef.current;
     if (!app) return undefined;
 
-    const revealItems = app.querySelectorAll('[data-reveal]:not(.is-revealed)');
+    const revealItems = app.querySelectorAll('[data-reveal]');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     app.classList.add('reveal-ready');
 
@@ -43,9 +43,7 @@ export default function PortfolioHome({ visible }) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
+          entry.target.classList.toggle('is-revealed', entry.isIntersecting);
         });
       },
       {
