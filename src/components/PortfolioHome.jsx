@@ -15,11 +15,95 @@ function Tags({ tags }) {
   );
 }
 
+function ProjectDetail({ project, language, labels, isOpen, onClose }) {
+  if (!project) return null;
+
+  const localized = project[language];
+
+  return (
+    <div
+      className={`project-detail-layer ${isOpen ? 'is-open' : ''}`}
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        className="project-detail"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`project-detail-${project.id}`}
+      >
+        <button
+          className="project-detail-close"
+          type="button"
+          aria-label={labels.closeLabel}
+          autoFocus
+          onClick={onClose}
+        >
+          ×
+        </button>
+
+        <div className={`project-preview ${project.media.image ? 'has-image' : ''}`}>
+          {project.media.image ? (
+            <img src={project.media.image} alt={project.media.alt || localized.title} />
+          ) : (
+            <div className="project-preview-system">
+              <span>{labels.previewLabel}</span>
+              <strong>{project.id.toUpperCase()}</strong>
+              <div className="preview-scanline" />
+            </div>
+          )}
+        </div>
+
+        <div className="project-detail-copy">
+          <p className="eyebrow">{labels.detailEyebrow}</p>
+          <h2 id={`project-detail-${project.id}`}>{localized.title}</h2>
+          <p>{localized.description}</p>
+
+          <div className="project-detail-grid">
+            <div>
+              <span className="mini-label">{labels.stackLabel}</span>
+              <Tags tags={project.stack} />
+            </div>
+            <div>
+              <span className="mini-label">{labels.featureLabel}</span>
+              <ul>
+                {localized.points.map((point) => <li key={point}>{point}</li>)}
+              </ul>
+            </div>
+          </div>
+
+          <div className="project-detail-actions">
+            {project.links.demo ? (
+              <a className="button primary" href={project.links.demo} target="_blank" rel="noreferrer">
+                {labels.demoLabel} ↗
+              </a>
+            ) : (
+              <span className="button is-disabled">{labels.demoLabel}: {labels.unavailable}</span>
+            )}
+            {project.links.github ? (
+              <a className="button ghost" href={project.links.github} target="_blank" rel="noreferrer">
+                {labels.githubLabel} ↗
+              </a>
+            ) : (
+              <span className="button is-disabled">{labels.githubLabel}: {labels.unavailable}</span>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export default function PortfolioHome({ visible }) {
   const appRef = useRef(null);
+  const projectCloseTimer = useRef(0);
   const [language, setLanguage] = useState('vi');
   const [category, setCategory] = useState('all');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [projectDetailOpen, setProjectDetailOpen] = useState(false);
   const content = portfolioContent[language];
   const projects = getProjectsByCategory(category);
   const contactLinks = getVisibleContactLinks(contactConfig);
@@ -55,6 +139,35 @@ export default function PortfolioHome({ visible }) {
     revealItems.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, [language, category]);
+
+  useEffect(() => {
+    if (!selectedProject) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const frame = window.requestAnimationFrame(() => setProjectDetailOpen(true));
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') closeProjectDetail();
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [selectedProject]);
+
+  function openProjectDetail(project) {
+    window.clearTimeout(projectCloseTimer.current);
+    setSelectedProject(project);
+  }
+
+  function closeProjectDetail() {
+    setProjectDetailOpen(false);
+    projectCloseTimer.current = window.setTimeout(() => setSelectedProject(null), 320);
+  }
 
   return (
     <div ref={appRef} className={`portfolio-app ${visible ? 'is-visible' : ''}`}>
@@ -231,6 +344,16 @@ export default function PortfolioHome({ visible }) {
                   className="project-card"
                   data-reveal="up"
                   style={{ '--reveal-delay': `${(index % 3) * 90}ms` }}
+                  role="button"
+                  tabIndex="0"
+                  aria-haspopup="dialog"
+                  onClick={() => openProjectDetail(project)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      openProjectDetail(project);
+                    }
+                  }}
                   key={project.id}
                 >
                   <div className="project-index">{String(index + 1).padStart(2, '0')}</div>
@@ -245,6 +368,10 @@ export default function PortfolioHome({ visible }) {
                     <ul>
                       {localized.points.map((point) => <li key={point}>{point}</li>)}
                     </ul>
+                  </div>
+                  <div className="project-card-open">
+                    <span>{content.projects.viewDetails}</span>
+                    <span aria-hidden="true">↗</span>
                   </div>
                 </article>
               );
@@ -355,6 +482,14 @@ export default function PortfolioHome({ visible }) {
           github.com/ptdbrain ↗
         </a>
       </footer>
+
+      <ProjectDetail
+        project={selectedProject}
+        language={language}
+        labels={content.projects}
+        isOpen={projectDetailOpen}
+        onClose={closeProjectDetail}
+      />
     </div>
   );
 }

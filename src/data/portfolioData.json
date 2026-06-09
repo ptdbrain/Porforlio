@@ -172,7 +172,14 @@
         "title": "Dự án nổi bật",
         "intro": "Các dự án cho thấy cách tôi đi từ model, dữ liệu, thuật toán đến sản phẩm có thể sử dụng.",
         "stackLabel": "Công nghệ",
-        "featureLabel": "Điểm chính"
+        "featureLabel": "Điểm chính",
+        "viewDetails": "Mở project",
+        "detailEyebrow": "Project system view",
+        "demoLabel": "Xem demo",
+        "githubLabel": "Mã nguồn GitHub",
+        "previewLabel": "Khu vực demo dự án",
+        "unavailable": "Đang cập nhật",
+        "closeLabel": "Đóng chi tiết dự án"
       },
       "journey": {
         "title": "Hành trình học tập",
@@ -414,7 +421,14 @@
         "title": "Featured Projects",
         "intro": "Projects that show how I move from models, data and algorithms into usable software.",
         "stackLabel": "Stack",
-        "featureLabel": "Highlights"
+        "featureLabel": "Highlights",
+        "viewDetails": "Open project",
+        "detailEyebrow": "Project system view",
+        "demoLabel": "View demo",
+        "githubLabel": "GitHub source",
+        "previewLabel": "Project demo area",
+        "unavailable": "Coming soon",
+        "closeLabel": "Close project details"
       },
       "journey": {
         "title": "Learning Journey",
@@ -518,7 +532,15 @@
         "MySQL",
         "WebSocket",
         "Docker"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     },
     {
       "id": "lane",
@@ -549,7 +571,15 @@
         "OpenCV",
         "UNet",
         "Deep Learning"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     },
     {
       "id": "yolo",
@@ -580,7 +610,15 @@
         "PyTorch",
         "OpenCV",
         "Roboflow"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     },
     {
       "id": "pathfinding",
@@ -613,7 +651,15 @@
         "Leaflet",
         "A*",
         "Dijkstra"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     },
     {
       "id": "branddna",
@@ -645,7 +691,15 @@
         "Vector DB",
         "Hybrid Search",
         "LLM"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     },
     {
       "id": "research",
@@ -675,7 +729,15 @@
         "Pandas",
         "Deep Learning",
         "AUC"
-      ]
+      ],
+      "media": {
+        "image": "",
+        "alt": ""
+      },
+      "links": {
+        "demo": "",
+        "github": ""
+      }
     }
   ],
   "categoryOptions": [

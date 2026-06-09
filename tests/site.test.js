@@ -33,6 +33,13 @@ test('filters projects by category and keeps all projects available', () => {
   assert.ok(cvProjects.every((project) => project.categories.includes('computer-vision')));
 });
 
+test('projects expose future demo, source and media slots', () => {
+  assert.ok(projects.every((project) => typeof project.links.demo === 'string'));
+  assert.ok(projects.every((project) => typeof project.links.github === 'string'));
+  assert.ok(projects.every((project) => typeof project.media.image === 'string'));
+  assert.ok(projects.every((project) => typeof project.media.alt === 'string'));
+});
+
 test('shows featured contact fields and configured social links', () => {
   const links = getVisibleContactLinks([
     { id: 'email', featured: true, href: '' },
@@ -74,6 +81,19 @@ test('portfolio uses intersection observer scroll reveals', () => {
   assert.match(component, /prefers-reduced-motion/);
   assert.match(component, /classList\.toggle\('is-revealed', entry\.isIntersecting\)/);
   assert.doesNotMatch(component, /observer\.unobserve/);
+});
+
+test('project cards open an accessible animated detail viewer', () => {
+  const component = fs.readFileSync(
+    path.join(__dirname, '..', 'src', 'components', 'PortfolioHome.jsx'),
+    'utf8',
+  );
+
+  assert.match(component, /aria-haspopup="dialog"/);
+  assert.match(component, /role="dialog"/);
+  assert.match(component, /event\.key === 'Escape'/);
+  assert.match(component, /project\.links\.demo/);
+  assert.match(component, /project\.links\.github/);
 });
 
 test('about section includes education stages with empty image slots', () => {
