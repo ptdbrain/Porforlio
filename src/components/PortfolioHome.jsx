@@ -17,9 +17,24 @@ function Tags({ tags }) {
 }
 
 function ProjectDetail({ project, language, labels, isOpen, onClose }) {
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveMediaIndex(0);
+  }, [project?.id]);
+
   if (!project) return null;
 
   const localized = project[language];
+  const configuredGallery = project.media.gallery || [];
+  const gallery = configuredGallery.length
+    ? configuredGallery
+    : Array.from({ length: 3 }, (_, index) => ({
+      src: index === 0 ? project.media.image : '',
+      alt: project.media.alt || localized.title,
+      caption: `${labels.imagePlaceholder} ${String(index + 1).padStart(2, '0')}`,
+    }));
+  const activeMedia = gallery[activeMediaIndex] || gallery[0];
 
   return createPortal(
     <div
@@ -45,33 +60,68 @@ function ProjectDetail({ project, language, labels, isOpen, onClose }) {
           ×
         </button>
 
-        <div className={`project-preview ${project.media.image ? 'has-image' : ''}`}>
-          {project.media.image ? (
-            <img src={project.media.image} alt={project.media.alt || localized.title} />
-          ) : (
-            <div className="project-preview-system">
-              <span>{labels.previewLabel}</span>
-              <strong>{project.id.toUpperCase()}</strong>
-              <div className="preview-scanline" />
-            </div>
-          )}
+        <div className="project-gallery">
+          <span className="mini-label">{labels.galleryLabel}</span>
+          <div className={`project-preview ${activeMedia?.src ? 'has-image' : ''}`}>
+            {activeMedia?.src ? (
+              <img src={activeMedia.src} alt={activeMedia.alt || localized.title} />
+            ) : (
+              <div className="project-preview-system">
+                <span>{activeMedia?.caption || labels.previewLabel}</span>
+                <strong>{project.id.toUpperCase()}</strong>
+                <div className="preview-scanline" />
+              </div>
+            )}
+            <span className="project-media-count">
+              {String(activeMediaIndex + 1).padStart(2, '0')} / {String(gallery.length).padStart(2, '0')}
+            </span>
+          </div>
+          <div className="project-thumbnails" aria-label={labels.galleryLabel}>
+            {gallery.map((media, index) => (
+              <button
+                className={activeMediaIndex === index ? 'is-active' : ''}
+                type="button"
+                aria-label={`${labels.galleryLabel} ${index + 1}`}
+                onClick={() => setActiveMediaIndex(index)}
+                key={`${media.src}-${index}`}
+              >
+                {media.src ? (
+                  <img src={media.src} alt="" />
+                ) : (
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="project-detail-copy">
-          <p className="eyebrow">{labels.detailEyebrow}</p>
-          <h2 id={`project-detail-${project.id}`}>{localized.title}</h2>
-          <p>{localized.description}</p>
+          <div className="project-detail-intro">
+            <p className="eyebrow">{labels.detailEyebrow}</p>
+            <h2 id={`project-detail-${project.id}`}>{localized.title}</h2>
+          </div>
+
+          <section className="project-story">
+            <span className="mini-label">{labels.overviewLabel}</span>
+            <p>{localized.description}</p>
+          </section>
+
+          <section className="project-results">
+            <span className="mini-label">{labels.resultLabel}</span>
+            <div className="project-result-list">
+              {localized.points.map((point, index) => (
+                <div key={point}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{point}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <div className="project-detail-grid">
             <div>
               <span className="mini-label">{labels.stackLabel}</span>
               <Tags tags={project.stack} />
-            </div>
-            <div>
-              <span className="mini-label">{labels.featureLabel}</span>
-              <ul>
-                {localized.points.map((point) => <li key={point}>{point}</li>)}
-              </ul>
             </div>
           </div>
 

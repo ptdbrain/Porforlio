@@ -175,9 +175,13 @@
         "featureLabel": "Điểm chính",
         "viewDetails": "Mở project",
         "detailEyebrow": "Project system view",
-        "demoLabel": "Xem demo",
+        "overviewLabel": "Tổng quan dự án",
+        "galleryLabel": "Hình ảnh & kết quả trực quan",
+        "resultLabel": "Kết quả & khả năng",
+        "demoLabel": "Mở demo online",
         "githubLabel": "Mã nguồn GitHub",
         "previewLabel": "Khu vực demo dự án",
+        "imagePlaceholder": "Ảnh dự án sẽ được cập nhật",
         "unavailable": "Đang cập nhật",
         "closeLabel": "Đóng chi tiết dự án"
       },
@@ -424,9 +428,13 @@
         "featureLabel": "Highlights",
         "viewDetails": "Open project",
         "detailEyebrow": "Project system view",
-        "demoLabel": "View demo",
+        "overviewLabel": "Project overview",
+        "galleryLabel": "Images & visual results",
+        "resultLabel": "Results & capabilities",
+        "demoLabel": "Open online demo",
         "githubLabel": "GitHub source",
         "previewLabel": "Project demo area",
+        "imagePlaceholder": "Project image coming soon",
         "unavailable": "Coming soon",
         "closeLabel": "Close project details"
       },
@@ -535,7 +543,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",
@@ -574,7 +583,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",
@@ -613,7 +623,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",
@@ -654,7 +665,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",
@@ -694,7 +706,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",
@@ -732,7 +745,8 @@
       ],
       "media": {
         "image": "",
-        "alt": ""
+        "alt": "",
+        "gallery": []
       },
       "links": {
         "demo": "",

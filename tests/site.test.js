@@ -38,6 +38,7 @@ test('projects expose future demo, source and media slots', () => {
   assert.ok(projects.every((project) => typeof project.links.github === 'string'));
   assert.ok(projects.every((project) => typeof project.media.image === 'string'));
   assert.ok(projects.every((project) => typeof project.media.alt === 'string'));
+  assert.ok(projects.every((project) => Array.isArray(project.media.gallery)));
 });
 
 test('shows featured contact fields and configured social links', () => {
@@ -96,6 +97,9 @@ test('project cards open an accessible animated detail viewer', () => {
   assert.match(component, /event\.key === 'Escape'/);
   assert.match(component, /project\.links\.demo/);
   assert.match(component, /project\.links\.github/);
+  assert.match(component, /activeMediaIndex/);
+  assert.match(component, /project-thumbnails/);
+  assert.match(component, /project-result-list/);
 });
 
 test('project viewer remains fixed to the viewport', () => {
