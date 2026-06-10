@@ -23,6 +23,12 @@
         "eyebrow": "AI systems builder",
         "title": "Tôi tập trung vào AI có khả năng ứng dụng thật.",
         "body": "Tôi định hướng trở thành AI Engineer, tập trung vào Computer Vision, Deep Learning, RAG/LLM và triển khai các hệ thống AI có giao diện sử dụng được. Điểm mạnh của tôi là học nhanh, đào sâu bản chất kỹ thuật và kết hợp AI với phần mềm thực tế.",
+        "dashboardLabel": "Personal intelligence dashboard",
+        "profileLabel": "Hồ sơ cá nhân",
+        "metricsLabel": "Ma trận năng lực",
+        "statusLabel": "Sẵn sàng phát triển",
+        "identityLabel": "AI Engineer profile",
+        "timelineLabel": "Dòng thời gian học tập",
         "stats": [
           [
             "6+",
@@ -276,6 +282,12 @@
         "eyebrow": "AI systems builder",
         "title": "I focus on AI that can become real software.",
         "body": "I am developing toward AI Engineering with a focus on Computer Vision, Deep Learning, RAG/LLM and usable AI systems. My strength is learning quickly, studying technical fundamentals deeply and combining AI with practical software.",
+        "dashboardLabel": "Personal intelligence dashboard",
+        "profileLabel": "Personal profile",
+        "metricsLabel": "Capability matrix",
+        "statusLabel": "Ready to grow",
+        "identityLabel": "AI Engineer profile",
+        "timelineLabel": "Education timeline",
         "stats": [
           [
             "6+",

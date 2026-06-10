@@ -298,56 +298,107 @@ export default function PortfolioHome({ visible }) {
             <p className="eyebrow">{content.about.eyebrow}</p>
             <h2>{content.about.title}</h2>
           </div>
-          <div className="about-grid">
-            <p data-reveal="left">{content.about.body}</p>
-            <div className="stat-grid" data-reveal="right">
-              {content.about.stats.map(([value, label]) => (
-                <div className="stat" key={`${value}-${label}`}>
-                  <strong>{value}</strong>
-                  <span>{label}</span>
+
+          <div className="about-dashboard" data-reveal="up">
+            <div className="about-dashboard-bar">
+              <div>
+                <span className="dashboard-signal" aria-hidden="true" />
+                <strong>{content.about.dashboardLabel}</strong>
+              </div>
+              <span>DB / PROFILE.OS / 01</span>
+            </div>
+
+            <div className="about-dashboard-main">
+              <section className="dashboard-profile">
+                <span className="mini-label">{content.about.profileLabel}</span>
+                <div className="dashboard-identity">
+                  <div className="dashboard-avatar" aria-label="Profile image placeholder">
+                    <span>DB</span>
+                    <i aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p>{content.about.identityLabel}</p>
+                    <h3>{content.hero.name}</h3>
+                    <span>{content.hero.role}</span>
+                  </div>
                 </div>
-              ))}
+                <p className="dashboard-bio">{content.about.body}</p>
+                <div className="dashboard-status">
+                  <span aria-hidden="true" />
+                  <div>
+                    <small>STATUS</small>
+                    <strong>{content.about.statusLabel}</strong>
+                  </div>
+                </div>
+              </section>
+
+              <section className="dashboard-metrics">
+                <span className="mini-label">{content.about.metricsLabel}</span>
+                <div className="dashboard-metric-grid">
+                  {content.about.stats.map(([value, label], index) => (
+                    <div className="dashboard-metric" key={`${value}-${label}`}>
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <strong>{value}</strong>
+                      <p>{label}</p>
+                      <i aria-hidden="true" />
+                    </div>
+                  ))}
+                </div>
+              </section>
             </div>
-          </div>
-          <div className="direction" data-reveal="up">
-            <h3>{content.direction.title}</h3>
-            <p>{content.direction.body}</p>
-          </div>
-          <div className="about-details">
-            <div className="section-heading compact-heading" data-reveal="up">
-              <p className="eyebrow">{content.about.educationTitle}</p>
-              <h3>{content.about.educationIntro}</h3>
-            </div>
-            <div className="education-grid">
+
+            <section className="dashboard-direction">
+              <div>
+                <span className="mini-label">{content.direction.title}</span>
+                <h3>{content.about.educationIntro}</h3>
+              </div>
+              <p>{content.direction.body}</p>
+            </section>
+
+            <section className="dashboard-education">
+              <div className="dashboard-section-title">
+                <span className="mini-label">{content.about.timelineLabel}</span>
+                <h3>{content.about.educationTitle}</h3>
+              </div>
+              <div className="dashboard-timeline">
               {content.about.educationStages.map((stage, index) => (
                 <article
-                  className="education-stage"
-                  data-reveal={index % 2 === 0 ? 'left' : 'right'}
-                  style={{ '--reveal-delay': `${index * 80}ms` }}
+                  className="dashboard-stage"
                   key={stage.id}
                 >
-                  <div className={`stage-media ${stage.image.src ? 'has-image' : ''}`}>
+                  <span className="dashboard-stage-index">{String(index + 1).padStart(2, '0')}</span>
+                  <div className={`dashboard-stage-media ${stage.image.src ? 'has-image' : ''}`}>
                     {stage.image.src ? (
                       <img src={stage.image.src} alt={stage.image.alt} />
                     ) : (
-                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <span>IMG</span>
                     )}
                   </div>
-                  <div className="stage-copy">
+                  <div className="dashboard-stage-copy">
                     <p className="mini-label">{stage.label}</p>
                     <h3>{stage.title}</h3>
                     <p>{stage.body}</p>
                   </div>
                 </article>
               ))}
-            </div>
-            <div className="hobby-panel" data-reveal="up">
-              <h3>{content.about.hobbiesTitle}</h3>
-              <div className="hobby-list">
-                {content.about.hobbies.map((hobby) => <span key={hobby}>{hobby}</span>)}
               </div>
+            </section>
+
+            <section className="dashboard-interests">
+              <div className="dashboard-section-title">
+                <span className="mini-label">INPUT STREAMS</span>
+                <h3>{content.about.hobbiesTitle}</h3>
+              </div>
+              <div className="dashboard-interest-list">
+                {content.about.hobbies.map((hobby, index) => (
+                  <span key={hobby}>
+                    <b>{String(index + 1).padStart(2, '0')}</b>
+                    {hobby}
+                  </span>
+                ))}
+              </div>
+            </section>
             </div>
-          </div>
         </section>
 
         <section id="skills" className="section">

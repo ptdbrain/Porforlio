@@ -123,3 +123,16 @@ test('about section includes bilingual hobbies', () => {
   assert.ok(portfolioContent.vi.about.hobbies.length >= 4);
   assert.equal(portfolioContent.en.about.hobbies.length, portfolioContent.vi.about.hobbies.length);
 });
+
+test('about section renders as a personal dashboard', () => {
+  const component = fs.readFileSync(
+    path.join(__dirname, '..', 'src', 'components', 'PortfolioHome.jsx'),
+    'utf8',
+  );
+
+  assert.match(component, /about-dashboard/);
+  assert.match(component, /dashboard-profile/);
+  assert.match(component, /dashboard-metric-grid/);
+  assert.match(component, /dashboard-timeline/);
+  assert.match(component, /dashboard-interest-list/);
+});
