@@ -27,7 +27,7 @@ export function EmptyText({ value, language, label, className = '' }) {
   return content ? <p className={className}>{content}</p> : <div className={`empty-text ${className}`}><span aria-hidden="true">—</span><small>{label}</small></div>;
 }
 
-export function Modal({ title, onClose, children }) {
+export function Modal({ title, onClose, children, className = '' }) {
   const ref = useRef(null);
   useEffect(() => {
     const previous = document.activeElement;
@@ -47,7 +47,7 @@ export function Modal({ title, onClose, children }) {
     return () => { document.body.style.overflow = overflow; document.removeEventListener('keydown', keydown); previous?.focus(); };
   }, [onClose]);
   return createPortal(<div className="modal-backdrop" onClick={(event) => event.target === event.currentTarget && onClose()}>
-    <section className="story-modal" role="dialog" aria-modal="true" aria-label={title} ref={ref}>
+    <section className={`story-modal ${className}`} role="dialog" aria-modal="true" aria-label={title} ref={ref}>
       <button className="modal-close" onClick={onClose} aria-label={title}>×</button>{children}
     </section>
   </div>, document.body);

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import data from './content/portfolio.json';
 import { copy } from './content/copy';
+import { cinemaCopy } from './content/cinemaCopy';
+import { useMotionPreference } from './lib/useMotionPreference';
 import { resolveRoute, routeMetadata } from './lib/routes.mjs';
 import { Home } from './components/editorial/Home';
 import { Work } from './components/editorial/Work';
@@ -17,10 +19,10 @@ function initialLang() {
   try { return localStorage.getItem('ptd-language') === 'en' ? 'en' : 'vi'; } catch { return 'vi'; }
 }
 
-function useMotion(path, language) {
+function useMotion(path, language, disabled) {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reduced.matches || !('IntersectionObserver' in window)) return;
+    if (disabled || reduced.matches || !('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('motion-enabled');
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); observer.unobserve(entry.target); }
@@ -32,18 +34,21 @@ function useMotion(path, language) {
     const onChange = () => { if (reduced.matches) document.documentElement.classList.remove('motion-enabled'); };
     reduced.addEventListener('change',onChange);
     return () => {observer.disconnect();mutation.disconnect();reduced.removeEventListener('change',onChange);document.documentElement.classList.remove('motion-enabled');};
-  }, [path,language]);
+  }, [path,language,disabled]);
 }
 
-export default function App({ initialPath }) {
+export default function App({ initialPath, initialLanguage, hydrating=false }) {
   const [location,setLocation] = useState(() => initialPath ? {path:initialPath,hash:'',scroll:0,initial:true} : typeof window !== 'undefined' ? browserLocation() : {path:'/',hash:'',scroll:0,initial:true});
-  const [language,setLanguage] = useState(initialLang);
+  const [language,setLanguage] = useState(()=>initialLanguage||initialLang());
   const [menuOpen,setMenuOpen] = useState(false);
   const mainRef=useRef(null);
   const route=resolveRoute(location.path,data.projects);
   const work=route.kind === 'work' || route.kind === 'project';
   const t=copy[language];
-  useMotion(location.path,language);
+  const motionPreference=useMotionPreference(hydrating);
+  const c=cinemaCopy[language];
+  useMotion(location.path,language,work && motionPreference.simple);
+  useEffect(()=>{if(initialLanguage)setLanguage(initialLang());},[initialLanguage]);
 
   useEffect(() => {
     function navigate(event) {
@@ -56,11 +61,13 @@ export default function App({ initialPath }) {
       if (language === 'en') url.searchParams.set('lang','en');
       const next={path:url.pathname,hash:url.hash,scroll:0,initial:false};
       const perform=() => {history.pushState({scroll:0},'',url.pathname+url.search+url.hash);setLocation(next);setMenuOpen(false);};
-      if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && url.pathname !== window.location.pathname) {
+      if (document.startViewTransition && !motionPreference.simple && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && url.pathname !== window.location.pathname) {
         const choice=link.closest('.story-choice');
-        if (choice) choice.style.viewTransitionName='journey';
+        const cover=link.closest('[data-project-portal]');
+        if (choice && innerWidth>=768) choice.style.viewTransitionName='journey';
+        if (cover && innerWidth>=768) cover.style.viewTransitionName='project-cover';
         const transition=document.startViewTransition(() => flushSync(perform));
-        transition.finished.catch(() => {}).finally(() => { if(choice?.isConnected) choice.style.viewTransitionName=''; });
+        transition.finished.catch(() => {}).finally(() => { if(choice?.isConnected) choice.style.viewTransitionName='';if(cover?.isConnected)cover.style.viewTransitionName=''; });
       } else perform();
     }
     function popstate() {setLocation({path:window.location.pathname,hash:window.location.hash,scroll:history.state?.scroll || 0,initial:false});setMenuOpen(false);}
@@ -69,7 +76,7 @@ export default function App({ initialPath }) {
     history.scrollRestoration='manual';
     document.addEventListener('click',navigate);document.addEventListener('keydown',escape);window.addEventListener('popstate',popstate);
     return () => {document.removeEventListener('click',navigate);document.removeEventListener('keydown',escape);window.removeEventListener('popstate',popstate);history.scrollRestoration=oldRestoration;};
-  }, [language]);
+  }, [language,motionPreference.simple]);
 
   useEffect(() => {
     const metadata=routeMetadata(route,data,language);
@@ -83,7 +90,7 @@ export default function App({ initialPath }) {
     setMeta('description',metadata.description);setMeta('og:title',metadata.title,true);setMeta('og:description',metadata.description,true);setMeta('og:type',metadata.type,true);setMeta('og:url',canonical,true);setMeta('twitter:card',metadata.image?'summary_large_image':'summary');
     if(metadata.image) setMeta('og:image',new URL(metadata.image,siteUrl).href,true);else document.head.querySelector('meta[property="og:image"]')?.remove();
     let link=document.head.querySelector('link[rel="canonical"]');if(!link){link=document.createElement('link');link.rel='canonical';document.head.append(link);}link.href=canonical;
-    setMeta('theme-color',work?'#0b111b':'#f5f3ed');
+    setMeta('theme-color',work?'#090b10':'#f5f3ed');
     setMeta('robots',route.kind === 'not-found'?'noindex, follow':'index, follow');
   }, [location.path,language]);
 
@@ -107,15 +114,15 @@ export default function App({ initialPath }) {
     const next=language === 'vi'?'en':'vi';setLanguage(next);try {localStorage.setItem('ptd-language',next);}catch{}
     const url=new URL(window.location.href);if(next === 'en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState(history.state,'',url.pathname+url.search+url.hash);
   }
-  return <div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'}`}>
+  return <div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${work&&motionPreference.simple?'is-simple':''}`}>
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header"><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>
-      <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}</nav>
+      <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false],['/work#experience',language==='vi'?'Đóng góp':'Experience',false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}{work&&<button className="motion-preference" type="button" aria-pressed={motionPreference.simple} disabled={motionPreference.systemReduced} title={motionPreference.systemReduced?c.auto:undefined} onClick={motionPreference.toggle}>{motionPreference.systemReduced?c.simple:motionPreference.simple?c.full:c.simple}</button>}</nav>
       <div className="header-tools"><button className="language-toggle" type="button" onClick={changeLanguage} aria-label={language==='vi'?'Switch to English':'Chuyển sang tiếng Việt'}><span className={language==='vi'?'active':''}>VI</span><span>/</span><span className={language==='en'?'active':''}>EN</span></button><button className="menu-toggle" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="main-navigation" aria-label={menuOpen?t.close:t.menu}><span /> <span /></button></div></div></header>
     <main id="main-content" ref={mainRef} tabIndex="-1" key={location.path}>
       {route.kind==='home'&&<Home data={data} language={language} t={t} />}
       {route.kind==='personal'&&<Personal data={data} language={language} t={t} />}
-      {route.kind==='work'&&<Work data={data} language={language} t={t} />}
+      {route.kind==='work'&&<Work data={data} language={language} t={t} simple={motionPreference.simple} />}
       {route.kind==='project'&&<CaseStudy key={route.project.slug} project={route.project} data={data} language={language} t={t} />}
       {route.kind==='contact'&&<div className="page-width standalone-contact"><Contact data={data} language={language} t={t} /></div>}
       {route.kind==='not-found'&&<section className="not-found page-width"><span className="eyebrow">404 / PTD.</span><h1>{t.notFound}</h1><RouteLink className="button button-dark" href="/">{t.returnHome} ↗</RouteLink></section>}

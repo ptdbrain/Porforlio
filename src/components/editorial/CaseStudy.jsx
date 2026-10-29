@@ -3,6 +3,9 @@ import { localize as l } from '../../content/copy';
 import { Arrow, Contact, EmptyText, ExternalLink, Photo, RouteLink, SectionTitle } from './Shared';
 import { ProjectMeta } from '../work/ProjectElements';
 import { studioCopy } from '../../content/studioCopy';
+import cinema from '../../content/cinema.json';
+import { cinemaCopy } from '../../content/cinemaCopy';
+import { CinemaFrame } from '../cinema/CinemaFrame';
 
 function Architecture({ project, language, t }) {
   const [active,setActive] = useState(0);
@@ -15,8 +18,9 @@ export function CaseStudy({ project, data, language, t }) {
   const hasFailures = Boolean(l(project.failedExperiments,language));
   const next = data.projects[(data.projects.findIndex(p => p.slug === project.slug)+1)%data.projects.length];
   const sections=[['problem',t.problem],['contribution',t.contribution],['architecture',t.architecture],['implementation',t.implementation],...(hasDecisions?[['decisions',s.decisions]]:[]),['results',t.results],...(hasFailures?[['failures',s.failures]]:[]),['lessons',t.lessons],['links',t.links]];
-  return <>
-    <section className="case-hero page-width"><RouteLink href="/work#selected-work" className="back-link">← {t.backWork}</RouteLink><ProjectMeta project={project} language={language} t={t} /><h1 className="intro-in">{project.title}<span className="accent-dot">.</span></h1><p className="case-subtitle intro-in">{l(project.subtitle,language)}</p><div className="case-meta-grid"><div><span className="eyebrow">{t.role}</span><p>{l(project.role,language) || '—'}</p></div><div><span className="eyebrow">{t.periodPending}</span><p>{project.period || '—'}</p></div><div><span className="eyebrow">STACK</span><p>{project.stack.join(' / ')}</p></div></div><Photo asset={{src:project.media.cover,alt:project.media.alt}} label={`${project.title} / ${t.cover}`} code="PROJECT OVERVIEW" language={language} t={t} className="case-cover" priority /></section>
+  const format=cinema.featured.find(item=>item.slug===project.slug)?.format||'article';
+  return <div className={`cinema-case case-${format}`}>
+    <section className="case-hero page-width"><RouteLink href="/work#selected-work" className="back-link">← {t.backWork}</RouteLink><ProjectMeta project={project} language={language} t={t} /><h1 className="intro-in">{project.title}<span className="accent-dot">.</span></h1><p className="case-subtitle intro-in">{l(project.subtitle,language)}</p><div className="case-meta-grid"><div><span className="eyebrow">{t.role}</span><p>{l(project.role,language) || '—'}</p></div><div><span className="eyebrow">{t.periodPending}</span><p>{project.period || '—'}</p></div><div><span className="eyebrow">STACK</span><p>{project.stack.join(' / ')}</p></div></div><div className="case-cover"><CinemaFrame project={project} language={language} c={cinemaCopy[language]} priority/></div></section>
     <div className="case-layout page-width"><nav className="case-toc" aria-label={t.caseStudy}>{sections.map(([id,label],index) => <a href={`#${id}`} key={id}><span>0{index+1}</span>{label}</a>)}</nav><div className="case-content">
       <section id="problem" data-reveal><span className="eyebrow">01 / CONTEXT</span><h2>{t.problem}</h2><p className="case-body-lead">{l(project.problem,language)}</p></section>
       <section id="contribution" data-reveal><span className="eyebrow">02 / CONTRIBUTION</span><h2>{t.contribution}</h2>{l(project.role,language) && <p>{l(project.role,language)}</p>}<EmptyText value={project.personalContribution} language={language} label={t.contributionPending} /></section>
@@ -29,5 +33,5 @@ export function CaseStudy({ project, data, language, t }) {
       <section id="links" data-reveal><span className="eyebrow">07 / EXPLORE</span><h2>{t.links}</h2><div className="case-links"><ExternalLink className="button button-accent" href={project.links.github}>{t.sourceCode}</ExternalLink>{project.links.demo && <ExternalLink className="button button-outline" href={project.links.demo}>{t.liveDemo}</ExternalLink>}{project.links.report && <ExternalLink className="button button-outline" href={project.links.report}>{t.report}</ExternalLink>}</div><p className="case-source">{t.sourceLabel}: <ExternalLink href={project.source}>GitHub README</ExternalLink></p></section>
     </div></div>
     <div className="page-width"><RouteLink className="next-project" href={`/projects/${next.slug}`}><span className="eyebrow">{t.nextProject}</span><strong>{next.title}</strong><Arrow /></RouteLink><Contact data={data} language={language} t={t} branch="work" /></div>
-  </>;
+  </div>;
 }

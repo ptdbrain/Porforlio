@@ -1,0 +1,289 @@
+{
+  "featured": [
+    {
+      "slug": "medtutor",
+      "format": "product-film"
+    },
+    {
+      "slug": "future-vla",
+      "format": "research-motion"
+    },
+    {
+      "slug": "labguard",
+      "format": "interactive-experience"
+    }
+  ],
+  "manifesto": [
+    {
+      "word": "EXPLORE",
+      "text": {
+        "vi": "Tìm hiểu Computer Vision, RAG/LLM và các hệ thống AI ứng dụng.",
+        "en": "Exploring computer vision, RAG/LLM and practical AI systems."
+      }
+    },
+    {
+      "word": "EXPERIMENT",
+      "text": {
+        "vi": "Thử nghiệm mô hình và pipeline; ghi rõ phạm vi prototype và nghiên cứu.",
+        "en": "Experimenting with models and pipelines, with prototype and research scope made explicit."
+      }
+    },
+    {
+      "word": "BUILD",
+      "text": {
+        "vi": "Kết nối dữ liệu, mô hình, API và giao diện.",
+        "en": "Connecting data, models, APIs and interfaces."
+      }
+    },
+    {
+      "word": "IMPROVE",
+      "text": {
+        "vi": "Hướng tới đánh giá có bằng chứng và cải tiến có căn cứ.",
+        "en": "Working toward evidence-based evaluation and grounded improvements."
+      }
+    }
+  ],
+  "productLayers": [
+    {
+      "title": "WORKSPACE",
+      "description": {
+        "vi": "Giao diện Next.js cho chat, tài liệu và đánh giá.",
+        "en": "A Next.js workspace for chat, documents and evaluation."
+      }
+    },
+    {
+      "title": "API",
+      "description": {
+        "vi": "FastAPI điều phối ingest, retrieval và trả lời có nguồn.",
+        "en": "FastAPI coordinates ingestion, retrieval and cited answers."
+      }
+    },
+    {
+      "title": "MODEL / DATA",
+      "description": {
+        "vi": "Retrieval có nhiều chế độ; provider mock mặc định và cấu hình model thật tùy chọn.",
+        "en": "Multiple retrieval modes, mock providers by default and optional real-model configuration."
+      }
+    }
+  ],
+  "productShots": [
+    {
+      "id": "overview",
+      "label": {
+        "vi": "Tổng quan",
+        "en": "Overview"
+      },
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "feature",
+      "label": {
+        "vi": "Chi tiết tính năng",
+        "en": "Feature detail"
+      },
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "proof",
+      "label": {
+        "vi": "Kết quả / minh chứng",
+        "en": "Evidence"
+      },
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      }
+    }
+  ],
+  "skillGroups": [
+    {
+      "id": "language",
+      "word": "LANGUAGE",
+      "tools": [
+        "RAG",
+        "BM25",
+        "Qdrant"
+      ],
+      "projects": [
+        "medtutor",
+        "labguard"
+      ]
+    },
+    {
+      "id": "models",
+      "word": "MODELS",
+      "tools": [
+        "PyTorch",
+        "OCR"
+      ],
+      "projects": [
+        "future-vla",
+        "parking-ai"
+      ]
+    },
+    {
+      "id": "systems",
+      "word": "SYSTEMS",
+      "tools": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "SQLAlchemy",
+        "Docker"
+      ],
+      "projects": [
+        "medtutor",
+        "parking-ai",
+        "labguard",
+        "pathfinder"
+      ]
+    },
+    {
+      "id": "data",
+      "word": "DATA",
+      "tools": [
+        "Kafka",
+        "Spark",
+        "PostgreSQL"
+      ],
+      "projects": [
+        "sentinel-ai"
+      ]
+    },
+    {
+      "id": "product",
+      "word": "PRODUCT",
+      "tools": [
+        "React",
+        "Next.js",
+        "JavaScript"
+      ],
+      "projects": [
+        "labguard",
+        "medtutor",
+        "pathfinder"
+      ]
+    },
+    {
+      "id": "research",
+      "word": "RESEARCH",
+      "tools": [
+        "MATLAB",
+        "CEC2017",
+        "VLA-Adapter"
+      ],
+      "projects": [
+        "future-vla",
+        "pso-optimize"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "slug": "future-vla",
+      "updatedAt": "",
+      "hypothesis": {
+        "vi": "",
+        "en": ""
+      },
+      "tried": {
+        "vi": "",
+        "en": ""
+      },
+      "learned": {
+        "vi": "",
+        "en": ""
+      },
+      "next": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "slug": "sentinel-ai",
+      "updatedAt": "",
+      "hypothesis": {
+        "vi": "",
+        "en": ""
+      },
+      "tried": {
+        "vi": "",
+        "en": ""
+      },
+      "learned": {
+        "vi": "",
+        "en": ""
+      },
+      "next": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "slug": "pso-optimize",
+      "updatedAt": "",
+      "hypothesis": {
+        "vi": "",
+        "en": ""
+      },
+      "tried": {
+        "vi": "",
+        "en": ""
+      },
+      "learned": {
+        "vi": "",
+        "en": ""
+      },
+      "next": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    }
+  ],
+  "savedExamples": [],
+  "future": {
+    "role": {
+      "vi": "",
+      "en": ""
+    },
+    "master": {
+      "vi": "Phát triển năng lực AI Engineering, Computer Vision và RAG/LLM.",
+      "en": "Develop expertise in AI engineering, computer vision and RAG/LLM."
+    },
+    "create": {
+      "vi": "Xây dựng hệ thống AI hoàn chỉnh, từ dữ liệu và mô hình đến giao diện và triển khai.",
+      "en": "Build complete AI systems, from data and models to interfaces and deployment."
+    }
+  },
+  "availabilityUpdatedAt": ""
+}

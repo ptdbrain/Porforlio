@@ -27,11 +27,11 @@ for(const pathname of paths){
     `<meta property="og:url" content="${escape(canonical)}" />`,
     `<meta name="twitter:card" content="${meta.image?'summary_large_image':'summary'}" />`,
     `<meta name="robots" content="${route.kind==='not-found'?'noindex, follow':'index, follow'}" />`,
-    `<meta name="theme-color" content="${route.kind==='work'||route.kind==='project'?'#0b111b':'#f5f3ed'}" />`,
+    `<meta name="theme-color" content="${route.kind==='work'||route.kind==='project'?'#090b10':'#f5f3ed'}" />`,
     `<link rel="canonical" href="${escape(canonical)}" />`,
     meta.image?`<meta property="og:image" content="${escape(new URL(meta.image,siteUrl).href)}" />`:'',
   ].filter(Boolean).join('\n    ');
-  const html=template.replace(/<title>[^<]*<\/title>/,`<title>${escape(meta.title)}</title>`).replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/,`<meta name="description" content="${escape(meta.description)}" />`).replace('</head>',`${tags}\n  </head>`).replace('<div id="root"></div>',`<div id="root">${render(pathname)}</div>`);
+  const html=template.replace(/<title>[^<]*<\/title>/,`<title>${escape(meta.title)}</title>`).replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/,`<meta name="description" content="${escape(meta.description)}" />`).replace('</head>',`${tags}\n  </head>`).replace('<div id="root"></div>',`<div id="root" data-rendered-path="${escape(pathname)}">${render(pathname)}</div>`);
   const filename=pathname==='/'?'index.html':pathname==='/404'?'404.html':pathname.slice(1)+'.html';
   await mkdir(path.dirname(path.join(outDir,filename)),{recursive:true});
   await writeFile(path.join(outDir,filename),html);

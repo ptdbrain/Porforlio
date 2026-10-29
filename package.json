@@ -8,20 +8,26 @@
     "build": "vite build && node scripts/prerender.mjs",
     "test": "node --test tests/*.test.js",
     "preview": "vite preview --host 127.0.0.1",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "lint": "eslint src/App.jsx src/main.jsx src/components/cinema src/components/editorial/Work.jsx src/components/editorial/CaseStudy.jsx src/components/editorial/Shared.jsx src/lib/useMotionPreference.js src/content/cinemaCopy.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "gsap": "^3.15.0",
+    "motion": "^14.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite": "^6.0.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": "^20.19.0 || ^22.13.0 || >=24"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.64.1",
-    "esbuild": "^0.25.12"
+    "esbuild": "^0.25.12",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0"
   }
 }

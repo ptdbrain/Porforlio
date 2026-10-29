@@ -11,11 +11,11 @@ test('home selects either journey, navigates without reload and supports browser
   await page.evaluate(()=>window.__navigationMarker='same-document');
   await page.locator('.hero-actions').getByRole('link',{name:'Khám phá công việc'}).click();
   await expect(page).toHaveURL(/\/work$/);
-  await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');
+  await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');
   expect(await page.evaluate(()=>window.__navigationMarker)).toBe('same-document');
   await openMenu(page);await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
   await expect(page.locator('h1')).toContainText('ngoài màn hình');
-  await page.goBack();await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');
+  await page.goBack();await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');
   await page.goBack();await expect(page.locator('h1')).toContainText('Trọng Đạt');
   expect(errors).toEqual([]);
 });
@@ -26,7 +26,7 @@ test('both photo choices link to the correct journeys',async({page})=>{
   await expect(page).toHaveURL(/\/personal$/);
   await expect(page.locator('.life-chapter')).toHaveCount(4);
   await page.goto('/');await page.locator('.story-choice-work').click();
-  await expect(page.locator('[data-featured-format]')).toHaveCount(3);
+  await expect(page.locator('.product-film,.research-motion,.interactive-world')).toHaveCount(3);
 });
 
 test('language switch updates content, metadata and persists across routes and reload',async({page})=>{
@@ -34,46 +34,40 @@ test('language switch updates content, metadata and persists across routes and r
   await expect(page.locator('html')).toHaveAttribute('lang','en');
   await expect(page.locator('.hero-statement')).toContainText('intelligent systems');
   await page.locator('.hero-actions').getByRole('link',{name:'Explore my work'}).click();
-  await expect(page.locator('h1')).toContainText('THINK & WORK');
-  await page.reload();await expect(page.locator('h1')).toContainText('THINK & WORK');
+  await expect(page.locator('h1')).toContainText('REAL THINGS');
+  await page.reload();await expect(page.locator('h1')).toContainText('REAL THINGS');
   await expect(page).toHaveTitle(/Work.*Phan Trọng Đạt/);
   await page.getByRole('button',{name:'Chuyển sang tiếng Việt'}).click();
   await expect(page.locator('html')).toHaveAttribute('lang','vi');
 });
 
-test('project archive combines category and stack filters, including the empty state',async({page})=>{
+test('project index combines category, stack and accent-insensitive search',async({page})=>{
   await page.goto('/work');const archive=page.locator('#archive');
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(6);
-  await archive.getByRole('button',{name:'Xem thêm dự án'}).click();
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(7);
-  await archive.getByRole('button',{name:'Nghiên cứu',exact:true}).click();
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(2);
-  await archive.getByRole('combobox').selectOption('MATLAB');
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(1);
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(data.projects.length);
+  await archive.getByRole('combobox',{name:'Danh mục'}).selectOption('research');
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(2);
+  await archive.getByRole('combobox',{name:'Stack'}).selectOption('MATLAB');
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
   await expect(archive.locator('h3')).toContainText('PSO-Optimize');
-  await archive.getByRole('combobox').selectOption('FastAPI');
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(0);
+  await archive.getByRole('combobox',{name:'Stack'}).selectOption('FastAPI');
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(0);
   await archive.getByRole('button',{name:'Xóa bộ lọc'}).click();
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(6);
   await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('medtutor');
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(1);
-  await expect(archive.locator('h3')).toHaveText('MedTutor');
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
 });
 
-test('skills matrix and mobile accordions show actual implementation evidence',async({page},info)=>{
+test('skills words and mobile accordions expose real project evidence',async({page},info)=>{
   await page.goto('/work');
-  if(info.project.name==='mobile') {
-    await page.locator('.skills-mobile-group summary').filter({hasText:'PyTorch'}).click();
-    await expect(page.locator('.skills-mobile-group details[open]')).toContainText('FutureVLA');
-    await page.locator('.skills-mobile-group summary').filter({hasText:'Kafka'}).click();
-  } else {
-    await page.getByRole('button',{name:'PyTorch',exact:true}).click();
-    await expect(page.locator('.matrix-evidence')).toContainText('FutureVLA');
-    await page.getByRole('button',{name:'Kafka',exact:true}).click();
+  if(info.project.name==='mobile'){
+    const group=page.locator('.mobile-skill-scenes details').filter({has:page.locator('summary',{hasText:'MODELS'})});await group.locator('summary').click();await expect(group).toContainText('FutureVLA');
+    await expect(group.getByRole('link',{name:'Xem minh chứng'}).first()).toHaveAttribute('href','/projects/future-vla#implementation');
+  }else{
+    await page.locator('.type-wall').getByRole('button',{name:/MODELS/}).click();
+    await expect(page.locator('.wall-evidence')).toContainText('FutureVLA');
+    await page.locator('.type-wall').getByRole('button',{name:/DATA/}).click();
+    await expect(page.locator('.wall-evidence')).toContainText('SentinelAI');
+    await expect(page.locator('.wall-evidence')).not.toContainText('MedTutor');
   }
-  await expect(page.locator('.matrix-evidence')).toContainText('SentinelAI');
-  await expect(page.locator('.matrix-evidence')).not.toContainText('MedTutor');
-  await expect(page.locator('.matrix-evidence a')).toHaveAttribute('href','/projects/sentinel-ai#implementation');
 });
 
 test('case study is directly addressable and its architecture is interactive',async({page})=>{
@@ -126,7 +120,7 @@ test('prerendered case studies have correct HTML and OG metadata before JavaScri
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content',/ParkingAI/);
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content','article');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',/\/projects\/parking-ai$/);
-  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');await context.close();
+  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');await context.close();
 });
 
 test('all project links and static pages resolve without a client-only fallback',async({request})=>{

@@ -1,14 +1,15 @@
 # PTD. — One Person. Two Stories.
 
-Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work hiện theo [newidea2.md](newidea2.md): **The Build Studio**, với ba showcase độc lập và các module tương tác.
+Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work hiện theo bản mới của [newidea2.md](newidea2.md): **Kinetic Cinema V2**, với typography động, orbit 2.5D và các project world.
 
 ## Chạy và kiểm tra
 
-Yêu cầu Node.js 20+.
+Yêu cầu Node.js 20.19+, 22.13+ hoặc 24+; khuyến nghị Node.js LTS còn được hỗ trợ.
 
 ```bash
 npm ci
 npm run dev
+npm run lint
 npm test
 npm run test:e2e
 npm run build
@@ -19,7 +20,8 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 ## Nội dung và ảnh còn thiếu
 
-- [Bản cập nhật Work Studio và tài nguyên cần thêm](docs/WORK-STUDIO-UPDATE.md).
+- [Bản cập nhật Kinetic Cinema V2](docs/KINETIC-CINEMA-UPDATE.md).
+- [Kế hoạch file và các bước triển khai](docs/KINETIC-CINEMA-PLAN.md).
 - [Danh sách cần bổ sung và cách điền](docs/CONTENT-NEEDED.md).
 - [Phân tích bản cũ, đối chiếu từng phần của plan và giới hạn kiểm tra](docs/IMPLEMENTATION-REVIEW.md).
 - Dữ liệu chính: `src/content/portfolio.json`.
@@ -36,7 +38,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 - `/projects/[slug]`: case study riêng cho từng dự án trong dữ liệu.
 - `/contact`: liên hệ.
 
-History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
+History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Work có nút Simple view, reduced-motion/thiết bị yếu fallback và GSAP/Motion tải động. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
 
 ## Cấu trúc
 
@@ -44,6 +46,9 @@ History API hỗ trợ chuyển trang và Back; View Transition là progressive 
 src/App.jsx                      Router, layout, i18n, motion, metadata
 src/components/editorial/        Home, Personal, Work, CaseStudy, Shared
 src/content/portfolio.json       Nội dung và asset slots
+src/content/cinema.json          Scene formats, manifesto, experiments, career
+src/components/cinema/           Cold open, orbit, project worlds và các scene
+cinema.css                       Kinetic Cinema, responsive và low-motion
 src/content/copy.js              Nhãn Việt/Anh
 src/lib/routes.mjs               Route resolution, metadata
 src/prerender.jsx                React server renderer cho build tĩnh

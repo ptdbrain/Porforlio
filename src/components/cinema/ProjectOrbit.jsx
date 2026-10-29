@@ -1,0 +1,17 @@
+import { useRef, useState } from 'react';
+import { localize as l } from '../../content/copy';
+import { ProjectPortal } from './CinemaFrame';
+import { useScene } from './CinemaMotion';
+export function ProjectOrbit({projects,language,t,c,simple}){
+ const [active,setActive]=useState(0),rail=useRef(null),frames=useRef([]),lastProgress=useRef(0),manual=useRef(null),activeRef=useRef(0);
+ const update=index=>{const next=Math.max(0,Math.min(projects.length-1,index));activeRef.current=next;setActive(next);};
+ useScene('project-orbit',progress=>{lastProgress.current=progress;if(simple||innerWidth<1200)return;if(manual.current!==null&&Math.abs(progress-manual.current)<.09)return;manual.current=null;const next=Math.round(progress*(projects.length-1));if(next!==activeRef.current)update(next);});
+ function select(index){const next=(index+projects.length)%projects.length;manual.current=lastProgress.current;update(next);if(!simple&&innerWidth<1200){const frame=frames.current[next],element=rail.current;element.scrollTo({left:frame.offsetLeft-(element.clientWidth-frame.clientWidth)/2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}}
+ const offset=index=>{let distance=index-active;if(distance>projects.length/2)distance-=projects.length;if(distance < -projects.length/2)distance+=projects.length;return distance;};
+ if(!projects.length)return null;
+ return <section className="project-universe" id="selected-work"><div className="page-width universe-title"><span className="eyebrow">{c.universe}</span><h2>{c.universeTitle}</h2><p>{c.orbitHint}</p></div><div className="orbit-scroll" data-cinema-scene="project-orbit" data-scene-range="pinned"><div className="orbit-stage"><div className="orbit-halo" aria-hidden="true"/>
+  <div className="orbit-rail" ref={rail} role="region" aria-label={c.universeTitle} tabIndex="0" onKeyDown={event=>{if(event.target!==event.currentTarget)return;if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();select(active+(event.key==='ArrowRight'?1:-1));}}} onScroll={()=>{if(simple||innerWidth>=1200)return;const parent=rail.current.getBoundingClientRect();const center=parent.left+parent.width/2;const distances=frames.current.map(frame=>Math.abs(frame.getBoundingClientRect().left+frame.clientWidth/2-center));update(distances.indexOf(Math.min(...distances)));}}>
+  {projects.map((project,index)=><article className={`orbit-frame ${active===index?'is-active':''}`} style={{'--relative':offset(index),'--distance':Math.abs(offset(index)),'--frame-index':index}} key={project.slug} ref={node=>frames.current[index]=node}><ProjectPortal project={project} language={language} c={c}/><div className="orbit-frame-copy"><span>{String(index+1).padStart(2,'0')} / {project.title}</span><span>{t.caseStudy} ↗</span></div></article>)}</div>
+  <div className="orbit-console page-width"><div className="orbit-controls"><button onClick={()=>select(active-1)} aria-label={c.previous}>←</button><span aria-live="polite">{String(active+1).padStart(2,'0')} / {String(projects.length).padStart(2,'0')}</span><button onClick={()=>select(active+1)} aria-label={c.next}>→</button></div><div className="orbit-project-names">{projects.map((project,index)=><button key={project.slug} onClick={()=>select(index)} aria-pressed={active===index}>{project.title}</button>)}</div><p className="orbit-description" aria-live="polite">{l(projects[active].description,language)}</p></div>
+ </div></div></section>;
+}

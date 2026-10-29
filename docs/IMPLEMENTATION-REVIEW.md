@@ -1,3 +1,5 @@
+> **Lưu trữ:** phần Work hiện đã thay bằng [Kinetic Cinema V2](KINETIC-CINEMA-UPDATE.md), theo bản mới nhất của `newidea2.md`.
+
 # Đối chiếu portfolio với newidea.md
 
 > Nhánh Work đã được refactor tiếp theo `newidea2.md`. Bảng bên dưới ghi lại bản triển khai đầu; các mục Work (đặc biệt showcase sticky) được thay thế bởi [WORK-STUDIO-UPDATE.md](WORK-STUDIO-UPDATE.md). Nhánh Personal giữ triết lý visual diary.

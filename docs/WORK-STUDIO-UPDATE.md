@@ -1,3 +1,5 @@
+> **Lưu trữ:** phần Work hiện đã thay bằng [Kinetic Cinema V2](KINETIC-CINEMA-UPDATE.md), theo bản mới nhất của `newidea2.md`.
+
 # Work 2.0 — The Build Studio
 
 Áp dụng `newidea2.md` cho `/work` và cách trình bày case study. Home và Personal giữ triết lý “One Person. Two Stories.” / visual diary. Các trường còn thiếu được giữ trống theo yêu cầu trước.

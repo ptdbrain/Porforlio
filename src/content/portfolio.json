@@ -24,7 +24,11 @@
       "vi": "",
       "en": ""
     },
-    "traits": []
+    "traits": [],
+    "currentRole": {
+      "vi": "",
+      "en": ""
+    }
   },
   "assets": {
     "hero": {

@@ -1,5 +1,8 @@
 # Nội dung bạn cần bổ sung
 
+> **Work hiện dùng Kinetic Cinema V2.** Dữ liệu chính vẫn là `src/content/portfolio.json`; format/cảnh mới ở `src/content/cinema.json`. Mục hướng dẫn Studio phía dưới là lịch sử. Xem phần Kinetic Cinema ở cuối file cho các trường hiện hành.
+
+
 Bản mới đã dựng theo `newidea.md`. Các dữ kiện chưa biết được lưu bằng chuỗi rỗng hoặc mảng rỗng, không dùng ảnh AI, ảnh người khác hoặc số liệu minh họa làm thành tích thật.
 
 ## Bổ sung trước
@@ -7,7 +10,7 @@ Bản mới đã dựng theo `newidea.md`. Các dữ kiện chưa biết đượ
 1. **Ảnh chân dung hero:** 1 ảnh dọc 4:5, khoảng 1200 × 1500 px trở lên. Thêm một ảnh đời thường và một ảnh học/làm việc cho hai lựa chọn ở trang chủ.
 2. **Tiểu sử:** 80–120 từ về bạn ngoài công việc; có thể thêm ba từ khóa tính cách do bạn tự chọn.
 3. **Học tập:** tên trường THCS, THPT, đại học, ngành học, khoảng năm, câu chuyện 50–80 từ mỗi giai đoạn và ảnh tương ứng.
-4. **Dự án:** ảnh giao diện/kết quả, phần việc trực tiếp, thời gian thực hiện, thử thách và bài học. Ưu tiên MedTutor, ParkingAI và LabGuard.
+4. **Dự án:** ảnh giao diện/kết quả, phần việc trực tiếp, thời gian thực hiện, thử thách và bài học. Ưu tiên MedTutor, FutureVLA và LabGuard; ParkingAI vẫn có case study riêng.
 5. **CV PDF**, vai trò đang tìm, hình thức/khu vực làm việc mong muốn.
 6. **VinUni:** ảnh chứng nhận, ngày hoàn thành, mã hoặc liên kết xác minh nếu có. Trạng thái hoàn thành đã có theo thông tin bạn xác nhận.
 
@@ -141,3 +144,38 @@ Bố cục Work hiện theo `newidea2.md`, với dữ liệu riêng tại **`src
 - **Case study nâng cao:** `projects[].technicalDecisions` nhận các mục `{ "title":{"vi":"","en":""}, "why":{"vi":"","en":""}, "alternatives":{"vi":"","en":""}, "tradeoffs":{"vi":"","en":""} }`; `failedExperiments` và `nextSteps` là chuỗi song ngữ. Các module chỉ xuất hiện khi có nội dung, tránh tạo trải nghiệm nghiên cứu không được xác minh.
 
 Các kỹ năng/category và số dự án liên quan được lấy từ dữ liệu thật. Không thêm nhóm Speech hay các tỷ lệ kỹ năng khi chưa có repo làm minh chứng.
+
+
+## Kinetic Cinema V2 — các trường hiện hành
+
+| Cần bổ sung | Đường dẫn dữ liệu |
+| --- | --- |
+| Vai trò hiện tại chính xác | `portfolio.json → identity.currentRole.vi/en` |
+| CV PDF | `portfolio.json → identity.cv` (URL `/documents/...pdf`) |
+| Hero + orbit + cover case study | `portfolio.json → projects[].media.cover`, `media.alt` |
+| Ảnh/clip chân dung ending | `portfolio.json → assets.contact` |
+| Ba shot Product Film | `cinema.json → productShots[].src`, `alt`, `label`; có thể dùng ảnh cover làm shot overview |
+| Video sản phẩm | `portfolio.json → projects[].media.video` (file video; không autoplay) |
+| What / Why / Trade-off của research | `portfolio.json → projects[].pipeline[].detail`, tùy chọn `decision`, `tradeoff` |
+| Thử nghiệm A/B, đánh đổi | `projects[].technicalDecisions` (chỉ hiện khi có dữ liệu) |
+| Số liệu/kết quả thật | `projects[].metrics` + điều kiện đo, `links.report`; không tự điền phần trăm |
+| Bốn frame LabGuard | `studio.json → demoFrames[].image`, `video`, `title` (Work dùng lại dữ liệu frame, không dùng layout Studio) |
+| Ví dụ public có output đã lưu | `cinema.json → savedExamples[]`: `project`, `title`, `input`, `output`, `source` |
+| Ghi chú experiment | `cinema.json → experiments[]`: `updatedAt`, `hypothesis`, `tried`, `learned`, `next`, `image` |
+| Nghề nghiệp mong muốn | `cinema.json → future.role.vi/en`, `future.master`, `future.create` |
+
+Ảnh thiếu được thể hiện bằng typography có chủ đích và nhãn chờ bổ sung; không tạo screenshot giả. `updatedAt` để chuỗi rỗng khi chưa có ngày xác nhận, không lấy ngày commit để giả cập nhật hôm nay.
+
+Ví dụ **schema trống**, chỉ thêm vào `savedExamples` sau khi có đủ dữ liệu public thật:
+
+```json
+{
+  "project": "labguard",
+  "title": { "vi": "", "en": "" },
+  "input": { "vi": "", "en": "" },
+  "output": { "vi": "", "en": "" },
+  "source": ""
+}
+```
+
+`input`, `output` phải có ít nhất một chuỗi ngôn ngữ có nội dung và `source` phải là URL thật. Khi chưa có, để `savedExamples: []`; Work hiển thị gallery fallback và nói rõ không phải demo AI trực tiếp.
