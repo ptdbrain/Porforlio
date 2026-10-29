@@ -1,6 +1,6 @@
 # PTD. — One Person. Two Stories.
 
-Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng.
+Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work hiện theo [newidea2.md](newidea2.md): **The Build Studio**, với ba showcase độc lập và các module tương tác.
 
 ## Chạy và kiểm tra
 
@@ -19,6 +19,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 ## Nội dung và ảnh còn thiếu
 
+- [Bản cập nhật Work Studio và tài nguyên cần thêm](docs/WORK-STUDIO-UPDATE.md).
 - [Danh sách cần bổ sung và cách điền](docs/CONTENT-NEEDED.md).
 - [Phân tích bản cũ, đối chiếu từng phần của plan và giới hạn kiểm tra](docs/IMPLEMENTATION-REVIEW.md).
 - Dữ liệu chính: `src/content/portfolio.json`.

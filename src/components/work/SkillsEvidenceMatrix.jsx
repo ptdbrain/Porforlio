@@ -1,0 +1,13 @@
+import { useState } from 'react';
+import { localize as l } from '../../content/copy';
+import { Arrow, RouteLink, SectionTitle } from '../editorial/Shared';
+
+export function SkillsEvidenceMatrix({data,studio,language,t,s}) {
+  const technologies=[...new Set(data.skills.flatMap(group=>group.tools))];
+  const [selected,setSelected]=useState(technologies[0]);
+  const matches=data.projects.filter(project=>project.stack.includes(selected));
+  return <section className="skills-matrix-section studio-light section-space" id="skills"><div className="page-width"><SectionTitle eyebrow={s.skillsLabel} title={s.skills}>{s.skillsLead}</SectionTitle><div className="skills-matrix-desktop"><table className="skills-matrix"><caption className="visually-hidden">{s.skills}</caption><thead><tr><th scope="col">{s.technology}</th>{data.projects.map(project=><th scope="col" key={project.slug}><RouteLink href={`/projects/${project.slug}#implementation`}>{project.title}</RouteLink></th>)}</tr></thead><tbody>{technologies.map(tool=><tr key={tool} className={selected===tool?'is-selected':''}><th scope="row"><button aria-pressed={selected===tool} onClick={()=>setSelected(tool)}>{tool}</button></th>{data.projects.map(project=><td key={project.slug}>{project.stack.includes(tool)?<RouteLink href={`/projects/${project.slug}#implementation`} aria-label={`${tool} / ${project.title}`}><span aria-hidden="true">●</span></RouteLink>:<span className="matrix-empty" aria-label="—">—</span>}</td>)}</tr>)}</tbody></table></div>
+    <div className="skills-mobile-accordions">{data.skills.map(group=><div className="skills-mobile-group" key={l(group.title,language)}><h3>{l(group.title,language)}</h3>{group.tools.map(tool=><details key={tool} onToggle={event=>{if(event.currentTarget.open)setSelected(tool);}}><summary>{tool}<span aria-hidden="true">+</span></summary><div>{data.projects.filter(project=>project.stack.includes(tool)).map(project=><div className="mobile-skill-evidence" key={project.slug}><RouteLink href={`/projects/${project.slug}#implementation`}>{project.title}<Arrow/></RouteLink><p>{l(studio.skillEvidence[tool],language)||l(project.description,language)}</p></div>)}</div></details>)}</div>)}</div>
+    <div className="matrix-evidence" aria-live="polite"><div><span className="eyebrow">{s.usage}</span><h3>{selected}</h3></div><div>{matches.map(project=><article key={project.slug}><RouteLink href={`/projects/${project.slug}#implementation`}>{project.title}<Arrow/></RouteLink><p>{l(studio.skillEvidence[selected],language)||l(project.description,language)}</p></article>)}</div></div>
+  </div></section>;
+}

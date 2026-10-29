@@ -305,7 +305,40 @@
     "source": "https://vinuni.edu.vn/aithucchien/"
   },
   "achievements": [],
-  "experiences": [],
+  "experiences": [
+    {
+      "id": "labguard-team",
+      "type": "student-team",
+      "period": "",
+      "sortDate": "",
+      "organization": "LabGuard / K4-hackathon-HUST-E402",
+      "role": {
+        "vi": "Product Owner · Spec & impact",
+        "en": "Product Owner · Specification & impact"
+      },
+      "challenge": {
+        "vi": "Yêu cầu bài lab và tiêu chí đánh giá nằm ở nhiều nơi. LabGuard gom chúng thành bước rà soát trước khi nộp, giúp người học nhìn thấy bằng chứng còn thiếu.",
+        "en": "Lab requirements and evaluation rubrics live in different places. LabGuard brings them together into a pre-submission check that highlights missing evidence."
+      },
+      "contribution": {
+        "vi": "README của nhóm ghi nhận vai trò Product Owner, phụ trách spec và impact. Phần việc chi tiết và kết quả tác động sẽ được bổ sung.",
+        "en": "The team README identifies my role as Product Owner, responsible for specification and impact. Detailed contributions and measured impact remain to be added."
+      },
+      "outcome": {
+        "vi": "Prototype hỗ trợ nhiều provider và repo demo chưa hoàn thiện. README ghi nhận tôi phụ trách Product Owner, spec và impact; chưa bổ sung số liệu tác động hoặc kết quả cuộc thi.",
+        "en": "The prototype supports multiple providers and an intentionally incomplete demo repository. The README identifies my role as Product Owner, specification and impact; measured impact and competition results have not been added."
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "project": "labguard",
+      "evidence": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md"
+    }
+  ],
   "sports": [
     {
       "title": {
@@ -518,7 +551,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/med-bot/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/med-bot/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "parking-ai",
@@ -618,7 +660,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/ParkingAI/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/ParkingAI/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "labguard",
@@ -717,7 +768,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "sentinel-ai",
@@ -818,7 +878,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "future-vla",
@@ -916,7 +985,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/FutureVLA/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/FutureVLA/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "pathfinder",
@@ -1015,7 +1093,16 @@
         "demo": "https://bienkieu1411.github.io/Project_AI_20242/",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     },
     {
       "slug": "pso-optimize",
@@ -1114,7 +1201,16 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/PSO-Optimize/blob/main/README.md"
+      "source": "https://github.com/ptdbrain/PSO-Optimize/blob/main/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      }
     }
   ],
   "skills": [

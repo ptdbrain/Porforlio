@@ -1,5 +1,7 @@
 # Đối chiếu portfolio với newidea.md
 
+> Nhánh Work đã được refactor tiếp theo `newidea2.md`. Bảng bên dưới ghi lại bản triển khai đầu; các mục Work (đặc biệt showcase sticky) được thay thế bởi [WORK-STUDIO-UPDATE.md](WORK-STUDIO-UPDATE.md). Nhánh Personal giữ triết lý visual diary.
+
 ## Phân tích bản cũ
 
 Bản cũ là một trang dashboard kỹ thuật: hero AI, kỹ năng, sáu thẻ dự án, hành trình và ghi chú. Nội dung cá nhân đặt chung với chuyên môn; chưa có nhánh Personal, trang case study theo URL hoặc cấu trúc kể chuyện. Nhiều liên kết dự án, thông tin trường học và ảnh vẫn trống. Intro neural/brain chiếm màn hình trước khi vào nội dung.

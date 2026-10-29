@@ -27,7 +27,7 @@ for(const pathname of paths){
     `<meta property="og:url" content="${escape(canonical)}" />`,
     `<meta name="twitter:card" content="${meta.image?'summary_large_image':'summary'}" />`,
     `<meta name="robots" content="${route.kind==='not-found'?'noindex, follow':'index, follow'}" />`,
-    `<meta name="theme-color" content="${route.kind==='work'||route.kind==='project'?'#101b20':'#f5f3ed'}" />`,
+    `<meta name="theme-color" content="${route.kind==='work'||route.kind==='project'?'#0b111b':'#f5f3ed'}" />`,
     `<link rel="canonical" href="${escape(canonical)}" />`,
     meta.image?`<meta property="og:image" content="${escape(new URL(meta.image,siteUrl).href)}" />`:'',
   ].filter(Boolean).join('\n    ');

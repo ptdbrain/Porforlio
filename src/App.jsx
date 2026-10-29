@@ -83,7 +83,7 @@ export default function App({ initialPath }) {
     setMeta('description',metadata.description);setMeta('og:title',metadata.title,true);setMeta('og:description',metadata.description,true);setMeta('og:type',metadata.type,true);setMeta('og:url',canonical,true);setMeta('twitter:card',metadata.image?'summary_large_image':'summary');
     if(metadata.image) setMeta('og:image',new URL(metadata.image,siteUrl).href,true);else document.head.querySelector('meta[property="og:image"]')?.remove();
     let link=document.head.querySelector('link[rel="canonical"]');if(!link){link=document.createElement('link');link.rel='canonical';document.head.append(link);}link.href=canonical;
-    setMeta('theme-color',work?'#101b20':'#f5f3ed');
+    setMeta('theme-color',work?'#0b111b':'#f5f3ed');
     setMeta('robots',route.kind === 'not-found'?'noindex, follow':'index, follow');
   }, [location.path,language]);
 
@@ -110,9 +110,8 @@ export default function App({ initialPath }) {
   return <div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'}`}>
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header"><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>
-      <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],['/contact',t.contact,route.kind==='contact']].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}</nav>
+      <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}</nav>
       <div className="header-tools"><button className="language-toggle" type="button" onClick={changeLanguage} aria-label={language==='vi'?'Switch to English':'Chuyển sang tiếng Việt'}><span className={language==='vi'?'active':''}>VI</span><span>/</span><span className={language==='en'?'active':''}>EN</span></button><button className="menu-toggle" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="main-navigation" aria-label={menuOpen?t.close:t.menu}><span /> <span /></button></div></div></header>
-    {work && <div className="work-shortcuts"><div className="page-width"><RouteLink href="/work#selected-work">{t.projects} ↓</RouteLink><CvLink identity={data.identity} t={t} className="text-cv" /></div></div>}
     <main id="main-content" ref={mainRef} tabIndex="-1" key={location.path}>
       {route.kind==='home'&&<Home data={data} language={language} t={t} />}
       {route.kind==='personal'&&<Personal data={data} language={language} t={t} />}

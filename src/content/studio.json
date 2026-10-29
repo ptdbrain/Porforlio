@@ -1,0 +1,333 @@
+{
+  "focus": {
+    "vi": "Computer Vision · RAG / LLM · AI Systems",
+    "en": "Computer Vision · RAG / LLM · AI Systems"
+  },
+  "availabilityUpdatedAt": "",
+  "capabilities": [
+    {
+      "id": "retrieval",
+      "title": "NLP / LLM Systems",
+      "description": {
+        "vi": "Truy xuất tài liệu, tìm nguồn và thiết kế luồng hỏi đáp.",
+        "en": "Document retrieval, source grounding and question-answering pipelines."
+      },
+      "projects": [
+        "medtutor",
+        "labguard"
+      ],
+      "glyph": "retrieval"
+    },
+    {
+      "id": "vision",
+      "title": "Vision & Edge AI",
+      "description": {
+        "vi": "Kết nối dữ liệu thị giác, pipeline AI và ứng dụng.",
+        "en": "Connecting visual data, AI pipelines and applications."
+      },
+      "projects": [
+        "parking-ai",
+        "future-vla"
+      ],
+      "glyph": "vision"
+    },
+    {
+      "id": "systems",
+      "title": "Backend & APIs",
+      "description": {
+        "vi": "Dịch vụ API, hàng đợi và giao diện sử dụng được.",
+        "en": "APIs, queues and interfaces that work together."
+      },
+      "projects": [
+        "parking-ai",
+        "medtutor",
+        "labguard",
+        "pathfinder"
+      ],
+      "glyph": "systems"
+    },
+    {
+      "id": "data",
+      "title": "Data Engineering",
+      "description": {
+        "vi": "Từ ingest và ETL đến dữ liệu phục vụ phân tích.",
+        "en": "From ingestion and ETL to analytics-ready data."
+      },
+      "projects": [
+        "sentinel-ai"
+      ],
+      "glyph": "data"
+    },
+    {
+      "id": "research",
+      "title": "Research & Evaluation",
+      "description": {
+        "vi": "Thử nghiệm mô hình, tối ưu và quy trình đánh giá.",
+        "en": "Model experiments, optimization and evaluation protocols."
+      },
+      "projects": [
+        "future-vla",
+        "pso-optimize"
+      ],
+      "glyph": "research"
+    }
+  ],
+  "featured": [
+    {
+      "slug": "medtutor",
+      "format": "flagship",
+      "outcome": {
+        "vi": "Prototype chạy local; câu trả lời có nguồn; mock và model thật là các cấu hình riêng.",
+        "en": "Local prototype with cited answers; mock and real models use separate configurations."
+      }
+    },
+    {
+      "slug": "parking-ai",
+      "format": "blueprint",
+      "outcome": {
+        "vi": "Pipeline bất đồng bộ, REST và WebSocket; mặc định demo bằng mock inference.",
+        "en": "Asynchronous pipeline, REST and WebSocket; mock inference is the demo default."
+      }
+    },
+    {
+      "slug": "labguard",
+      "format": "reel",
+      "outcome": {
+        "vi": "Prototype kiểm tra chỉ đọc; có script đánh giá và demo dự phòng.",
+        "en": "Read-only preflight prototype with evaluation scripts and a fallback demo."
+      }
+    }
+  ],
+  "demoFrames": [
+    {
+      "id": "overview",
+      "title": {
+        "vi": "Tổng quan",
+        "en": "Overview"
+      },
+      "field": "description",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "video": ""
+    },
+    {
+      "id": "interaction",
+      "title": {
+        "vi": "Tương tác",
+        "en": "Interaction"
+      },
+      "field": "implementation",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "video": ""
+    },
+    {
+      "id": "result",
+      "title": {
+        "vi": "Kết quả",
+        "en": "Result"
+      },
+      "field": "result",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "video": ""
+    },
+    {
+      "id": "tech",
+      "title": {
+        "vi": "Công nghệ",
+        "en": "Tech"
+      },
+      "field": "constraints",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "video": ""
+    }
+  ],
+  "caseNotes": [
+    "medtutor",
+    "parking-ai",
+    "labguard"
+  ],
+  "labGroups": [
+    {
+      "id": "learning",
+      "title": {
+        "vi": "Đang học",
+        "en": "Learning"
+      },
+      "items": []
+    },
+    {
+      "id": "building",
+      "title": {
+        "vi": "Đang xây dựng",
+        "en": "Building"
+      },
+      "items": [
+        {
+          "slug": "sentinel-ai",
+          "updatedAt": "",
+          "note": {
+            "vi": "",
+            "en": ""
+          },
+          "image": {
+            "src": "",
+            "alt": {
+              "vi": "",
+              "en": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experimenting",
+      "title": {
+        "vi": "Đang thử nghiệm",
+        "en": "Experimenting"
+      },
+      "items": [
+        {
+          "slug": "future-vla",
+          "updatedAt": "",
+          "note": {
+            "vi": "",
+            "en": ""
+          },
+          "image": {
+            "src": "",
+            "alt": {
+              "vi": "",
+              "en": ""
+            }
+          }
+        },
+        {
+          "slug": "pso-optimize",
+          "updatedAt": "",
+          "note": {
+            "vi": "",
+            "en": ""
+          },
+          "image": {
+            "src": "",
+            "alt": {
+              "vi": "",
+              "en": ""
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "categoryLabels": {
+    "ai": {
+      "vi": "AI / LLM",
+      "en": "AI / LLM"
+    },
+    "data": {
+      "vi": "Dữ liệu",
+      "en": "Data"
+    },
+    "software": {
+      "vi": "Phần mềm",
+      "en": "Software"
+    },
+    "research": {
+      "vi": "Nghiên cứu",
+      "en": "Research"
+    }
+  },
+  "skillEvidence": {
+    "Python": {
+      "vi": "Logic xử lý dữ liệu, backend hoặc thử nghiệm trong repo.",
+      "en": "Data-processing, backend or experiment logic in the repository."
+    },
+    "PyTorch": {
+      "vi": "Huấn luyện Pareto Reachability Critic trong thử nghiệm FutureVLA.",
+      "en": "Training the Pareto Reachability Critic in the FutureVLA experiment."
+    },
+    "RAG": {
+      "vi": "Hỏi đáp trên tài liệu, đi kèm truy xuất và trích dẫn nguồn.",
+      "en": "Document question-answering with retrieval and source citations."
+    },
+    "BM25": {
+      "vi": "Nhánh truy xuất từ khóa trong hybrid retrieval.",
+      "en": "The keyword-retrieval branch of hybrid search."
+    },
+    "Qdrant": {
+      "vi": "Tùy chọn lưu vector trong cấu hình dùng model thật.",
+      "en": "An optional vector store in the real-model configuration."
+    },
+    "OCR": {
+      "vi": "Worker đọc biển số trong kiến trúc prototype bãi đỗ xe.",
+      "en": "A plate-reading worker boundary in the parking prototype."
+    },
+    "FastAPI": {
+      "vi": "Phục vụ HTTP API cho luồng ứng dụng.",
+      "en": "Serving HTTP APIs for application workflows."
+    },
+    "Flask": {
+      "vi": "Backend cho các thuật toán tìm đường và giao diện tương tác.",
+      "en": "The backend for search algorithms and the interactive interface."
+    },
+    "SQLAlchemy": {
+      "vi": "Lớp model và repository truy cập cơ sở dữ liệu bất đồng bộ.",
+      "en": "Async database models and repository access."
+    },
+    "Kafka": {
+      "vi": "Ingest và vận chuyển sự kiện trong pipeline dữ liệu.",
+      "en": "Event ingestion and transport in the data pipeline."
+    },
+    "Spark": {
+      "vi": "Xử lý batch ETL và Structured Streaming.",
+      "en": "Batch ETL and Structured Streaming processing."
+    },
+    "PostgreSQL": {
+      "vi": "Kho dữ liệu phục vụ analytics và đồng bộ các bảng Gold.",
+      "en": "An analytics warehouse with Gold-table synchronization."
+    },
+    "React": {
+      "vi": "Giao diện web của prototype LabGuard.",
+      "en": "The web interface of the LabGuard prototype."
+    },
+    "Next.js": {
+      "vi": "Workspace hỏi đáp, tài liệu và đánh giá của MedTutor.",
+      "en": "The MedTutor workspace for chat, documents and evaluation."
+    },
+    "JavaScript": {
+      "vi": "Giao diện tương tác trực quan hóa thuật toán tìm đường.",
+      "en": "The interactive graph-search visualization interface."
+    },
+    "Docker": {
+      "vi": "Cấu hình môi trường chạy ứng dụng bằng container.",
+      "en": "Container-based application environment configuration."
+    },
+    "MATLAB": {
+      "vi": "Script chạy so sánh thuật toán và xuất thống kê CEC2017.",
+      "en": "Scripts for CEC2017 algorithm comparisons and statistical reporting."
+    }
+  }
+}

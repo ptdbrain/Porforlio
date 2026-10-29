@@ -11,11 +11,11 @@ test('home selects either journey, navigates without reload and supports browser
   await page.evaluate(()=>window.__navigationMarker='same-document');
   await page.locator('.hero-actions').getByRole('link',{name:'Khám phá công việc'}).click();
   await expect(page).toHaveURL(/\/work$/);
-  await expect(page.locator('h1')).toContainText('hệ thống thông minh');
+  await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');
   expect(await page.evaluate(()=>window.__navigationMarker)).toBe('same-document');
   await openMenu(page);await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
   await expect(page.locator('h1')).toContainText('ngoài màn hình');
-  await page.goBack();await expect(page.locator('h1')).toContainText('hệ thống thông minh');
+  await page.goBack();await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');
   await page.goBack();await expect(page.locator('h1')).toContainText('Trọng Đạt');
   expect(errors).toEqual([]);
 });
@@ -26,7 +26,7 @@ test('both photo choices link to the correct journeys',async({page})=>{
   await expect(page).toHaveURL(/\/personal$/);
   await expect(page.locator('.life-chapter')).toHaveCount(4);
   await page.goto('/');await page.locator('.story-choice-work').click();
-  await expect(page.locator('.showcase-story')).toHaveCount(3);
+  await expect(page.locator('[data-featured-format]')).toHaveCount(3);
 });
 
 test('language switch updates content, metadata and persists across routes and reload',async({page})=>{
@@ -34,8 +34,8 @@ test('language switch updates content, metadata and persists across routes and r
   await expect(page.locator('html')).toHaveAttribute('lang','en');
   await expect(page.locator('.hero-statement')).toContainText('intelligent systems');
   await page.locator('.hero-actions').getByRole('link',{name:'Explore my work'}).click();
-  await expect(page.locator('h1')).toContainText('From ideas');
-  await page.reload();await expect(page.locator('h1')).toContainText('From ideas');
+  await expect(page.locator('h1')).toContainText('THINK & WORK');
+  await page.reload();await expect(page.locator('h1')).toContainText('THINK & WORK');
   await expect(page).toHaveTitle(/Work.*Phan Trọng Đạt/);
   await page.getByRole('button',{name:'Chuyển sang tiếng Việt'}).click();
   await expect(page.locator('html')).toHaveAttribute('lang','vi');
@@ -43,6 +43,8 @@ test('language switch updates content, metadata and persists across routes and r
 
 test('project archive combines category and stack filters, including the empty state',async({page})=>{
   await page.goto('/work');const archive=page.locator('#archive');
+  await expect(archive.locator('.project-card-editorial')).toHaveCount(6);
+  await archive.getByRole('button',{name:'Xem thêm dự án'}).click();
   await expect(archive.locator('.project-card-editorial')).toHaveCount(7);
   await archive.getByRole('button',{name:'Nghiên cứu',exact:true}).click();
   await expect(archive.locator('.project-card-editorial')).toHaveCount(2);
@@ -52,19 +54,26 @@ test('project archive combines category and stack filters, including the empty s
   await archive.getByRole('combobox').selectOption('FastAPI');
   await expect(archive.locator('.project-card-editorial')).toHaveCount(0);
   await archive.getByRole('button',{name:'Xóa bộ lọc'}).click();
-  await expect(archive.locator('.project-card-editorial')).toHaveCount(7);
+  await expect(archive.locator('.project-card-editorial')).toHaveCount(6);
+  await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('medtutor');
+  await expect(archive.locator('.project-card-editorial')).toHaveCount(1);
+  await expect(archive.locator('h3')).toHaveText('MedTutor');
 });
 
-test('skills show actual matching projects and process tabs support keyboard',async({page})=>{
+test('skills matrix and mobile accordions show actual implementation evidence',async({page},info)=>{
   await page.goto('/work');
-  await page.getByRole('button',{name:'PyTorch',exact:false}).click();
-  await expect(page.locator('.skill-evidence')).toContainText('FutureVLA');
-  await page.getByRole('button',{name:'Kafka',exact:false}).click();
-  await expect(page.locator('.skill-evidence')).toContainText('SentinelAI');
-  await expect(page.locator('.skill-evidence')).not.toContainText('MedTutor');
-  const tab=page.getByRole('tab').first();await tab.focus();await page.keyboard.press('ArrowRight');
-  await expect(page.getByRole('tab').nth(1)).toHaveAttribute('aria-selected','true');
-  await expect(page.getByRole('tabpanel')).toContainText('Ví dụ từ dự án thực tế');
+  if(info.project.name==='mobile') {
+    await page.locator('.skills-mobile-group summary').filter({hasText:'PyTorch'}).click();
+    await expect(page.locator('.skills-mobile-group details[open]')).toContainText('FutureVLA');
+    await page.locator('.skills-mobile-group summary').filter({hasText:'Kafka'}).click();
+  } else {
+    await page.getByRole('button',{name:'PyTorch',exact:true}).click();
+    await expect(page.locator('.matrix-evidence')).toContainText('FutureVLA');
+    await page.getByRole('button',{name:'Kafka',exact:true}).click();
+  }
+  await expect(page.locator('.matrix-evidence')).toContainText('SentinelAI');
+  await expect(page.locator('.matrix-evidence')).not.toContainText('MedTutor');
+  await expect(page.locator('.matrix-evidence a')).toHaveAttribute('href','/projects/sentinel-ai#implementation');
 });
 
 test('case study is directly addressable and its architecture is interactive',async({page})=>{
@@ -92,12 +101,13 @@ test('missing content stays intentional and contact links are actionable',async(
   expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe(data.identity.email);
 });
 
-test('timeline and pinned showcase track the visible chapter on desktop',async({page},info)=>{
-  test.skip(info.project.name==='mobile','Mobile uses an ordinary vertical layout.');
+test('personal retains the photo timeline while work has independent non-sticky showcases',async({page},info)=>{
+  test.skip(info.project.name==='mobile','Personal uses an ordinary vertical layout on mobile.');
   await page.goto('/personal');await page.locator('#chapter-university').scrollIntoViewIfNeeded();
   await expect(page.locator('.timeline-caption')).toContainText('Đại học');
-  await page.goto('/work');await page.locator('[data-featured="2"]').scrollIntoViewIfNeeded();
-  await expect(page.locator('.showcase-caption')).toContainText('LabGuard');
+  await page.goto('/work');
+  await expect(page.locator('.selected-showcase,.showcase-sticky,.skill-evidence')).toHaveCount(0);
+  expect(await page.locator('main').evaluate(root=>[...root.querySelectorAll('*')].filter(node=>getComputedStyle(node).position==='sticky').length)).toBe(0);
 });
 
 for(const route of ['/','/work','/personal','/projects/parking-ai','/contact']){
@@ -116,7 +126,7 @@ test('prerendered case studies have correct HTML and OG metadata before JavaScri
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content',/ParkingAI/);
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content','article');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',/\/projects\/parking-ai$/);
-  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('hệ thống thông minh');await context.close();
+  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('BIẾT TƯ DUY');await context.close();
 });
 
 test('all project links and static pages resolve without a client-only fallback',async({request})=>{

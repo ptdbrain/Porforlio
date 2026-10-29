@@ -125,3 +125,19 @@ Các thẻ cũ về Lane Detection, Custom YOLO, BrandDNA và tái lập paper v
 - GitHub công khai: [ptdbrain](https://github.com/ptdbrain), đối chiếu README và metadata repo ngày 29/10/2026. Các trang case study có link trực tiếp tới nguồn tương ứng.
 - LinkedIn: [phantrongdat-ptdbrain](https://www.linkedin.com/in/phantrongdat-ptdbrain/). Thêm đúng địa chỉ bạn cung cấp; nội dung profile không đọc được công khai trong phiên này, nên chưa lấy trường học/chức danh từ đó.
 - [Trang chương trình AI Thực chiến VinUni](https://vinuni.edu.vn/aithucchien/). Trạng thái cá nhân “Đã hoàn thành” dựa trên xác nhận của bạn ở yêu cầu trước; ngày/mã chứng nhận vẫn để trống.
+
+
+## Bổ sung cho Work Studio (newidea2.md)
+
+Bố cục Work hiện theo `newidea2.md`, với dữ liệu riêng tại **`src/content/studio.json`**:
+
+- **Hero và flagship:** điền `projects[].media.cover` trong `portfolio.json` cho MedTutor, ParkingAI, LabGuard. Hero tự dùng lại đúng ba ảnh này.
+- **Bốn khung LabGuard:** `studio.json → demoFrames[] → image.src`, `image.alt`, `video`. Ảnh/video để trống nếu chưa có. `video` là URL file video phát được; trình phát có controls, không autoplay. Mỗi tab đã có mô tả từ repo, không dùng mock screenshot giả.
+- **Blueprint ParkingAI:** nội dung nền từ `projects[].pipeline`. Có thể bổ sung `decision: {"vi":"", "en":""}` và `image: {"src":"", "alt":{"vi":"", "en":""}}` vào node khi có quyết định kỹ thuật hoặc ảnh minh chứng thật.
+- **Vai trò và phạm vi:** role còn thiếu của MedTutor/ParkingAI để trống. Các nhãn Outcome ghi phạm vi prototype/mock được tài liệu mô tả, không phải benchmark độc lập.
+- **Experience:** đã có hồ sơ nhóm LabGuard từ vai trò trong README, gắn nhãn nhóm dự án. Cần bổ sung thời gian thật, chi tiết phần việc và ảnh. Mục này không phải xác nhận việc làm tại công ty. `type` có thể là `employment`, `internship`, `collaboration`, `competition`, `student-team`; `sortDate` dùng để xếp mới nhất trước.
+- **Lab notebook:** `studio.json → labGroups[].items[]`. Điền `note`, `image`, `updatedAt` (YYYY-MM-DD) khi có cập nhật thật. Nhóm Learning đang trống. Không dùng ngày push repo thay cho ngày xác nhận bạn đang thực hiện công việc.
+- **Open to:** điền `identity.availability` cùng `studio.availabilityUpdatedAt` thì trạng thái cơ hội mới xuất hiện. Chỉ điền một trường sẽ không tạo trạng thái thiếu ngày xác nhận.
+- **Case study nâng cao:** `projects[].technicalDecisions` nhận các mục `{ "title":{"vi":"","en":""}, "why":{"vi":"","en":""}, "alternatives":{"vi":"","en":""}, "tradeoffs":{"vi":"","en":""} }`; `failedExperiments` và `nextSteps` là chuỗi song ngữ. Các module chỉ xuất hiện khi có nội dung, tránh tạo trải nghiệm nghiên cứu không được xác minh.
+
+Các kỹ năng/category và số dự án liên quan được lấy từ dữ liệu thật. Không thêm nhóm Speech hay các tỷ lệ kỹ năng khi chưa có repo làm minh chứng.
