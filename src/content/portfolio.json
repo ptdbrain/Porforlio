@@ -1,0 +1,1272 @@
+{
+  "identity": {
+    "name": "Phan Trọng Đạt",
+    "englishName": "Phan Trong Dat",
+    "handle": "ptdbrain",
+    "email": "phandat20052009@gmail.com",
+    "phone": "0382 977 551",
+    "github": "https://github.com/ptdbrain",
+    "linkedin": "https://www.linkedin.com/in/phantrongdat-ptdbrain/",
+    "cv": "",
+    "location": {
+      "vi": "",
+      "en": ""
+    },
+    "availability": {
+      "vi": "",
+      "en": ""
+    },
+    "workingPreference": {
+      "vi": "",
+      "en": ""
+    },
+    "personalBio": {
+      "vi": "",
+      "en": ""
+    },
+    "traits": []
+  },
+  "assets": {
+    "hero": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "work": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "personal": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "contact": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "future": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "collageMain": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "collageSport": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "collageFriends": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "collageStudy": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "presentLearning": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "presentBuilding": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "presentExploring": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      }
+    }
+  },
+  "education": [
+    {
+      "id": "secondary",
+      "label": {
+        "vi": "THCS",
+        "en": "Secondary school"
+      },
+      "school": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "location": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "",
+        "en": ""
+      },
+      "achievements": [],
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "gallery": []
+    },
+    {
+      "id": "high-school",
+      "label": {
+        "vi": "THPT",
+        "en": "High school"
+      },
+      "school": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "location": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "",
+        "en": ""
+      },
+      "achievements": [],
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "gallery": []
+    },
+    {
+      "id": "university",
+      "label": {
+        "vi": "Đại học",
+        "en": "University"
+      },
+      "school": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "location": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "",
+        "en": ""
+      },
+      "achievements": [],
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "gallery": []
+    },
+    {
+      "id": "present",
+      "label": {
+        "vi": "Hiện tại",
+        "en": "Present"
+      },
+      "school": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "location": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "",
+        "en": ""
+      },
+      "achievements": [],
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "gallery": []
+    }
+  ],
+  "training": {
+    "title": {
+      "vi": "Chương trình Đào tạo Nhân tài AI Thực chiến",
+      "en": "Hands-on AI Talent Training Program"
+    },
+    "organization": "VinUni × Vingroup",
+    "status": {
+      "vi": "Đã hoàn thành",
+      "en": "Completed"
+    },
+    "description": {
+      "vi": "Hoàn thành chương trình AI Thực chiến của Tập đoàn Vingroup do Trường Đại học VinUni phối hợp triển khai.",
+      "en": "Completed Vingroup’s hands-on AI talent training program, delivered in collaboration with VinUniversity."
+    },
+    "date": "",
+    "credentialId": "",
+    "evidence": "",
+    "image": {
+      "src": "",
+      "alt": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    "source": "https://vinuni.edu.vn/aithucchien/"
+  },
+  "achievements": [],
+  "experiences": [],
+  "sports": [
+    {
+      "title": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "gallery": []
+    }
+  ],
+  "hobbies": [
+    {
+      "title": {
+        "vi": "Đọc & ghi chú",
+        "en": "Reading & notes"
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "title": {
+        "vi": "Thử nghiệm ý tưởng",
+        "en": "Small experiments"
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "title": {
+        "vi": "Sản phẩm & thiết kế",
+        "en": "Products & design"
+      },
+      "caption": {
+        "vi": "",
+        "en": ""
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    }
+  ],
+  "present": {
+    "updatedAt": "",
+    "learning": {
+      "vi": "",
+      "en": ""
+    },
+    "building": {
+      "vi": "",
+      "en": ""
+    },
+    "exploring": {
+      "vi": "",
+      "en": ""
+    }
+  },
+  "dreams": {
+    "near": {
+      "vi": "",
+      "en": ""
+    },
+    "long": {
+      "vi": "",
+      "en": ""
+    },
+    "life": {
+      "vi": "",
+      "en": ""
+    }
+  },
+  "career": {
+    "short": {
+      "vi": "Phát triển năng lực AI Engineering, Computer Vision, RAG/LLM và triển khai sản phẩm.",
+      "en": "Develop expertise in AI engineering, computer vision, RAG/LLM and product deployment."
+    },
+    "long": {
+      "vi": "Xây dựng các hệ thống AI hoàn chỉnh kết hợp mô hình, dữ liệu, giao diện và triển khai ổn định.",
+      "en": "Build complete AI systems that bring models, data, interfaces and reliable deployment together."
+    }
+  },
+  "projects": [
+    {
+      "slug": "medtutor",
+      "repo": "med-bot",
+      "title": "MedTutor",
+      "subtitle": {
+        "vi": "Hỏi đáp tài liệu, có nguồn để kiểm chứng.",
+        "en": "Document questions. Answers with evidence."
+      },
+      "category": "ai",
+      "status": "prototype",
+      "featured": true,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "RAG",
+        "BM25",
+        "Qdrant",
+        "Next.js",
+        "Docker"
+      ],
+      "description": {
+        "vi": "Trợ lý RAG phục vụ học tập y khoa: truy xuất tài liệu, trả lời tiếng Việt kèm trích dẫn và giới hạn phạm vi sử dụng.",
+        "en": "An educational RAG assistant for medical learning, with Vietnamese answers, source citations and scoped guardrails."
+      },
+      "problem": {
+        "vi": "Tài liệu học tập nằm rải rác trong ghi chú, PDF và slide. MedTutor tổ chức luồng hỏi đáp dựa trên tài liệu, giữ nguồn tham chiếu đi cùng câu trả lời.",
+        "en": "Learning materials are scattered across notes, PDFs and slides. MedTutor brings document retrieval and cited answers into a single workflow."
+      },
+      "implementation": {
+        "vi": "Backend FastAPI hỗ trợ ingest tài liệu, chunk theo cấu trúc và lưu metadata. Các chế độ retrieval gồm naive, hybrid, rerank, parent-child, multi-query, corrective và agentic. Giao diện Next.js kết nối chat, thư viện tài liệu và đánh giá.",
+        "en": "A FastAPI backend ingests structured chunks and metadata. Retrieval modes include naive, hybrid, rerank, parent-child, multi-query, corrective and agentic. A Next.js workspace connects chat, document management and evaluation."
+      },
+      "result": {
+        "vi": "Repo có luồng chạy local bằng mock provider và cấu hình tùy chọn cho BGE-M3, Qdrant, Ollama. Đây là công cụ học tập, không dùng để chẩn đoán hay kê đơn. Chưa bổ sung benchmark độc lập.",
+        "en": "The repository provides a local mock-provider path and optional BGE-M3, Qdrant and Ollama integrations. It is an educational tool, with no diagnostic or prescribing scope. Independent benchmarks have not been added."
+      },
+      "constraints": {
+        "vi": "Các adapter OCR và mô hình có chế độ mock mặc định. Cấu hình chạy thật và dữ liệu đánh giá cần được ghi rõ khi trình bày kết quả.",
+        "en": "OCR and model adapters default to mock providers. Real-provider configuration and evaluation data must be specified when reporting results."
+      },
+      "pipeline": [
+        {
+          "title": "Documents",
+          "detail": {
+            "vi": "PDF · Markdown · DOCX",
+            "en": "PDF · Markdown · DOCX"
+          }
+        },
+        {
+          "title": "Index",
+          "detail": {
+            "vi": "Chunks · metadata",
+            "en": "Chunks · metadata"
+          }
+        },
+        {
+          "title": "Retrieve",
+          "detail": {
+            "vi": "Dense + BM25 · RRF",
+            "en": "Dense + BM25 · RRF"
+          }
+        },
+        {
+          "title": "Generate",
+          "detail": {
+            "vi": "Relevance gate · citations",
+            "en": "Relevance gate · citations"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/med-bot",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/med-bot/blob/main/README.md"
+    },
+    {
+      "slug": "parking-ai",
+      "repo": "ParkingAI",
+      "title": "ParkingAI",
+      "subtitle": {
+        "vi": "Từ camera đến một hệ thống sự kiện.",
+        "en": "From camera frames to a system of events."
+      },
+      "category": "ai",
+      "status": "prototype",
+      "featured": true,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "WebSocket",
+        "SQLAlchemy",
+        "FAISS",
+        "OCR"
+      ],
+      "description": {
+        "vi": "Prototype bãi đỗ xe theo hướng edge-first, tách pipeline AI bất đồng bộ khỏi API và dashboard thời gian thực.",
+        "en": "An edge-first parking prototype that separates asynchronous AI processing from APIs and a live dashboard."
+      },
+      "problem": {
+        "vi": "Một hệ thống camera cần vừa xử lý khung hình vừa phản hồi giao diện mà không để tác vụ inference chặn API hoặc hàng đợi tăng không giới hạn.",
+        "en": "Camera systems need to process frames while serving a responsive interface, without inference blocking the API or queues growing without bounds."
+      },
+      "implementation": {
+        "vi": "Các worker YOLO, OCR, Re-ID và VLM giao tiếp bằng bounded asyncio.Queue. Backend FastAPI nhận sự kiện, phục vụ REST/WebSocket và truy cập cơ sở dữ liệu qua SQLAlchemy.",
+        "en": "YOLO, OCR, Re-ID and VLM worker boundaries communicate through bounded asyncio queues. FastAPI receives events, serves REST/WebSocket clients and accesses storage through SQLAlchemy."
+      },
+      "result": {
+        "vi": "README mô tả demo CPU với mock inference và SQLite mặc định. Có điểm mở rộng cho model thật, MySQL và FAISS. Chưa bổ sung kết quả độ chính xác hay FPS trên phần cứng thực tế.",
+        "en": "The README documents a CPU demo with mock inference and SQLite by default, with extension points for real models, MySQL and FAISS. Accuracy and real-hardware FPS results have not been added."
+      },
+      "constraints": {
+        "vi": "Mock inference là cấu hình mặc định; khả năng tích hợp YOLO/OCR/VLM không đồng nghĩa các model thật đã được triển khai và đánh giá đầy đủ.",
+        "en": "Mock inference is the default configuration; YOLO/OCR/VLM integration boundaries do not establish fully evaluated real-model deployment."
+      },
+      "pipeline": [
+        {
+          "title": "Camera",
+          "detail": {
+            "vi": "RTSP · frames",
+            "en": "RTSP · frames"
+          }
+        },
+        {
+          "title": "AI runtime",
+          "detail": {
+            "vi": "Bounded queues · workers",
+            "en": "Bounded queues · workers"
+          }
+        },
+        {
+          "title": "Events",
+          "detail": {
+            "vi": "Schema · event queue",
+            "en": "Schema · event queue"
+          }
+        },
+        {
+          "title": "Serving",
+          "detail": {
+            "vi": "FastAPI · WebSocket · DB",
+            "en": "FastAPI · WebSocket · DB"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/ParkingAI",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/ParkingAI/blob/main/README.md"
+    },
+    {
+      "slug": "labguard",
+      "repo": "K4-hackathon-HUST-E402",
+      "title": "LabGuard",
+      "subtitle": {
+        "vi": "Kiểm tra bằng chứng trước khi nộp bài.",
+        "en": "Check the evidence before submission."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": true,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "GitHub API",
+        "LLM"
+      ],
+      "role": {
+        "vi": "Product Owner · Spec & impact",
+        "en": "Product Owner · Specification & impact"
+      },
+      "description": {
+        "vi": "Prototype AI Submission Preflight giúp đối chiếu Codelab, rubric và repo cho bài lab theo cách chỉ đọc.",
+        "en": "A read-only AI submission preflight prototype that cross-checks lab Codelabs, rubrics and repository evidence."
+      },
+      "problem": {
+        "vi": "Yêu cầu bài lab và tiêu chí đánh giá nằm ở nhiều nơi. LabGuard gom chúng thành bước rà soát trước khi nộp, giúp người học nhìn thấy bằng chứng còn thiếu.",
+        "en": "Lab requirements and evaluation rubrics live in different places. LabGuard brings them together into a pre-submission check that highlights missing evidence."
+      },
+      "implementation": {
+        "vi": "Provider AI tạo pack từ Codelab và README/docs của đề bài, sau đó ánh xạ vào các checker chỉ đọc. Repo có đường chạy demo dự phòng và script đánh giá. Nhóm gồm sáu thành viên với phần việc được ghi trong README.",
+        "en": "An AI provider creates a pack from the Codelab and assignment README/docs, then maps it to read-only checkers. The repository includes a fallback demo path and evaluation scripts. Six team members have documented responsibilities."
+      },
+      "result": {
+        "vi": "Prototype hỗ trợ nhiều provider và repo demo chưa hoàn thiện. README ghi nhận tôi phụ trách Product Owner, spec và impact; chưa bổ sung số liệu tác động hoặc kết quả cuộc thi.",
+        "en": "The prototype supports multiple providers and an intentionally incomplete demo repository. The README identifies my role as Product Owner, specification and impact; measured impact and competition results have not been added."
+      },
+      "constraints": {
+        "vi": "Công cụ chỉ đọc: không thực thi code không tin cậy, không sửa repo và không tự nộp bài.",
+        "en": "The tool is read-only: it does not execute untrusted code, modify repositories or submit assignments."
+      },
+      "pipeline": [
+        {
+          "title": "Requirements",
+          "detail": {
+            "vi": "Codelab · rubric",
+            "en": "Codelab · rubric"
+          }
+        },
+        {
+          "title": "Evidence",
+          "detail": {
+            "vi": "Repository · README",
+            "en": "Repository · README"
+          }
+        },
+        {
+          "title": "Checks",
+          "detail": {
+            "vi": "Safe checker pack",
+            "en": "Safe checker pack"
+          }
+        },
+        {
+          "title": "Review",
+          "detail": {
+            "vi": "Preflight report",
+            "en": "Preflight report"
+          }
+        }
+      ],
+      "year": "2026",
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/K4-hackathon-HUST-E402",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md"
+    },
+    {
+      "slug": "sentinel-ai",
+      "repo": "Agentic_Multimodal_Big_Data_Intelligence_Platform",
+      "title": "SentinelAI",
+      "subtitle": {
+        "vi": "Dữ liệu thương mại điện tử, từ ingest đến insight.",
+        "en": "E-commerce data, from ingestion to insight."
+      },
+      "category": "data",
+      "status": "in-progress",
+      "featured": false,
+      "stack": [
+        "Python",
+        "Kafka",
+        "Spark",
+        "PostgreSQL",
+        "MinIO",
+        "Streamlit",
+        "Airflow"
+      ],
+      "description": {
+        "vi": "Nền tảng dữ liệu đang phát triển với ingest đa định dạng, ETL, streaming, kiểm tra chất lượng dữ liệu và dashboard.",
+        "en": "An in-development data platform with multi-format ingestion, ETL, streaming, data quality checks and analytics."
+      },
+      "problem": {
+        "vi": "Dữ liệu sản phẩm, giá và đánh giá cần được chuẩn hóa trước khi phân tích xu hướng và bất thường.",
+        "en": "Product, price and review data need consistent processing before trend and anomaly analysis."
+      },
+      "implementation": {
+        "vi": "Kiến trúc kết hợp Kafka, medallion data lake, Spark batch/streaming, kho PostgreSQL và dashboard Streamlit. Airflow điều phối pipeline.",
+        "en": "The architecture connects Kafka, a medallion data lake, Spark batch/stream processing, PostgreSQL and a Streamlit dashboard, with Airflow orchestration."
+      },
+      "result": {
+        "vi": "README ghi rõ Phase 1 đang phát triển và cung cấp luồng chạy end-to-end. Chưa đưa số liệu hiệu năng trong repo thành kết quả đã kiểm chứng tại portfolio.",
+        "en": "The README marks Phase 1 as under active development and provides an end-to-end run path. Repository performance claims are not presented here as independently verified results."
+      },
+      "constraints": {
+        "vi": "Phạm vi hiện tại là nền tảng dữ liệu Phase 1; tên repo không chứng minh mọi tính năng agentic/multimodal đã hoàn tất.",
+        "en": "The documented scope is the Phase 1 data platform; the repository name does not establish completion of all agentic or multimodal features."
+      },
+      "pipeline": [
+        {
+          "title": "Sources",
+          "detail": {
+            "vi": "Files · e-commerce",
+            "en": "Files · e-commerce"
+          }
+        },
+        {
+          "title": "Ingest",
+          "detail": {
+            "vi": "Kafka · Bronze",
+            "en": "Kafka · Bronze"
+          }
+        },
+        {
+          "title": "Process",
+          "detail": {
+            "vi": "Spark · Silver / Gold",
+            "en": "Spark · Silver / Gold"
+          }
+        },
+        {
+          "title": "Analyze",
+          "detail": {
+            "vi": "PostgreSQL · Streamlit",
+            "en": "PostgreSQL · Streamlit"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/main/README.md"
+    },
+    {
+      "slug": "future-vla",
+      "repo": "FutureVLA",
+      "title": "FutureVLA",
+      "subtitle": {
+        "vi": "Giữ lại lựa chọn khi sở thích chưa rõ.",
+        "en": "Preserving options before preferences are known."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "PyTorch",
+        "VLA-Adapter",
+        "LIBERO"
+      ],
+      "description": {
+        "vi": "Thử nghiệm Pareto Reachability Critic trên nền VLA-Adapter đóng băng để chọn hành động trước và sau khi nhận sở thích người dùng.",
+        "en": "A Pareto Reachability Critic experiment on a frozen VLA-Adapter, selecting actions before and after user preferences are revealed."
+      },
+      "problem": {
+        "vi": "Trong tác vụ robot, hành động sớm có thể loại bỏ một kết quả mà người dùng chỉ yêu cầu về sau.",
+        "en": "Early robot actions can eliminate an outcome that a user only requests later."
+      },
+      "implementation": {
+        "vi": "Phần mở rộng giữ VLA làm bộ sinh action chunk, thêm critic tập Pareto và selector theo commitment regret. Tài liệu mô tả counterfactual rollout, ensemble và hiệu chỉnh conformal.",
+        "en": "The extension retains the VLA as an action-chunk proposer and adds a Pareto-set critic with a commitment-regret selector. Documentation covers counterfactual rollouts, ensembles and conformal calibration."
+      },
+      "result": {
+        "vi": "Repo có mô tả thuật toán và pipeline thử nghiệm. Chưa bổ sung kết quả thực nghiệm được xác minh. VLA-Adapter và LIBERO là nền tảng của các tác giả gốc.",
+        "en": "The repository contains algorithm documentation and an experimental pipeline. Verified experimental results have not been added. VLA-Adapter and LIBERO remain the work of their original authors."
+      },
+      "constraints": {
+        "vi": "Đây là hướng nghiên cứu/thử nghiệm, không trình bày như công trình đã xuất bản hoặc hệ thống robot hoàn thiện.",
+        "en": "This is a research experiment, with no claim of publication or a completed robotics system."
+      },
+      "pipeline": [
+        {
+          "title": "Observation",
+          "detail": {
+            "vi": "Vision · instruction",
+            "en": "Vision · instruction"
+          }
+        },
+        {
+          "title": "Candidates",
+          "detail": {
+            "vi": "Frozen VLA-Adapter",
+            "en": "Frozen VLA-Adapter"
+          }
+        },
+        {
+          "title": "Critic",
+          "detail": {
+            "vi": "Pareto sets · uncertainty",
+            "en": "Pareto sets · uncertainty"
+          }
+        },
+        {
+          "title": "Select",
+          "detail": {
+            "vi": "Execute prefix · replan",
+            "en": "Execute prefix · replan"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/FutureVLA",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/FutureVLA/blob/main/README.md"
+    },
+    {
+      "slug": "pathfinder",
+      "repo": "DSA-Pathfinding-Intro-AI",
+      "title": "PathFinder",
+      "subtitle": {
+        "vi": "Làm cho thuật toán tìm đường trở nên nhìn thấy được.",
+        "en": "Making graph search visible."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "year": "2025",
+      "stack": [
+        "Python",
+        "Flask",
+        "JavaScript",
+        "A*",
+        "Dijkstra"
+      ],
+      "role": {
+        "vi": "Thành viên nhóm · Phần việc chi tiết chưa bổ sung",
+        "en": "Team member · Detailed contribution pending"
+      },
+      "description": {
+        "vi": "Ứng dụng trực quan hóa tìm đường với A*, Dijkstra, BFS, DFS và các thuật toán tìm kiếm đồ thị khác.",
+        "en": "An interactive graph-search application visualizing A*, Dijkstra, BFS, DFS and other search algorithms."
+      },
+      "problem": {
+        "vi": "Quá trình duyệt node và chọn đường khó theo dõi nếu chỉ đọc mã hoặc kết quả cuối cùng.",
+        "en": "Node exploration and route selection are difficult to follow from code or a final path alone."
+      },
+      "implementation": {
+        "vi": "Backend Flask cung cấp thuật toán tìm kiếm; frontend HTML/CSS/JavaScript trực quan hóa trên đồ thị hoặc bản đồ. README ghi nhận Phan Trọng Đạt trong nhóm dự án.",
+        "en": "A Flask backend exposes search algorithms; an HTML/CSS/JavaScript frontend visualizes a graph or map. The README lists Phan Trọng Đạt as a project team member."
+      },
+      "result": {
+        "vi": "Repo có hướng dẫn chạy local và liên kết frontend demo của nhóm. Đóng góp cá nhân và báo cáo đánh giá cần bổ sung.",
+        "en": "The repository includes local run instructions and a team frontend demo link. Detailed individual contributions and evaluation reports remain to be added."
+      },
+      "constraints": {
+        "vi": "Dự án nhóm; không quy toàn bộ phần triển khai cho một cá nhân.",
+        "en": "This is a team project; the full implementation is not attributed to one individual."
+      },
+      "pipeline": [
+        {
+          "title": "Graph",
+          "detail": {
+            "vi": "Nodes · edges",
+            "en": "Nodes · edges"
+          }
+        },
+        {
+          "title": "Search",
+          "detail": {
+            "vi": "A* · Dijkstra · BFS",
+            "en": "A* · Dijkstra · BFS"
+          }
+        },
+        {
+          "title": "API",
+          "detail": {
+            "vi": "Flask",
+            "en": "Flask"
+          }
+        },
+        {
+          "title": "Explore",
+          "detail": {
+            "vi": "Interactive visualization",
+            "en": "Interactive visualization"
+          }
+        }
+      ],
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI",
+        "demo": "https://bienkieu1411.github.io/Project_AI_20242/",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/main/README.md"
+    },
+    {
+      "slug": "pso-optimize",
+      "repo": "PSO-Optimize",
+      "title": "PSO-Optimize",
+      "subtitle": {
+        "vi": "So sánh thuật toán bằng một quy trình tái lập.",
+        "en": "Comparing optimizers with a reproducible protocol."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "MATLAB",
+        "C++",
+        "PSO",
+        "DE",
+        "CEC2017"
+      ],
+      "description": {
+        "vi": "Bộ thí nghiệm so sánh PSO, APSO, DE và JADE trên benchmark CEC2017 với thống kê và đường cong hội tụ.",
+        "en": "An experimental comparison of PSO, APSO, DE and JADE on CEC2017, with statistical tests and convergence plots."
+      },
+      "problem": {
+        "vi": "So sánh thuật toán tối ưu cần cùng ngân sách đánh giá hàm, nhiều lần chạy và một quy trình xuất kết quả nhất quán.",
+        "en": "Optimizer comparisons need equal function-evaluation budgets, repeated runs and consistent result reporting."
+      },
+      "implementation": {
+        "vi": "Các thuật toán dùng chung cấu hình benchmark; script xuất Excel, vẽ hội tụ và thực hiện kiểm định Wilcoxon cùng xếp hạng Friedman.",
+        "en": "Algorithms share benchmark settings, with scripts for Excel export, convergence plots, Wilcoxon tests and Friedman ranking."
+      },
+      "result": {
+        "vi": "Repo mô tả cấu hình và cách chạy. Chưa bổ sung bảng kết quả đã xác minh vào portfolio; không khẳng định thuật toán nào thắng.",
+        "en": "The repository documents settings and run instructions. Verified result tables are pending; no winning algorithm is claimed here."
+      },
+      "constraints": {
+        "vi": "CEC2017 thuộc các tác giả benchmark gốc. Kết quả thô cần được tái tạo từ script theo README.",
+        "en": "CEC2017 belongs to its original benchmark authors. Raw results are regenerated through the documented scripts."
+      },
+      "pipeline": [
+        {
+          "title": "Benchmark",
+          "detail": {
+            "vi": "CEC2017 functions",
+            "en": "CEC2017 functions"
+          }
+        },
+        {
+          "title": "Optimize",
+          "detail": {
+            "vi": "PSO · APSO · DE · JADE",
+            "en": "PSO · APSO · DE · JADE"
+          }
+        },
+        {
+          "title": "Repeat",
+          "detail": {
+            "vi": "Shared evaluation budget",
+            "en": "Shared evaluation budget"
+          }
+        },
+        {
+          "title": "Compare",
+          "detail": {
+            "vi": "Statistics · convergence",
+            "en": "Statistics · convergence"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/PSO-Optimize",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/PSO-Optimize/blob/main/README.md"
+    }
+  ],
+  "skills": [
+    {
+      "title": {
+        "vi": "AI & truy xuất",
+        "en": "AI & retrieval"
+      },
+      "tools": [
+        "RAG",
+        "BM25",
+        "Qdrant",
+        "OCR",
+        "PyTorch"
+      ]
+    },
+    {
+      "title": {
+        "vi": "Backend & dữ liệu",
+        "en": "Backend & data"
+      },
+      "tools": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "SQLAlchemy",
+        "Kafka",
+        "Spark",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "title": {
+        "vi": "Sản phẩm & công cụ",
+        "en": "Products & tools"
+      },
+      "tools": [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "Docker",
+        "MATLAB"
+      ]
+    }
+  ],
+  "lab": [
+    {
+      "title": "FutureVLA",
+      "slug": "future-vla"
+    },
+    {
+      "title": "SentinelAI",
+      "slug": "sentinel-ai"
+    },
+    {
+      "title": "PSO-Optimize",
+      "slug": "pso-optimize"
+    }
+  ],
+  "approach": [
+    {
+      "title": {
+        "vi": "Hiểu bài toán",
+        "en": "Understand"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "title": {
+        "vi": "Nghiên cứu",
+        "en": "Research"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "title": {
+        "vi": "Xây dựng",
+        "en": "Build"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "title": {
+        "vi": "Đánh giá",
+        "en": "Evaluate"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "title": {
+        "vi": "Cải tiến",
+        "en": "Improve"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    },
+    {
+      "title": {
+        "vi": "Bàn giao",
+        "en": "Deliver"
+      },
+      "example": {
+        "vi": "",
+        "en": ""
+      }
+    }
+  ],
+  "researchNotes": [
+    {
+      "title": {
+        "vi": "Từ truy xuất đến câu trả lời có căn cứ",
+        "en": "From retrieval to grounded answers"
+      },
+      "description": {
+        "vi": "Ghi chú kiến trúc, chunking, hybrid retrieval và đánh giá trong repo MedTutor.",
+        "en": "Architecture notes on chunking, hybrid retrieval and evaluation in the MedTutor repository."
+      },
+      "href": "https://github.com/ptdbrain/med-bot/blob/main/docs/RAG_INTERVIEW_VI.md"
+    },
+    {
+      "title": {
+        "vi": "Pareto options trong mô hình VLA",
+        "en": "Pareto options in VLA models"
+      },
+      "description": {
+        "vi": "Tài liệu thuật toán của hướng thử nghiệm FutureVLA.",
+        "en": "Algorithm documentation for the FutureVLA research experiment."
+      },
+      "href": "https://github.com/ptdbrain/FutureVLA/blob/main/FUTUREVLA_ALGORITHM.md"
+    }
+  ],
+  "verification": {
+    "checkedAt": "2026-10-29",
+    "github": "https://api.github.com/users/ptdbrain/repos?per_page=100",
+    "linkedinReadable": false,
+    "notes": {
+      "vi": "Mô tả dự án dựa trên README công khai. Phần đóng góp cá nhân, số liệu, mốc thực hiện và ảnh còn thiếu được để trống.",
+      "en": "Project descriptions are based on public READMEs. Missing contributions, measurements, dates and images are left empty."
+    }
+  }
+}

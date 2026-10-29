@@ -384,6 +384,22 @@ export default function PortfolioHome({ visible }) {
               </div>
             </section>
 
+            <section className="dashboard-training" aria-labelledby="training-title">
+              <div className="training-heading">
+                <div>
+                  <p className="mini-label">{content.about.training.eyebrow}</p>
+                  <h3 id="training-title">{content.about.training.title}</h3>
+                  <p className="training-organization">{content.about.training.organization}</p>
+                </div>
+                <span className="training-status">{content.about.training.status}</span>
+              </div>
+              <p>{content.about.training.body}</p>
+              <p>{content.about.training.focus}</p>
+              <a className="training-source" href={content.about.training.sourceUrl} target="_blank" rel="noreferrer">
+                {content.about.training.sourceLabel} <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+
             <section className="dashboard-interests">
               <div className="dashboard-section-title">
                 <span className="mini-label">INPUT STREAMS</span>

@@ -87,7 +87,17 @@
           "Xây dựng project nhỏ để kiểm chứng ý tưởng kỹ thuật",
           "Tìm hiểu sản phẩm công nghệ và cách triển khai thực tế",
           "Thiết kế giao diện, animation và trải nghiệm người dùng"
-        ]
+        ],
+        "training": {
+          "eyebrow": "Đào tạo chuyên môn",
+          "title": "AI Thực chiến",
+          "organization": "VinUni × Vingroup",
+          "status": "Đã hoàn thành",
+          "body": "Tôi đã hoàn thành Chương trình Đào tạo Nhân tài AI Thực chiến của Tập đoàn Vingroup, do Trường Đại học VinUni phối hợp triển khai.",
+          "focus": "Chương trình kết hợp tư duy AI, sử dụng AI có trách nhiệm và giải quyết bài toán thực tế.",
+          "sourceLabel": "Thông tin chương trình tại VinUni",
+          "sourceUrl": "https://vinuni.edu.vn/aithucchien/"
+        }
       },
       "direction": {
         "title": "Định hướng nghề nghiệp",
@@ -218,6 +228,11 @@
             "05",
             "Backend, API, Deployment",
             "Biến mô hình thành API, giao diện và hệ thống triển khai được."
+          ],
+          [
+            "06",
+            "AI Thực chiến · VinUni × Vingroup",
+            "Đã hoàn thành chương trình đào tạo AI thực chiến."
           ]
         ]
       },
@@ -346,7 +361,17 @@
           "Building small projects to validate technical ideas",
           "Studying technology products and real deployment workflows",
           "Designing interfaces, animation and user experience"
-        ]
+        ],
+        "training": {
+          "eyebrow": "Professional training",
+          "title": "AI Thực chiến · Hands-on AI",
+          "organization": "VinUni × Vingroup",
+          "status": "Completed",
+          "body": "I completed the AI Talent Training Program by Vingroup, delivered in collaboration with VinUniversity.",
+          "focus": "The program combines AI thinking, responsible AI use and practical problem-solving.",
+          "sourceLabel": "Program information at VinUni",
+          "sourceUrl": "https://vinuni.edu.vn/aithucchien/"
+        }
       },
       "direction": {
         "title": "Career Direction",
@@ -477,6 +502,11 @@
             "05",
             "Backend, API, Deployment",
             "Turning models into APIs, interfaces and deployable systems."
+          ],
+          [
+            "06",
+            "AI Thực chiến · VinUni × Vingroup",
+            "Completed the hands-on AI talent training program."
           ]
         ]
       },

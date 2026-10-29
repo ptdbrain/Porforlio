@@ -21,7 +21,7 @@ test('vercel config deploys the generated dist directory', () => {
 test('package scripts expose local verification and Vercel build commands', () => {
   const pkg = readJson('package.json');
 
-  assert.equal(pkg.scripts.build, 'vite build');
+  assert.equal(pkg.scripts.build, 'vite build && node scripts/prerender.mjs');
   assert.equal(pkg.scripts.test, 'node --test tests/*.test.js');
   assert.equal(pkg.scripts.dev, 'vite --host 127.0.0.1');
   assert.equal(pkg.dependencies.react, '^18.3.1');
@@ -29,7 +29,7 @@ test('package scripts expose local verification and Vercel build commands', () =
 });
 
 test('vite build writes the deployable static files', () => {
-  execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe', shell: true });
+  execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe' });
 
   assert.equal(fs.existsSync(path.join(root, 'dist', 'index.html')), true, 'index.html should exist in dist');
 

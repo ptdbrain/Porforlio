@@ -1,70 +1,60 @@
-# Porforlio
+# PTD. — One Person. Two Stories.
 
-React and Vite bilingual portfolio for Phan Trong Dat / Dat Brain, focused on AI Engineering, Computer Vision, RAG/LLM, and full-stack AI products.
+Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng.
 
-## Run Locally
+## Chạy và kiểm tra
 
-Install dependencies, then use the Vite workflow:
+Yêu cầu Node.js 20+.
 
-```powershell
-npm install
-npm test
+```bash
+npm ci
 npm run dev
+npm test
+npm run test:e2e
 npm run build
 npm run preview
 ```
 
-The build output is generated in `dist/`.
+E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy preview trên port 4174. Nếu máy chưa có Chrome, cài Chrome hoặc thay channel trong `playwright.config.js` bằng Chromium đã cài cho Playwright. Báo cáo lỗi/trace nằm trong `test-results/` và `playwright-report/` (được gitignore).
 
-## Deploy To Vercel
+## Nội dung và ảnh còn thiếu
 
-This project is configured for a simple Vercel deployment:
+- [Danh sách cần bổ sung và cách điền](docs/CONTENT-NEEDED.md).
+- [Phân tích bản cũ, đối chiếu từng phần của plan và giới hạn kiểm tra](docs/IMPLEMENTATION-REVIEW.md).
+- Dữ liệu chính: `src/content/portfolio.json`.
+- Nhãn Việt/Anh: `src/content/copy.js`.
+- File ảnh: `public/images/`; CV/báo cáo: `public/documents/`.
 
-- `vercel.json` runs `npm run build`.
-- Vercel serves the generated `dist/` directory.
-- `cleanUrls` is enabled so static URLs stay clean.
+Để chuỗi `""` hoặc mảng `[]` khi chưa có nội dung. Ảnh chưa có hiển thị khung trống; CV chưa có không tạo link tải giả. Mỗi case study có đường dẫn nguồn README công khai; trường đóng góp/số liệu cá nhân cần chủ portfolio bổ sung.
 
-Recommended flow:
+## Routes
 
-1. Push this repository to GitHub.
-2. In Vercel, choose **Add New Project**.
-3. Import the GitHub repository.
-4. Keep Framework Preset as **Other** if Vercel does not auto-detect it.
-5. Confirm:
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-6. Deploy.
+- `/`: Home — hai lựa chọn.
+- `/personal`: tiểu sử, học tập, cột mốc, thể thao, sở thích, hiện tại, ước mơ.
+- `/work`: định vị, kinh nghiệm, Selected Work, archive, Lab, skills, notes, VinUni, career.
+- `/projects/[slug]`: case study riêng cho từng dự án trong dữ liệu.
+- `/contact`: liên hệ.
 
-## Custom Domain
+History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
 
-After the Vercel project is deployed:
+## Cấu trúc
 
-1. Open the Vercel project dashboard.
-2. Go to **Settings** > **Domains**.
-3. Add your domain, for example `example.com` or `www.example.com`.
-4. Follow the DNS records Vercel shows for that domain.
-5. Wait for DNS propagation. It can take minutes, but some records may take up to 24 hours.
+```text
+src/App.jsx                      Router, layout, i18n, motion, metadata
+src/components/editorial/        Home, Personal, Work, CaseStudy, Shared
+src/content/portfolio.json       Nội dung và asset slots
+src/content/copy.js              Nhãn Việt/Anh
+src/lib/routes.mjs               Route resolution, metadata
+src/prerender.jsx                React server renderer cho build tĩnh
+scripts/prerender.mjs            Tạo HTML theo route và sitemap
+editorial.css                    Design system, responsive, motion
+public/fonts/                    Be Vietnam Pro, Manrope, IBM Plex Mono + OFL
+```
 
-For a domain managed outside Vercel, update DNS at your domain registrar. For a domain using Vercel nameservers, manage DNS inside Vercel.
+Giao diện cũ (`BrainIntro.jsx`, `PortfolioHome.jsx`, `styles.css`, `src/data/`) được giữ để tham khảo, không dùng trong entry mới.
 
-## Customize
+## Triển khai Vercel
 
-- Update contact values in `script.js` inside `contactConfig`.
-- Edit the opening intro in `src/components/BrainIntro.jsx`.
-- Edit the portfolio page in `src/components/PortfolioHome.jsx`.
-- Update portfolio data in `src/data/portfolioData.json`.
-- Add a CV file to `assets/` later and set the `cv` value.
-- Add real GitHub or demo URLs to project data when available.
+Cấu hình hiện tại dùng `npm run build`, output `dist`, `cleanUrls: true`. Build tạo `/work.html`, `/personal.html`, `/projects/<slug>.html` và custom 404; Vercel phục vụ đường dẫn không có `.html`.
 
-## Structure
-
-- `index.html`: Vite HTML entry.
-- `src/main.jsx`: React entry.
-- `src/App.jsx`: switches from `BrainIntro` to `PortfolioHome`.
-- `src/components/BrainIntro.jsx`: full-screen neural brain intro animation.
-- `src/components/PortfolioHome.jsx`: portfolio page.
-- `src/data/portfolioData.json`: bilingual content and project data.
-- `styles.css`: Digital AI Lab visual system, intro animation, and responsive layout.
-- `vercel.json`: Vercel build and routing configuration.
-- `tests/site.test.js`: Node tests for content and behavior.
-- `tests/deploy.test.js`: Node tests for deploy configuration and build output.
+Nếu dùng domain khác, đặt **`VITE_SITE_URL=https://your-domain.example`** trong môi trường build để canonical và sitemap dùng đúng domain. Mặc định là `https://porforlio-delta.vercel.app` từ metadata repo công khai. Sau khi cập nhật nội dung hoặc ảnh, build và triển khai lại để metadata tĩnh được cập nhật.

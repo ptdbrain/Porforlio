@@ -2798,3 +2798,53 @@ h3 {
     transition-duration: 1ms !important;
   }
 }
+
+.dashboard-training {
+  padding: clamp(24px, 4vw, 44px);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(120deg, rgba(81, 227, 194, 0.07), transparent);
+}
+
+.training-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.training-heading h3 {
+  margin: 8px 0;
+  font-size: clamp(1.4rem, 2.6vw, 2.3rem);
+}
+
+.dashboard-training p {
+  color: var(--muted);
+  max-width: 76ch;
+}
+
+.training-heading .training-organization {
+  margin: 0;
+  color: var(--text);
+}
+
+.training-status {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cyan);
+  font-size: 0.85rem;
+}
+
+.training-source {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--cyan);
+  text-underline-offset: 5px;
+}
+
+.training-source:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 6px;
+}
