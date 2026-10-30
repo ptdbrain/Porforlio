@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import data from './content/portfolio.json';
 import { copy } from './content/copy';
@@ -10,6 +10,7 @@ import { Work } from './components/editorial/Work';
 import { Personal } from './components/editorial/Personal';
 import { CaseStudy } from './components/editorial/CaseStudy';
 import { Contact, CvLink, RouteLink } from './components/editorial/Shared';
+import { NeuralIntro } from './components/editorial/NeuralIntro';
 
 function browserLocation() { return {path: window.location.pathname, hash: window.location.hash, scroll: 0, initial: true}; }
 function initialLang() {
@@ -41,12 +42,25 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   const [location,setLocation] = useState(() => initialPath ? {path:initialPath,hash:'',scroll:0,initial:true} : typeof window !== 'undefined' ? browserLocation() : {path:'/',hash:'',scroll:0,initial:true});
   const [language,setLanguage] = useState(()=>initialLanguage||initialLang());
   const [menuOpen,setMenuOpen] = useState(false);
+  const [introVisible,setIntroVisible] = useState(false);
   const mainRef=useRef(null);
   const route=resolveRoute(location.path,data.projects);
   const work=route.kind === 'work' || route.kind === 'project';
   const t=copy[language];
   const motionPreference=useMotionPreference(hydrating);
   const c=cinemaCopy[language];
+  const finishIntro=useCallback(()=>{
+    setIntroVisible(false);
+    document.documentElement.classList.remove('neural-intro-pending');
+    requestAnimationFrame(()=>mainRef.current?.focus({preventScroll:true}));
+  },[]);
+  useEffect(()=>{
+    const pending=document.documentElement.classList.contains('neural-intro-pending');
+    if(location.path==='/'&&pending){
+      try{sessionStorage.setItem('ptd-neural-intro-seen','1');}catch{}
+      setIntroVisible(true);
+    }else document.documentElement.classList.remove('neural-intro-pending');
+  },[]);
   useMotion(location.path,language,work && motionPreference.simple);
   useEffect(()=>{if(initialLanguage)setLanguage(initialLang());},[initialLanguage]);
 
@@ -114,7 +128,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
     const next=language === 'vi'?'en':'vi';setLanguage(next);try {localStorage.setItem('ptd-language',next);}catch{}
     const url=new URL(window.location.href);if(next === 'en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState(history.state,'',url.pathname+url.search+url.hash);
   }
-  return <div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${work&&motionPreference.simple?'is-simple':''}`}>
+  return <><div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${work&&motionPreference.simple?'is-simple':''}`} inert={introVisible?'':undefined} aria-hidden={introVisible?'true':undefined}>
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header"><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>
       <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false],['/work#experience',language==='vi'?'Đóng góp':'Experience',false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}{work&&<button className="motion-preference" type="button" aria-pressed={motionPreference.simple} disabled={motionPreference.systemReduced} title={motionPreference.systemReduced?c.auto:undefined} onClick={motionPreference.toggle}>{motionPreference.systemReduced?c.simple:motionPreference.simple?c.full:c.simple}</button>}</nav>
@@ -128,5 +142,5 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
       {route.kind==='not-found'&&<section className="not-found page-width"><span className="eyebrow">404 / PTD.</span><h1>{t.notFound}</h1><RouteLink className="button button-dark" href="/">{t.returnHome} ↗</RouteLink></section>}
     </main>
     <footer className="site-footer page-width"><RouteLink href="/" className="wordmark">PTD<span>.</span></RouteLink><p>{t.footer}</p><a href="#main-content" className="back-top" aria-label={language==='vi'?'Về đầu trang':'Back to top'}>↑</a></footer>
-  </div>;
+  </div>{introVisible&&<NeuralIntro language={language} onComplete={finishIntro}/>}</>;
 }

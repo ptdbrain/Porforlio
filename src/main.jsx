@@ -4,6 +4,7 @@ import App from './App.jsx';
 import '../editorial.css';
 import '../cinema.css';
 import '../work-sections.css';
+import '../neural-intro.css';
 
 const root = document.getElementById('root');
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
