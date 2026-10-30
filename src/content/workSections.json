@@ -85,14 +85,14 @@
     ]
   },
   "selected": {
-    "eyebrow": "SELECTED WORK / 02",
+    "eyebrow": "04 / SELECTED WORK",
     "heading": {
-      "vi": "Những điều tôi đã xây.",
-      "en": "Things I’ve built."
+      "vi": "Chọn một dự án để xem chi tiết.",
+      "en": "Choose a project to explore."
     },
     "intro": {
-      "vi": "Một vài dự án cho thấy cách tôi tiếp cận bài toán, thử nghiệm và xây dựng hệ thống.",
-      "en": "A few projects that show how I approach problems, experiment and build systems."
+      "vi": "Đây là một số dự án tiêu biểu. Mở case study khi bạn muốn xem bài toán, cách triển khai và phần đóng góp cụ thể.",
+      "en": "A few selected projects. Open a case study when you want to see the problem, implementation and specific contribution."
     }
   }
 }
