@@ -1,6 +1,6 @@
 # PTD. — One Person. Two Stories.
 
-Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work hiện theo bản mới của [newidea2.md](newidea2.md): **Kinetic Cinema V2**, với typography động, orbit 2.5D và các project world.
+Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work cập nhật theo [newidea2.md](newidea2.md) V3: process SVG bốn bước và Selected Works có điều khiển, trên nền Kinetic Cinema và các project world hiện có.
 
 ## Chạy và kiểm tra
 
@@ -20,6 +20,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 ## Nội dung và ảnh còn thiếu
 
+- [Bản cập nhật hai section Work V3](docs/WORK-SECTIONS-V3.md).
 - [Bản cập nhật Kinetic Cinema V2](docs/KINETIC-CINEMA-UPDATE.md).
 - [Kế hoạch file và các bước triển khai](docs/KINETIC-CINEMA-PLAN.md).
 - [Danh sách cần bổ sung và cách điền](docs/CONTENT-NEEDED.md).

@@ -52,24 +52,24 @@ test('simple view persists and stops spatial pinning without changing Personal',
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
  await page.getByRole('button',{name:'Simple view',exact:true}).click();
  await expect(page.locator('.kinetic-cinema')).toHaveClass(/cinema-simple/);
- await expect(page.locator('.orbit-stage')).toHaveCSS('position','static');
+ await expect(page.locator('.selected-stage-viewport')).toHaveCSS('position','relative');
+ await expect(page.locator('.orbit-scroll,.type-wall,.manifesto-lines')).toHaveCount(0);
  await page.reload();await expect(page.locator('.kinetic-cinema')).toHaveClass(/cinema-simple/);
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
  await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
  await expect(page.locator('.life-chapter')).toHaveCount(4);await expect(page.locator('.theme-personal')).toBeVisible();
 });
 
-test('normal-motion orbit offers buttons, direct project links, and a bounded native pin',async({page},info)=>{
+test('normal-motion project stage has direct controls, keyboard navigation and a real case-study link',async({page})=>{
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/work');
- const next=page.locator('.orbit-controls').getByRole('button',{name:'Dự án tiếp theo'});
- await page.locator('.orbit-scroll').scrollIntoViewIfNeeded();await next.click();
- const selected=page.locator('.orbit-project-names button[aria-pressed=true]');await expect(selected).toHaveCount(1);
- if(info.project.name==='desktop'){
-  await expect(page.locator('.orbit-stage')).toHaveCSS('position','sticky');
-  expect(await page.locator('.orbit-scroll').evaluate(node=>node.clientHeight/innerHeight)).toBeLessThanOrEqual(2.25);
- }else await expect(page.locator('.orbit-stage')).toHaveCSS('position','relative');
- const href=await page.locator('.orbit-frame.is-active a').getAttribute('href');
- await page.locator('.orbit-frame.is-active a').click();await expect(page).toHaveURL(new RegExp(href+'$'));await expect(page.locator('h1')).toBeVisible();
+ const gallery=page.locator('.selected-project-gallery');await gallery.scrollIntoViewIfNeeded();
+ await gallery.getByRole('button',{name:'Dự án tiếp theo'}).click();
+ await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true]) h3')).toHaveText('FutureVLA');
+ await expect(page.locator('.selected-progress')).toHaveAttribute('aria-valuenow','2');
+ await gallery.focus();await page.keyboard.press('ArrowLeft');
+ await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true]) h3')).toHaveText('MedTutor');
+ await expect(page.locator('.selected-stage-viewport')).toHaveCSS('position','relative');
+ await page.locator('.selected-stage-link').click();await expect(page).toHaveURL(/\/projects\/medtutor$/);await expect(page.locator('h1')).toHaveText('MedTutor.');
 });
 
 test('low-power fallback does not initialize a scroll scene',async({page})=>{
@@ -84,19 +84,19 @@ test('closing scene connects to real email and Personal',async({page,context})=>
  await page.locator('.personal-ending-link').click();await expect(page).toHaveURL(/\/personal$/);
 });
 
-test('touch orbit snaps between real frames and the reel advances without capturing vertical gestures',async({page},info)=>{
+test('touch project stage and reel change slides without capturing vertical gestures',async({page},info)=>{
  test.skip(info.project.name!=='mobile','Touch-specific check');
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/work');
- const rail=page.locator('.orbit-rail');await rail.scrollIntoViewIfNeeded();
+ const rail=page.locator('.selected-stage-stack');await rail.scrollIntoViewIfNeeded();
  const client=await page.context().newCDPSession(page);
  async function swipe(locator,vertical=false){const box=await locator.boundingBox();const x1=box.x+Math.min(box.width*.78,280),x2=box.x+Math.max(30,box.width*.18);const y=Math.max(115,Math.min(600,box.y+100));await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:x1,y,id:1}]});for(const fraction of [.25,.5,.75,1])await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:vertical?x1+3:x1+(x2-x1)*fraction,y:vertical?y-100*fraction:y+3,id:1}]});await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
- await swipe(rail);await expect.poll(()=>rail.evaluate(node=>node.scrollLeft)).toBeGreaterThan(50);
+ await swipe(rail);await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true]) h3')).toHaveText('FutureVLA');
  const reel=page.locator('.interactive-reel');await reel.scrollIntoViewIfNeeded();await swipe(reel);
  await expect(page.getByRole('tab',{name:'02 / Tương tác'})).toHaveAttribute('aria-selected','true');
  await swipe(reel,true);await expect(page.getByRole('tab',{name:'02 / Tương tác'})).toHaveAttribute('aria-selected','true');
 });
 
-test('normal-motion route revisits clean up the scene and anchors escape the orbit',async({page},info)=>{
+test('normal-motion route revisits clean up scenes and preserve direct anchors',async({page},info)=>{
  await page.emulateMedia({reducedMotion:'no-preference'});const errors=[];page.on('pageerror',error=>errors.push(error.message));
  await page.goto('/work');
  for(let index=0;index<2;index++){

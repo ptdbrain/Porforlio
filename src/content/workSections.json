@@ -1,0 +1,98 @@
+{
+  "process": {
+    "eyebrow": "MY PROCESS / 01",
+    "heading": {
+      "vi": "Một ý tưởng chỉ là khởi đầu.",
+      "en": "An idea is only the beginning."
+    },
+    "intro": {
+      "vi": "Tôi hướng tới việc bắt đầu bằng một câu hỏi, kiểm chứng bằng thử nghiệm, xây thành hệ thống và cải thiện dựa trên kết quả. Đây là định hướng, không phải một quy trình cứng cho mọi dự án.",
+      "en": "I aim to start with a question, test ideas, build a system and improve it through evaluation. This is a working direction, not a rigid sequence claimed for every project."
+    },
+    "ending": {
+      "vi": "Từ một câu hỏi đến một thứ có thể hoạt động.",
+      "en": "From a question to something that works."
+    },
+    "steps": [
+      {
+        "id": "explore",
+        "label": "Explore",
+        "title": {
+          "vi": "Hiểu bài toán",
+          "en": "Understand the problem"
+        },
+        "description": {
+          "vi": "Tìm hiểu tài liệu, bối cảnh và tiêu chí thành công.",
+          "en": "Explore the context, documentation and success criteria."
+        },
+        "shape": "question",
+        "example": {
+          "slug": "medtutor",
+          "field": "problem"
+        }
+      },
+      {
+        "id": "experiment",
+        "label": "Experiment",
+        "title": {
+          "vi": "Thử giả thuyết",
+          "en": "Test a hypothesis"
+        },
+        "description": {
+          "vi": "Thử các phương án và quan sát kết quả trong phạm vi đã xác định.",
+          "en": "Try alternatives and inspect results within a defined scope."
+        },
+        "shape": "experiment",
+        "example": {
+          "slug": "pso-optimize",
+          "field": "implementation"
+        }
+      },
+      {
+        "id": "build",
+        "label": "Build",
+        "title": {
+          "vi": "Kết nối hệ thống",
+          "en": "Connect the system"
+        },
+        "description": {
+          "vi": "Ghép dữ liệu, mô hình, API và giao diện thành prototype.",
+          "en": "Connect data, models, APIs and interfaces into a prototype."
+        },
+        "shape": "build",
+        "example": {
+          "slug": "parking-ai",
+          "field": "implementation"
+        }
+      },
+      {
+        "id": "improve",
+        "label": "Improve",
+        "title": {
+          "vi": "Đánh giá & lặp lại",
+          "en": "Evaluate & iterate"
+        },
+        "description": {
+          "vi": "Kiểm tra giới hạn, phân tích lỗi và xác định bước cải thiện.",
+          "en": "Inspect limitations, analyze errors and identify improvements."
+        },
+        "shape": "improve",
+        "example": {
+          "slug": "medtutor",
+          "field": "constraints"
+        }
+      }
+    ]
+  },
+  "selected": {
+    "eyebrow": "SELECTED WORK / 02",
+    "heading": {
+      "vi": "Những điều tôi đã xây.",
+      "en": "Things I’ve built."
+    },
+    "intro": {
+      "vi": "Một vài dự án cho thấy cách tôi tiếp cận bài toán, thử nghiệm và xây dựng hệ thống.",
+      "en": "A few projects that show how I approach problems, experiment and build systems."
+    }
+  }
+}

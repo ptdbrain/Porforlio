@@ -56,18 +56,14 @@ test('project index combines category, stack and accent-insensitive search',asyn
   await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
 });
 
-test('skills words and mobile accordions expose real project evidence',async({page},info)=>{
+test('selected works replace the abstract skills menu with project evidence',async({page})=>{
   await page.goto('/work');
-  if(info.project.name==='mobile'){
-    const group=page.locator('.mobile-skill-scenes details').filter({has:page.locator('summary',{hasText:'MODELS'})});await group.locator('summary').click();await expect(group).toContainText('FutureVLA');
-    await expect(group.getByRole('link',{name:'Xem minh chứng'}).first()).toHaveAttribute('href','/projects/future-vla#implementation');
-  }else{
-    await page.locator('.type-wall').getByRole('button',{name:/MODELS/}).click();
-    await expect(page.locator('.wall-evidence')).toContainText('FutureVLA');
-    await page.locator('.type-wall').getByRole('button',{name:/DATA/}).click();
-    await expect(page.locator('.wall-evidence')).toContainText('SentinelAI');
-    await expect(page.locator('.wall-evidence')).not.toContainText('MedTutor');
-  }
+  await expect(page.locator('.type-wall,.mobile-skill-scenes,.skills-in-motion')).toHaveCount(0);
+  await expect(page.locator('.selected-works')).toHaveCount(1);
+  await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true])')).toContainText('MedTutor');
+  await page.getByRole('button',{name:'Xem FutureVLA',exact:true}).click();
+  await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true])')).toContainText('PyTorch');
+  await expect(page.locator('.selected-stage-link')).toHaveAttribute('href','/projects/future-vla');
 });
 
 test('case study is directly addressable and its architecture is interactive',async({page})=>{

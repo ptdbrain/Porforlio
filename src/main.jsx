@@ -3,6 +3,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.jsx';
 import '../editorial.css';
 import '../cinema.css';
+import '../work-sections.css';
 
 const root = document.getElementById('root');
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
