@@ -3,9 +3,9 @@ const {test,expect}=require('@playwright/test');
 test('cold open identifies the person and keeps project/CV actions immediately accessible',async({page})=>{
  await page.goto('/work');await expect(page.locator('.cold-identity')).toContainText('PHAN TRỌNG ĐẠT');
  await expect(page.locator('.cold-focus')).toContainText('COMPUTER VISION');
- await expect(page.locator('.cold-actions a')).toBeInViewport();
- await expect(page.locator('.cold-actions [aria-disabled=true]')).toContainText('CV');
- await page.locator('.cold-actions a').click();await expect(page).toHaveURL(/#selected-work$/);
+ await expect(page.locator('.cold-actions a').first()).toBeInViewport();
+ await expect(page.locator('.cold-actions a[href="/CV_PhanTrongDat.pdf"]')).toBeVisible();
+ await page.locator('.cold-actions a').first().click();await expect(page).toHaveURL(/#selected-work$/);
 });
 
 test('three distinct project worlds show documented scope, not generated results',async({page})=>{
@@ -16,7 +16,7 @@ test('three distinct project worlds show documented scope, not generated results
  await expect(page.locator('.demo-honesty')).toContainText('không gọi AI');
  await expect(page.locator('.research-proof')).toContainText('Chưa bổ sung phép đo');
  await expect(page.locator('.metric-grid')).toHaveCount(0);
- await page.locator('.film-tabs').getByRole('button',{name:'Chi tiết tính năng'}).click();await expect(page.locator('.film-annotation')).toContainText('Backend FastAPI');
+ await page.locator('.film-tabs').getByRole('button',{name:'Chi tiết tính năng'}).click();await expect(page.locator('.film-annotation')).toContainText('weighted RRF');
  await page.locator('.film-layers').getByRole('button',{name:/API/}).click();await expect(page.locator('.layer-description')).toContainText('FastAPI');
 });
 
@@ -30,7 +30,7 @@ test('research process opens an accessible detail overlay and restores focus',as
 test('interactive fallback reel supports tabs and arrow keys without a fake live request',async({page})=>{
  const requests=[];page.on('request',request=>{if(request.method()==='POST')requests.push(request.url());});
  await page.goto('/work');const world=page.locator('.interactive-world');
- await world.getByRole('tab',{name:'03 / Kết quả'}).click();await expect(world.getByRole('tabpanel')).toContainText('Prototype hỗ trợ');
+ await world.getByRole('tab',{name:'03 / Kết quả'}).click();await expect(world.getByRole('tabpanel')).toContainText('38/38');
  await world.getByRole('button',{name:'Khung tiếp theo'}).click();await expect(world.getByRole('tab',{name:'04 / Công nghệ'})).toHaveAttribute('aria-selected','true');
  await world.getByRole('button',{name:'Khung trước'}).click();
  await world.getByRole('tab',{name:'03 / Kết quả'}).focus();await page.keyboard.press('Home');

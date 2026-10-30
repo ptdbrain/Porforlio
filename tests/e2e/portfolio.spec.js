@@ -45,7 +45,7 @@ test('project index combines category, stack and accent-insensitive search',asyn
   await page.goto('/work');const archive=page.locator('#archive');
   await expect(archive.locator('.cinema-index-entry')).toHaveCount(data.projects.length);
   await archive.getByRole('combobox',{name:'Danh mục'}).selectOption('research');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(2);
+  await expect(archive.locator('.cinema-index-entry')).toHaveCount(data.projects.filter(project=>project.category==='research').length);
   await archive.getByRole('combobox',{name:'Stack'}).selectOption('MATLAB');
   await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
   await expect(archive.locator('h3')).toContainText('PSO-Optimize');
@@ -70,21 +70,21 @@ test('case study is directly addressable and its architecture is interactive',as
   await page.goto('/projects/medtutor');
   await expect(page.locator('h1')).toHaveText('MedTutor.');
   for(const id of ['problem','contribution','architecture','implementation','results','lessons','links'])await expect(page.locator(`#${id}`)).toBeAttached();
-  await page.getByRole('button',{name:'03 Retrieve'}).click();
+  await page.getByRole('button',{name:'02 Retrieve'}).click();
   await expect(page.locator('.architecture-detail')).toContainText('Dense + BM25');
-  await expect(page.locator('.case-source a')).toHaveAttribute('href',/github.com\/ptdbrain\/med-bot/);
+  await expect(page.locator('.case-sources a').first()).toHaveAttribute('href',/github.com\/ptdbrain\/med-bot/);
   await page.reload();await expect(page).toHaveTitle(/MedTutor/);
   await page.locator('.back-link').click();await expect(page).toHaveURL(/\/work#selected-work$/);
 });
 
 test('missing content stays intentional and contact links are actionable',async({page,context})=>{
-  await page.goto('/personal');await expect(page.locator('.personal-bio')).toContainText('sẽ được bổ sung');
+  await page.goto('/personal');await expect(page.locator('.personal-bio')).toContainText('Đại học Bách khoa Hà Nội');
   expect(await page.locator('img[src=""]').count()).toBe(0);
   await expect(page.locator('.training-card')).toContainText('Đã hoàn thành');
   await page.goto('/contact');
   await expect(page.getByRole('link',{name:'LinkedIn'})).toHaveAttribute('href',data.identity.linkedin);
   await expect(page.locator('.email-link')).toHaveAttribute('href',`mailto:${data.identity.email}`);
-  await expect(page.locator('.text-cv')).toHaveAttribute('aria-disabled','true');
+  await expect(page.locator('.text-cv')).toHaveAttribute('href','/CV_PhanTrongDat.pdf');
   await context.grantPermissions(['clipboard-read','clipboard-write']);
   await page.getByRole('button',{name:'Sao chép email'}).click();
   await expect(page.getByRole('button',{name:'Đã sao chép'})).toBeVisible();

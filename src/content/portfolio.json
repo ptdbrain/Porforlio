@@ -7,10 +7,10 @@
     "phone": "0382 977 551",
     "github": "https://github.com/ptdbrain",
     "linkedin": "https://www.linkedin.com/in/phantrongdat-ptdbrain/",
-    "cv": "",
+    "cv": "/CV_PhanTrongDat.pdf",
     "location": {
-      "vi": "",
-      "en": ""
+      "vi": "Hà Nội, Việt Nam",
+      "en": "Hanoi, Vietnam"
     },
     "availability": {
       "vi": "",
@@ -21,13 +21,13 @@
       "en": ""
     },
     "personalBio": {
-      "vi": "",
-      "en": ""
+      "vi": "Tôi là Phan Trọng Đạt, sinh viên Khoa học Máy tính tại Đại học Bách khoa Hà Nội. Tôi quan tâm NLP, mô hình chủ đề, Computer Vision và các hệ thống AI có thể sử dụng được: từ pipeline dữ liệu, RAG đến ứng dụng edge/IoT. Tôi là đồng tác giả bài LLMFeed tại EMNLP 2026; phần công việc tôi tập trung là triển khai và đánh giá thực nghiệm.",
+      "en": "I am Phan Trong Dat, a Computer Science student at Hanoi University of Science and Technology. My interests span NLP, topic modeling, computer vision and practical AI systems, from data pipelines and RAG to edge/IoT applications. I co-authored LLMFeed at EMNLP 2026, contributing to implementation and experimental evaluation."
     },
     "traits": [],
     "currentRole": {
-      "vi": "",
-      "en": ""
+      "vi": "Sinh viên Khoa học Máy tính · AI/NLP",
+      "en": "Computer Science student · AI/NLP"
     }
   },
   "assets": {
@@ -201,17 +201,17 @@
         "en": "High school"
       },
       "school": {
-        "vi": "",
-        "en": ""
+        "vi": "THPT Chuyên Vĩnh Phúc",
+        "en": "Vinh Phuc High School for the Gifted"
       },
-      "period": "",
+      "period": "08/2020 – 07/2023",
       "location": {
         "vi": "",
         "en": ""
       },
       "story": {
-        "vi": "",
-        "en": ""
+        "vi": "Học chuyên Tin học.",
+        "en": "Specialized in Information Technology."
       },
       "achievements": [],
       "image": {
@@ -230,17 +230,17 @@
         "en": "University"
       },
       "school": {
-        "vi": "",
-        "en": ""
+        "vi": "Đại học Bách khoa Hà Nội",
+        "en": "Hanoi University of Science and Technology"
       },
-      "period": "",
+      "period": "2023 – Present",
       "location": {
         "vi": "",
         "en": ""
       },
       "story": {
-        "vi": "",
-        "en": ""
+        "vi": "Sinh viên chương trình Cử nhân Khoa học Máy tính. Các học phần trong CV gồm Machine Learning, Deep Learning, NLP, Computer Vision, Data Science, DSA, AI và cơ sở dữ liệu.",
+        "en": "Bachelor of Science in Computer Science student. CV coursework includes machine learning, deep learning, NLP, computer vision, data science, algorithms/data structures, AI and database systems."
       },
       "achievements": [],
       "image": {
@@ -308,7 +308,182 @@
     },
     "source": "https://vinuni.edu.vn/aithucchien/"
   },
-  "achievements": [],
+  "achievements": [
+    {
+      "id": "llmfeed-emnlp",
+      "title": {
+        "vi": "LLMFeed · EMNLP 2026 Main Conference",
+        "en": "LLMFeed · EMNLP 2026 Main Conference"
+      },
+      "date": "2026",
+      "organization": "EMNLP / ACL",
+      "result": {
+        "vi": "Đồng tác giả thứ hai của bài LLM Feedback for Topic Model with Preference Optimization and Contrastive Learning.",
+        "en": "Second author of LLM Feedback for Topic Model with Preference Optimization and Contrastive Learning."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "https://aclanthology.org/2026.emnlp-main.265/",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "national-science-2023",
+      "title": {
+        "vi": "Giải Nhì · Khoa học Kỹ thuật cấp quốc gia",
+        "en": "Second Prize · National Science & Technology Competition"
+      },
+      "date": "2023",
+      "organization": "",
+      "result": {
+        "vi": "Giải Nhì cuộc thi Khoa học Kỹ thuật dành cho học sinh, theo CV.",
+        "en": "Second Prize in the national student science and technology competition, according to the CV."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "/CV_PhanTrongDat.pdf",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "venture-x-2026",
+      "title": {
+        "vi": "Top 10 & Giải Khán giả · Venture X",
+        "en": "Top 10 & People’s Choice · Venture X"
+      },
+      "date": "2026",
+      "organization": "E-Lab, VinUniversity",
+      "result": {
+        "vi": "Top 10 và People’s Choice Award tại Venture X 2026, theo CV.",
+        "en": "Top 10 and People’s Choice Award at Venture X 2026, according to the CV."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "/CV_PhanTrongDat.pdf",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "youth-creativity-2022",
+      "title": {
+        "vi": "Giải Nhì · Sáng tạo trẻ cấp tỉnh",
+        "en": "Second Prize · Provincial Youth Creativity Contest"
+      },
+      "date": "2022",
+      "organization": "",
+      "result": {
+        "vi": "Giải Nhì cuộc thi Sáng tạo trẻ cấp tỉnh, theo CV.",
+        "en": "Second Prize in the provincial youth creativity contest, according to the CV."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "/CV_PhanTrongDat.pdf",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "robotics-runner-up",
+      "title": {
+        "vi": "Mentor đội á quân · Vietnam Robotics Challenge",
+        "en": "Runner-up Team Mentor · Vietnam Robotics Challenge"
+      },
+      "date": "2022",
+      "organization": "Vietnam Robotics Challenge",
+      "result": {
+        "vi": "Hướng dẫn đội học sinh đạt á quân, theo CV.",
+        "en": "Mentored a runner-up student team, according to the CV."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "/CV_PhanTrongDat.pdf",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "badminton-club",
+      "title": {
+        "vi": "Chủ nhiệm Câu lạc bộ Cầu lông",
+        "en": "Badminton Club President"
+      },
+      "date": "2022",
+      "organization": "",
+      "result": {
+        "vi": "Vai trò lãnh đạo câu lạc bộ được ghi trong CV.",
+        "en": "Club leadership recorded in the CV."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo CV do tôi cung cấp.",
+        "en": "Recorded in my supplied CV."
+      },
+      "evidence": "/CV_PhanTrongDat.pdf",
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      }
+    }
+  ],
   "experiences": [
     {
       "id": "labguard-team",
@@ -325,12 +500,12 @@
         "en": "Lab requirements and evaluation rubrics live in different places. LabGuard brings them together into a pre-submission check that highlights missing evidence."
       },
       "contribution": {
-        "vi": "README của nhóm ghi nhận vai trò Product Owner, phụ trách spec và impact. Phần việc chi tiết và kết quả tác động sẽ được bổ sung.",
-        "en": "The team README identifies my role as Product Owner, responsible for specification and impact. Detailed contributions and measured impact remain to be added."
+        "vi": "Tôi phụ trách Product Owner, specification và impact. Reflection cá nhân ghi rõ các phần: định nghĩa sản phẩm một câu, so sánh ba ứng viên, conditional automation, cost-of-error và non-goals. Tôi xác định ranh giới chỉ đọc, không sửa/nộp thay và chuyển tiêu chí semantic sang Human review; không quy phần backend/frontend của thành viên khác cho mình.",
+        "en": "I was responsible for product ownership, specification and impact. My reflection identifies the one-sentence product definition, comparison of three candidates, conditional automation, cost of error and non-goals. I defined read-only boundaries, no automatic editing/submission and human review for semantic criteria, without claiming teammates’ backend/frontend work."
       },
       "outcome": {
-        "vi": "Prototype hỗ trợ nhiều provider và repo demo chưa hoàn thiện. README ghi nhận tôi phụ trách Product Owner, spec và impact; chưa bổ sung số liệu tác động hoặc kết quả cuộc thi.",
-        "en": "The prototype supports multiple providers and an intentionally incomplete demo repository. The README identifies my role as Product Owner, specification and impact; measured impact and competition results have not been added."
+        "vi": "Repo hỗ trợ nhiều AI provider và checker chỉ đọc. Báo cáo eval lưu tiến trình 23/24 → 24/24 → 38/38 case sau khi xử lý false positive từ comment có từ khóa ReAct. Bộ case gồm synthetic và self-test; đây là kết quả nội bộ của nhóm, không phải tỷ lệ chính xác ngoài thực tế hoặc kết quả cuộc thi.",
+        "en": "The repository supports multiple AI providers and read-only checkers. Evaluation documentation records 23/24 → 24/24 → 38/38 cases after fixing a false positive caused by a comment containing ReAct keywords. Cases include synthetic and self-test data; these are internal team results, not real-world accuracy or a competition ranking."
       },
       "image": {
         "src": "",
@@ -341,17 +516,110 @@
       },
       "project": "labguard",
       "evidence": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md"
+    },
+    {
+      "id": "geoit-vnpt",
+      "type": "Kinh nghiệm chuyên môn / Professional experience",
+      "organization": "GeoIT VNPT",
+      "role": {
+        "vi": "Software Engineer",
+        "en": "Software Engineer"
+      },
+      "period": "03/2026 – 07/2026",
+      "sortDate": "2026-03",
+      "challenge": {
+        "vi": "Xử lý và phân tích luồng dữ liệu địa không gian cho ứng dụng dựa trên vị trí.",
+        "en": "Process and analyze geospatial streams for location-based applications."
+      },
+      "contribution": {
+        "vi": "Theo CV, tôi phát triển hệ thống địa không gian tích hợp AI, backend service và workflow xử lý dữ liệu; thiết kế, triển khai pipeline cho các luồng dữ liệu này.",
+        "en": "According to my CV, I developed AI-integrated geospatial systems, backend services and data workflows, and designed/implemented stream-processing pipelines."
+      },
+      "outcome": {
+        "vi": "Phạm vi công việc được ghi trong CV; chưa có số liệu latency/throughput hoặc case study công khai từ công ty.",
+        "en": "Responsibilities are documented in the CV; company-approved latency/throughput figures and a public case study are not provided."
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "evidence": "/CV_PhanTrongDat.pdf"
+    },
+    {
+      "id": "ba-gps",
+      "type": "Kinh nghiệm chuyên môn / Professional experience",
+      "organization": "BA GPS",
+      "role": {
+        "vi": "AI Intern",
+        "en": "AI Intern"
+      },
+      "period": "06/2024 – 12/2024",
+      "sortDate": "2024-06",
+      "challenge": {
+        "vi": "Đưa module Computer Vision vào phần cứng nhúng có giới hạn tài nguyên.",
+        "en": "Deploy computer-vision modules on resource-constrained embedded hardware."
+      },
+      "contribution": {
+        "vi": "Theo CV, tôi xây module phát hiện vật thể, khuôn mặt và bàn tay bằng Python, OpenCV, YOLO; tối ưu inference để phù hợp giới hạn tính toán của thiết bị.",
+        "en": "According to my CV, I built object, face and hand detection modules with Python, OpenCV and YOLO, optimizing inference for limited device compute."
+      },
+      "outcome": {
+        "vi": "Kinh nghiệm phát triển và tối ưu được ghi trong CV; chưa có phép đo FPS/độ chính xác được phép công bố.",
+        "en": "Development and optimization are recorded in the CV; publishable FPS/accuracy measurements have not been supplied."
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "evidence": "/CV_PhanTrongDat.pdf"
+    },
+    {
+      "id": "robotics-mentor",
+      "type": "Kinh nghiệm chuyên môn / Professional experience",
+      "organization": "Vietnam Robotics Challenge",
+      "role": {
+        "vi": "Robotics Developer & Mentor",
+        "en": "Robotics Developer & Mentor"
+      },
+      "period": "2021 – 2022",
+      "sortDate": "2021",
+      "challenge": {
+        "vi": "Vận hành robot ổn định trong điều kiện thi đấu.",
+        "en": "Operate robots reliably under competition conditions."
+      },
+      "contribution": {
+        "vi": "Tôi thiết kế/lập trình robot thi đấu, xây logic chuyển động và tích hợp cảm biến; đồng thời hướng dẫn đội học sinh.",
+        "en": "I designed/programmed competition robots, developed motion logic and integrated sensors, while mentoring a student team."
+      },
+      "outcome": {
+        "vi": "CV ghi nhận đội được hướng dẫn đạt á quân cấp quốc gia năm 2022; minh chứng cuộc thi riêng chưa được bổ sung.",
+        "en": "The CV records mentoring a national runner-up team in 2022; separate competition evidence has not been supplied."
+      },
+      "image": {
+        "src": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        }
+      },
+      "evidence": "/CV_PhanTrongDat.pdf"
     }
   ],
   "sports": [
     {
       "title": {
-        "vi": "",
-        "en": ""
+        "vi": "Cầu lông",
+        "en": "Badminton"
       },
       "story": {
-        "vi": "",
-        "en": ""
+        "vi": "Tôi từng là Chủ nhiệm Câu lạc bộ Cầu lông năm 2022.",
+        "en": "I served as Badminton Club President in 2022."
       },
       "image": {
         "src": "",
@@ -457,6 +725,323 @@
   },
   "projects": [
     {
+      "slug": "dpotm",
+      "repo": "DPOTM",
+      "title": "LLMFeed / DPOTM",
+      "subtitle": {
+        "vi": "Cho mô hình chủ đề học từ phản hồi.",
+        "en": "Teaching topic models through feedback."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "PyTorch",
+        "Neural Topic Models",
+        "DPO",
+        "Sentence Transformers",
+        "Weights & Biases"
+      ],
+      "description": {
+        "vi": "Nghiên cứu cải thiện neural topic modeling bằng phản hồi LLM, preference optimization và contrastive learning; đồng tác giả bài EMNLP 2026.",
+        "en": "Research on neural topic modeling with LLM feedback, preference optimization and contrastive learning; co-authored at EMNLP 2026."
+      },
+      "problem": {
+        "vi": "Các chủ đề tự động có thể khớp dữ liệu nhưng chưa phù hợp với cách con người muốn nhóm và diễn giải nội dung. DPOTM khảo sát việc bổ sung tín hiệu ưu tiên vào quá trình học để điều chỉnh phân phối chủ đề và từ khóa.",
+        "en": "Automatically learned topics may fit a corpus without matching human preferences for grouping and interpretation. DPOTM explores preference signals for adjusting topic and keyword distributions."
+      },
+      "implementation": {
+        "vi": "Pipeline Python nạp bag-of-words, embedding tài liệu và embedding từ; hỗ trợ ECRTM, FASTopic, CTM, ETM và các baseline khác. Phần ECRTM có nhánh fine-tune dùng cặp ưu tiên topic–word/document–topic, loss DPO-like và regularization so với phân phối tham chiếu. Script cho phép chọn cách tạo preference, lưu checkpoint, đánh giá theo epoch và theo dõi bằng Weights & Biases.",
+        "en": "The Python pipeline loads bag-of-words, document embeddings and word embeddings, with ECRTM, FASTopic, CTM, ETM and other baselines. ECRTM includes preference-based fine-tuning for topic–word and document–topic pairs, DPO-like losses and reference-distribution regularization. Scripts configure preference generation, checkpoints, per-epoch evaluation and Weights & Biases tracking."
+      },
+      "result": {
+        "vi": "Bài LLM Feedback for Topic Model with Preference Optimization and Contrastive Learning đã có trên ACL Anthology, EMNLP 2026 Main Conference. Abstract báo cáo mức tăng topic coherence 7,6% và hơn 10% cho phân phối document–topic trên 20 Newsgroups. Đây là kết quả của nhóm tác giả trong bài báo, không phải phép đo tôi vừa chạy lại từ checkout DPOTM.",
+        "en": "LLM Feedback for Topic Model with Preference Optimization and Contrastive Learning is listed in the EMNLP 2026 main proceedings on ACL Anthology. Its abstract reports a 7.6% topic-coherence gain and over 10% improvement in document–topic distributions on 20 Newsgroups. These are the author team’s paper results, not measurements rerun from this DPOTM checkout."
+      },
+      "constraints": {
+        "vi": "README DPOTM còn giới thiệu mã NeuroMax và dẫn tác giả gốc; CV liên kết DPOTM với LLMFeed. Không đồng nhất công trình NeuroMax với bài LLMFeed hoặc coi mọi baseline trong repo là đóng góp mới của tôi.",
+        "en": "The DPOTM README still describes NeuroMax code and cites its original authors, while the CV links DPOTM to LLMFeed. NeuroMax and LLMFeed are distinct works, and repository baselines are not all claimed as my original contributions."
+      },
+      "pipeline": [
+        {
+          "title": "Corpus",
+          "detail": {
+            "vi": "BoW và contextual embeddings",
+            "en": "BoW and contextual embeddings"
+          }
+        },
+        {
+          "title": "Topic model",
+          "detail": {
+            "vi": "Huấn luyện mô hình chủ đề và phân phối tham chiếu",
+            "en": "Train topic models and reference distributions"
+          }
+        },
+        {
+          "title": "Preference",
+          "detail": {
+            "vi": "Tinh chỉnh topic–word / document–topic",
+            "en": "Fine-tune topic–word / document–topic preferences"
+          }
+        },
+        {
+          "title": "Evaluate",
+          "detail": {
+            "vi": "Coherence, diversity và downstream evaluation",
+            "en": "Coherence, diversity and downstream evaluation"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "Đồng tác giả · Tác giả thứ hai",
+        "en": "Co-author · Second author"
+      },
+      "period": "2025 – 2026",
+      "personalContribution": {
+        "vi": "Theo CV, tôi tham gia triển khai và đánh giá thực nghiệm LLMFeed, chạy các baseline gồm LISA và TopicGPT, so sánh coherence/diversity và mở rộng dataset handler, script đánh giá, cấu hình huấn luyện phục vụ ablation. ACL Anthology xác nhận tên Dat Phan Trong ở vị trí tác giả thứ hai; phần việc cụ thể được ghi theo CV, không suy ra từ thứ tự tác giả.",
+        "en": "My CV records contributing to LLMFeed implementation and experimental evaluation, benchmarking LISA and TopicGPT, comparing coherence/diversity, and extending dataset handlers, evaluation scripts and training configurations for ablations. ACL Anthology lists Dat Phan Trong second; specific responsibilities are taken from the CV, not inferred from author order."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/DPOTM",
+        "demo": "",
+        "report": "https://aclanthology.org/2026.emnlp-main.265/"
+      },
+      "source": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "0a293be6d50a4738569a28cc3137a058f87962a0",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "main.py",
+          "basic_trainer.py",
+          "utils/hpo.py",
+          "utils/llm.py",
+          "models/ECRTM/ECRTM.py",
+          "evaluations/evaluate.py",
+          "bash/train.sh"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/README.md"
+        },
+        {
+          "label": "models/ECRTM/ECRTM.py",
+          "href": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/models/ECRTM/ECRTM.py"
+        },
+        {
+          "label": "basic_trainer.py",
+          "href": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/basic_trainer.py"
+        },
+        {
+          "label": "main.py",
+          "href": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/main.py"
+        },
+        {
+          "label": "bash/train.sh",
+          "href": "https://github.com/ptdbrain/DPOTM/blob/0a293be6d50a4738569a28cc3137a058f87962a0/bash/train.sh"
+        },
+        {
+          "label": "CV · LLMFeed contribution",
+          "href": "/CV_PhanTrongDat.pdf"
+        },
+        {
+          "label": "EMNLP 2026 · ACL Anthology",
+          "href": "https://aclanthology.org/2026.emnlp-main.265/"
+        }
+      ]
+    },
+    {
+      "slug": "advertest",
+      "repo": "AdverTest",
+      "title": "AdverTest",
+      "subtitle": {
+        "vi": "Đo mô hình ở những điều kiện khó.",
+        "en": "Testing models under challenging conditions."
+      },
+      "category": "software",
+      "status": "in-progress",
+      "featured": false,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PyTorch",
+        "Next.js",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
+      "description": {
+        "vi": "Nền tảng kiểm thử độ bền mô hình thị giác: tổ chức dữ liệu, tạo điều kiện thử thách, so sánh kết quả và lưu bằng chứng cho từng lần chạy.",
+        "en": "A visual-model robustness platform that organizes data, applies challenging conditions, compares results and preserves run evidence."
+      },
+      "problem": {
+        "vi": "Độ chính xác trên ảnh sạch chưa cho biết mô hình hoạt động ra sao khi có nhiễu, thời tiết xấu, che khuất hoặc perturbation đối kháng. AdverTest gom cấu hình, dữ liệu, model và báo cáo vào một workflow để so sánh có thể truy vết.",
+        "en": "Clean-image accuracy does not explain behavior under noise, adverse weather, occlusion or adversarial perturbations. AdverTest brings configuration, data, models and reporting into a traceable comparison workflow."
+      },
+      "implementation": {
+        "vi": "Backend FastAPI tách adapter mô hình, catalog phép biến đổi, hàng đợi job, storage và evaluation. Mã có adapter YOLO11, Faster R-CNN, RT-DETR, SAM2 và mô hình 3D; các nhóm thử nghiệm gồm corruption, weather, occlusion, PGD/FGSM, black-box và patch. BenchmarkProtocol khóa dataset, recipe, sample hash, seed và phiên bản metric; manifest lưu checkpoint và môi trường riêng. Frontend Next.js hiển thị thí nghiệm, so sánh ảnh/kết quả, analytics và review; có mô-đun hard-example/closed-loop training.",
+        "en": "The FastAPI backend separates model adapters, transformation catalog, jobs, storage and evaluation. Adapters cover YOLO11, Faster R-CNN, RT-DETR, SAM2 and 3D models; test groups include corruption, weather, occlusion, PGD/FGSM, black-box methods and patches. BenchmarkProtocol freezes dataset, recipe, sample hashes, seed and metric versions, while a separate manifest records checkpoint and environment. Next.js provides experiment, visual comparison, analytics and review screens, alongside hard-example and closed-loop training modules."
+      },
+      "result": {
+        "vi": "Repo có pipeline, test và script kiểm tra cho nhiều nhánh, cùng cấu hình local Docker và deployment tách API/worker. Chưa tái chạy các workload GPU hoặc xác nhận một benchmark tổng hợp trong lần rà soát này; chất lượng từng adapter và chế độ demo cần xem theo run manifest cụ thể.",
+        "en": "The repository provides pipelines, tests, verification scripts and local Docker / split API-worker deployment configuration. GPU workloads were not rerun in this review and no aggregate benchmark is asserted; adapter quality and demo modes must be assessed from individual run manifests."
+      },
+      "constraints": {
+        "vi": "Không coi các số liệu fixture/simulation là kết quả inference thật. Một số plugin có trạng thái experimental hoặc disabled; hỗ trợ trong catalog không đồng nghĩa mọi tổ hợp dataset/model/attack đã được kiểm chứng.",
+        "en": "Fixture and simulation metrics are not real-inference results. Some plugins are experimental or disabled; catalog support does not prove every dataset/model/attack combination has been validated."
+      },
+      "pipeline": [
+        {
+          "title": "Configure",
+          "detail": {
+            "vi": "Dataset/model version và protocol khóa",
+            "en": "Dataset/model versions and a locked protocol"
+          }
+        },
+        {
+          "title": "Challenge",
+          "detail": {
+            "vi": "Phép biến đổi theo modality và capability",
+            "en": "Capability- and modality-compatible transformations"
+          }
+        },
+        {
+          "title": "Run",
+          "detail": {
+            "vi": "Job worker, inference và artifacts",
+            "en": "Job workers, inference and artifacts"
+          }
+        },
+        {
+          "title": "Review",
+          "detail": {
+            "vi": "Metric, visual evidence và so sánh",
+            "en": "Metrics, visual evidence and comparisons"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "Phát triển nền tảng & pipeline kiểm thử",
+        "en": "Platform & evaluation pipeline development"
+      },
+      "period": "2026 – Present",
+      "personalContribution": {
+        "vi": "Tôi phát triển kiến trúc plugin cho phép thử, adapter model/dataset và workflow đánh giá tái lập; xây luồng sinh attack-dataset cho các nhóm gradient/patch. Theo CV, phần tích hợp còn gồm anonymization, AP/degradation evaluation, FastAPI/CLI và benchmark KITTI/YOLO; nhánh defense/retraining đang tiếp tục phát triển.",
+        "en": "I develop attack plugins, model/dataset adapters and reproducible evaluation workflows, including gradient/patch attack-dataset generation. My CV also records anonymization, AP/degradation evaluation, FastAPI/CLI execution and KITTI/YOLO benchmark integration; defense/retraining work is ongoing."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/AdverTest",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/src/pipeline/runner.py",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "75a612471f94e4d6fd7a74c84c8acead68acb3e7",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "deploy/README.md",
+          "deploy/gcp/README.md",
+          "src/main.py",
+          "deploy/sam2_service.py",
+          "scripts/verify_segmentation_pipeline.py",
+          "scripts/e2e_full_pipeline_verification.py",
+          "src/pipeline/runner.py",
+          "src/attacks/catalog.py",
+          "src/evaluation/benchmark_protocol.py",
+          "src/training/closed_loop.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "src/pipeline/runner.py",
+          "href": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/src/pipeline/runner.py"
+        },
+        {
+          "label": "src/attacks/catalog.py",
+          "href": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/src/attacks/catalog.py"
+        },
+        {
+          "label": "src/evaluation/benchmark_protocol.py",
+          "href": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/src/evaluation/benchmark_protocol.py"
+        },
+        {
+          "label": "src/training/closed_loop.py",
+          "href": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/src/training/closed_loop.py"
+        },
+        {
+          "label": "deploy/README.md",
+          "href": "https://github.com/ptdbrain/AdverTest/blob/75a612471f94e4d6fd7a74c84c8acead68acb3e7/deploy/README.md"
+        },
+        {
+          "label": "CV · Projects",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ]
+    },
+    {
       "slug": "medtutor",
       "repo": "med-bot",
       "title": "MedTutor",
@@ -465,7 +1050,7 @@
         "en": "Document questions. Answers with evidence."
       },
       "category": "ai",
-      "status": "prototype",
+      "status": "in-progress",
       "featured": true,
       "stack": [
         "Python",
@@ -473,68 +1058,69 @@
         "RAG",
         "BM25",
         "Qdrant",
+        "BGE-M3",
         "Next.js",
         "Docker"
       ],
       "description": {
-        "vi": "Trợ lý RAG phục vụ học tập y khoa: truy xuất tài liệu, trả lời tiếng Việt kèm trích dẫn và giới hạn phạm vi sử dụng.",
-        "en": "An educational RAG assistant for medical learning, with Vietnamese answers, source citations and scoped guardrails."
+        "vi": "Không gian học tập y khoa dùng RAG: đưa tài liệu và bài giảng vào thư viện, hỏi đáp tiếng Việt, xem nguồn và kiểm tra chất lượng truy xuất.",
+        "en": "A medical-learning RAG workspace for indexing documents and lectures, asking questions in Vietnamese, inspecting sources and evaluating retrieval."
       },
       "problem": {
-        "vi": "Tài liệu học tập nằm rải rác trong ghi chú, PDF và slide. MedTutor tổ chức luồng hỏi đáp dựa trên tài liệu, giữ nguồn tham chiếu đi cùng câu trả lời.",
-        "en": "Learning materials are scattered across notes, PDFs and slides. MedTutor brings document retrieval and cited answers into a single workflow."
+        "vi": "Ghi chú, PDF, slide và bài giảng nằm ở nhiều nơi, khiến việc tìm lại nội dung và kiểm chứng câu trả lời mất công. MedTutor kết nối ingestion, tìm kiếm và trả lời có trích dẫn trong một workspace dành cho học tập.",
+        "en": "Notes, PDFs, slides and lectures are scattered across sources, making information retrieval and answer checking cumbersome. MedTutor connects ingestion, search and cited answers in an educational workspace."
       },
       "implementation": {
-        "vi": "Backend FastAPI hỗ trợ ingest tài liệu, chunk theo cấu trúc và lưu metadata. Các chế độ retrieval gồm naive, hybrid, rerank, parent-child, multi-query, corrective và agentic. Giao diện Next.js kết nối chat, thư viện tài liệu và đánh giá.",
-        "en": "A FastAPI backend ingests structured chunks and metadata. Retrieval modes include naive, hybrid, rerank, parent-child, multi-query, corrective and agentic. A Next.js workspace connects chat, document management and evaluation."
+        "vi": "FastAPI xử lý tài liệu theo cấu trúc, giữ heading, trang, timestamp và hash trong metadata. Nhánh retrieval kết hợp dense search với BM25 bằng weighted RRF, hỗ trợ rerank, parent–child, multi-query, corrective và rule-based agentic routing. Provider thật có BGE-M3, Qdrant hoặc SQLite dense, cross-encoder và Qwen3 qua Ollama; chế độ mặc định dùng mock/lexical để demo không cần key. Next.js kết nối chat, evidence inspector, quản lý tài liệu, ingest và evaluation; audio/video được tìm qua transcript, ảnh đi qua OCR/caption provider.",
+        "en": "FastAPI ingests structured documents with headings, pages, timestamps and content hashes. Retrieval combines dense search and BM25 through weighted RRF, with reranking, parent–child, multi-query, corrective and rule-based agentic routing. Optional real providers include BGE-M3, Qdrant or SQLite dense storage, a cross-encoder and Qwen3 through Ollama; mock/lexical defaults support key-free demos. Next.js connects chat, an evidence inspector, document management, ingestion and evaluation. Audio/video are searched through transcripts, and images use OCR/caption providers."
       },
       "result": {
-        "vi": "Repo có luồng chạy local bằng mock provider và cấu hình tùy chọn cho BGE-M3, Qdrant, Ollama. Đây là công cụ học tập, không dùng để chẩn đoán hay kê đơn. Chưa bổ sung benchmark độc lập.",
-        "en": "The repository provides a local mock-provider path and optional BGE-M3, Qdrant and Ollama integrations. It is an educational tool, with no diagnostic or prescribing scope. Independent benchmarks have not been added."
+        "vi": "README ghi nhận local smoke test 6 case: Hit@5 = 1.000 và MRR = 0.833; đây là snapshot trên bộ mẫu nhỏ, không phải benchmark lâm sàng hay phép đo tôi vừa chạy lại. Repo còn có evaluation theo từng câu cho citation, format, thiếu ngữ cảnh và safety, cùng test backend/frontend và cấu hình chạy local.",
+        "en": "The README reports a six-case local smoke snapshot with Hit@5 = 1.000 and MRR = 0.833. This is a small sample snapshot, not a clinical benchmark or a run reproduced in this review. The repository also includes per-question citation, format, insufficient-context and safety evaluation, backend/frontend tests and local run configuration."
       },
       "constraints": {
-        "vi": "Các adapter OCR và mô hình có chế độ mock mặc định. Cấu hình chạy thật và dữ liệu đánh giá cần được ghi rõ khi trình bày kết quả.",
-        "en": "OCR and model adapters default to mock providers. Real-provider configuration and evaluation data must be specified when reporting results."
+        "vi": "Chỉ phục vụ học tập trên tài liệu cung cấp, không dùng để chẩn đoán hoặc kê đơn. OCR/caption và STT mặc định vẫn mock; video chỉ xử lý transcript. Cần corpus có nhãn và kiểm tra faithfulness/citation entailment trước khi kết luận về độ tin cậy thực tế.",
+        "en": "For learning from supplied documents, with no diagnostic or prescribing scope. OCR/caption and STT default to mock providers, and video processing is transcript-only. A labeled corpus and faithfulness/citation-entailment checks are needed before drawing real-world reliability conclusions."
       },
       "pipeline": [
         {
-          "title": "Documents",
+          "title": "Ingest",
           "detail": {
-            "vi": "PDF · Markdown · DOCX",
-            "en": "PDF · Markdown · DOCX"
-          }
-        },
-        {
-          "title": "Index",
-          "detail": {
-            "vi": "Chunks · metadata",
-            "en": "Chunks · metadata"
+            "vi": "Tài liệu / transcript → chunk có metadata",
+            "en": "Documents / transcripts → metadata-rich chunks"
           }
         },
         {
           "title": "Retrieve",
           "detail": {
-            "vi": "Dense + BM25 · RRF",
-            "en": "Dense + BM25 · RRF"
+            "vi": "Dense + BM25 → weighted RRF",
+            "en": "Dense + BM25 → weighted RRF"
           }
         },
         {
-          "title": "Generate",
+          "title": "Ground",
           "detail": {
-            "vi": "Relevance gate · citations",
-            "en": "Relevance gate · citations"
+            "vi": "Rerank, diversity và relevance gate",
+            "en": "Reranking, diversity and a relevance gate"
+          }
+        },
+        {
+          "title": "Inspect",
+          "detail": {
+            "vi": "Trả lời có nguồn và audit từng câu",
+            "en": "Cited answers and per-question audits"
           }
         }
       ],
       "year": "2026",
       "role": {
-        "vi": "",
-        "en": ""
+        "vi": "Phát triển RAG & evaluation",
+        "en": "RAG & evaluation development"
       },
-      "period": "",
+      "period": "2026 – Present",
       "personalContribution": {
-        "vi": "",
-        "en": ""
+        "vi": "Tôi phát triển trợ lý RAG học tập y khoa đa phương thức bằng tiếng Việt, câu trả lời có trích dẫn và guardrail. Theo CV, tôi triển khai bảy chiến lược retrieval cùng evaluation harness cho hit@k, MRR, citation rate và safety accuracy; tích hợp BGE-M3, Qdrant và Qwen3/Ollama cho đường chạy model thật.",
+        "en": "I develop a multimodal Vietnamese medical-learning RAG assistant with citations and guardrails. My CV records implementing seven retrieval strategies and an evaluation harness for hit@k, MRR, citation rate and safety accuracy, with BGE-M3, Qdrant and Qwen3/Ollama for the real-model path."
       },
       "lessons": {
         "vi": "",
@@ -555,7 +1141,7 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/med-bot/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -564,15 +1150,352 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "1f7283977436024c75d518ae27a3f7f466c9b4e9",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "mota.md",
+          "README.md",
+          "PRODUCT.md",
+          "app/main.py",
+          "frontend/streamlit_app.py",
+          "app/rag/service.py",
+          "app/ingestion/pipeline.py",
+          "app/config.py",
+          "app/evaluation/retrieval_eval.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/README.md"
+        },
+        {
+          "label": "app/rag/service.py",
+          "href": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/app/rag/service.py"
+        },
+        {
+          "label": "app/ingestion/pipeline.py",
+          "href": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/app/ingestion/pipeline.py"
+        },
+        {
+          "label": "app/config.py",
+          "href": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/app/config.py"
+        },
+        {
+          "label": "app/evaluation/retrieval_eval.py",
+          "href": "https://github.com/ptdbrain/med-bot/blob/1f7283977436024c75d518ae27a3f7f466c9b4e9/app/evaluation/retrieval_eval.py"
+        },
+        {
+          "label": "CV · Projects",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "prism",
+      "repo": "PRISM",
+      "title": "PRISM",
+      "subtitle": {
+        "vi": "Phân bổ từng bit, kiểm tra từng đánh đổi.",
+        "en": "Allocate each bit. Examine each trade-off."
+      },
+      "category": "research",
+      "status": "in-progress",
+      "featured": false,
+      "stack": [
+        "Python",
+        "PyTorch",
+        "CUDA",
+        "Mixed Precision",
+        "LLM Quantization"
+      ],
+      "description": {
+        "vi": "Pipeline nghiên cứu lượng tử hóa trọng số LLM theo mixed precision, phân bổ bit từng layer dưới ngân sách bộ nhớ và đánh giá chất lượng/runtime.",
+        "en": "A research pipeline for mixed-precision LLM weight quantization, with memory-budgeted per-layer bit allocation and quality/runtime evaluation."
+      },
+      "problem": {
+        "vi": "Dùng cùng số bit cho mọi layer có thể lãng phí bộ nhớ hoặc làm giảm chất lượng ở layer nhạy cảm. PRISM nghiên cứu cách dự đoán sensitivity và phân bổ bit có ràng buộc, rồi kiểm tra kết quả bằng artifact có provenance.",
+        "en": "Uniform bit width can waste memory or degrade sensitive layers. PRISM studies sensitivity prediction and constrained bit allocation, followed by provenance-aware artifact evaluation."
+      },
+      "implementation": {
+        "vi": "Stage 0 huấn luyện meta-learner từ feature layer; Stage 1 profiling không dùng calibration data ở đường PRISM-original; Stage 2 giải bài toán gán bit theo ngân sách. Stage 2.5 có QUIC và nhánh CBER dùng split search/guard riêng; Stage 3 materialize RTN và Stage 4 lắp runtime. Mã hiện có thêm CausalRD orchestration, kiểm tra fingerprint/assignment và fallback GEMM khi backend tăng tốc không đáp ứng.",
+        "en": "Stage 0 trains a layer-feature meta-learner; Stage 1 performs data-free profiling on the PRISM-original path; Stage 2 solves budgeted bit allocation. Stage 2.5 offers QUIC and a CBER path with separate search/guard splits; Stage 3 materializes RTN and Stage 4 assembles runtime modules. Current code also provides CausalRD orchestration, fingerprint/assignment checks and GEMM fallback when accelerated backends are unavailable."
+      },
+      "result": {
+        "vi": "Artifact local cho Llama-3.1-8B ghi 224 linear layer, trung bình 3 bit trọng số và 3,125 bit/parameter sau accounting; runtime của run đó là GEMM fallback. Báo cáo engineering ghi kiểm thử CPU, nhưng review vẫn để pending đánh giá GPU/native kernel và phục hồi chất lượng. Không trình bày tỷ lệ nén phần linear như mức giảm RAM toàn mô hình hoặc tuyên bố PRISM thắng baseline.",
+        "en": "A local Llama-3.1-8B artifact records 224 linear layers, 3 average weight bits and 3.125 memory bits per parameter after accounting, with GEMM fallback runtime. Engineering reports record CPU tests, while GPU/native-kernel and quality-recovery validation remain pending. Linear-weight compression is not presented as whole-model RAM reduction or a demonstrated win over baselines."
+      },
+      "constraints": {
+        "vi": "Thông tin đối chiếu từ checkout local do tôi cung cấp vì GitHub công khai trả 404. “Calibration-free” chỉ mô tả đường profiling/gán bit PRISM-original; CBER cần calibration split thật. Các kết quả lịch sử chưa vượt quality gate không được coi là research-ready.",
+        "en": "Reviewed from the user-provided local checkout because public GitHub returns 404. “Calibration-free” applies to PRISM-original profiling/allocation; CBER needs real calibration splits. Historical results that do not pass the quality gate are not treated as research-ready."
+      },
+      "pipeline": [
+        {
+          "title": "Profile",
+          "detail": {
+            "vi": "Dự đoán sensitivity theo layer",
+            "en": "Predict per-layer sensitivity"
+          }
+        },
+        {
+          "title": "Assign",
+          "detail": {
+            "vi": "Gán bit dưới ngân sách bộ nhớ",
+            "en": "Allocate bits under a memory budget"
+          }
+        },
+        {
+          "title": "Correct",
+          "detail": {
+            "vi": "QUIC / CBER có guard",
+            "en": "QUIC / guarded CBER"
+          }
+        },
+        {
+          "title": "Runtime",
+          "detail": {
+            "vi": "RTN, runtime và evaluation",
+            "en": "RTN, runtime and evaluation"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "Thiết kế pipeline & triển khai nghiên cứu",
+        "en": "Pipeline design & research implementation"
+      },
+      "period": "2025 – Present",
+      "personalContribution": {
+        "vi": "Theo CV: tôi thiết kế pipeline mixed-precision chi phí thấp, meta-learner Stage 0, data-free profiling và bộ giải gán bit; triển khai QUIC từ dữ liệu synthetic và runtime có Marlin preference/GEMM fallback. Checkout hiện tại được đọc thêm để mô tả các guard và giới hạn mới, không quy mọi thay đổi về sau thành phần đã ghi trong CV.",
+        "en": "My CV records designing the low-cost mixed-precision pipeline, Stage 0 meta-learner, data-free profiling and bit assignment; implementing synthetic-data QUIC correction and runtime assembly with Marlin preference/GEMM fallback. The current checkout was additionally reviewed for newer guards and limits, without treating every later change as CV-confirmed individual work."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/PRISM",
+        "demo": "",
+        "report": ""
+      },
+      "source": "/CV_PhanTrongDat.pdf",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "7796469b5fad1af56725ac3083129b96f51c1cf6",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "prism/causalrd/pipeline.py",
+          "prism/quic/pipeline.py",
+          "docs/reviews/2026-10-26-prism-recovery-code-results.md",
+          "artifacts_from_modal/prism/llama31_8b_stage1_v2/report.md"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        },
+        "access": "local-checkout",
+        "publicReadable": false,
+        "snapshot": "local working tree, including uncommitted changes",
+        "fileHashes": {
+          "README.md": "d6ae16cbe49f7e776d88f3cce38c47f1d56840e8323e1fcb62117e1f1f4fca3e",
+          "prism/causalrd/pipeline.py": "301de4e82bc1afb6432144a4f045e86c25bff8cf93bd4021052341948309f92b",
+          "prism/quic/pipeline.py": "1603c0a1c97c2394bc9f1daa94c6ec87cc88619a60d9f53138e58b3e8c894b51",
+          "docs/reviews/2026-10-26-prism-recovery-code-results.md": "d36fdec33cff91c1c37d4c96f9d417b6fc14c69d4be0c35998d9c45ff524b6fd",
+          "artifacts_from_modal/prism/llama31_8b_stage1_v2/report.md": "2b96e3592396f63cf2a0ea997ca51c815bb0a72ae813546324b289533d253793"
+        }
+      },
+      "sources": [
+        {
+          "label": "CV · PRISM",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ],
+      "yearKind": "project"
+    },
+    {
+      "slug": "brandflow",
+      "repo": "BrainFlow",
+      "title": "BrandFlow",
+      "subtitle": {
+        "vi": "Từ mục tiêu B2B đến kế hoạch có ràng buộc.",
+        "en": "From B2B goals to constrained plans."
+      },
+      "category": "software",
+      "status": "in-progress",
+      "featured": false,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "LangChain",
+        "Groq",
+        "Next.js",
+        "ChromaDB"
+      ],
+      "description": {
+        "vi": "Hệ thống hỗ trợ lập chiến lược marketing B2B, nối phân tích thị trường, chiến lược, ngân sách và phản biện đa vai trò.",
+        "en": "A B2B marketing strategy assistant connecting market analysis, strategy, budgeting and review by multiple roles."
+      },
+      "problem": {
+        "vi": "Kế hoạch do LLM sinh ra có thể thiếu nhất quán giữa mục tiêu, số liệu và ngân sách. BrandFlow tách các bước suy luận khỏi phần tính toán để kiểm soát workflow chiến lược.",
+        "en": "LLM-generated plans can be inconsistent across goals, figures and budgets. BrandFlow separates reasoning stages from arithmetic to control the strategy workflow."
+      },
+      "implementation": {
+        "vi": "FastAPI điều phối các pha CMO: mục tiêu, audit, chiến lược, tactical plan và review CFO/persona. Python xử lý weighted SWOT, gap analysis và ràng buộc ngân sách; ChromaDB giữ ngữ cảnh thương hiệu. Frontend Next.js hiển thị kết quả; design-agent package tách trích xuất DNA, prompt và client sinh ảnh.",
+        "en": "FastAPI orchestrates CMO stages for goals, audit, strategy, tactics and CFO/persona review. Python handles weighted SWOT, gap analysis and budget constraints, while ChromaDB stores brand context. Next.js presents results; a design-agent package separates design DNA extraction, prompts and image-provider access."
+      },
+      "result": {
+        "vi": "Repo có workflow full-stack, hướng dẫn khởi động và báo cáo thiết kế. Chưa có phép đo độc lập về chất lượng chiến lược hoặc hiệu quả marketing; tài liệu design agent còn ghi các giới hạn provider ảnh.",
+        "en": "The repository contains a full-stack workflow, startup instructions and design documentation. Independent strategy-quality or marketing-impact measurements are unavailable, and design-agent documentation records image-provider limitations."
+      },
+      "constraints": {
+        "vi": "Tính toán bằng code chỉ kiểm soát số học, không bảo đảm giả định marketing đúng. Không dùng các tuyên bố tuyệt đối trong README như bằng chứng hiệu quả.",
+        "en": "Code-based arithmetic controls calculations, not the validity of marketing assumptions. Absolute README claims are not treated as effectiveness evidence."
+      },
+      "pipeline": [
+        {
+          "title": "Brief",
+          "detail": {
+            "vi": "Mục tiêu và ràng buộc thương hiệu",
+            "en": "Goals and brand constraints"
+          }
+        },
+        {
+          "title": "Analyze",
+          "detail": {
+            "vi": "Audit, SWOT và gap analysis",
+            "en": "Audit, SWOT and gap analysis"
+          }
+        },
+        {
+          "title": "Plan",
+          "detail": {
+            "vi": "Chiến lược, tactics và ngân sách",
+            "en": "Strategy, tactics and budgets"
+          }
+        },
+        {
+          "title": "Review",
+          "detail": {
+            "vi": "CFO/persona review và giao diện",
+            "en": "CFO/persona review and presentation"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "Phát triển multi-agent & backend",
+        "en": "Multi-agent & backend development"
+      },
+      "period": "2026 – Present",
+      "personalContribution": {
+        "vi": "Tôi phát triển workflow multi-agent B2B theo các pha mục tiêu → audit → chiến lược → ngân sách → review. Theo CV, tôi kết hợp LLM với math engine và budget interceptor bằng Python để xử lý SWOT, gap analysis và kiểm soát ngân sách; đây là phần tách tính toán xác định khỏi sinh nội dung.",
+        "en": "I develop the staged B2B multi-agent workflow from goals and audit through strategy, budgeting and review. My CV records combining LLM agents with a Python math engine and budget interceptors for SWOT, gap analysis and budget enforcement, separating deterministic arithmetic from content generation."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/BrainFlow",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/BrainFlow/blob/d3d9e61171722321651742f87e92c21f52ff308a/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "d3d9e61171722321651742f87e92c21f52ff308a",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "frontend/README.md",
+          "design_agent/README.md",
+          "update_qs.py",
+          "list_models.py",
+          "create_admin.py",
+          "web/app.js",
+          "docs/brandflow_project_report.md",
+          "main.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/BrainFlow/blob/d3d9e61171722321651742f87e92c21f52ff308a/README.md"
+        },
+        {
+          "label": "docs/brandflow_project_report.md",
+          "href": "https://github.com/ptdbrain/BrainFlow/blob/d3d9e61171722321651742f87e92c21f52ff308a/docs/brandflow_project_report.md"
+        },
+        {
+          "label": "design_agent/README.md",
+          "href": "https://github.com/ptdbrain/BrainFlow/blob/d3d9e61171722321651742f87e92c21f52ff308a/design_agent/README.md"
+        },
+        {
+          "label": "CV · Projects",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ]
     },
     {
       "slug": "parking-ai",
       "repo": "ParkingAI",
       "title": "ParkingAI",
       "subtitle": {
-        "vi": "Từ camera đến một hệ thống sự kiện.",
-        "en": "From camera frames to a system of events."
+        "vi": "Prototype bãi đỗ xe theo hướng edge-first, tách pipeline AI bất đồng bộ khỏi API và dashboard thời gian thực.",
+        "en": "An edge-first parking prototype that separates asynchronous AI processing from APIs and a live dashboard."
       },
       "category": "ai",
       "status": "prototype",
@@ -594,8 +1517,8 @@
         "en": "Camera systems need to process frames while serving a responsive interface, without inference blocking the API or queues growing without bounds."
       },
       "implementation": {
-        "vi": "Các worker YOLO, OCR, Re-ID và VLM giao tiếp bằng bounded asyncio.Queue. Backend FastAPI nhận sự kiện, phục vụ REST/WebSocket và truy cập cơ sở dữ liệu qua SQLAlchemy.",
-        "en": "YOLO, OCR, Re-ID and VLM worker boundaries communicate through bounded asyncio queues. FastAPI receives events, serves REST/WebSocket clients and accesses storage through SQLAlchemy."
+        "vi": "Thiết kế tách backend FastAPI khỏi AI runtime: camera/frame đi qua bounded asyncio.Queue tới các worker detection, OCR, Re-ID và VLM, sau đó phát event cho REST/WebSocket. SQLAlchemy async kết nối SQLite/MySQL; FAISS có lớp wrapper và fallback Python. Dashboard theo dõi xe, biển số, ô đỗ và sự kiện; mock mode giúp demo CPU, real mode cần model và dependency riêng.",
+        "en": "The design separates FastAPI from the AI runtime: camera frames pass through bounded asyncio queues to detection, OCR, Re-ID and VLM workers, which emit events for REST/WebSocket services. Async SQLAlchemy connects SQLite/MySQL; FAISS has a wrapper and Python fallback. The dashboard tracks vehicles, plates, slots and events. Mock mode supports CPU demos, while real mode requires separate models and dependencies."
       },
       "result": {
         "vi": "README mô tả demo CPU với mock inference và SQLite mặc định. Có điểm mở rộng cho model thật, MySQL và FAISS. Chưa bổ sung kết quả độ chính xác hay FPS trên phần cứng thực tế.",
@@ -637,13 +1560,13 @@
       ],
       "year": "2026",
       "role": {
-        "vi": "",
-        "en": ""
+        "vi": "Thiết kế hệ thống & phát triển AI pipeline",
+        "en": "System design & AI pipeline development"
       },
-      "period": "",
+      "period": "2026",
       "personalContribution": {
-        "vi": "",
-        "en": ""
+        "vi": "Theo CV: tôi thiết kế kiến trúc edge-first và backend tách rời, xây luồng AI bất đồng bộ, tích hợp tìm kiếm vector Re-ID và dashboard WebSocket. Mã repo thể hiện các ranh giới worker, queue và service tương ứng; số đo inference trên thiết bị thật chưa được bổ sung.",
+        "en": "According to my CV, I designed the edge-first architecture and decoupled backend, built the asynchronous AI flow, and integrated Re-ID vector search and a WebSocket dashboard. Repository worker, queue and service boundaries reflect this scope; real-device inference measurements are not yet provided."
       },
       "lessons": {
         "vi": "",
@@ -664,7 +1587,7 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/ParkingAI/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/ParkingAI/blob/542dc714be89b2d6f88eb58d6ce64fe86e8be5eb/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -673,126 +1596,56 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
-    },
-    {
-      "slug": "labguard",
-      "repo": "K4-hackathon-HUST-E402",
-      "title": "LabGuard",
-      "subtitle": {
-        "vi": "Kiểm tra bằng chứng trước khi nộp bài.",
-        "en": "Check the evidence before submission."
       },
-      "category": "software",
-      "status": "prototype",
-      "featured": true,
-      "stack": [
-        "Python",
-        "FastAPI",
-        "React",
-        "GitHub API",
-        "LLM"
-      ],
-      "role": {
-        "vi": "Product Owner · Spec & impact",
-        "en": "Product Owner · Specification & impact"
-      },
-      "description": {
-        "vi": "Prototype AI Submission Preflight giúp đối chiếu Codelab, rubric và repo cho bài lab theo cách chỉ đọc.",
-        "en": "A read-only AI submission preflight prototype that cross-checks lab Codelabs, rubrics and repository evidence."
-      },
-      "problem": {
-        "vi": "Yêu cầu bài lab và tiêu chí đánh giá nằm ở nhiều nơi. LabGuard gom chúng thành bước rà soát trước khi nộp, giúp người học nhìn thấy bằng chứng còn thiếu.",
-        "en": "Lab requirements and evaluation rubrics live in different places. LabGuard brings them together into a pre-submission check that highlights missing evidence."
-      },
-      "implementation": {
-        "vi": "Provider AI tạo pack từ Codelab và README/docs của đề bài, sau đó ánh xạ vào các checker chỉ đọc. Repo có đường chạy demo dự phòng và script đánh giá. Nhóm gồm sáu thành viên với phần việc được ghi trong README.",
-        "en": "An AI provider creates a pack from the Codelab and assignment README/docs, then maps it to read-only checkers. The repository includes a fallback demo path and evaluation scripts. Six team members have documented responsibilities."
-      },
-      "result": {
-        "vi": "Prototype hỗ trợ nhiều provider và repo demo chưa hoàn thiện. README ghi nhận tôi phụ trách Product Owner, spec và impact; chưa bổ sung số liệu tác động hoặc kết quả cuộc thi.",
-        "en": "The prototype supports multiple providers and an intentionally incomplete demo repository. The README identifies my role as Product Owner, specification and impact; measured impact and competition results have not been added."
-      },
-      "constraints": {
-        "vi": "Công cụ chỉ đọc: không thực thi code không tin cậy, không sửa repo và không tự nộp bài.",
-        "en": "The tool is read-only: it does not execute untrusted code, modify repositories or submit assignments."
-      },
-      "pipeline": [
-        {
-          "title": "Requirements",
-          "detail": {
-            "vi": "Codelab · rubric",
-            "en": "Codelab · rubric"
-          }
-        },
-        {
-          "title": "Evidence",
-          "detail": {
-            "vi": "Repository · README",
-            "en": "Repository · README"
-          }
-        },
-        {
-          "title": "Checks",
-          "detail": {
-            "vi": "Safe checker pack",
-            "en": "Safe checker pack"
-          }
-        },
-        {
-          "title": "Review",
-          "detail": {
-            "vi": "Preflight report",
-            "en": "Preflight report"
-          }
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "542dc714be89b2d6f88eb58d6ce64fe86e8be5eb",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "PRODUCT.md",
+          "models/README.md",
+          "database/migrations/README.md",
+          "app/main.py",
+          "scripts/run_pipeline_demo.py",
+          "app/ai/pipeline.py",
+          "app/services/slot_service.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
         }
-      ],
-      "year": "2026",
-      "period": "",
-      "personalContribution": {
-        "vi": "",
-        "en": ""
       },
-      "lessons": {
-        "vi": "",
-        "en": ""
-      },
-      "metrics": [],
-      "media": {
-        "cover": "",
-        "alt": {
-          "vi": "",
-          "en": ""
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/ParkingAI/blob/542dc714be89b2d6f88eb58d6ce64fe86e8be5eb/README.md"
         },
-        "gallery": [],
-        "video": ""
-      },
-      "links": {
-        "github": "https://github.com/ptdbrain/K4-hackathon-HUST-E402",
-        "demo": "",
-        "report": ""
-      },
-      "source": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/main/README.md",
-      "technicalDecisions": [],
-      "failedExperiments": {
-        "vi": "",
-        "en": ""
-      },
-      "nextSteps": {
-        "vi": "",
-        "en": ""
-      }
+        {
+          "label": "app/main.py",
+          "href": "https://github.com/ptdbrain/ParkingAI/blob/542dc714be89b2d6f88eb58d6ce64fe86e8be5eb/app/main.py"
+        },
+        {
+          "label": "scripts/run_pipeline_demo.py",
+          "href": "https://github.com/ptdbrain/ParkingAI/blob/542dc714be89b2d6f88eb58d6ce64fe86e8be5eb/scripts/run_pipeline_demo.py"
+        },
+        {
+          "label": "CV · Projects",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ]
     },
     {
       "slug": "sentinel-ai",
       "repo": "Agentic_Multimodal_Big_Data_Intelligence_Platform",
       "title": "SentinelAI",
       "subtitle": {
-        "vi": "Dữ liệu thương mại điện tử, từ ingest đến insight.",
-        "en": "E-commerce data, from ingestion to insight."
+        "vi": "Nền tảng dữ liệu đang phát triển với ingest đa định dạng, ETL, streaming, kiểm tra chất lượng dữ liệu và dashboard.",
+        "en": "An in-development data platform with multi-format ingestion, ETL, streaming, data quality checks and analytics."
       },
-      "category": "data",
-      "status": "in-progress",
+      "category": "software",
+      "status": "prototype",
       "featured": false,
       "stack": [
         "Python",
@@ -812,12 +1665,12 @@
         "en": "Product, price and review data need consistent processing before trend and anomaly analysis."
       },
       "implementation": {
-        "vi": "Kiến trúc kết hợp Kafka, medallion data lake, Spark batch/streaming, kho PostgreSQL và dashboard Streamlit. Airflow điều phối pipeline.",
-        "en": "The architecture connects Kafka, a medallion data lake, Spark batch/stream processing, PostgreSQL and a Streamlit dashboard, with Airflow orchestration."
+        "vi": "Dữ liệu thương mại điện tử từ crawler/API/file đa định dạng được đưa qua Kafka tới Bronze; Spark làm sạch, chuẩn hóa, loại trùng và kiểm tra chất lượng để tạo Silver/Gold. PostgreSQL phục vụ marts, Elasticsearch phục vụ search và Streamlit hiển thị analytics/cảnh báo. Pipeline có Airflow, watermark/checkpoint cho streaming, event identity và catalog snapshot để kiểm soát replay; mock/local và service thật được chọn tường minh.",
+        "en": "E-commerce crawler/API/multi-format data passes through Kafka into Bronze. Spark cleans, normalizes, deduplicates and validates it into Silver/Gold. PostgreSQL serves marts, Elasticsearch serves search and Streamlit presents analytics/alerts. Airflow, streaming watermarks/checkpoints, event identity and a snapshot catalog control orchestration and replay; mock/local and real-service modes are selected explicitly."
       },
       "result": {
-        "vi": "README ghi rõ Phase 1 đang phát triển và cung cấp luồng chạy end-to-end. Chưa đưa số liệu hiệu năng trong repo thành kết quả đã kiểm chứng tại portfolio.",
-        "en": "The README marks Phase 1 as under active development and provides an end-to-end run path. Repository performance claims are not presented here as independently verified results."
+        "vi": "Báo cáo nghiệm thu trong repo ghi nhận kiểm thử Python, Spark/JVM, HTTP, replay và các integration service; cập nhật 29/10 còn ghi Docker acceptance và dashboard PostgreSQL. Đây là bằng chứng do repo lưu, chưa được tôi chạy lại trong lần cập nhật portfolio; chưa coi là release production hoặc số liệu sử dụng thực tế.",
+        "en": "Repository acceptance reports record Python, Spark/JVM, HTTP, replay and service-integration checks; an October 29 update also records Docker acceptance and PostgreSQL dashboard checks. These are stored repository reports, not tests rerun for this portfolio update, and do not establish a production release or real-user usage."
       },
       "constraints": {
         "vi": "Phạm vi hiện tại là nền tảng dữ liệu Phase 1; tên repo không chứng minh mọi tính năng agentic/multimodal đã hoàn tất.",
@@ -882,7 +1735,7 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/1b5289128c0a30cca61cd35b6e76cf1f0662b9d4/btl/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -891,15 +1744,51 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "1b5289128c0a30cca61cd35b6e76cf1f0662b9d4",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "btl/README.md",
+          "btl/dashboard/app.py",
+          "btl/scripts/run_e2e_pipeline.py",
+          "btl/spark/etl/price_pipeline.py",
+          "btl/dashboard/pages/2_Pipeline.py",
+          "btl/docs/reports/remediation_status.md"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "btl/README.md",
+          "href": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/1b5289128c0a30cca61cd35b6e76cf1f0662b9d4/btl/README.md"
+        },
+        {
+          "label": "btl/dashboard/app.py",
+          "href": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/1b5289128c0a30cca61cd35b6e76cf1f0662b9d4/btl/dashboard/app.py"
+        },
+        {
+          "label": "btl/scripts/run_e2e_pipeline.py",
+          "href": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/1b5289128c0a30cca61cd35b6e76cf1f0662b9d4/btl/scripts/run_e2e_pipeline.py"
+        },
+        {
+          "label": "remediation_status.md",
+          "href": "https://github.com/ptdbrain/Agentic_Multimodal_Big_Data_Intelligence_Platform/blob/1b5289128c0a30cca61cd35b6e76cf1f0662b9d4/btl/docs/reports/remediation_status.md"
+        }
+      ]
     },
     {
       "slug": "future-vla",
       "repo": "FutureVLA",
       "title": "FutureVLA",
       "subtitle": {
-        "vi": "Giữ lại lựa chọn khi sở thích chưa rõ.",
-        "en": "Preserving options before preferences are known."
+        "vi": "Thử nghiệm Pareto Reachability Critic trên nền VLA-Adapter đóng băng để chọn hành động trước và sau khi nhận sở thích người dùng.",
+        "en": "A Pareto Reachability Critic experiment on a frozen VLA-Adapter, selecting actions before and after user preferences are revealed."
       },
       "category": "research",
       "status": "research",
@@ -919,8 +1808,8 @@
         "en": "Early robot actions can eliminate an outcome that a user only requests later."
       },
       "implementation": {
-        "vi": "Phần mở rộng giữ VLA làm bộ sinh action chunk, thêm critic tập Pareto và selector theo commitment regret. Tài liệu mô tả counterfactual rollout, ensemble và hiệu chỉnh conformal.",
-        "en": "The extension retains the VLA as an action-chunk proposer and adds a Pareto-set critic with a commitment-regret selector. Documentation covers counterfactual rollouts, ensembles and conformal calibration."
+        "vi": "Giữ VLA-Adapter đóng băng làm bộ sinh action chunk; rollout phản thực từ cùng snapshot để dựng tập kết quả Pareto cho critic. Critic kết hợp feature trạng thái, action và horizon, được train bằng set reconstruction và Bellman consistency; ensemble/conformal calibration biểu diễn bất định. Selector cân bằng tiến độ và commitment regret trước khi biết preference, rồi chọn theo utility sau reveal và thực thi prefix ngắn để replan.",
+        "en": "A frozen VLA-Adapter proposes action chunks, with counterfactual rollouts from the same snapshot forming Pareto targets for a critic. The critic combines state features, actions and horizon, training with set reconstruction and Bellman consistency. Ensembles/conformal calibration represent uncertainty. Selection balances progress and commitment regret before preference revelation, then switches to utility and executes short prefixes for replanning."
       },
       "result": {
         "vi": "Repo có mô tả thuật toán và pipeline thử nghiệm. Chưa bổ sung kết quả thực nghiệm được xác minh. VLA-Adapter và LIBERO là nền tảng của các tác giả gốc.",
@@ -989,7 +1878,7 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/FutureVLA/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/FutureVLA/blob/d719c05fb82d813481ae3c5a6c015b617c85626d/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -998,81 +1887,258 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "d719c05fb82d813481ae3c5a6c015b617c85626d",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "pretrained_models/prism-qwen25-extra-dinosiglip-224px-0_5b/README.md",
+          "experiments/robot/aloha/README.md",
+          "scripts/pretrain.py",
+          "vla-scripts/train.py",
+          "futurevla/data.py",
+          "futurevla/replay.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/FutureVLA/blob/d719c05fb82d813481ae3c5a6c015b617c85626d/README.md"
+        },
+        {
+          "label": "scripts/pretrain.py",
+          "href": "https://github.com/ptdbrain/FutureVLA/blob/d719c05fb82d813481ae3c5a6c015b617c85626d/scripts/pretrain.py"
+        },
+        {
+          "label": "vla-scripts/train.py",
+          "href": "https://github.com/ptdbrain/FutureVLA/blob/d719c05fb82d813481ae3c5a6c015b617c85626d/vla-scripts/train.py"
+        }
+      ]
     },
     {
-      "slug": "pathfinder",
-      "repo": "DSA-Pathfinding-Intro-AI",
-      "title": "PathFinder",
+      "slug": "labguard",
+      "repo": "K4-hackathon-HUST-E402",
+      "title": "LabGuard",
       "subtitle": {
-        "vi": "Làm cho thuật toán tìm đường trở nên nhìn thấy được.",
-        "en": "Making graph search visible."
+        "vi": "Prototype AI Submission Preflight giúp đối chiếu Codelab, rubric và repo cho bài lab theo cách chỉ đọc.",
+        "en": "A read-only AI submission preflight prototype that cross-checks lab Codelabs, rubrics and repository evidence."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": true,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "GitHub API",
+        "LLM"
+      ],
+      "role": {
+        "vi": "Product Owner · Spec & impact",
+        "en": "Product Owner · Specification & impact"
+      },
+      "description": {
+        "vi": "Prototype AI Submission Preflight giúp đối chiếu Codelab, rubric và repo cho bài lab theo cách chỉ đọc.",
+        "en": "A read-only AI submission preflight prototype that cross-checks lab Codelabs, rubrics and repository evidence."
+      },
+      "problem": {
+        "vi": "Yêu cầu bài lab và tiêu chí đánh giá nằm ở nhiều nơi. LabGuard gom chúng thành bước rà soát trước khi nộp, giúp người học nhìn thấy bằng chứng còn thiếu.",
+        "en": "Lab requirements and evaluation rubrics live in different places. LabGuard brings them together into a pre-submission check that highlights missing evidence."
+      },
+      "implementation": {
+        "vi": "Provider AI tạo pack từ Codelab và README/docs của đề bài, sau đó ánh xạ vào các checker chỉ đọc. Repo có đường chạy demo dự phòng và script đánh giá. Nhóm gồm sáu thành viên với phần việc được ghi trong README.",
+        "en": "An AI provider creates a pack from the Codelab and assignment README/docs, then maps it to read-only checkers. The repository includes a fallback demo path and evaluation scripts. Six team members have documented responsibilities."
+      },
+      "result": {
+        "vi": "Repo hỗ trợ nhiều AI provider và checker chỉ đọc. Báo cáo eval lưu tiến trình 23/24 → 24/24 → 38/38 case sau khi xử lý false positive từ comment có từ khóa ReAct. Bộ case gồm synthetic và self-test; đây là kết quả nội bộ của nhóm, không phải tỷ lệ chính xác ngoài thực tế hoặc kết quả cuộc thi.",
+        "en": "The repository supports multiple AI providers and read-only checkers. Evaluation documentation records 23/24 → 24/24 → 38/38 cases after fixing a false positive caused by a comment containing ReAct keywords. Cases include synthetic and self-test data; these are internal team results, not real-world accuracy or a competition ranking."
+      },
+      "constraints": {
+        "vi": "Công cụ chỉ đọc: không thực thi code không tin cậy, không sửa repo và không tự nộp bài.",
+        "en": "The tool is read-only: it does not execute untrusted code, modify repositories or submit assignments."
+      },
+      "pipeline": [
+        {
+          "title": "Requirements",
+          "detail": {
+            "vi": "Codelab · rubric",
+            "en": "Codelab · rubric"
+          }
+        },
+        {
+          "title": "Evidence",
+          "detail": {
+            "vi": "Repository · README",
+            "en": "Repository · README"
+          }
+        },
+        {
+          "title": "Checks",
+          "detail": {
+            "vi": "Safe checker pack",
+            "en": "Safe checker pack"
+          }
+        },
+        {
+          "title": "Review",
+          "detail": {
+            "vi": "Preflight report",
+            "en": "Preflight report"
+          }
+        }
+      ],
+      "year": "2026",
+      "period": "",
+      "personalContribution": {
+        "vi": "Tôi phụ trách Product Owner, specification và impact. Reflection cá nhân ghi rõ các phần: định nghĩa sản phẩm một câu, so sánh ba ứng viên, conditional automation, cost-of-error và non-goals. Tôi xác định ranh giới chỉ đọc, không sửa/nộp thay và chuyển tiêu chí semantic sang Human review; không quy phần backend/frontend của thành viên khác cho mình.",
+        "en": "I was responsible for product ownership, specification and impact. My reflection identifies the one-sentence product definition, comparison of three candidates, conditional automation, cost of error and non-goals. I defined read-only boundaries, no automatic editing/submission and human review for semantic criteria, without claiming teammates’ backend/frontend work."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/K4-hackathon-HUST-E402",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "d8f0fa9e866ff07ab6f7b26e76ced58bc7098606",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "eval/README.md",
+          "codebase/src/main.jsx",
+          "codebase/backend/main.py",
+          "eval/run_eval.py",
+          "codebase/index.html",
+          "reflection/phan-trong-dat.md",
+          "eval/latest-results.json"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/README.md"
+        },
+        {
+          "label": "codebase/src/main.jsx",
+          "href": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/codebase/src/main.jsx"
+        },
+        {
+          "label": "codebase/backend/main.py",
+          "href": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/codebase/backend/main.py"
+        },
+        {
+          "label": "reflection/phan-trong-dat.md",
+          "href": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/reflection/phan-trong-dat.md"
+        },
+        {
+          "label": "eval/README.md",
+          "href": "https://github.com/ptdbrain/K4-hackathon-HUST-E402/blob/d8f0fa9e866ff07ab6f7b26e76ced58bc7098606/eval/README.md"
+        }
+      ]
+    },
+    {
+      "slug": "firebite",
+      "repo": "Web-E-commerce-BTL",
+      "title": "FireBite MiniShopee",
+      "subtitle": {
+        "vi": "Từ lựa chọn món đến vận hành đơn hàng.",
+        "en": "From choosing food to managing orders."
       },
       "category": "software",
       "status": "prototype",
       "featured": false,
-      "year": "2025",
       "stack": [
-        "Python",
-        "Flask",
         "JavaScript",
-        "A*",
-        "Dijkstra"
+        "React",
+        "Vite",
+        "Express",
+        "MongoDB",
+        "ZaloPay"
       ],
-      "role": {
-        "vi": "Thành viên nhóm · Phần việc chi tiết chưa bổ sung",
-        "en": "Team member · Detailed contribution pending"
-      },
       "description": {
-        "vi": "Ứng dụng trực quan hóa tìm đường với A*, Dijkstra, BFS, DFS và các thuật toán tìm kiếm đồ thị khác.",
-        "en": "An interactive graph-search application visualizing A*, Dijkstra, BFS, DFS and other search algorithms."
+        "vi": "Ứng dụng đặt món full-stack với storefront và cổng admin quản lý menu, đơn hàng, voucher và hỗ trợ khách hàng.",
+        "en": "A full-stack food-ordering application with a storefront and an admin portal for menus, orders, vouchers and customer support."
       },
       "problem": {
-        "vi": "Quá trình duyệt node và chọn đường khó theo dõi nếu chỉ đọc mã hoặc kết quả cuối cùng.",
-        "en": "Node exploration and route selection are difficult to follow from code or a final path alone."
+        "vi": "Luồng đặt món cần đồng bộ tùy chọn sản phẩm, giá, trạng thái đơn và thanh toán; admin cần công cụ quản lý dữ liệu thay vì sửa trực tiếp giao diện.",
+        "en": "Ordering needs consistent item options, prices, order states and payments, while administrators need data-management tools rather than UI edits."
       },
       "implementation": {
-        "vi": "Backend Flask cung cấp thuật toán tìm kiếm; frontend HTML/CSS/JavaScript trực quan hóa trên đồ thị hoặc bản đồ. README ghi nhận Phan Trọng Đạt trong nhóm dự án.",
-        "en": "A Flask backend exposes search algorithms; an HTML/CSS/JavaScript frontend visualizes a graph or map. The README lists Phan Trọng Đạt as a project team member."
+        "vi": "React/Vite dựng storefront và /admin; Express phục vụ API, MongoDB lưu dữ liệu, Redis là tùy chọn. Module nghiệp vụ tách cart/menu/category; admin xử lý kho, voucher theo đối tượng, quy trình bếp/giao hàng và chat. Thanh toán ZaloPay được kiểm tra phía backend qua callback/status.",
+        "en": "React/Vite builds the storefront and /admin portal; Express serves APIs and MongoDB stores data, with optional Redis. Domain modules separate cart/menu/category logic. Admin workflows cover inventory, targeted vouchers, kitchen/delivery states and chat. ZaloPay payment verification uses backend callbacks/status checks."
       },
       "result": {
-        "vi": "Repo có hướng dẫn chạy local và liên kết frontend demo của nhóm. Đóng góp cá nhân và báo cáo đánh giá cần bổ sung.",
-        "en": "The repository includes local run instructions and a team frontend demo link. Detailed individual contributions and evaluation reports remain to be added."
+        "vi": "Repo có frontend/backend, admin workflow và lệnh test/build. Chưa có số đơn thực tế, doanh thu hoặc deployment được kiểm tra trong lần rà soát.",
+        "en": "The repository includes frontend/backend code, admin workflows and test/build commands. Real orders, revenue and a verified deployment are not established by this review."
       },
       "constraints": {
-        "vi": "Dự án nhóm; không quy toàn bộ phần triển khai cho một cá nhân.",
-        "en": "This is a team project; the full implementation is not attributed to one individual."
+        "vi": "Dự án có nguồn gốc bài tập nhóm; chưa có bảng phân công cá nhân. Các tích hợp thanh toán cần cấu hình riêng, không suy ra đã chạy giao dịch thật.",
+        "en": "This is a coursework/team repository without an individual assignment table. Payment integrations require separate configuration and do not establish live transaction use."
       },
       "pipeline": [
         {
-          "title": "Graph",
+          "title": "Browse",
           "detail": {
-            "vi": "Nodes · edges",
-            "en": "Nodes · edges"
+            "vi": "Menu, lựa chọn và giỏ hàng",
+            "en": "Menu, options and cart"
           }
         },
         {
-          "title": "Search",
+          "title": "Order",
           "detail": {
-            "vi": "A* · Dijkstra · BFS",
-            "en": "A* · Dijkstra · BFS"
+            "vi": "Đặt món và trạng thái thanh toán",
+            "en": "Ordering and payment status"
           }
         },
         {
-          "title": "API",
+          "title": "Operate",
           "detail": {
-            "vi": "Flask",
-            "en": "Flask"
-          }
-        },
-        {
-          "title": "Explore",
-          "detail": {
-            "vi": "Interactive visualization",
-            "en": "Interactive visualization"
+            "vi": "Admin, voucher, đơn và chat",
+            "en": "Admin, vouchers, orders and chat"
           }
         }
       ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
       "period": "",
       "personalContribution": {
         "vi": "",
@@ -1093,11 +2159,11 @@
         "video": ""
       },
       "links": {
-        "github": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI",
-        "demo": "https://bienkieu1411.github.io/Project_AI_20242/",
+        "github": "https://github.com/ptdbrain/Web-E-commerce-BTL",
+        "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/Web-E-commerce-BTL/blob/8b2e4d79fe0ef19581c5e5fbc0e5acde936c7c12/IT4409-project-main/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -1106,15 +2172,468 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "8b2e4d79fe0ef19581c5e5fbc0e5acde936c7c12",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "IT4409-project-main/README.md",
+          "IT4409-project-main/frontend/README.md",
+          "IT4409-project-main/backend/models/README.md",
+          "IT4409-project-main/frontend/src/main.jsx",
+          "IT4409-project-main/backend/utils/cartDomain.js",
+          "IT4409-project-main/backend/utils/menuDomain.js",
+          "IT4409-project-main/backend/utils/categoryDomain.js"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "IT4409-project-main/README.md",
+          "href": "https://github.com/ptdbrain/Web-E-commerce-BTL/blob/8b2e4d79fe0ef19581c5e5fbc0e5acde936c7c12/IT4409-project-main/README.md"
+        },
+        {
+          "label": "IT4409-project-main/backend/utils/cartDomain.js",
+          "href": "https://github.com/ptdbrain/Web-E-commerce-BTL/blob/8b2e4d79fe0ef19581c5e5fbc0e5acde936c7c12/IT4409-project-main/backend/utils/cartDomain.js"
+        },
+        {
+          "label": "IT4409-project-main/backend/utils/menuDomain.js",
+          "href": "https://github.com/ptdbrain/Web-E-commerce-BTL/blob/8b2e4d79fe0ef19581c5e5fbc0e5acde936c7c12/IT4409-project-main/backend/utils/menuDomain.js"
+        }
+      ]
+    },
+    {
+      "slug": "ahs-real-estate",
+      "repo": "BDS",
+      "title": "AHS Real Estate Workspace",
+      "subtitle": {
+        "vi": "Một workflow từ kho căn đến hợp đồng.",
+        "en": "From inventory to contracts."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "Prisma",
+        "Tailwind CSS"
+      ],
+      "description": {
+        "vi": "Workspace quản lý kinh doanh bất động sản: kho căn, lượt booking, giữ chỗ, khách hàng, hợp đồng và doanh thu theo vai trò.",
+        "en": "A real-estate sales workspace for inventory, booking turns, reservations, customers, contracts and role-specific financial views."
+      },
+      "problem": {
+        "vi": "Sales và quản trị cần phối hợp trên cùng trạng thái căn, lịch booking và phê duyệt giao dịch, đồng thời giới hạn quyền xem/sửa dữ liệu tài chính.",
+        "en": "Sales and administration need shared inventory, booking schedules and transaction approvals, with controlled financial-data access."
+      },
+      "implementation": {
+        "vi": "Next.js cung cấp dashboard và API route; Prisma mô hình hóa dự án, sản phẩm, nhân viên, khách hàng và hợp đồng. Logic riêng xử lý booking queue theo cửa sổ thời gian, trạng thái giữ chỗ, duyệt cọc và hợp đồng. Policy tài chính kiểm tra quyền cập nhật doanh thu/hoa hồng và lọc trường trả về theo vai trò; có script import Excel và test concurrency.",
+        "en": "Next.js serves the dashboard and API routes; Prisma models projects, products, employees, customers and contracts. Dedicated logic handles timed booking queues, reservation states, deposits and contract approvals. Financial policies validate revenue/commission updates and filter responses by role; Excel import and concurrency-test scripts are included."
+      },
+      "result": {
+        "vi": "Mã có các màn hình nghiệp vụ, API, schema/seed và test cho booking, phân quyền, hợp đồng. Chưa có số liệu vận hành tại doanh nghiệp hoặc kiểm chứng triển khai thực tế.",
+        "en": "Code includes business screens, APIs, schema/seeds and booking, role and contract tests. Enterprise operating metrics and a verified live deployment are not available."
+      },
+      "constraints": {
+        "vi": "README chỉ có tên repo; mô tả được đối chiếu từ schema và logic nghiệp vụ. Tên AHS phản ánh tên trong mã, không khẳng định khách hàng hay hợp đồng thương mại.",
+        "en": "The README contains only the repository name; the description comes from schema and business logic. AHS reflects naming in code, without claiming a customer or commercial engagement."
+      },
+      "pipeline": [
+        {
+          "title": "Inventory",
+          "detail": {
+            "vi": "Dự án và trạng thái kho căn",
+            "en": "Projects and unit inventory"
+          }
+        },
+        {
+          "title": "Booking",
+          "detail": {
+            "vi": "Hàng đợi và cửa sổ khớp căn",
+            "en": "Booking queues and matching windows"
+          }
+        },
+        {
+          "title": "Approve",
+          "detail": {
+            "vi": "Duyệt cọc, khách hàng và hợp đồng",
+            "en": "Deposit, customer and contract approvals"
+          }
+        },
+        {
+          "title": "Report",
+          "detail": {
+            "vi": "Doanh thu và quyền truy cập",
+            "en": "Revenue reporting and access policy"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/BDS",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/BDS/blob/4387a1a15fa00a7790fdd6607d05e0afe278879c/prisma/schema.prisma",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "4387a1a15fa00a7790fdd6607d05e0afe278879c",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "next-env.d.ts",
+          "next.config.js",
+          "postcss.config.js",
+          "tailwind.config.js",
+          "src/app/page.tsx",
+          "prisma/schema.prisma",
+          "src/lib/bookingQueue.ts",
+          "src/lib/contractFinancialPolicy.ts"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "prisma/schema.prisma",
+          "href": "https://github.com/ptdbrain/BDS/blob/4387a1a15fa00a7790fdd6607d05e0afe278879c/prisma/schema.prisma"
+        },
+        {
+          "label": "src/lib/bookingQueue.ts",
+          "href": "https://github.com/ptdbrain/BDS/blob/4387a1a15fa00a7790fdd6607d05e0afe278879c/src/lib/bookingQueue.ts"
+        },
+        {
+          "label": "src/lib/contractFinancialPolicy.ts",
+          "href": "https://github.com/ptdbrain/BDS/blob/4387a1a15fa00a7790fdd6607d05e0afe278879c/src/lib/contractFinancialPolicy.ts"
+        },
+        {
+          "label": "src/app/page.tsx",
+          "href": "https://github.com/ptdbrain/BDS/blob/4387a1a15fa00a7790fdd6607d05e0afe278879c/src/app/page.tsx"
+        }
+      ]
+    },
+    {
+      "slug": "tour-resq",
+      "repo": "tourr",
+      "title": "Tour-resQ",
+      "subtitle": {
+        "vi": "Đọc hóa đơn. Hiểu ngữ cảnh. Tìm trợ giúp.",
+        "en": "Read receipts. Understand context. Find help."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Gemini",
+        "SQLite",
+        "JavaScript",
+        "OCR"
+      ],
+      "description": {
+        "vi": "Trợ lý hỗ trợ du khách tại Việt Nam: đọc hóa đơn, đối chiếu giá tham khảo, dịch hội thoại và cung cấp workflow SOS.",
+        "en": "An assistant for visitors to Vietnam, with receipt reading, reference-price checks, live translation and an SOS workflow."
+      },
+      "problem": {
+        "vi": "Khác biệt ngôn ngữ và thiếu thông tin giá khiến du khách khó hiểu hóa đơn hoặc xử lý tranh chấp. Tour-resQ nối OCR, dữ liệu tham khảo và hướng dẫn theo ngữ cảnh.",
+        "en": "Language barriers and limited price information make receipts and disputes difficult to navigate. Tour-resQ connects OCR, reference data and contextual assistance."
+      },
+      "implementation": {
+        "vi": "Frontend HTML/JavaScript gửi ảnh tới FastAPI; Gemini đọc nội dung, engine thống kê dùng median/MAD để so với dữ liệu giá. Luồng dịch tách fast path SpeechRecognition → translation → SpeechSynthesis và nhánh AI phân tích nền. Quan sát AI được lưu ở trạng thái chưa xác minh, có bước review trước khi đưa vào dữ liệu giá tin cậy.",
+        "en": "An HTML/JavaScript frontend sends images to FastAPI; Gemini extracts content and a median/MAD-based engine compares reference prices. Translation separates a fast SpeechRecognition → translation → SpeechSynthesis path from background AI analysis. AI observations remain unverified until review before promotion to trusted reference data."
+      },
+      "result": {
+        "vi": "README có URL demo và API của nhóm; artifact OCR lưu ba ảnh trả về kết quả thành công. Đây là smoke test chức năng, chưa đo độ chính xác OCR hoặc tỷ lệ cảnh báo sai trên tập độc lập.",
+        "en": "The README links team demo/API URLs, and an OCR artifact records successful responses for three images. This is a functional smoke test, without independent OCR-accuracy or false-alarm evaluation."
+      },
+      "constraints": {
+        "vi": "Repo dẫn nhóm Tour-resQ gốc; chưa có phân công cá nhân trong nguồn đã đọc. Giá tham khảo và cảnh báo thống kê không phải kết luận pháp lý hay bảo đảm an toàn.",
+        "en": "The repository references the original Tour-resQ team, without individual role attribution in the reviewed sources. Reference prices and statistical alerts are not legal findings or safety guarantees."
+      },
+      "pipeline": [
+        {
+          "title": "Capture",
+          "detail": {
+            "vi": "Ảnh, văn bản hoặc giọng nói",
+            "en": "Image, text or speech"
+          }
+        },
+        {
+          "title": "Analyze",
+          "detail": {
+            "vi": "OCR, thống kê giá và dịch",
+            "en": "OCR, price statistics and translation"
+          }
+        },
+        {
+          "title": "Review",
+          "detail": {
+            "vi": "Kết quả, xác nhận và hỗ trợ",
+            "en": "Results, confirmation and assistance"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/tourr",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/tourr/blob/cf31f569d73331e81aaf59f89219d3fb60dfe946/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "cf31f569d73331e81aaf59f89219d3fb60dfe946",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "backend/main.py",
+          "evaluate_ocr.py",
+          "frontend/index.html",
+          "backend/app/api/routes.py",
+          "eval_results_summary.json"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/tourr/blob/cf31f569d73331e81aaf59f89219d3fb60dfe946/README.md"
+        },
+        {
+          "label": "backend/app/api/routes.py",
+          "href": "https://github.com/ptdbrain/tourr/blob/cf31f569d73331e81aaf59f89219d3fb60dfe946/backend/app/api/routes.py"
+        },
+        {
+          "label": "eval_results_summary.json",
+          "href": "https://github.com/ptdbrain/tourr/blob/cf31f569d73331e81aaf59f89219d3fb60dfe946/eval_results_summary.json"
+        }
+      ]
+    },
+    {
+      "slug": "tcb-stock-prediction",
+      "repo": "PRJ-Data-Science---Stock-Prediction",
+      "title": "TCB Stock Prediction",
+      "subtitle": {
+        "vi": "Kết nối dữ liệu, so sánh mô hình chuỗi thời gian.",
+        "en": "Connect data. Compare time-series models."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "PyTorch",
+        "LSTM",
+        "GRU",
+        "Transformer",
+        "Streamlit"
+      ],
+      "description": {
+        "vi": "Pipeline thử nghiệm dự báo giá TCB từ giá lịch sử, báo cáo tài chính và tín hiệu tin tức, có dashboard so sánh mô hình.",
+        "en": "An experimental TCB price-prediction pipeline using historical prices, financial reports and news signals, with a model-comparison dashboard."
+      },
+      "problem": {
+        "vi": "Các nguồn dữ liệu có tần suất và thời điểm công bố khác nhau; việc ghép feature và so sánh mô hình cần cùng quy trình tiền xử lý và đánh giá.",
+        "en": "Data sources differ in frequency and publication timing, so feature merging and model comparisons need consistent preprocessing and evaluation."
+      },
+      "implementation": {
+        "vi": "Các module thu thập giá, tài chính, tin tức được xử lý thành feature và bảng merged_features. BasePredictor dùng chung luồng dữ liệu/đánh giá cho LSTM, GRU và Transformer; script train ghi metrics và predictions để Streamlit hiển thị.",
+        "en": "Price, finance and news collectors feed preprocessing and a merged_features table. BasePredictor shares data/evaluation behavior across LSTM, GRU and Transformer, while training scripts persist metrics and predictions for Streamlit."
+      },
+      "result": {
+        "vi": "Repo có code thu thập, preprocessing, training và dashboard. Chưa xác minh bảng kết quả out-of-sample để kết luận mô hình nào tốt hơn hoặc khả năng sinh lợi.",
+        "en": "Code covers collection, preprocessing, training and a dashboard. Out-of-sample result tables have not been verified, so no winning model or profitability is claimed."
+      },
+      "constraints": {
+        "vi": "README phân công bằng ký hiệu A–F và trỏ tới repo nhóm khác; chưa ánh xạ được phần việc của Phan Trọng Đạt.",
+        "en": "The README assigns work to anonymous A–F roles and points to another team repository; Phan Trong Dat’s exact role is not established."
+      },
+      "pipeline": [
+        {
+          "title": "Collect",
+          "detail": {
+            "vi": "Giá, tài chính, tin tức",
+            "en": "Prices, finance and news"
+          }
+        },
+        {
+          "title": "Features",
+          "detail": {
+            "vi": "Làm sạch và ghép theo thời gian",
+            "en": "Clean and time-align features"
+          }
+        },
+        {
+          "title": "Train",
+          "detail": {
+            "vi": "LSTM / GRU / Transformer",
+            "en": "LSTM / GRU / Transformer"
+          }
+        },
+        {
+          "title": "Compare",
+          "detail": {
+            "vi": "Metrics và dashboard Streamlit",
+            "en": "Metrics and a Streamlit dashboard"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/PRJ-Data-Science---Stock-Prediction",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/PRJ-Data-Science---Stock-Prediction/blob/78995f52f92138c4dd4aa86a49d327302be3cfce/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "78995f52f92138c4dd4aa86a49d327302be3cfce",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "web/app.py",
+          "models/train.py",
+          "models/gru_model.py",
+          "models/base_model.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/PRJ-Data-Science---Stock-Prediction/blob/78995f52f92138c4dd4aa86a49d327302be3cfce/README.md"
+        },
+        {
+          "label": "web/app.py",
+          "href": "https://github.com/ptdbrain/PRJ-Data-Science---Stock-Prediction/blob/78995f52f92138c4dd4aa86a49d327302be3cfce/web/app.py"
+        },
+        {
+          "label": "models/train.py",
+          "href": "https://github.com/ptdbrain/PRJ-Data-Science---Stock-Prediction/blob/78995f52f92138c4dd4aa86a49d327302be3cfce/models/train.py"
+        }
+      ]
     },
     {
       "slug": "pso-optimize",
       "repo": "PSO-Optimize",
       "title": "PSO-Optimize",
       "subtitle": {
-        "vi": "So sánh thuật toán bằng một quy trình tái lập.",
-        "en": "Comparing optimizers with a reproducible protocol."
+        "vi": "Bộ thí nghiệm so sánh PSO, APSO, DE và JADE trên benchmark CEC2017 với thống kê và đường cong hội tụ.",
+        "en": "An experimental comparison of PSO, APSO, DE and JADE on CEC2017, with statistical tests and convergence plots."
       },
       "category": "research",
       "status": "research",
@@ -1135,8 +2654,8 @@
         "en": "Optimizer comparisons need equal function-evaluation budgets, repeated runs and consistent result reporting."
       },
       "implementation": {
-        "vi": "Các thuật toán dùng chung cấu hình benchmark; script xuất Excel, vẽ hội tụ và thực hiện kiểm định Wilcoxon cùng xếp hạng Friedman.",
-        "en": "Algorithms share benchmark settings, with scripts for Excel export, convergence plots, Wilcoxon tests and Friedman ranking."
+        "vi": "MATLAB điều phối PSO, APSO, DE và JADE trên CEC2017 qua MEX C++. Cấu hình mặc định D=30, cùng ngân sách 300.000 function evaluations và 30 lần chạy cho mỗi hàm. Script lưu checkpoint theo hàm, xuất thống kê Excel, vẽ convergence và chạy Wilcoxon/Friedman; toolbox song song là tùy chọn.",
+        "en": "MATLAB orchestrates PSO, APSO, DE and JADE on CEC2017 through C++ MEX. Defaults use D=30, a shared 300,000-function-evaluation budget and 30 runs per function. Scripts checkpoint by function, export Excel statistics, plot convergence and run Wilcoxon/Friedman comparisons, with optional parallel execution."
       },
       "result": {
         "vi": "Repo mô tả cấu hình và cách chạy. Chưa bổ sung bảng kết quả đã xác minh vào portfolio; không khẳng định thuật toán nào thắng.",
@@ -1205,7 +2724,7 @@
         "demo": "",
         "report": ""
       },
-      "source": "https://github.com/ptdbrain/PSO-Optimize/blob/main/README.md",
+      "source": "https://github.com/ptdbrain/PSO-Optimize/blob/5962fffb661f31578d687baced3ba9f9b44a1948/README.md",
       "technicalDecisions": [],
       "failedExperiments": {
         "vi": "",
@@ -1214,7 +2733,1201 @@
       "nextSteps": {
         "vi": "",
         "en": ""
-      }
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "5962fffb661f31578d687baced3ba9f9b44a1948",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "cec17_func.cpp",
+          "run_CEC2017_comparison.m",
+          "utils/tied_rank.m",
+          "utils/single_run.m"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/PSO-Optimize/blob/5962fffb661f31578d687baced3ba9f9b44a1948/README.md"
+        },
+        {
+          "label": "cec17_func.cpp",
+          "href": "https://github.com/ptdbrain/PSO-Optimize/blob/5962fffb661f31578d687baced3ba9f9b44a1948/cec17_func.cpp"
+        },
+        {
+          "label": "run_CEC2017_comparison.m",
+          "href": "https://github.com/ptdbrain/PSO-Optimize/blob/5962fffb661f31578d687baced3ba9f9b44a1948/run_CEC2017_comparison.m"
+        }
+      ]
+    },
+    {
+      "slug": "pathfinder",
+      "repo": "DSA-Pathfinding-Intro-AI",
+      "title": "PathFinder",
+      "subtitle": {
+        "vi": "Ứng dụng trực quan hóa tìm đường với A*, Dijkstra, BFS, DFS và các thuật toán tìm kiếm đồ thị khác.",
+        "en": "An interactive graph-search application visualizing A*, Dijkstra, BFS, DFS and other search algorithms."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "year": "2025",
+      "stack": [
+        "Python",
+        "Flask",
+        "JavaScript",
+        "A*",
+        "Dijkstra"
+      ],
+      "role": {
+        "vi": "Thành viên nhóm · Phần việc chi tiết chưa bổ sung",
+        "en": "Team member · Detailed contribution pending"
+      },
+      "description": {
+        "vi": "Ứng dụng trực quan hóa tìm đường với A*, Dijkstra, BFS, DFS và các thuật toán tìm kiếm đồ thị khác.",
+        "en": "An interactive graph-search application visualizing A*, Dijkstra, BFS, DFS and other search algorithms."
+      },
+      "problem": {
+        "vi": "Quá trình duyệt node và chọn đường khó theo dõi nếu chỉ đọc mã hoặc kết quả cuối cùng.",
+        "en": "Node exploration and route selection are difficult to follow from code or a final path alone."
+      },
+      "implementation": {
+        "vi": "Flask cung cấp endpoint tìm đường với A*, Dijkstra, BFS, DFS, greedy best-first, uniform-cost và iterative deepening. Frontend HTML/CSS/JavaScript dựng graph/map, chọn điểm đầu-cuối và mô phỏng chặn đường/giao thông; dữ liệu node, cạnh và trọng số lưu CSV/JavaScript. API trả đường đi và chi phí để giao diện trực quan hóa.",
+        "en": "Flask exposes pathfinding with A*, Dijkstra, BFS, DFS, greedy best-first, uniform-cost and iterative deepening. An HTML/CSS/JavaScript frontend renders graphs/maps, selects endpoints and simulates road closures/traffic; node, edge and weight data live in CSV/JavaScript. APIs return paths and costs for visualization."
+      },
+      "result": {
+        "vi": "Repo có hướng dẫn chạy local và liên kết frontend demo của nhóm. Đóng góp cá nhân và báo cáo đánh giá cần bổ sung.",
+        "en": "The repository includes local run instructions and a team frontend demo link. Detailed individual contributions and evaluation reports remain to be added."
+      },
+      "constraints": {
+        "vi": "Dự án nhóm; không quy toàn bộ phần triển khai cho một cá nhân.",
+        "en": "This is a team project; the full implementation is not attributed to one individual."
+      },
+      "pipeline": [
+        {
+          "title": "Graph",
+          "detail": {
+            "vi": "Nodes · edges",
+            "en": "Nodes · edges"
+          }
+        },
+        {
+          "title": "Search",
+          "detail": {
+            "vi": "A* · Dijkstra · BFS",
+            "en": "A* · Dijkstra · BFS"
+          }
+        },
+        {
+          "title": "API",
+          "detail": {
+            "vi": "Flask",
+            "en": "Flask"
+          }
+        },
+        {
+          "title": "Explore",
+          "detail": {
+            "vi": "Interactive visualization",
+            "en": "Interactive visualization"
+          }
+        }
+      ],
+      "period": "",
+      "personalContribution": {
+        "vi": "README ghi tên tôi trong nhóm năm thành viên. Phạm vi dự án gồm thuật toán tìm kiếm, API Flask và giao diện trực quan; tài liệu chưa chia rõ tôi phụ trách thuật toán hay module nào nên phần việc chi tiết vẫn chờ xác nhận.",
+        "en": "The README lists me in a five-member team. Project scope covers search algorithms, a Flask API and visualization; it does not assign specific algorithms/modules to me, so detailed individual ownership remains to be confirmed."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI",
+        "demo": "https://bienkieu1411.github.io/Project_AI_20242/",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/6aa33853fad8c3b87991f076ff4597b5d16c68af/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "6aa33853fad8c3b87991f076ff4597b5d16c68af",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "app.py",
+          "index.html",
+          "algorithm/bfs.py",
+          "algorithm/dfs.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/6aa33853fad8c3b87991f076ff4597b5d16c68af/README.md"
+        },
+        {
+          "label": "app.py",
+          "href": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/6aa33853fad8c3b87991f076ff4597b5d16c68af/app.py"
+        },
+        {
+          "label": "index.html",
+          "href": "https://github.com/ptdbrain/DSA-Pathfinding-Intro-AI/blob/6aa33853fad8c3b87991f076ff4597b5d16c68af/index.html"
+        }
+      ]
+    },
+    {
+      "slug": "8th-year-student",
+      "repo": "gamechillchill",
+      "title": "8th Year Student",
+      "subtitle": {
+        "vi": "Một câu chuyện, nhiều cách chơi.",
+        "en": "One story. Multiple ways to play."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "Java",
+        "Swing",
+        "Maven",
+        "2D Game"
+      ],
+      "description": {
+        "vi": "Game desktop nhiều chương kết hợp mở đầu cốt truyện, khám phá/chiến đấu, mê cung và đua xe.",
+        "en": "A multi-chapter desktop game combining a story opening, exploration/combat, a maze and racing."
+      },
+      "problem": {
+        "vi": "Các cơ chế chơi khác nhau cần cùng một luồng chuyển cảnh, giữ điều khiển và trải nghiệm liền mạch thay vì các demo độc lập.",
+        "en": "Different game mechanics need shared scene transitions, input handling and continuity rather than isolated demos."
+      },
+      "implementation": {
+        "vi": "Java Swing dựng JFrame/JPanel; entrypoint nối các GamePanel bằng callback hoàn thành và Timer chuyển cảnh. Mã chia theo chapter, entity, tile, collision, UI và sound; tài nguyên gồm map, sprite, âm thanh và hội thoại. Maven quản lý project.",
+        "en": "Java Swing provides JFrame/JPanel screens; the entry point connects GamePanels through completion callbacks and transition timers. Code is organized by chapter, entities, tiles, collision, UI and sound, with maps, sprites, audio and dialogue. Maven manages the project."
+      },
+      "result": {
+        "vi": "Repo chứa mã gameplay và tài nguyên của nhiều chương. Chưa có bản phát hành được kiểm tra, số liệu người chơi hoặc báo cáo kiểm thử hiệu năng.",
+        "en": "The repository includes gameplay code and assets for multiple chapters. A verified release, player metrics and performance-test reports are not available."
+      },
+      "constraints": {
+        "vi": "README chỉ ghi TeamGame; chưa có phân công để xác định chính xác chương hoặc hệ thống do từng thành viên phụ trách.",
+        "en": "The README only says TeamGame; individual ownership of chapters or systems is not documented."
+      },
+      "pipeline": [
+        {
+          "title": "Story",
+          "detail": {
+            "vi": "Giới thiệu và hội thoại",
+            "en": "Introduction and dialogue"
+          }
+        },
+        {
+          "title": "Play",
+          "detail": {
+            "vi": "Các chapter và game loop",
+            "en": "Chapters and game loops"
+          }
+        },
+        {
+          "title": "Transition",
+          "detail": {
+            "vi": "Callback, Timer và chuyển màn",
+            "en": "Callbacks, timers and scene transitions"
+          }
+        }
+      ],
+      "year": "2024",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/gamechillchill",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/gamechillchill/blob/dbca5c2adf6cc60c0e36a23b18ad6266a85b8aeb/src/main/java/game/MAIN.java",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "dbca5c2adf6cc60c0e36a23b18ad6266a85b8aeb",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "src/main/java/game/MAIN.java",
+          "src/main/java/game/SceneTransition.java",
+          "src/main/java/game/SceneTransition1.java",
+          "src/main/java/game/StoryIntroAndTransition.java"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "src/main/java/game/MAIN.java",
+          "href": "https://github.com/ptdbrain/gamechillchill/blob/dbca5c2adf6cc60c0e36a23b18ad6266a85b8aeb/src/main/java/game/MAIN.java"
+        },
+        {
+          "label": "src/main/java/game/SceneTransition.java",
+          "href": "https://github.com/ptdbrain/gamechillchill/blob/dbca5c2adf6cc60c0e36a23b18ad6266a85b8aeb/src/main/java/game/SceneTransition.java"
+        },
+        {
+          "label": "src/main/java/game/StoryIntroAndTransition.java",
+          "href": "https://github.com/ptdbrain/gamechillchill/blob/dbca5c2adf6cc60c0e36a23b18ad6266a85b8aeb/src/main/java/game/StoryIntroAndTransition.java"
+        }
+      ]
+    },
+    {
+      "slug": "ai-exam",
+      "repo": "AI-exam",
+      "title": "AI Exam Vision Experiments",
+      "subtitle": {
+        "vi": "Kiểm tra thị giác trước khi suy luận hành vi.",
+        "en": "Test perception before interpreting behavior."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "Ultralytics YOLO",
+        "SAM2",
+        "Computer Vision"
+      ],
+      "description": {
+        "vi": "Các thử nghiệm suy luận thị giác trên video thi: phát hiện keypoint người và thử phân đoạn ảnh/video.",
+        "en": "Vision inference experiments for exam video, covering human keypoints and image/video segmentation."
+      },
+      "problem": {
+        "vi": "Phân tích hành vi từ video cần kiểm tra trước khả năng định vị người và vùng ảnh. Repo tập trung vào các script thử model, chưa phải hệ thống kết luận gian lận.",
+        "en": "Video behavior analysis first needs reliable person localization and segmentation. This repository focuses on model experiments, rather than a complete cheating-detection system."
+      },
+      "implementation": {
+        "vi": "Script Ultralytics nạp checkpoint keypoint, chạy predict theo stream, đặt ngưỡng confidence/IoU và lưu video gắn nhãn. Các thư mục khác chứa checkpoint segmentation và thử nghiệm SAM2; script SAM2 được đọc vẫn ở dạng comment.",
+        "en": "Ultralytics scripts load keypoint checkpoints, stream predictions, configure confidence/IoU thresholds and save annotated video. Other folders hold segmentation checkpoints and SAM2 experiments; the inspected SAM2 script remains commented out."
+      },
+      "result": {
+        "vi": "Có checkpoint và script inference, nhưng đường dẫn video còn cần cấu hình. Chưa có nhãn hành vi, confusion matrix, accuracy hay đánh giá theo lớp gian lận.",
+        "en": "Checkpoints and inference scripts are present, with video paths requiring configuration. Behavior labels, confusion matrices, accuracy and cheating-class evaluation are not available."
+      },
+      "constraints": {
+        "vi": "Không suy diễn keypoint thành hành vi gian lận hoặc tuyên bố mô hình được huấn luyện bởi cá nhân khi repo chưa ghi nhận quy trình đó.",
+        "en": "Keypoints are not interpreted as proof of cheating, and model training is not attributed to an individual without supporting provenance."
+      },
+      "pipeline": [
+        {
+          "title": "Video",
+          "detail": {
+            "vi": "Cấu hình nguồn video",
+            "en": "Configure video input"
+          }
+        },
+        {
+          "title": "Model",
+          "detail": {
+            "vi": "Nạp checkpoint YOLO",
+            "en": "Load a YOLO checkpoint"
+          }
+        },
+        {
+          "title": "Output",
+          "detail": {
+            "vi": "Stream inference và video gắn nhãn",
+            "en": "Stream inference and annotated video"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/AI-exam",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/AI-exam/blob/3b86c9ca5bfb94c774d253e28d427762755d4e34/keypointdetect/test.py",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "3b86c9ca5bfb94c774d253e28d427762755d4e34",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "keypointdetect/test.py",
+          "testsegment/testsam2.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "keypointdetect/test.py",
+          "href": "https://github.com/ptdbrain/AI-exam/blob/3b86c9ca5bfb94c774d253e28d427762755d4e34/keypointdetect/test.py"
+        },
+        {
+          "label": "testsegment/testsam2.py",
+          "href": "https://github.com/ptdbrain/AI-exam/blob/3b86c9ca5bfb94c774d253e28d427762755d4e34/testsegment/testsam2.py"
+        }
+      ]
+    },
+    {
+      "slug": "face-vision",
+      "repo": "face-detection",
+      "title": "Face Vision Playground",
+      "subtitle": {
+        "vi": "Từ landmark đến hiệu ứng khuôn mặt.",
+        "en": "From landmarks to face effects."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "OpenCV",
+        "MediaPipe",
+        "dlib",
+        "face_recognition"
+      ],
+      "description": {
+        "vi": "Bộ thử nghiệm nhận diện khuôn mặt, face mesh và gắn phụ kiện theo landmark trên ảnh hoặc camera.",
+        "en": "Experiments in face recognition, face meshes and landmark-aligned accessories for images or camera input."
+      },
+      "problem": {
+        "vi": "Các hiệu ứng khuôn mặt cần định vị đặc trưng và biến đổi phụ kiện theo vị trí thực tế; nhận diện cần so khớp biểu diễn thay vì chỉ phát hiện bounding box.",
+        "en": "Face effects need landmarks and aligned accessories, while recognition requires representation matching beyond bounding-box detection."
+      },
+      "implementation": {
+        "vi": "Các script dùng OpenCV cho ảnh/camera, face_recognition để mã hóa và so khớp khuôn mặt, MediaPipe cho mesh và dlib landmark để đặt kính/khẩu trang. Logic resize và compositing phụ kiện được tách theo từng bài thử.",
+        "en": "Scripts use OpenCV for images/cameras, face_recognition for encoding and matching, MediaPipe for face meshes and dlib landmarks for glasses/masks. Resizing and accessory compositing are implemented in separate experiments."
+      },
+      "result": {
+        "vi": "Repo có script và tài nguyên mẫu phục vụ demo cục bộ. Chưa có benchmark nhận diện, đo FPS hoặc đánh giá độ bền theo điều kiện ánh sáng/góc mặt.",
+        "en": "The repository contains scripts and sample assets for local demos. Recognition benchmarks, FPS measurements and lighting/pose robustness evaluation are unavailable."
+      },
+      "constraints": {
+        "vi": "Nhiều đường dẫn phụ thuộc máy phát triển và cần chỉnh trước khi chạy. Không trình bày như giải pháp nhận diện danh tính đã được kiểm chứng.",
+        "en": "Several paths depend on the development machine and need editing before execution. This is not presented as a validated identity-recognition product."
+      },
+      "pipeline": [
+        {
+          "title": "Capture",
+          "detail": {
+            "vi": "Ảnh hoặc camera",
+            "en": "Images or camera input"
+          }
+        },
+        {
+          "title": "Landmarks",
+          "detail": {
+            "vi": "Detection, encoding và landmark",
+            "en": "Detection, encoding and landmarks"
+          }
+        },
+        {
+          "title": "Render",
+          "detail": {
+            "vi": "So khớp hoặc ghép phụ kiện",
+            "en": "Matching or accessory compositing"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/face-detection",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/face-detection/blob/cb78a0fae56e61d1bb3079431d33d67a82267a23/code/b3.py",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "cb78a0fae56e61d1bb3079431d33d67a82267a23",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "code/b3.py",
+          "code/codemau.py",
+          "code/deokinh.py",
+          "code/deophukien.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "code/b3.py",
+          "href": "https://github.com/ptdbrain/face-detection/blob/cb78a0fae56e61d1bb3079431d33d67a82267a23/code/b3.py"
+        },
+        {
+          "label": "code/codemau.py",
+          "href": "https://github.com/ptdbrain/face-detection/blob/cb78a0fae56e61d1bb3079431d33d67a82267a23/code/codemau.py"
+        },
+        {
+          "label": "code/deokinh.py",
+          "href": "https://github.com/ptdbrain/face-detection/blob/cb78a0fae56e61d1bb3079431d33d67a82267a23/code/deokinh.py"
+        },
+        {
+          "label": "code/deophukien.py",
+          "href": "https://github.com/ptdbrain/face-detection/blob/cb78a0fae56e61d1bb3079431d33d67a82267a23/code/deophukien.py"
+        }
+      ]
+    },
+    {
+      "slug": "kv-cache-privacy",
+      "repo": "newidea",
+      "title": "KV-cache Privacy Experiments",
+      "subtitle": {
+        "vi": "Khảo sát quyền riêng tư trong KV-cache.",
+        "en": "Examining privacy in KV-cache."
+      },
+      "category": "research",
+      "status": "research",
+      "featured": false,
+      "stack": [
+        "Python",
+        "PyTorch",
+        "Transformers",
+        "KV-cache",
+        "KIVI",
+        "Quantization"
+      ],
+      "description": {
+        "vi": "Repo thử nghiệm quyền riêng tư KV-cache, kết hợp mã KV-Cloak với nhánh tích hợp KIVI và lượng tử hóa để khảo sát đánh đổi utility, bộ nhớ và rò rỉ.",
+        "en": "A KV-cache privacy experiment combining KV-Cloak code with KIVI integration and quantization to examine utility, memory and leakage trade-offs."
+      },
+      "problem": {
+        "vi": "Trạng thái trung gian KV-cache có thể tiết lộ thông tin đầu vào. Cần so sánh bảo vệ và nén cache trong cùng điều kiện thay vì chỉ đo kích thước hoặc tốc độ.",
+        "en": "Intermediate KV-cache states can expose input information. Protection and compression need matched-condition comparisons rather than isolated size or speed figures."
+      },
+      "implementation": {
+        "vi": "Pipeline tách sinh cache, bảo vệ/giải lượng tử và evaluation. CachePipeline có các nhánh identity, KV-Cloak, KIVI và kết hợp; int3_quant triển khai pack/unpack 3-bit. Script điều phối điều kiện thí nghiệm và lưu artifacts riêng cho native packed cache và cache giải lượng tử phục vụ harness.",
+        "en": "The pipeline separates cache generation, protection/dequantization and evaluation. CachePipeline provides identity, KV-Cloak, KIVI and combined branches; int3_quant implements 3-bit packing/unpacking. Scripts organize experimental conditions and separate native packed artifacts from dequantized cache used by the harness."
+      },
+      "result": {
+        "vi": "Có mã tích hợp và hướng dẫn chạy thí nghiệm theo điều kiện. Các bảng số trong README gắn với công trình KV-Cloak gốc; chưa xác nhận kết quả tái lập của riêng repo tích hợp này.",
+        "en": "Integration code and condition-specific experiment instructions are available. README result tables relate to the original KV-Cloak work; results reproduced by this integration repository have not been established."
+      },
+      "constraints": {
+        "vi": "Không ghi công bài NDSS hoặc phương pháp KV-Cloak/KIVI cho chủ repo khi chưa có bằng chứng tác giả. Chỉ mô tả phạm vi thí nghiệm và tích hợp có thể kiểm tra trong mã.",
+        "en": "Authorship of the NDSS paper or KV-Cloak/KIVI methods is not attributed to the repository owner. Only inspectable experiment and integration scope is described."
+      },
+      "pipeline": [
+        {
+          "title": "Cache",
+          "detail": {
+            "vi": "Trích KV-cache từ model",
+            "en": "Extract model KV-cache"
+          }
+        },
+        {
+          "title": "Transform",
+          "detail": {
+            "vi": "Bảo vệ và lượng tử hóa",
+            "en": "Protect and quantize"
+          }
+        },
+        {
+          "title": "Evaluate",
+          "detail": {
+            "vi": "Utility, storage và privacy",
+            "en": "Utility, storage and privacy"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/newidea",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/newidea/blob/a1e9a30eda31a22d6d560797b3ba03363090fdd3/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "a1e9a30eda31a22d6d560797b3ba03363090fdd3",
+        "kind": "research",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "src/cache_pipeline.py",
+          "src/config.py",
+          "attack/attacks.py",
+          "src/int3_quant.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/newidea/blob/a1e9a30eda31a22d6d560797b3ba03363090fdd3/README.md"
+        },
+        {
+          "label": "src/cache_pipeline.py",
+          "href": "https://github.com/ptdbrain/newidea/blob/a1e9a30eda31a22d6d560797b3ba03363090fdd3/src/cache_pipeline.py"
+        },
+        {
+          "label": "src/int3_quant.py",
+          "href": "https://github.com/ptdbrain/newidea/blob/a1e9a30eda31a22d6d560797b3ba03363090fdd3/src/int3_quant.py"
+        }
+      ]
+    },
+    {
+      "slug": "ptd-portfolio",
+      "repo": "Porforlio",
+      "title": "PTD. — One Person. Two Stories.",
+      "subtitle": {
+        "vi": "Một con người. Hai câu chuyện.",
+        "en": "One person. Two stories."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "React",
+        "Vite",
+        "JavaScript",
+        "GSAP",
+        "Motion",
+        "Playwright"
+      ],
+      "description": {
+        "vi": "Portfolio Việt/Anh tách câu chuyện cá nhân và công việc, với trang case study riêng và nội dung prerender cho từng URL.",
+        "en": "A Vietnamese/English portfolio separating personal and professional stories, with individual case studies and prerendered route content."
+      },
+      "problem": {
+        "vi": "Dự án kỹ thuật cần được kể bằng bài toán, kiến trúc, đóng góp và bằng chứng; một danh sách tên repo khó giúp người đọc hiểu được phạm vi công việc.",
+        "en": "Technical work needs context, architecture, contribution and evidence; repository names alone make scope difficult to assess."
+      },
+      "implementation": {
+        "vi": "React/Vite tổ chức Home, Personal, Work, Contact và case study theo dữ liệu JSON song ngữ. Build prerender nội dung/metadata theo route; Work dùng GSAP/Motion cho các scene, có Simple view và reduced motion. Thư viện dự án hỗ trợ tìm kiếm/lọc; Playwright và axe kiểm tra tương tác, responsive và accessibility.",
+        "en": "React/Vite organizes Home, Personal, Work, Contact and case studies from bilingual JSON. Builds prerender content and metadata per route. Work uses GSAP/Motion scenes with Simple view and reduced-motion support. A searchable/filterable project library is covered by Playwright and axe interaction, responsive and accessibility checks."
+      },
+      "result": {
+        "vi": "Repo có site có thể build tĩnh, kiểm thử và cấu hình Vercel. Nội dung đang được bổ sung từ GitHub và CV; ảnh thiếu vẫn có placeholder rõ ràng, không tạo ảnh sản phẩm giả.",
+        "en": "The repository includes a statically buildable site, tests and Vercel configuration. Content is being enriched from GitHub and the CV; missing images retain explicit placeholders rather than fabricated product screenshots."
+      },
+      "constraints": {
+        "vi": "Các mốc test trong tài liệu gắn với phiên bản tương ứng; không suy ra mọi bản deploy hiện tại có cùng kết quả.",
+        "en": "Documented test snapshots apply to their respective versions, not automatically to every live deployment."
+      },
+      "pipeline": [
+        {
+          "title": "Content",
+          "detail": {
+            "vi": "Dữ liệu song ngữ có nguồn",
+            "en": "Source-backed bilingual data"
+          }
+        },
+        {
+          "title": "Render",
+          "detail": {
+            "vi": "React route và prerender",
+            "en": "React routes and prerendering"
+          }
+        },
+        {
+          "title": "Interact",
+          "detail": {
+            "vi": "Motion và fallback tĩnh",
+            "en": "Motion and static fallbacks"
+          }
+        },
+        {
+          "title": "Verify",
+          "detail": {
+            "vi": "Build, browser và accessibility",
+            "en": "Build, browser and accessibility checks"
+          }
+        }
+      ],
+      "year": "2026",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/Porforlio",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/Porforlio/blob/3bf7347fdc5895093f2442484a92d5d7205ffe59/README.md",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "3bf7347fdc5895093f2442484a92d5d7205ffe59",
+        "kind": "application",
+        "fork": false,
+        "filesRead": [
+          "README.md",
+          "src/main.jsx",
+          "index.html",
+          "vite.config.js",
+          "playwright.config.js"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "README.md",
+          "href": "https://github.com/ptdbrain/Porforlio/blob/3bf7347fdc5895093f2442484a92d5d7205ffe59/README.md"
+        },
+        {
+          "label": "src/main.jsx",
+          "href": "https://github.com/ptdbrain/Porforlio/blob/3bf7347fdc5895093f2442484a92d5d7205ffe59/src/main.jsx"
+        },
+        {
+          "label": "index.html",
+          "href": "https://github.com/ptdbrain/Porforlio/blob/3bf7347fdc5895093f2442484a92d5d7205ffe59/index.html"
+        }
+      ]
+    },
+    {
+      "slug": "assistive-robotic-arm",
+      "repo": "",
+      "title": "Assistive Robotic Arm",
+      "subtitle": {
+        "vi": "Cánh tay robot điều khiển bằng giọng nói và hồng ngoại hỗ trợ thao tác sinh hoạt cho người khuyết tật.",
+        "en": "A voice- and infrared-controlled robotic arm designed to assist people with disabilities in everyday tasks."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "Arduino",
+        "C++",
+        "Infrared Sensors",
+        "Voice Recognition"
+      ],
+      "description": {
+        "vi": "Cánh tay robot điều khiển bằng giọng nói và hồng ngoại hỗ trợ thao tác sinh hoạt cho người khuyết tật.",
+        "en": "A voice- and infrared-controlled robotic arm designed to assist people with disabilities in everyday tasks."
+      },
+      "problem": {
+        "vi": "Người hạn chế vận động cần giao diện điều khiển đơn giản để thực hiện một số thao tác hằng ngày.",
+        "en": "People with limited mobility need simple control interfaces for everyday actions."
+      },
+      "implementation": {
+        "vi": "Theo CV, prototype dùng Arduino/C++ cho motion control, tích hợp module nhận dạng giọng nói và cảm biến hồng ngoại với phần cơ khí. Chưa có sơ đồ điện hoặc mã nguồn công khai trong các repo đã rà soát.",
+        "en": "According to the CV, the prototype uses Arduino/C++ motion control, a voice-recognition module and infrared sensors integrated with mechanical components. Wiring diagrams and public source code were not found in the reviewed repositories."
+      },
+      "result": {
+        "vi": "CV ghi nhận prototype vận hành ổn định ở phạm vi thử nghiệm. Chưa có báo cáo đo tải, độ chính xác chuyển động hoặc đánh giá với người sử dụng để công bố số liệu.",
+        "en": "The CV describes stable prototype operation. Load, motion-accuracy and user-evaluation reports are unavailable, so no numerical performance is asserted."
+      },
+      "constraints": {
+        "vi": "Dự án được mô tả theo CV; chưa có repo, ảnh hoặc tài liệu kiểm chứng riêng. Không tự gắn thành tích cuộc thi trong CV với robot này khi chưa có liên kết xác nhận.",
+        "en": "Described from the CV, without a separate repository, images or validation report. CV competition awards are not automatically attributed to this robot without supporting linkage."
+      },
+      "pipeline": [
+        {
+          "title": "Input",
+          "detail": {
+            "vi": "Giọng nói hoặc tín hiệu hồng ngoại",
+            "en": "Voice or infrared input"
+          }
+        },
+        {
+          "title": "Control",
+          "detail": {
+            "vi": "Arduino xử lý lệnh và chuyển động",
+            "en": "Arduino command and motion control"
+          }
+        },
+        {
+          "title": "Actuate",
+          "detail": {
+            "vi": "Tác động lên cơ cấu tay robot",
+            "en": "Drive the robotic arm mechanism"
+          }
+        }
+      ],
+      "year": "2022",
+      "role": {
+        "vi": "Phát triển prototype & điều khiển robot",
+        "en": "Prototype development & robot control"
+      },
+      "period": "03/2022 – 01/2023",
+      "personalContribution": {
+        "vi": "Tôi xây dựng prototype, lập trình logic điều khiển chuyển động trên Arduino và tích hợp phần cứng–phần mềm; phạm vi này lấy trực tiếp từ CV.",
+        "en": "I built the prototype, programmed Arduino motion-control logic and integrated hardware/software, as described in my CV."
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "",
+        "demo": "",
+        "report": ""
+      },
+      "source": "/CV_PhanTrongDat.pdf",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "kind": "cv-project",
+        "access": "cv-only",
+        "filesRead": [
+          "CV_PhanTrongDat.pdf"
+        ],
+        "attribution": {
+          "vi": "Đóng góp và kết quả lấy từ CV do chủ portfolio cung cấp.",
+          "en": "Contribution and results are based on the owner-supplied CV."
+        }
+      },
+      "sources": [
+        {
+          "label": "CV · Robotic Arm",
+          "href": "/CV_PhanTrongDat.pdf"
+        }
+      ],
+      "yearKind": "project"
+    },
+    {
+      "slug": "background-removal",
+      "repo": "remove-background-tool",
+      "title": "Background Removal Script",
+      "subtitle": {
+        "vi": "Tách nền cho bước ghép ảnh tiếp theo.",
+        "en": "Remove backgrounds for the next composition."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "Python",
+        "rembg",
+        "Pillow"
+      ],
+      "description": {
+        "vi": "Script xử lý ảnh cục bộ để tách nền và lưu kết quả PNG.",
+        "en": "A local image-processing script for removing backgrounds and saving PNG output."
+      },
+      "problem": {
+        "vi": "Ảnh phụ kiện hoặc vật thể cần nền trong suốt để ghép vào ảnh khác.",
+        "en": "Accessory or object images need transparent backgrounds for compositing."
+      },
+      "implementation": {
+        "vi": "Pillow đọc ảnh, rembg.remove xử lý nền, sau đó ghi ảnh đầu ra. Đường dẫn input/output hiện được cấu hình trực tiếp trong script.",
+        "en": "Pillow loads the image, rembg.remove processes the background and the result is saved. Input/output paths are currently hard-coded."
+      },
+      "result": {
+        "vi": "Repo có các script thử xử lý ảnh; chưa có giao diện, API hoặc benchmark chất lượng tách nền.",
+        "en": "The repository has image-processing scripts, with no UI, API or background-removal quality benchmark."
+      },
+      "constraints": {
+        "vi": "Cần đổi đường dẫn theo máy trước khi chạy; mô hình tách nền do thư viện rembg cung cấp.",
+        "en": "Paths must be adapted before execution; the background-removal model is supplied by rembg."
+      },
+      "pipeline": [
+        {
+          "title": "Load",
+          "detail": {
+            "vi": "Pillow đọc ảnh",
+            "en": "Load with Pillow"
+          }
+        },
+        {
+          "title": "Remove",
+          "detail": {
+            "vi": "rembg tách nền",
+            "en": "Remove background with rembg"
+          }
+        },
+        {
+          "title": "Save",
+          "detail": {
+            "vi": "Ghi PNG đầu ra",
+            "en": "Save PNG output"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/remove-background-tool",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/remove-background-tool/blob/ef943a2c69a3b8d5aedf35aa7e3d930bf94aadfa/xoanen.py",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "ef943a2c69a3b8d5aedf35aa7e3d930bf94aadfa",
+        "kind": "utility",
+        "fork": false,
+        "filesRead": [
+          "xoanen.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "xoanen.py",
+          "href": "https://github.com/ptdbrain/remove-background-tool/blob/ef943a2c69a3b8d5aedf35aa7e3d930bf94aadfa/xoanen.py"
+        }
+      ]
+    },
+    {
+      "slug": "image-collection-tools",
+      "repo": "tool",
+      "title": "Image Collection Utilities",
+      "subtitle": {
+        "vi": "Chuẩn bị ảnh bằng một lệnh.",
+        "en": "Prepare images with one command."
+      },
+      "category": "software",
+      "status": "prototype",
+      "featured": false,
+      "stack": [
+        "Python",
+        "bing_image_downloader"
+      ],
+      "description": {
+        "vi": "Các script CLI tải ảnh theo từ khóa và số lượng để chuẩn bị tài nguyên thử nghiệm.",
+        "en": "CLI scripts that download images by keyword and count for experiment preparation."
+      },
+      "problem": {
+        "vi": "Chuẩn bị tập ảnh mẫu thủ công tốn thao tác lặp; công cụ gom bước tìm và tải ảnh vào một lệnh.",
+        "en": "Manual sample-image preparation is repetitive; these utilities combine search and download in one command."
+      },
+      "implementation": {
+        "vi": "Nhận từ khóa và giới hạn từ input, gọi bing_image_downloader, lưu vào thư mục output và đặt timeout. Repo giữ nhiều phiên bản script.",
+        "en": "The scripts read a keyword/count, call bing_image_downloader, write to an output folder and set a timeout. Multiple script variants are retained."
+      },
+      "result": {
+        "vi": "Có công cụ tải ảnh dạng script; chưa có pipeline gán nhãn, lọc trùng hoặc đánh giá chất lượng dataset.",
+        "en": "Download scripts are available, without labeling, deduplication or dataset-quality evaluation."
+      },
+      "constraints": {
+        "vi": "Ảnh từ kết quả tìm kiếm không tự có nhãn, quyền sử dụng hoặc bảo đảm phù hợp cho training.",
+        "en": "Search-result images do not automatically provide labels, usage rights or suitability for training."
+      },
+      "pipeline": [
+        {
+          "title": "Query",
+          "detail": {
+            "vi": "Từ khóa và số lượng",
+            "en": "Keyword and count"
+          }
+        },
+        {
+          "title": "Download",
+          "detail": {
+            "vi": "Tải qua thư viện",
+            "en": "Download through a library"
+          }
+        },
+        {
+          "title": "Files",
+          "detail": {
+            "vi": "Lưu thư mục cục bộ",
+            "en": "Save local files"
+          }
+        }
+      ],
+      "year": "2025",
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "period": "",
+      "personalContribution": {
+        "vi": "",
+        "en": ""
+      },
+      "lessons": {
+        "vi": "",
+        "en": ""
+      },
+      "metrics": [],
+      "media": {
+        "cover": "",
+        "alt": {
+          "vi": "",
+          "en": ""
+        },
+        "gallery": [],
+        "video": ""
+      },
+      "links": {
+        "github": "https://github.com/ptdbrain/tool",
+        "demo": "",
+        "report": ""
+      },
+      "source": "https://github.com/ptdbrain/tool/blob/4c94b8d2431b9d648cd022bb93f48b4e86a30157/tooltaianhok.py",
+      "technicalDecisions": [],
+      "failedExperiments": {
+        "vi": "",
+        "en": ""
+      },
+      "nextSteps": {
+        "vi": "",
+        "en": ""
+      },
+      "repositoryReview": {
+        "checkedAt": "2026-10-30",
+        "commit": "4c94b8d2431b9d648cd022bb93f48b4e86a30157",
+        "kind": "utility",
+        "fork": false,
+        "filesRead": [
+          "tooltaianh...py",
+          "tooltaianhok.py",
+          "tooltaianhxin.py"
+        ],
+        "attribution": {
+          "vi": "Mô tả phản ánh mã và tài liệu trong repo. Quyền sở hữu repo không tự xác nhận tác giả của mọi thành phần.",
+          "en": "This description reflects repository code and documentation. Repository ownership does not establish authorship of every component."
+        }
+      },
+      "sources": [
+        {
+          "label": "tooltaianhok.py",
+          "href": "https://github.com/ptdbrain/tool/blob/4c94b8d2431b9d648cd022bb93f48b4e86a30157/tooltaianhok.py"
+        },
+        {
+          "label": "tooltaianhxin.py",
+          "href": "https://github.com/ptdbrain/tool/blob/4c94b8d2431b9d648cd022bb93f48b4e86a30157/tooltaianhxin.py"
+        }
+      ]
     }
   ],
   "skills": [
@@ -1257,6 +3970,37 @@
         "JavaScript",
         "Docker",
         "MATLAB"
+      ]
+    },
+    {
+      "title": {
+        "vi": "Lập trình & công cụ",
+        "en": "Programming & tools"
+      },
+      "tools": [
+        "Python",
+        "JavaScript",
+        "C/C++",
+        "HTML",
+        "CSS",
+        "Git/GitHub",
+        "Linux",
+        "VS Code",
+        "Jupyter Notebook",
+        "Weights & Biases"
+      ]
+    },
+    {
+      "title": {
+        "vi": "Nghiên cứu & ngôn ngữ",
+        "en": "Research & languages"
+      },
+      "tools": [
+        "Topic Modeling",
+        "LLM Quantization",
+        "Time-Series Forecasting",
+        "Vietnamese (native)",
+        "English (technical reading/writing)"
       ]
     }
   ],
@@ -1339,6 +4083,17 @@
   "researchNotes": [
     {
       "title": {
+        "vi": "LLMFeed · EMNLP 2026",
+        "en": "LLMFeed · EMNLP 2026"
+      },
+      "description": {
+        "vi": "Bài báo về phản hồi LLM, preference optimization và contrastive learning cho mô hình chủ đề; tôi là đồng tác giả thứ hai.",
+        "en": "A paper on LLM feedback, preference optimization and contrastive learning for topic models; I am the second author."
+      },
+      "href": "https://aclanthology.org/2026.emnlp-main.265/"
+    },
+    {
+      "title": {
         "vi": "Từ truy xuất đến câu trả lời có căn cứ",
         "en": "From retrieval to grounded answers"
       },
@@ -1361,12 +4116,13 @@
     }
   ],
   "verification": {
-    "checkedAt": "2026-10-29",
+    "checkedAt": "2026-10-30",
     "github": "https://api.github.com/users/ptdbrain/repos?per_page=100",
     "linkedinReadable": false,
     "notes": {
-      "vi": "Mô tả dự án dựa trên README công khai. Phần đóng góp cá nhân, số liệu, mốc thực hiện và ảnh còn thiếu được để trống.",
-      "en": "Project descriptions are based on public READMEs. Missing contributions, measurements, dates and images are left empty."
-    }
+      "vi": "Mô tả được đối chiếu từ README, mã nguồn, artifact và CV_PhanTrongDat.pdf. Bỏ qua repo bài lab theo yêu cầu. PRISM được đọc từ checkout local do chủ portfolio cung cấp. Chỉ đóng góp được ghi trong CV hoặc báo cáo có tên mới được quy cho cá nhân; các test của dự án không được chạy lại trong lần rà soát nội dung.",
+      "en": "Descriptions were checked against READMEs, code, artifacts and CV_PhanTrongDat.pdf. Teaching labs are excluded as requested. PRISM was reviewed from the owner-provided local checkout. Individual contributions require CV or named-report evidence; project test suites were not rerun for this content review."
+    },
+    "cvSha256": "012384be41012a04536dd14d12f1e6b82adb74912c5f1ec97eb8f593ea3cbe73"
   }
 }

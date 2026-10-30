@@ -17,7 +17,7 @@ test('process disclosure is accessible with focus, tap and Escape and cites real
  await page.goto('/work');const button=page.locator('.process-step-button').nth(1);
  await button.focus();await expect(button).toHaveAttribute('aria-expanded','true');
  const example=page.locator('#process-storylet-experiment');await expect(example).toBeVisible();await expect(example).toContainText('PSO-Optimize');
- await expect(example.getByRole('link',{name:'README'})).toHaveAttribute('href','https://github.com/ptdbrain/PSO-Optimize/blob/main/README.md');
+ await expect(example.getByRole('link',{name:'Đọc nguồn'})).toHaveAttribute('href',require('../../src/content/portfolio.json').projects.find(p=>p.slug==='pso-optimize').source);
  await page.keyboard.press('Escape');await expect(example).toBeHidden();
  await page.locator('.process-step-button').nth(2).click();await expect(page.locator('#process-storylet-build')).toBeVisible();
  await expect(page.locator('#process-storylet-build')).toContainText('ParkingAI');

@@ -3,7 +3,8 @@ export function filterProjects(projects, {category='all',technology='',query=''}
   const terms=foldSearch(query).trim().split(/\s+/).filter(Boolean);
   return projects.filter(project => {
     const categories=Array.isArray(project.category)?project.category:[project.category];
-    const text=foldSearch([project.title,...Object.values(project.description),...Object.values(project.problem),...Object.values(project.role),...project.stack].join(' '));
+    const repo=project.repo||'';
+    const text=foldSearch([project.title,project.slug,repo,repo.replace(/[-_]/g,' '),repo.replace(/[-_]/g,''),...Object.values(project.description),...Object.values(project.problem),...Object.values(project.role),...project.stack].join(' '));
     return (category==='all'||categories.includes(category)) && (!technology||project.stack.includes(technology)) && terms.every(term=>text.includes(term));
   });
 }

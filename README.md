@@ -20,6 +20,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 ## Nội dung và ảnh còn thiếu
 
+- [Nội dung dự án từ GitHub và CV](docs/PROJECT-CONTENT-REVIEW.md) · 23 case study, bỏ qua repo bài lab.
 - [Bản cập nhật hai section Work V3](docs/WORK-SECTIONS-V3.md).
 - [Bản cập nhật Kinetic Cinema V2](docs/KINETIC-CINEMA-UPDATE.md).
 - [Kế hoạch file và các bước triển khai](docs/KINETIC-CINEMA-PLAN.md).

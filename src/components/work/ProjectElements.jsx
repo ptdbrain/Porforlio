@@ -3,7 +3,7 @@ import { Arrow, ExternalLink, Photo, RouteLink } from '../editorial/Shared';
 
 export function ProjectMeta({project,t}) {
   const categories=Array.isArray(project.category)?project.category:[project.category];
-  return <div className="project-meta"><span>{categories.join(' / ').toUpperCase()}</span><span>{t.repoYear} / {project.year}</span><span className={`project-status status-${project.status}`}>{t[project.status] || project.status}</span></div>;
+  return <div className="project-meta"><span>{categories.join(' / ').toUpperCase()}</span><span>{project.yearKind==='project'?(t.repoYear==='MỐC REPO'?'DỰ ÁN':'PROJECT'):t.repoYear} / {project.year}</span><span className={`project-status status-${project.status}`}>{t[project.status] || project.status}</span></div>;
 }
 export function ProjectFacts({project,outcome,language,t,s}) {
   return <dl className="build-facts"><div><dt>{s.problem}</dt><dd>{l(project.description,language)}</dd></div><div><dt>{t.role}</dt><dd>{l(project.role,language)||'—'}</dd></div><div><dt>{s.outcome}</dt><dd>{l(outcome || project.result,language)}</dd></div></dl>;

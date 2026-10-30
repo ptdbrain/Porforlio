@@ -52,7 +52,7 @@ export function ProcessFlow({content,projects,language,t,simple}) {
       <span className="process-node"><StepShape shape={step.shape}/></span><span className="process-label">0{index+1} — {step.label}</span><strong>{l(step.title,language)}</strong><span className="process-description">{l(step.description,language)}</span><span className="process-example-prompt">{language==='vi'?'Xem ví dụ từ repo':'Explore a repository example'} <span aria-hidden="true">↗</span></span>
      </button>
      <div className="process-storylet" id={`process-storylet-${step.id}`} hidden={!expanded} role="region" aria-label={`${step.label} / ${project?.title||''}`}>
-      {project&&<><span className="eyebrow">{language==='vi'?'MINH HỌA TỪ REPO':'REPOSITORY EXAMPLE'}</span><h3>{project.title}</h3><p>{l(project[step.example.field],language)}</p><div className="process-example-links"><RouteLink href={`/projects/${project.slug}#${step.example.field==='problem'?'problem':step.example.field==='constraints'?'results':'implementation'}`}>{t.caseStudy}<Arrow/></RouteLink><ExternalLink href={project.source}>README</ExternalLink></div></>}
+      {project&&<><span className="eyebrow">{language==='vi'?'MINH HỌA TỪ REPO':'REPOSITORY EXAMPLE'}</span><h3>{project.title}</h3><p>{l(project[step.example.field],language)}</p><div className="process-example-links"><RouteLink href={`/projects/${project.slug}#${step.example.field==='problem'?'problem':step.example.field==='constraints'?'results':'implementation'}`}>{t.caseStudy}<Arrow/></RouteLink><ExternalLink href={project.source}>{language==='vi'?'Đọc nguồn':'Read source'}</ExternalLink></div></>}
      </div>
     </li>;
    })}</ol>

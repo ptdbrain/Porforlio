@@ -11,8 +11,9 @@ test('public case studies have unique routes and traceable first-party sources',
   for (const project of data.projects) {
     const route = resolveRoute(`/projects/${project.slug}`, data.projects);
     assert.equal(route.project.title, project.title);
-    assert.ok(project.source.startsWith('https://github.com/ptdbrain/'));
-    assert.equal(project.links.github, `https://github.com/ptdbrain/${project.repo}`);
+    assert.ok(project.sources.length>0);
+    if(project.repo)assert.equal(project.links.github, `https://github.com/ptdbrain/${project.repo}`);
+    else assert.equal(project.source,data.identity.cv);
     assert.ok(project.pipeline.length >= 3);
     for (const key of ['description','problem','implementation','result','constraints']) {
       assert.ok(project[key].vi && project[key].en, `${project.slug}.${key} must support both languages`);

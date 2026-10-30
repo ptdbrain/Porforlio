@@ -1,6 +1,6 @@
 # Nội dung bạn cần bổ sung
 
-> **Work hiện dùng Kinetic Cinema V2.** Dữ liệu chính vẫn là `src/content/portfolio.json`; format/cảnh mới ở `src/content/cinema.json`. Mục hướng dẫn Studio phía dưới là lịch sử. Xem phần Kinetic Cinema ở cuối file cho các trường hiện hành.
+> **Cập nhật 30/10/2026:** Work đã có hai section V3. CV PDF, tiểu sử chuyên môn, THPT/đại học, kinh nghiệm và thành tích đã được điền từ `CV_PhanTrongDat.pdf`; 23 dự án đã có mô tả song ngữ. Xem [bản rà soát nội dung](PROJECT-CONTENT-REVIEW.md) để biết nguồn và phần còn thiếu. Các mục lịch sử phía dưới chỉ áp dụng cho trường vẫn trống trong dữ liệu hiện tại.
 
 
 Bản mới đã dựng theo `newidea.md`. Các dữ kiện chưa biết được lưu bằng chuỗi rỗng hoặc mảng rỗng, không dùng ảnh AI, ảnh người khác hoặc số liệu minh họa làm thành tích thật.
@@ -9,9 +9,9 @@ Bản mới đã dựng theo `newidea.md`. Các dữ kiện chưa biết đượ
 
 1. **Ảnh chân dung hero:** 1 ảnh dọc 4:5, khoảng 1200 × 1500 px trở lên. Thêm một ảnh đời thường và một ảnh học/làm việc cho hai lựa chọn ở trang chủ.
 2. **Tiểu sử:** 80–120 từ về bạn ngoài công việc; có thể thêm ba từ khóa tính cách do bạn tự chọn.
-3. **Học tập:** tên trường THCS, THPT, đại học, ngành học, khoảng năm, câu chuyện 50–80 từ mỗi giai đoạn và ảnh tương ứng.
+3. **Học tập:** THCS, câu chuyện cá nhân và ảnh từng giai đoạn; THPT/đại học và ngành học đã điền theo CV.
 4. **Dự án:** ảnh giao diện/kết quả, phần việc trực tiếp, thời gian thực hiện, thử thách và bài học. Ưu tiên MedTutor, FutureVLA và LabGuard; ParkingAI vẫn có case study riêng.
-5. **CV PDF**, vai trò đang tìm, hình thức/khu vực làm việc mong muốn.
+5. **Vai trò đang tìm**, hình thức/khu vực làm việc mong muốn. CV đã có tại `/CV_PhanTrongDat.pdf`.
 6. **VinUni:** ảnh chứng nhận, ngày hoàn thành, mã hoặc liên kết xác minh nếu có. Trạng thái hoàn thành đã có theo thông tin bạn xác nhận.
 
 ## Chỗ điền thông tin
