@@ -2,6 +2,8 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const data=require('../../src/content/portfolio.json');
 
+test.beforeEach(async({page})=>{await page.addInitScript(()=>sessionStorage.setItem('ptd-neural-intro-seen','1'));});
+
 async function openMenu(page){const menu=page.getByRole('button',{name:'Mở menu'});if(await menu.isVisible())await menu.click();}
 
 test('home selects either journey, navigates without reload and supports browser Back',async({page})=>{
@@ -11,11 +13,11 @@ test('home selects either journey, navigates without reload and supports browser
   await page.evaluate(()=>window.__navigationMarker='same-document');
   await page.locator('.hero-actions').getByRole('link',{name:'Khám phá công việc'}).click();
   await expect(page).toHaveURL(/\/work$/);
-  await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');
+  await expect(page.locator('h1')).toContainText('Tôi kết nối dữ liệu');
   expect(await page.evaluate(()=>window.__navigationMarker)).toBe('same-document');
   await openMenu(page);await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
   await expect(page.locator('h1')).toContainText('ngoài màn hình');
-  await page.goBack();await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');
+  await page.goBack();await expect(page.locator('h1')).toContainText('Tôi kết nối dữ liệu');
   await page.goBack();await expect(page.locator('h1')).toContainText('Trọng Đạt');
   expect(errors).toEqual([]);
 });
@@ -26,7 +28,7 @@ test('both photo choices link to the correct journeys',async({page})=>{
   await expect(page).toHaveURL(/\/personal$/);
   await expect(page.locator('.life-chapter')).toHaveCount(4);
   await page.goto('/');await page.locator('.story-choice-work').click();
-  await expect(page.locator('.product-film,.research-motion,.interactive-world')).toHaveCount(3);
+  await expect(page.locator('.v4-capabilities,.v4-experience,.v4-library')).toHaveCount(3);
 });
 
 test('language switch updates content, metadata and persists across routes and reload',async({page})=>{
@@ -34,36 +36,28 @@ test('language switch updates content, metadata and persists across routes and r
   await expect(page.locator('html')).toHaveAttribute('lang','en');
   await expect(page.locator('.hero-statement')).toContainText('intelligent systems');
   await page.locator('.hero-actions').getByRole('link',{name:'Explore my work'}).click();
-  await expect(page.locator('h1')).toContainText('REAL THINGS');
-  await page.reload();await expect(page.locator('h1')).toContainText('REAL THINGS');
+  await expect(page.locator('h1')).toContainText('I connect data');
+  await page.reload();await expect(page.locator('h1')).toContainText('I connect data');
   await expect(page).toHaveTitle(/Work.*Phan Trọng Đạt/);
   await page.getByRole('button',{name:'Chuyển sang tiếng Việt'}).click();
   await expect(page.locator('html')).toHaveAttribute('lang','vi');
 });
 
-test('project index combines category, stack and accent-insensitive search',async({page})=>{
+test('library combines problem, technology and repository aliases',async({page})=>{
   await page.goto('/work');const archive=page.locator('#archive');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(data.projects.length);
-  await archive.getByRole('combobox',{name:'Danh mục'}).selectOption('research');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(data.projects.filter(project=>project.category==='research').length);
-  await archive.getByRole('combobox',{name:'Stack'}).selectOption('MATLAB');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
+  await expect(archive.locator('.v4-project-card')).toHaveCount(6);
+  await archive.getByRole('button',{name:`Xem toàn bộ ${data.projects.length} dự án`}).click();
+  await expect(archive.locator('.v4-project-card')).toHaveCount(data.projects.length);
+  await archive.getByRole('button',{name:'Nghiên cứu & tối ưu',exact:true}).click();
+  await archive.getByRole('combobox',{name:'Công nghệ',exact:true}).selectOption('MATLAB');
+  await expect(archive.locator('.v4-project-card')).toHaveCount(1);
   await expect(archive.locator('h3')).toContainText('PSO-Optimize');
-  await archive.getByRole('combobox',{name:'Stack'}).selectOption('FastAPI');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(0);
+  await archive.getByRole('combobox',{name:'Công nghệ',exact:true}).selectOption('FastAPI');
+  await expect(archive.locator('.v4-project-card')).toHaveCount(0);
   await archive.getByRole('button',{name:'Xóa bộ lọc'}).click();
-  await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('medtutor');
-  await expect(archive.locator('.cinema-index-entry')).toHaveCount(1);
-});
-
-test('selected works replace the abstract skills menu with project evidence',async({page})=>{
-  await page.goto('/work');
-  await expect(page.locator('.type-wall,.mobile-skill-scenes,.skills-in-motion')).toHaveCount(0);
-  await expect(page.locator('.selected-works')).toHaveCount(1);
-  await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true])')).toContainText('MedTutor');
-  await page.getByRole('button',{name:'Xem FutureVLA',exact:true}).click();
-  await expect(page.locator('.selected-stage-metadata:not([aria-hidden=true])')).toContainText('PyTorch');
-  await expect(page.locator('.selected-stage-link')).toHaveAttribute('href','/projects/future-vla');
+  await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('medbot');
+  await expect(archive.locator('.v4-project-card')).toHaveCount(1);
+  await expect(archive.locator('h3')).toContainText('MedTutor');
 });
 
 test('case study is directly addressable and its architecture is interactive',async({page})=>{
@@ -74,7 +68,7 @@ test('case study is directly addressable and its architecture is interactive',as
   await expect(page.locator('.architecture-detail')).toContainText('Dense + BM25');
   await expect(page.locator('.case-sources a').first()).toHaveAttribute('href',/github.com\/ptdbrain\/med-bot/);
   await page.reload();await expect(page).toHaveTitle(/MedTutor/);
-  await page.locator('.back-link').click();await expect(page).toHaveURL(/\/work#selected-work$/);
+  await page.locator('.back-link').click();await expect(page).toHaveURL(/\/work#archive$/);
 });
 
 test('missing content stays intentional and contact links are actionable',async({page,context})=>{
@@ -116,7 +110,7 @@ test('prerendered case studies have correct HTML and OG metadata before JavaScri
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content',/ParkingAI/);
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content','article');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',/\/projects\/parking-ai$/);
-  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('ĐIỀU THẬT');await context.close();
+  await page.getByRole('link',{name:/Trở lại Work/}).click();await expect(page.locator('h1')).toContainText('Tôi kết nối dữ liệu');await context.close();
 });
 
 test('all project links and static pages resolve without a client-only fallback',async({request})=>{

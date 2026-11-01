@@ -3,7 +3,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.jsx';
 import '../editorial.css';
 import '../cinema.css';
-import '../work-sections.css';
+import '../work-v4.css';
 import '../neural-intro.css';
 
 const root = document.getElementById('root');

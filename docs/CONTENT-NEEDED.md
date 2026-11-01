@@ -1,6 +1,6 @@
 # Nội dung bạn cần bổ sung
 
-> **Cập nhật 30/10/2026:** Work đã có hai section V3. CV PDF, tiểu sử chuyên môn, THPT/đại học, kinh nghiệm và thành tích đã được điền từ `CV_PhanTrongDat.pdf`; 23 dự án đã có mô tả song ngữ. Xem [bản rà soát nội dung](PROJECT-CONTENT-REVIEW.md) để biết nguồn và phần còn thiếu. Các mục lịch sử phía dưới chỉ áp dụng cho trường vẫn trống trong dữ liệu hiện tại.
+> **Cập nhật 01/11/2026:** Work đã chuyển sang [V4](WORK-REDESIGN-V4.md), dùng `src/content/workV4.mjs` cho nội dung giới thiệu/năng lực và `src/content/portfolio.json` cho CV, kinh nghiệm, dự án. CV PDF, tiểu sử chuyên môn, THPT/đại học, kinh nghiệm và thành tích đã được điền; 23 dự án có mô tả song ngữ. Card dự án V4 hoạt động khi chưa có ảnh. Xem [bản rà soát nội dung](PROJECT-CONTENT-REVIEW.md) để biết nguồn và phần còn thiếu. Các hướng dẫn Studio/V2/V3 phía dưới là lịch sử; chỉ áp dụng cho trường còn trống khi dùng lại các component đó.
 
 
 Bản mới đã dựng theo `newidea.md`. Các dữ kiện chưa biết được lưu bằng chuỗi rỗng hoặc mảng rỗng, không dùng ảnh AI, ảnh người khác hoặc số liệu minh họa làm thành tích thật.

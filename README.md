@@ -1,6 +1,6 @@
 # PTD. — One Person. Two Stories.
 
-Portfolio Việt/Anh của Phan Trọng Đạt, triển khai theo [newidea.md](newidea.md): trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work cập nhật theo [newidea2.md](newidea2.md) V3: process SVG bốn bước và Selected Works có điều khiển, trên nền Kinetic Cinema và các project world hiện có.
+Portfolio Việt/Anh của Phan Trọng Đạt: trang mở đầu chung, câu chuyện Personal, chuyên môn Work và case study kỹ thuật theo URL riêng. Nhánh Work hiện dùng [kịch bản V4](docs/WORK-REDESIGN-V4.md): giới thiệu cụ thể, năng lực theo phần việc, kinh nghiệm có đóng góp rõ và một thư viện dự án duy nhất.
 
 ## Chạy và kiểm tra
 
@@ -21,6 +21,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 ## Nội dung và ảnh còn thiếu
 
 - [Nội dung dự án từ GitHub và CV](docs/PROJECT-CONTENT-REVIEW.md) · 23 case study, bỏ qua repo bài lab.
+- [Kịch bản Work V4 đã triển khai](docs/WORK-REDESIGN-V4.md) · [Bản phác thảo ban đầu](docs/work-v4-preview.html).
 - [Bản cập nhật hai section Work V3](docs/WORK-SECTIONS-V3.md).
 - [Bản cập nhật Kinetic Cinema V2](docs/KINETIC-CINEMA-UPDATE.md).
 - [Kế hoạch file và các bước triển khai](docs/KINETIC-CINEMA-PLAN.md).
@@ -36,11 +37,11 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 - `/`: Home — hai lựa chọn.
 - `/personal`: tiểu sử, học tập, cột mốc, thể thao, sở thích, hiện tại, ước mơ.
-- `/work`: định vị, kinh nghiệm, Selected Work, archive, Lab, skills, notes, VinUni, career.
+- `/work`: định vị, bốn nhóm năng lực, kinh nghiệm/nghiên cứu/VinUni, thư viện có lọc/tìm kiếm và liên hệ.
 - `/projects/[slug]`: case study riêng cho từng dự án trong dữ liệu.
 - `/contact`: liên hệ.
 
-History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Work có nút Simple view, reduced-motion/thiết bị yếu fallback và GSAP/Motion tải động. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
+History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Work có nút Simple view, reduced-motion/thiết bị yếu fallback, reveal bằng IntersectionObserver và sơ đồ SVG. Thư viện giữ bộ lọc, tìm kiếm và trạng thái mở rộng khi quay lại từ case study bằng Back hoặc liên kết Trở lại Work; focus quay về card đã chọn và khôi phục vị trí cuộn. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
 
 ## Cấu trúc
 
@@ -48,6 +49,9 @@ History API hỗ trợ chuyển trang và Back; View Transition là progressive 
 src/App.jsx                      Router, layout, i18n, motion, metadata
 src/components/editorial/        Home, Personal, Work, CaseStudy, Shared
 src/content/portfolio.json       Nội dung và asset slots
+src/content/workV4.mjs           Nội dung V4 Việt/Anh, nhóm năng lực, tóm tắt
+src/lib/workV4.mjs               Lọc, thứ tự ưu tiên và kiểm tra trạng thái Work
+work-v4.css                     Giao diện Work V4, responsive và reduced motion
 src/content/cinema.json          Scene formats, manifesto, experiments, career
 src/components/cinema/           Cold open, orbit, project worlds và các scene
 cinema.css                       Kinetic Cinema, responsive và low-motion
@@ -59,7 +63,7 @@ editorial.css                    Design system, responsive, motion
 public/fonts/                    Be Vietnam Pro, Manrope, IBM Plex Mono + OFL
 ```
 
-Giao diện cũ (`BrainIntro.jsx`, `PortfolioHome.jsx`, `styles.css`, `src/data/`) được giữ để tham khảo, không dùng trong entry mới.
+Giao diện cũ (`BrainIntro.jsx`, `PortfolioHome.jsx`, `styles.css`, `src/data/`) và các scene Work V2/V3 được giữ để tham khảo. Work V4 không render các scene cũ; case study vẫn dùng CinemaFrame và theme đã có. Intro trang chủ dùng `public/neural-intro.mp4` cùng poster, có nút bỏ qua và bật/tắt âm thanh.
 
 ## Triển khai Vercel
 

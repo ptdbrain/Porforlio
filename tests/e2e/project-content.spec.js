@@ -31,6 +31,6 @@ test('CV-backed education, experience and downloadable PDF are available without
  await expect(page.locator('#experience')).toContainText('GeoIT VNPT');
  await expect(page.locator('#experience')).toContainText('BA GPS');
  const search=page.locator('#archive input[type=search]');await search.fill('medbot');
- await expect(page.locator('.cinema-index-entry')).toHaveCount(1);
- await expect(page.locator('.cinema-index-entry h3')).toContainText('MedTutor');
+ await expect(page.locator('.v4-project-card')).toHaveCount(1);
+ await expect(page.locator('.v4-project-card h3')).toContainText('MedTutor');
 });

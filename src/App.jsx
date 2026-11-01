@@ -11,6 +11,7 @@ import { Personal } from './components/editorial/Personal';
 import { CaseStudy } from './components/editorial/CaseStudy';
 import { Contact, CvLink, RouteLink } from './components/editorial/Shared';
 import { NeuralIntro } from './components/editorial/NeuralIntro';
+import { workReturnKey } from './lib/workV4.mjs';
 
 function browserLocation() { return {path: window.location.pathname, hash: window.location.hash, scroll: 0, initial: true}; }
 function initialLang() {
@@ -73,8 +74,13 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
       event.preventDefault();
       history.replaceState({...history.state,scroll:window.scrollY},'');
       if (language === 'en') url.searchParams.set('lang','en');
-      const next={path:url.pathname,hash:url.hash,scroll:0,initial:false};
-      const perform=() => {history.pushState({scroll:0},'',url.pathname+url.search+url.hash);setLocation(next);setMenuOpen(false);};
+      let returnState=null;
+      if(link.hasAttribute('data-work-return')){
+        try{const saved=JSON.parse(sessionStorage.getItem(workReturnKey));if(saved?.projectPath===window.location.pathname)returnState=saved;}catch{}
+      }
+      const scroll=returnState&&Number.isFinite(returnState.scroll)?returnState.scroll:0;
+      const next={path:url.pathname,hash:url.hash,scroll,initial:false};
+      const perform=() => {history.pushState({scroll,...(returnState?{workV4:returnState}:{})},'',url.pathname+url.search+url.hash);setLocation(next);setMenuOpen(false);};
       if (document.startViewTransition && !motionPreference.simple && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && url.pathname !== window.location.pathname) {
         const choice=link.closest('.story-choice');
         const cover=link.closest('[data-project-portal]');
