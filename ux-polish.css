@@ -1,5 +1,5 @@
 /* Shared reading rhythm, navigation and motion across both stories. */
-html{scroll-padding-top:0}
+html{scroll-padding-top:0;scrollbar-gutter:stable}
 [id]{scroll-margin-top:114px}
 .page-hidden *{animation-play-state:paused!important}
 input:focus-visible,summary:focus-visible,[tabindex="-1"]:focus-visible{outline:2px solid var(--accent);outline-offset:5px}

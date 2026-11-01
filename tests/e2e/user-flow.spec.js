@@ -8,7 +8,7 @@ test('intro skips with keyboard, crossfades into Home and only plays once',async
  await expect(dialog.getByRole('button',{name:'Bỏ qua'})).toBeFocused();
  await page.keyboard.press('Tab');await expect(dialog.getByRole('button',{name:'Bật âm thanh'})).toBeFocused();
  await page.keyboard.press('Escape');
- await expect(page.locator('.portfolio')).toHaveClass(/intro-revealing/);
+ await expect(page.locator('.portfolio')).toHaveClass(/intro-revealed/);
  await expect(dialog).toBeHidden();await expect(page.locator('#main-content')).toBeFocused();
  await expect(page.locator('.portfolio')).not.toHaveAttribute('inert');
  await page.reload();await expect(page.getByRole('dialog')).toHaveCount(0);
@@ -26,11 +26,25 @@ test('a stalled video cannot leave the visitor on a loading gate',async({page})=
 });
 
 test('the video completes naturally and releases the page',async({page})=>{
+ const errors=[];page.on('pageerror',error=>errors.push(error.message));
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');
  await expect(page.getByRole('dialog')).toBeVisible();
+ const video=page.locator('.neural-intro-video');
+ await expect(page.locator('.neural-intro')).toHaveAttribute('data-exit','natural',{timeout:10000});
+ await expect(video).toHaveJSProperty('paused',false);
+ await expect(page.locator('.portfolio')).toHaveCSS('opacity','1');
+ await expect(page.locator('.hero-copy h1')).toHaveCSS('animation-name','none');
+ const initialTime=await video.evaluate(node=>node.currentTime);
+ const initialWidth=await page.locator('.home-hero').evaluate(node=>node.getBoundingClientRect().width);
+ await page.waitForTimeout(200);
+ expect(await video.evaluate(node=>node.currentTime)).toBeGreaterThan(initialTime);
+ expect(await video.evaluate(node=>node.volume)).toBeLessThan(1);
  await expect(page.getByRole('dialog')).toBeHidden({timeout:12000});
  await expect(page.locator('.portfolio')).not.toHaveAttribute('inert');
  await expect(page.locator('#home-title')).toBeVisible();
+ await expect(page.locator('.hero-copy h1')).toHaveCSS('animation-name','none');
+ expect(await page.locator('.home-hero').evaluate(node=>node.getBoundingClientRect().width)).toBeCloseTo(initialWidth,0);
+ expect(errors).toEqual([]);
 });
 
 test('a failed app script leaves the prerendered home readable',async({page})=>{

@@ -5,9 +5,11 @@
 .neural-video-controls{position:absolute;z-index:3;top:clamp(20px,4vh,42px);left:clamp(20px,5vw,72px);right:clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;gap:18px;pointer-events:none}.neural-brand,.neural-audio,.neural-skip{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.11em}.neural-brand{font-size:9px;color:#d4e1e8;text-shadow:0 1px 12px #080b12}.neural-brand>span{color:#86f2ff;font-family:Sora,sans-serif;font-size:16px;font-weight:700;letter-spacing:-.1em}.neural-video-actions{display:flex;align-items:center;gap:12px;pointer-events:auto}.neural-audio,.neural-skip{display:inline-flex;justify-content:center;align-items:center;gap:10px;min-height:44px;padding:0 13px;border:1px solid #c8e9f444;border-radius:999px;color:#e4edf2;background:#09111b88;backdrop-filter:blur(10px);font-size:8px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}.neural-audio:hover,.neural-skip:hover{background:#112331d9;border-color:#86f2ff99;color:#fff}.neural-skip span{color:#86f2ff;font:16px Arial,sans-serif}.neural-audio:focus-visible,.neural-skip:focus-visible{outline:2px solid #86f2ff;outline-offset:4px}
 @media(max-width:600px){.neural-video-controls{top:16px;left:16px;right:16px;align-items:flex-start}.neural-brand{font-size:7px;padding-top:14px}.neural-video-actions{gap:7px}.neural-audio,.neural-skip{font-size:7px;min-height:42px;padding-inline:10px}.neural-intro-video{width:100%;height:auto;max-height:100svh;aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.neural-intro,.neural-intro-pending .portfolio{transition:none}}
-.portfolio.intro-covered{opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .48s cubic-bezier(.22,1,.36,1)}
-.neural-intro-pending .portfolio.intro-revealing{opacity:1;transform:none}
+.portfolio.intro-covered{opacity:0;transform:none;transition:none}
+.neural-intro-pending .portfolio.intro-revealed{opacity:1;transform:none}
 .neural-intro-pending .intro-in,.neural-intro-pending .intro-photo{animation-play-state:paused}
-.neural-intro-pending .intro-revealing .intro-in,.neural-intro-pending .intro-revealing .intro-photo{animation-play-state:running}
-.neural-intro{transition-duration:.42s}.neural-brand{font-size:10px}.neural-audio,.neural-skip{font-size:10px;min-height:44px}
+.portfolio.intro-revealed .home-hero .intro-in,.portfolio.intro-revealed .home-hero .intro-photo{animation:none!important;opacity:1;transform:none;clip-path:none}
+.neural-intro{transition:opacity var(--intro-exit-duration,900ms) cubic-bezier(.4,0,.2,1)}
+.neural-video-controls{transition:opacity .18s ease}.neural-intro.is-exiting .neural-video-controls{opacity:0}
+.neural-brand{font-size:10px}.neural-audio,.neural-skip{font-size:10px;min-height:44px}
 @media(max-width:600px){.neural-brand{font-size:9px}.neural-audio,.neural-skip{font-size:10px;min-height:44px}}

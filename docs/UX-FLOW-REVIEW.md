@@ -28,7 +28,7 @@ Các ảnh, câu chuyện cá nhân, vai trò chưa có nguồn và số liệu 
 
 ## Chuyển động
 
-Reveal dùng IntersectionObserver, opacity và translateY khoảng 14 px trong 480–520 ms, chạy một lần. Video giữ đoạn đầu khoảng 7 giây và fade khoảng 420 ms. Panel năng lực Work giữ chiều cao ổn định và đổi trong khoảng 220 ms. Modal hiện khoảng 220 ms. Hover không đổi chiều rộng card.
+Reveal dùng IntersectionObserver, opacity và translateY khoảng 14 px trong 480–520 ms, chạy một lần. Intro giữ đoạn đầu khoảng 7 giây; bắt đầu hòa cảnh ở mốc khoảng 6,1 giây và tiếp tục phát hình trong 900 ms chuyển tiếp. Home được chuẩn bị hoàn chỉnh phía dưới, không fade cả hai lớp về nền tối hoặc chạy lại animation hero khi gỡ intro. Âm lượng giảm dần nếu bật tiếng. Bỏ qua/lỗi tải dùng chuyển tiếp nhanh khoảng 260 ms. `scrollbar-gutter: stable` giữ bề rộng bố cục khi mở khóa cuộn. Panel năng lực Work giữ chiều cao ổn định và đổi trong khoảng 220 ms. Modal hiện khoảng 220 ms. Hover không đổi chiều rộng card.
 
 Khi tab ẩn, animation pause và video dừng. Reduced motion/Simple view giữ nguyên thao tác nhưng tắt các chuyển động tương ứng. Thanh đọc dùng requestAnimationFrame; ghi vị trí lịch sử có throttle 500 ms và cập nhật khi scroll kết thúc.
 
