@@ -1,0 +1,109 @@
+/* Shared reading rhythm, navigation and motion across both stories. */
+html{scroll-padding-top:0}
+[id]{scroll-margin-top:114px}
+.page-hidden *{animation-play-state:paused!important}
+input:focus-visible,summary:focus-visible,[tabindex="-1"]:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.wordmark{min-height:44px;display:inline-flex;align-items:center}
+.language-toggle{min-width:44px;min-height:44px;justify-content:center;font-size:11px}
+.main-nav>a{font-size:12px}.theme-cinema .main-nav>a{font-size:11px}
+.text-link,.inline-links>a,.back-link,.case-sources a,.contact-links>a,.text-cv{min-height:44px;align-items:center}
+.back-link{display:inline-flex;font-size:12px}
+.text-link,.inline-links>a,.contact-links>a,.text-cv{font-size:13px}
+.back-top{min-width:44px;min-height:44px;display:inline-grid;place-items:center}
+.hero-actions .button{font-size:13px}
+.intro-in{animation-duration:.52s}.intro-photo{animation-duration:.68s;animation-delay:.12s}
+.hero-actions.intro-in{animation-delay:240ms!important}
+.motion-enabled [data-reveal]{transition:opacity .48s var(--ease),transform .48s var(--ease);transform:translateY(14px)}
+.motion-enabled [data-reveal].is-revealed{transform:none}
+.hero-disciplines{font-size:11px;line-height:1.9}
+.scroll-cue{font-size:10px;min-height:44px}
+.stories-intro{font-size:15px}
+.story-choice{transition:transform .25s var(--ease),box-shadow .25s var(--ease);border-radius:4px}
+.story-choice p{font-size:14px}.story-cta{font-size:13px;min-height:44px}
+.story-choices:has(.story-choice:hover) .story-choice,.story-choices .story-choice:hover{flex:1}
+.personal-collage{view-transition-name:none}.personal-collage:has(.has-photo){view-transition-name:journey}
+.photo.has-photo img{transition:transform .4s var(--ease)}
+.photo-empty-label small{font-size:10px;opacity:.85}.photo-number{font-size:10px}
+.life-chapter{min-height:55svh;padding-block:45px 65px}
+.life-chapter h3{font-size:38px;line-height:1.25;margin-bottom:25px}
+.life-chapter>p,.life-chapter>ul{font-size:15px;color:var(--muted);line-height:1.9}
+.life-chapter .chapter-school{font-size:18px;color:var(--ink)}
+.chapter-period{font-size:11px}
+.timeline-markers{height:auto;gap:5px}.timeline-markers a{min-height:44px;min-width:44px;font-size:10px}
+.timeline-caption{font-size:12px}.timeline-caption>span{font-size:10px}
+.achievement-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 25px;margin-top:45px}
+.achievement-card{min-width:0}.achievement-card .photo{aspect-ratio:16/11;margin-bottom:22px}
+.achievement-card h3{font-size:24px;line-height:1.35}.achievement-card>p{font-size:14px;color:var(--muted)}
+.achievement-card>.eyebrow{font-size:10px;letter-spacing:.04em}
+.training-content>p,.hobby-grid p,.dreams-grid p{font-size:14px}
+.training-org{font-size:12px}.training-top .eyebrow,.status-pill{font-size:10px}
+.present-grid .empty-text{min-height:80px}.empty-text small{font-size:12px}
+.contact-layout :is(h1,h2){font-size:clamp(38px,5.2vw,70px);line-height:1.2;max-width:15ch;margin-top:24px}
+.contact-lead{font-size:14px;line-height:1.9}.copy-button{min-height:44px;font-size:12px}.copy-status{font-size:12px}
+.contact-links{gap:12px 24px}.site-footer p{font-size:10px;line-height:1.8}
+.theme-cinema .case-hero h1{font-size:clamp(44px,7vw,104px)}
+.case-subtitle{max-width:65ch}.case-meta-grid p{font-size:13px;line-height:1.85}.case-meta-grid .eyebrow{font-size:10px}
+.theme-cinema .case-hero>.project-meta,.theme-cinema .case-hero .project-status{font-size:10px;line-height:1.8}
+.theme-cinema .case-toc{gap:4px 26px;padding-block:10px}.theme-cinema .case-toc a{min-height:44px;font-size:12px;padding-block:10px}.case-toc a span{font-size:10px}
+.case-content>section>p,.theme-cinema .technical-decisions p{font-size:15px;line-height:1.95}
+.theme-cinema .case-content>section>p{max-width:76ch}
+.theme-cinema .case-content>section>.case-body-lead{font-size:21px;line-height:1.85;max-width:65ch}
+.theme-cinema .architecture-nodes{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:16px}
+.theme-cinema .architecture-nodes button{min-height:125px;padding:20px 16px;gap:18px;transition:border-color .18s,background .18s}
+.theme-cinema .case-content .architecture-nodes button strong{font-size:14px;line-height:1.65}
+.architecture-diagram>p{font-size:13px;line-height:1.9}
+.architecture-detail{font:13px/1.9 'IBM Plex Mono',monospace!important;min-height:85px;padding:20px}
+.tags>li{font-size:11px;line-height:1.7}
+.case-sources a{font-size:13px;line-height:1.8}.case-sources>p{font-size:12px;max-width:76ch}
+.project-limitation p{font-size:14px;line-height:1.9}.next-project strong{font-size:clamp(28px,4vw,56px);line-height:1.3}
+.story-modal{--accent:#814b29;--line:#c4c1b7;border-radius:10px;overscroll-behavior:contain;animation:dialog-in .22s var(--ease) both}
+.modal-backdrop{animation:dialog-backdrop-in .16s ease both}
+.story-modal a{align-items:center;min-height:44px;font-size:13px}.story-modal p{font-size:14px;line-height:1.9}
+.portfolio.is-simple .intro-in,.portfolio.is-simple .intro-photo{animation:none!important;clip-path:none;transform:none}
+.portfolio.is-simple [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+.portfolio.is-simple .timeline-photo-layer,.portfolio.is-simple .photo img,.portfolio.is-simple .story-choice{transition:none!important}
+.portfolio.is-simple .story-choice:hover,.portfolio.is-simple .photo.has-photo:hover img{transform:none!important}
+html[data-motion="simple"] .modal-backdrop,html[data-motion="simple"] .story-modal{animation:none!important;transition:none!important}
+::view-transition-old(root){animation:fade-out .18s ease both}
+::view-transition-new(root){animation:fade-in .32s var(--ease) both}
+::view-transition-group(journey),::view-transition-group(project-cover){animation-duration:.48s}
+@keyframes dialog-in{from{opacity:.5;transform:translateY(10px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes dialog-backdrop-in{from{opacity:0}to{opacity:1}}
+@media(hover:hover) and (pointer:fine){.story-choice:hover{transform:translateY(-4px);box-shadow:0 16px 38px #0002}}
+@media(max-width:1100px){.achievement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header-inner{gap:25px}.main-nav{gap:22px}}
+@media(max-width:760px){
+  [id]{scroll-margin-top:96px}
+  .menu-toggle{min-width:44px;min-height:44px;padding:10px;align-items:center}
+  .main-nav.is-open{max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain;padding-block:12px 20px;animation:menu-in .2s var(--ease) both}
+  .main-nav>a,.theme-cinema .main-nav>a{font-size:15px;min-height:48px;padding-block:13px}
+  .main-nav .motion-preference{font-size:11px;min-height:44px;margin-top:10px}
+  .hero-actions .button{font-size:12px;min-height:50px;padding:13px 14px;gap:12px}
+  .hero-disciplines{font-size:10px}.scroll-cue{font-size:10px}
+  .story-choice{min-height:365px;padding:26px}.story-choice p{font-size:14px}.story-cta{font-size:13px}
+  .personal-lead{font-size:15px;line-height:1.9}.personal-bio{font-size:17px}
+  .life-chapter{min-height:0;padding-block:30px 45px}.life-chapter h3{font-size:33px}.chapter-period{font-size:11px}
+  .achievement-grid{grid-template-columns:1fr;gap:35px}.achievement-card h3{font-size:24px}.achievement-card .photo{aspect-ratio:16/10}
+  .training-content>p,.hobby-grid p,.sport-story p{font-size:14px}
+  .training-content .inline-links a{font-size:12px}.training-top .eyebrow{font-size:10px}
+  .photo-empty-label small{font-size:10px}.photo-number{font-size:9px}
+  .contact-layout :is(h1,h2){font-size:clamp(34px,8.6vw,48px);line-height:1.3}.contact-lead{font-size:14px}
+  .contact-links>a{font-size:13px}.site-footer p{font-size:10px}
+  .theme-cinema .case-hero h1{font-size:clamp(40px,9.7vw,65px)}
+  .case-meta-grid p{font-size:12px}.case-meta-grid .eyebrow{font-size:10px}
+  .theme-cinema .case-toc{gap:3px 16px}.theme-cinema .case-toc a{font-size:12px;line-height:1.7;min-height:48px;padding:10px 0}
+  .case-content>section>p,.theme-cinema .technical-decisions p{font-size:14px}
+  .theme-cinema .case-content>section>.case-body-lead{font-size:18px;line-height:1.9}
+  .theme-cinema .architecture-nodes{grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:12px}
+  .theme-cinema .architecture-nodes button{min-height:108px;padding:17px 13px}
+  .theme-cinema .case-content .architecture-nodes button strong{font-size:13px}
+  .architecture-detail{font-size:12px!important;padding:17px;min-height:100px}
+  .tags>li{font-size:10px}.case-sources a{font-size:12px}.case-sources>p{font-size:11px}
+  .modal-backdrop{backdrop-filter:blur(4px);padding:16px}.story-modal{max-height:calc(100dvh - 32px);padding:24px}
+}
+@keyframes menu-in{from{opacity:.5;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .portfolio *, .modal-backdrop,.story-modal{animation:none!important;transition:none!important}
+  .story-choice:hover,.photo.has-photo:hover img,.v4-project-card:hover{transform:none!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+@media print{.achievement-grid{grid-template-columns:1fr 1fr}.achievement-card{break-inside:avoid}.case-content>section>p{font-size:12px}.life-chapter{min-height:0}}

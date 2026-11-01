@@ -1,5 +1,7 @@
 # Nội dung bạn cần bổ sung
 
+Xem [danh sách ưu tiên mới sau đợt rà soát UX](ASSETS-CONTENT-CHECKLIST.md) để chuẩn bị ảnh/nội dung theo từng đợt; [báo cáo user flow](UX-FLOW-REVIEW.md) ghi các thay đổi và phạm vi kiểm tra.
+
 > **Cập nhật 01/11/2026:** Work đã chuyển sang [V4](WORK-REDESIGN-V4.md), dùng `src/content/workV4.mjs` cho nội dung giới thiệu/năng lực và `src/content/portfolio.json` cho CV, kinh nghiệm, dự án. CV PDF, tiểu sử chuyên môn, THPT/đại học, kinh nghiệm và thành tích đã được điền; 23 dự án có mô tả song ngữ. Card dự án V4 hoạt động khi chưa có ảnh. Xem [bản rà soát nội dung](PROJECT-CONTENT-REVIEW.md) để biết nguồn và phần còn thiếu. Các hướng dẫn Studio/V2/V3 phía dưới là lịch sử; chỉ áp dụng cho trường còn trống khi dùng lại các component đó.
 
 

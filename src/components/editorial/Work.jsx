@@ -26,7 +26,7 @@ export function Work({data,language,t,simple=false}) {
 
   useEffect(()=>{
     const saved=history.state?.workV4;
-    if(saved){setView(normalizeWorkView(saved,data.projects));if(Number.isFinite(saved.scroll)&&saved.scroll>=0)setRestore({scroll:saved.scroll,focusSlug:saved.focusSlug});}
+    if(saved){const scroll=Number.isFinite(history.state.scroll)?history.state.scroll:saved.scroll;setView(normalizeWorkView(saved,data.projects));if(Number.isFinite(scroll)&&scroll>=0)setRestore({scroll,focusSlug:saved.focusSlug});}
     setReady(true);
   },[data.projects]);
   useEffect(()=>{if(ready&&!restore)history.replaceState({...history.state,workV4:{...view,scroll:window.scrollY}},'');},[view,ready,restore]);

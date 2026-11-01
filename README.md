@@ -20,6 +20,8 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 ## Nội dung và ảnh còn thiếu
 
+- [Rà soát user flow và tối ưu UX](docs/UX-FLOW-REVIEW.md).
+- [Ảnh và thông tin cần bổ sung theo ưu tiên](docs/ASSETS-CONTENT-CHECKLIST.md).
 - [Nội dung dự án từ GitHub và CV](docs/PROJECT-CONTENT-REVIEW.md) · 23 case study, bỏ qua repo bài lab.
 - [Kịch bản Work V4 đã triển khai](docs/WORK-REDESIGN-V4.md) · [Bản phác thảo ban đầu](docs/work-v4-preview.html).
 - [Bản cập nhật hai section Work V3](docs/WORK-SECTIONS-V3.md).
@@ -57,6 +59,8 @@ src/components/cinema/           Cold open, orbit, project worlds và các scene
 cinema.css                       Kinetic Cinema, responsive và low-motion
 src/content/copy.js              Nhãn Việt/Anh
 src/lib/routes.mjs               Route resolution, metadata
+src/lib/useSiteMotion.js         Reveal theo viewport và tùy chọn chuyển động
+ux-polish.css                    Readability, focus, shared motion và responsive
 src/prerender.jsx                React server renderer cho build tĩnh
 scripts/prerender.mjs            Tạo HTML theo route và sitemap
 editorial.css                    Design system, responsive, motion

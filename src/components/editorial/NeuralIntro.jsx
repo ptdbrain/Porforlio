@@ -1,38 +1,57 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export function NeuralIntro({ language, onComplete }) {
+export function NeuralIntro({ language, onReveal, onComplete }) {
   const [muted, setMuted] = useState(true);
   const [exiting, setExiting] = useState(false);
   const videoRef = useRef(null);
   const skipRef = useRef(null);
   const finishTimer = useRef(null);
+  const mounted = useRef(false);
+  const finishing = useRef(false);
   const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const finish = useCallback(() => {
-    if (finishTimer.current !== null) return;
+    if (!mounted.current || finishing.current) return;
+    finishing.current = true;
+    videoRef.current?.pause();
+    onReveal();
     setExiting(true);
-    finishTimer.current = window.setTimeout(onComplete, 520);
-  }, [onComplete]);
+    finishTimer.current = window.setTimeout(onComplete, 420);
+  }, [onComplete,onReveal]);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
+    mounted.current = true;
+    finishing.current = false;
     document.body.style.overflow = 'hidden';
     skipRef.current?.focus({ preventScroll: true });
     if (reduced) {
+      onReveal();
       onComplete();
-      return () => { document.body.style.overflow = previousOverflow; };
+      return () => { mounted.current=false;document.body.style.overflow = previousOverflow; };
     }
 
     const video = videoRef.current;
-    const playback = video?.play();
-    playback?.catch(finish);
+    let disposed=false,loadTimer,stallTimer,started=false;
+    const clearGuards=()=>{clearTimeout(loadTimer);clearTimeout(stallTimer);};
+    const playing=()=>{started=true;clearGuards();};
+    const waiting=()=>{if(started&&!document.hidden){clearTimeout(stallTimer);stallTimer=setTimeout(finish,2500);}};
+    const play=()=>{if(finishing.current||document.hidden)return;loadTimer=setTimeout(finish,4500);video.play()?.catch(()=>{if(!disposed)finish();});};
+    const visibility=()=>{clearGuards();if(document.hidden)video.pause();else play();};
+    video.addEventListener('playing',playing);video.addEventListener('waiting',waiting);document.addEventListener('visibilitychange',visibility);play();
     return () => {
+      disposed=true;mounted.current=false;clearGuards();video.pause();
+      video.removeEventListener('playing',playing);video.removeEventListener('waiting',waiting);document.removeEventListener('visibilitychange',visibility);
       if (finishTimer.current !== null) window.clearTimeout(finishTimer.current);
+      finishTimer.current=null;
       document.body.style.overflow = previousOverflow;
     };
-  }, [finish, onComplete, reduced]);
+  }, [finish, onReveal, onComplete, reduced]);
 
-  return <div className={`neural-intro ${exiting ? 'is-exiting' : ''}`} role="dialog" aria-modal="true" aria-label={language === 'vi' ? 'Video giới thiệu portfolio' : 'Portfolio intro video'} onKeyDown={event => { if (event.key === 'Escape') finish(); }}>
+  return <div className={`neural-intro ${exiting ? 'is-exiting' : ''}`} role="dialog" aria-modal="true" aria-label={language === 'vi' ? 'Video giới thiệu portfolio' : 'Portfolio intro video'} onKeyDown={event => {
+    if(event.key==='Escape'){event.stopPropagation();finish();}
+    if(event.key==='Tab'){const buttons=[...event.currentTarget.querySelectorAll('button')];const first=buttons[0],last=buttons[buttons.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
+  }}>
     <video
       ref={videoRef}
       className="neural-intro-video"

@@ -7,9 +7,12 @@ function LifeTimeline({ chapters, language, t }) {
   const root = useRef(null);
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return;
+    const visible=new Map();
     const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible.length) setActive(Number(visible[0].target.dataset.chapter));
+      for(const entry of entries){if(entry.isIntersecting)visible.set(entry.target,entry.intersectionRatio);else visible.delete(entry.target);}
+      const candidates=[...visible.keys()].map(node=>({node,rect:node.getBoundingClientRect()}));
+      const current=candidates.find(({rect})=>rect.top<=innerHeight*.45&&rect.bottom>=innerHeight*.45)||candidates.sort((a,b)=>Math.abs(a.rect.top-innerHeight*.45)-Math.abs(b.rect.top-innerHeight*.45))[0];
+      if(current)setActive(Number(current.node.dataset.chapter));
     }, { rootMargin: '-20% 0px -35% 0px', threshold: [0, .2, .5] });
     root.current.querySelectorAll('[data-chapter]').forEach((node) => observer.observe(node));
     return () => observer.disconnect();
@@ -28,13 +31,13 @@ function LifeTimeline({ chapters, language, t }) {
       {chapter.gallery.length > 0 && <div className="chapter-gallery">{chapter.gallery.map((image, i) => <Photo key={i} asset={image} label={l(chapter.label, language)} language={language} t={t} />)}</div>}
       {chapter.id === 'present' && <RouteLink className="text-link" href="/work">{t.exploreWork}<Arrow /></RouteLink>}
     </article>)}</div>
-    <nav className="timeline-markers" aria-label={t.timeline}>{chapters.map((chapter, index) => <a href={`#chapter-${chapter.id}`} className={active === index ? 'active' : ''} aria-current={active === index ? 'step' : undefined} key={chapter.id} aria-label={l(chapter.label, language)}><span>0{index + 1}</span><i /></a>)}</nav>
+    <nav className="timeline-markers" aria-label={t.timeline}>{chapters.map((chapter, index) => <a href={`#chapter-${chapter.id}`} onClick={()=>setActive(index)} className={active === index ? 'active' : ''} aria-current={active === index ? 'step' : undefined} key={chapter.id} aria-label={l(chapter.label, language)}><span>0{index + 1}</span><i /></a>)}</nav>
   </div>;
 }
 
 function AchievementCard({ item, language, t }) {
   const [open, setOpen] = useState(false);
-  return <><article className="achievement-card" data-reveal><Photo asset={item.image} label={l(item.title, language)} language={language} t={t} /><span className="eyebrow">{item.date} {item.organization && ` / ${item.organization}`}</span><h3>{l(item.title, language)}</h3><p>{l(item.result, language)}</p><button className="text-link" onClick={() => setOpen(true)}>{t.details}<Arrow /></button></article>{open && <Modal title={t.close} onClose={() => setOpen(false)}><h2>{l(item.title, language)}</h2><p>{item.date} / {item.organization}</p><p>{l(item.result, language)}</p><p>{l(item.role, language)}</p><p>{l(item.story, language)}</p>{item.evidence && <ExternalLink href={item.evidence}>{t.evidence}</ExternalLink>}</Modal>}</>;
+  return <><article className="achievement-card" data-reveal><Photo asset={item.image} label={l(item.title, language)} language={language} t={t} /><span className="eyebrow">{item.date} {item.organization && ` / ${item.organization}`}</span><h3>{l(item.title, language)}</h3><p>{l(item.result, language)}</p><button className="text-link" onClick={() => setOpen(true)}>{t.details}<Arrow /></button></article>{open && <Modal title={l(item.title,language)} closeLabel={t.close} onClose={() => setOpen(false)}><h2>{l(item.title, language)}</h2><p>{item.date} / {item.organization}</p><p>{l(item.result, language)}</p><p>{l(item.role, language)}</p><p>{l(item.story, language)}</p>{item.evidence && <ExternalLink href={item.evidence}>{t.evidence}</ExternalLink>}</Modal>}</>;
 }
 
 export function Personal({ data, language, t }) {
