@@ -1,0 +1,46 @@
+.photo-surface{position:relative;width:100%;height:100%;overflow:hidden;border-radius:inherit;background:var(--photo)}
+.personal-photo-motion [data-photo-motion]{perspective:1200px;overflow:visible;background:transparent;--photo-fold:0;--photo-travel:0;--photo-strength:1}
+.personal-photo-motion .photo-surface{backface-visibility:hidden;transition:transform .24s cubic-bezier(.2,.65,.3,1),clip-path .24s cubic-bezier(.2,.65,.3,1);box-shadow:0 12px 28px #49352310}
+.personal-photo-motion .personal-collage .photo{border-color:transparent;box-shadow:none}
+.personal-photo-motion .personal-collage .photo-surface{outline:7px solid #fbf7ef}
+.personal-photo-motion .photo-surface::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,#fff8,transparent 45%,#49352324);opacity:calc(var(--photo-fold) * .4);transition:opacity .24s}
+/* Different paper gestures share one scroll signal and settle to a flat photo. */
+.personal-photo-motion [data-photo-motion="hinge"] .photo-surface{transform-origin:0% 50%;transform:rotateY(calc(var(--photo-fold) * -54deg * var(--photo-strength))) translateZ(0)}
+.personal-photo-motion [data-photo-motion="flip"] .photo-surface{transform-origin:50% 100%;transform:rotateX(calc(var(--photo-fold) * 48deg * var(--photo-strength))) scale(calc(1 - var(--photo-fold) * .035))}
+.personal-photo-motion [data-photo-motion="fan"] .photo-surface{transform-origin:50% 85%;transform:translateY(calc(var(--photo-fold) * 24px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 12deg * var(--photo-strength))) rotateY(calc(var(--photo-direction) * var(--photo-fold) * 18deg * var(--photo-strength))) scale(calc(1 - var(--photo-fold) * .06))}
+.personal-photo-motion [data-photo-motion="tilt"] .photo-surface{transform:rotate(calc(var(--photo-direction) * var(--photo-fold) * 10deg * var(--photo-strength))) rotateY(calc(var(--photo-direction) * var(--photo-fold) * 24deg * var(--photo-strength))) scale(calc(1 - var(--photo-fold) * .07))}
+.personal-photo-motion [data-photo-motion="unfold"] .photo-surface{transform:rotateX(calc(var(--photo-fold) * 22deg * var(--photo-strength)));clip-path:inset(0 calc(var(--photo-fold) * 24% * var(--photo-strength)) round 3px)}
+.personal-photo-motion [data-photo-motion="unfold"] img{transform:scale(calc(1.025 + var(--photo-fold) * .06)) translateY(calc(var(--photo-travel) * -12px));transition:transform .24s ease-out}
+.personal-photo-motion [data-photo-motion]:focus-within .photo-surface{transform:none!important;clip-path:none!important;transition-duration:.12s}
+.personal-photo-motion [data-photo-motion]:focus-within img{transform:none!important}
+.personal-photo-motion [data-photo-motion]:focus-within .photo-surface::after{opacity:0}
+
+/* Desktop timeline: the outgoing page closes as the next page opens.
+   All layers keep the same footprint and only the active one is accessible. */
+.personal-photo-motion .timeline-photo-stack{perspective:1600px;isolation:isolate}
+.personal-photo-motion .timeline-photo-layer{transform-origin:0% 50%;backface-visibility:hidden;visibility:hidden;z-index:0;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .65s ease,visibility 0s .95s;transform:translateX(12%) rotateY(65deg) scale(.94)}
+.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-8%) rotateY(-68deg) scale(.96)}
+.personal-photo-motion .timeline-photo-layer.is-active{transform:translateX(0) rotateY(0) scale(1);visibility:visible;opacity:1;z-index:2;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .65s ease,visibility 0s}
+.personal-photo-motion .timeline-photo-layer .photo{border-radius:4px;box-shadow:0 20px 45px #49352318}
+.personal-photo-motion .timeline-photo-layer::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#49352333,transparent 25%,#fff7);opacity:.65;transition:opacity .85s ease}
+.personal-photo-motion .timeline-photo-layer.is-active::after{opacity:0}
+.personal-photo-motion .timeline-photo-stack::after{content:"";position:absolute;inset:8px -7px -8px 9px;border:1px solid var(--line);border-radius:4px;background:var(--surface);z-index:-1;rotate:1.5deg;pointer-events:none}
+.personal-photo-motion .timeline-caption{position:relative}
+.personal-photo-motion .timeline-caption::before{content:"";position:absolute;left:0;top:0;width:44px;height:1px;background:var(--accent)}
+
+@media(max-width:760px){
+  .personal-photo-motion [data-photo-motion]{--photo-strength:.55;perspective:900px}
+  .personal-photo-motion .photo-surface{box-shadow:0 8px 18px #4935230c}
+}
+/* Immediate, fully readable fallbacks also cover print and focus navigation. */
+.portfolio.is-simple .photo-surface,.portfolio.is-simple .photo-surface img{transform:none!important;clip-path:none!important;transition:none!important}
+.portfolio.is-simple .photo-surface::after{display:none}
+@media(prefers-reduced-motion:reduce){
+  .personal-story .photo-surface,.personal-story .photo-surface img{transform:none!important;clip-path:none!important;transition:none!important}
+  .personal-story .photo-surface::after{display:none}
+  .personal-story .timeline-photo-layer{transform:none!important;transition:none!important}
+}
+@media print{
+  .personal-story .photo-surface,.personal-story .photo-surface img{transform:none!important;clip-path:none!important;box-shadow:none!important}
+  .personal-story .photo-surface::after{display:none}
+}

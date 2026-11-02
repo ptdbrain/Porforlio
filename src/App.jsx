@@ -164,7 +164,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
       <div className="header-tools"><button className="language-toggle" type="button" onClick={changeLanguage} aria-label={language==='vi'?'Switch to English':'Chuyển sang tiếng Việt'}><span className={language==='vi'?'active':''}>VI</span><span>/</span><span className={language==='en'?'active':''}>EN</span></button><button ref={menuButtonRef} className="menu-toggle" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="main-navigation" aria-label={menuOpen?t.close:t.menu}><span /> <span /></button></div></div></header>
     <main id="main-content" ref={mainRef} tabIndex="-1" key={location.path}>
       {route.kind==='home'&&<Home data={data} language={language} t={t} />}
-      {route.kind==='personal'&&<Personal data={data} language={language} t={t} />}
+      {route.kind==='personal'&&<Personal data={data} language={language} t={t} simple={motionPreference.simple} />}
       {route.kind==='work'&&<Work data={data} language={language} t={t} simple={motionPreference.simple} />}
       {route.kind==='project'&&<CaseStudy key={route.project.slug} project={route.project} data={data} language={language} t={t} />}
       {route.kind==='contact'&&<div className="page-width standalone-contact"><Contact data={data} language={language} t={t} headingLevel="h1" /></div>}

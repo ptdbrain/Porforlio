@@ -8,6 +8,7 @@ import '../neural-intro.css';
 import '../ux-polish.css';
 import '../work-motion.css';
 import '../ambient-motion.css';
+import '../personal-photo-motion.css';
 
 const root = document.getElementById('root');
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';

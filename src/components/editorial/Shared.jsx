@@ -56,7 +56,7 @@ export function Modal({ title, closeLabel=title, onClose, children, className = 
   </div>, document.body);
 }
 
-export function Photo({ asset, label, code, language, t, className = '', priority = false, interactive = true, fit }) {
+export function Photo({ asset, label, code, language, t, className = '', priority = false, interactive = true, fit, motion, motionIndex=0 }) {
   const [open, setOpen] = useState(false);
   const [failedSource,setFailedSource]=useState(null);
   const available=asset?.src&&failedSource!==asset.src;
@@ -66,9 +66,10 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
     {image || <div className="photo-empty"><span className="photo-cross" aria-hidden="true" /><span className="photo-number">{code || 'PTD / PHOTO'}</span><span className="photo-empty-label">{label}<small>{t.photoPending}</small></span><i className="photo-frame-corner" aria-hidden="true" /></div>}
     {image && <figcaption>{caption || label}<Arrow /></figcaption>}
   </>;
+  const surface = available && interactive ? <button className="photo-button" onClick={() => setOpen(true)} aria-label={`${language==='vi'?'Xem ảnh':'View photo'}: ${label}`}>{content}</button> : content;
   return <>
-    <figure className={`photo ${available ? 'has-photo' : 'is-empty'} ${className}`}>
-      {available && interactive ? <button className="photo-button" onClick={() => setOpen(true)} aria-label={`${language==='vi'?'Xem ảnh':'View photo'}: ${label}`}>{content}</button> : content}
+    <figure className={`photo ${available ? 'has-photo' : 'is-empty'} ${className}`} data-photo-motion={motion||undefined} style={motion?{'--photo-direction':motionIndex%2?-1:1}:undefined}>
+      {motion ? <div className="photo-surface">{surface}</div> : surface}
     </figure>
     {open && <Modal title={label} closeLabel={t.close} onClose={() => setOpen(false)}><img className="lightbox-image" src={asset.src} alt={localize(asset.alt, language) || label} decoding="async" /><h2>{label}</h2>{caption && <p>{caption}</p>}</Modal>}
   </>;
@@ -78,9 +79,9 @@ export function CvLink({ identity, t, className = 'button button-outline' }) {
   return identity.cv ? <a className={className} href={identity.cv} target="_blank" rel="noopener noreferrer">{t.cv}<Arrow /></a> : <span className={`${className} unavailable`} aria-disabled="true">{t.cvPending}<span aria-hidden="true">—</span></span>;
 }
 
-export function Training({ data, language, t, compact = false }) {
+export function Training({ data, language, t, compact = false, photoMotion }) {
   return <article className={`training-card ${compact ? 'is-compact' : ''}`} data-reveal>
-    {!compact && <Photo asset={data.image} label={t.certificate} code="VINUNI / CERTIFICATE" language={language} t={t} fit="contain" />}
+    {!compact && <Photo asset={data.image} label={t.certificate} code="VINUNI / CERTIFICATE" language={language} t={t} fit="contain" motion={photoMotion} />}
     <div className="training-content"><div className="training-top"><span className="eyebrow">{t.trainingType}</span><span className="status-pill">{localize(data.status, language)}</span></div>
       <h3>{localize(data.title, language)}</h3><span className="training-org">{data.organization}</span><p>{localize(data.description, language)}</p>
       {data.date && <p>{data.date}</p>}{data.credentialId && <p>ID: {data.credentialId}</p>}
