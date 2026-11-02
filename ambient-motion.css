@@ -1,0 +1,50 @@
+/* Continuous motion is opt-in through the existing hydrated motion preference. */
+.ambient-motion{display:none;--ambient-color:#b4773f;--ambient-core:#d29a51;--ambient-face:#3e2d1f;position:fixed;inset:0;z-index:12;pointer-events:none;overflow:clip;contain:strict}
+html[data-motion="full"] .portfolio:not(.is-simple):not(.intro-covered) > .ambient-motion{display:block}
+.ambient-tech{--ambient-color:#82cdd2;--ambient-core:#d9ff61;--ambient-face:#1b2b23}
+.ambient-rail{position:absolute;top:110px;bottom:32px;width:28px;--ambient-travel:calc(100svh - 230px)}
+.ambient-rail-left{left:12px}.ambient-rail-right{right:12px}
+.ambient-rail::before{content:"";position:absolute;inset:0 auto 0 50%;width:1px;background:linear-gradient(transparent,var(--ambient-color),transparent);opacity:.09}
+.ambient-stream{position:absolute;left:50%;top:0;width:1px;height:90px;background:linear-gradient(transparent,var(--ambient-color));opacity:0;animation:ambient-stream 11s linear infinite}
+.ambient-stream::after{content:"";position:absolute;bottom:0;left:-2px;width:5px;height:5px;border-radius:50%;background:var(--ambient-core);box-shadow:0 0 9px var(--ambient-color)}
+.ambient-stream-late{animation-delay:-5.5s}
+.ambient-rail-right > .ambient-stream{animation-duration:14s;animation-delay:-8s;animation-direction:reverse}
+.ambient-companion{position:absolute;top:0;left:-3px;width:34px;height:34px;animation:ambient-wander 28s ease-in-out infinite}
+.ambient-companion svg{display:block;width:100%;height:100%;overflow:visible;animation:ambient-bob 3.7s ease-in-out infinite}
+.ambient-body{fill:var(--ambient-core);stroke:var(--ambient-color);stroke-width:.8}
+.ambient-halo{fill:var(--ambient-core);opacity:.1;transform-origin:20px 22px;animation:ambient-breathe 4.5s ease-in-out infinite}
+.ambient-wing{fill:var(--ambient-color);opacity:.28;transform-box:fill-box;transform-origin:center;animation:ambient-wings 1.8s ease-in-out infinite alternate}
+.ambient-wing-right{animation-delay:-.9s}
+.ambient-antenna{fill:none;stroke:var(--ambient-color);stroke-width:1.3;stroke-linecap:round}
+.ambient-eyes{fill:var(--ambient-face);transform-origin:20px 20px;animation:ambient-blink 7s linear infinite}
+.ambient-smile{fill:none;stroke:var(--ambient-face);stroke-width:1;stroke-linecap:round}
+.ambient-motes{position:absolute;inset:120px 0 28px}
+.ambient-motes i{position:absolute;left:calc(19px + var(--mote) * 2px);top:calc(10% + var(--mote) * 14%);width:3px;height:3px;border-radius:50%;background:var(--ambient-color);opacity:0;animation:ambient-mote 8s ease-in-out infinite;animation-delay:calc(var(--mote) * -1.3s)}
+.ambient-motes i:nth-child(even){left:auto;right:22px}
+/* Reuse Work's existing signal only while its system map is in view. */
+.v4-motion .v4-system.is-revealed .v4-map-signal{animation:v4-signal 4.8s linear infinite}
+.v4-motion .v4-system.is-revealed .v4-system-orbit::after{animation:ambient-orbit 24s linear infinite}
+@keyframes ambient-stream{0%{transform:translateY(-90px);opacity:0}10%,85%{opacity:.65}100%{transform:translateY(var(--ambient-travel));opacity:0}}
+@keyframes ambient-wander{0%,100%{transform:translateY(5vh)}25%{transform:translateY(calc(var(--ambient-travel) * .45))}50%{transform:translateY(var(--ambient-travel))}75%{transform:translateY(calc(var(--ambient-travel) * .6))}}
+@keyframes ambient-bob{0%,100%{transform:translateX(-2px) rotate(-7deg)}50%{transform:translateX(2px) rotate(7deg)}}
+@keyframes ambient-breathe{0%,100%{transform:scale(.85);opacity:.08}50%{transform:scale(1.15);opacity:.2}}
+@keyframes ambient-wings{from{transform:scaleY(.65) rotate(-12deg)}to{transform:scaleY(1) rotate(12deg)}}
+@keyframes ambient-blink{0%,43%,47%,100%{transform:scaleY(1)}45%{transform:scaleY(.12)}}
+@keyframes ambient-mote{0%,100%{transform:translateY(12px);opacity:0}30%,65%{opacity:.45}80%{transform:translateY(-24px);opacity:0}}
+@keyframes ambient-orbit{to{transform:rotate(360deg)}}
+.ambient-motion[data-paused="true"] *,.ambient-motion[data-paused="true"] *::after,
+.page-hidden .ambient-motion *,.page-hidden .ambient-motion *::after,
+body:has(.modal-backdrop) .ambient-motion *{animation-play-state:paused!important}
+.page-hidden .v4-system-orbit::after,.v4-paused .v4-system-orbit::after{animation-play-state:paused!important}
+@media(max-width:760px){
+  .ambient-rail{top:88px;bottom:20px;width:14px;--ambient-travel:calc(100svh - 180px)}
+  .ambient-rail-left{left:2px}.ambient-rail-right{right:2px}
+  .ambient-companion{width:18px;height:18px;left:-2px}
+  .ambient-stream{height:60px;opacity:.4}
+  .ambient-motes{display:none}
+  .ambient-stream-late{display:none}
+}
+@media(prefers-reduced-motion:reduce),(max-height:420px){
+  html[data-motion] .portfolio > .ambient-motion{display:none}
+}
+@media print{html[data-motion] .portfolio > .ambient-motion{display:none}}
