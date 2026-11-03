@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
 import data from './content/portfolio.json';
 import { copy } from './content/copy';
 import { cinemaCopy } from './content/cinemaCopy';
@@ -12,6 +11,7 @@ import { CaseStudy } from './components/editorial/CaseStudy';
 import { Contact, CvLink, RouteLink } from './components/editorial/Shared';
 import { NeuralIntro } from './components/editorial/NeuralIntro';
 import { AmbientMotion } from './components/editorial/AmbientMotion';
+import { useRouteTransition } from './components/editorial/useRouteTransition';
 import { useSiteMotion } from './lib/useSiteMotion';
 import { workReturnKey } from './lib/workV4.mjs';
 
@@ -33,11 +33,13 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   const [menuOpen,setMenuOpen] = useState(false);
   const [introVisible,setIntroVisible] = useState(false);
   const [introRevealed,setIntroRevealed] = useState(false);
-  const mainRef=useRef(null),headerRef=useRef(null),menuButtonRef=useRef(null),transitionRef=useRef(null);
+  const mainRef=useRef(null),headerRef=useRef(null),menuButtonRef=useRef(null),currentPathRef=useRef(location.path);
+  currentPathRef.current=location.path;
   const route=resolveRoute(location.path,data.projects);
   const work=route.kind === 'work' || route.kind === 'project';
   const t=copy[language];
   const motionPreference=useMotionPreference(hydrating);
+  const transitionRoute=useRouteTransition(mainRef,motionPreference.simple);
   const c=cinemaCopy[language];
   const revealIntro=useCallback(()=>setIntroRevealed(true),[]);
   const finishIntro=useCallback(()=>{
@@ -59,7 +61,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   useEffect(()=>{
     if(!menuOpen)return;
     const header=headerRef.current,media=matchMedia('(max-width:760px)');
-    header.querySelector('.main-nav a')?.focus();
+    header.querySelector('.main-nav a')?.focus({preventScroll:true});
     const outside=event=>{if(!header.contains(event.target))setMenuOpen(false);};
     const keyboard=event=>{if(event.key==='Escape'){event.preventDefault();setMenuOpen(false);menuButtonRef.current?.focus();}};
     const resize=()=>{if(!media.matches)setMenuOpen(false);};
@@ -84,26 +86,27 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
       const next={path:url.pathname,hash:url.hash,scroll,initial:false};
       const projectTarget=url.pathname.startsWith('/projects/');
       const workOrigin=projectTarget?(history.state?.workOrigin||(window.location.pathname==='/work'?history.state?.workV4:null)):null;
-      if(url.pathname+url.search+url.hash===window.location.pathname+window.location.search+window.location.hash){setMenuOpen(false);const behavior=motionPreference.simple?'instant':'smooth';if(!url.hash||!scrollToAnchor(url.hash,behavior))window.scrollTo({top:0,behavior});mainRef.current?.focus({preventScroll:true});return;}
-      const perform=() => {history.pushState({scroll,url:url.pathname+url.search+url.hash,...(returnState?{workV4:returnState}:{}),...(workOrigin?{workOrigin}:{})},'',url.pathname+url.search+url.hash);setLocation(next);setMenuOpen(false);};
-      if (document.startViewTransition && !motionPreference.simple && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && url.pathname !== window.location.pathname) {
-        const choice=link.closest('.story-choice');
-        const cover=link.closest('[data-project-portal]');
-        if (choice && innerWidth>=768) choice.style.viewTransitionName='journey';
-        if (cover && innerWidth>=768) cover.style.viewTransitionName='project-cover';
-        transitionRef.current?.skipTransition();
-        const transition=document.startViewTransition(() => {flushSync(perform);if(!returnState&&(!url.hash||!scrollToAnchor(url.hash)))window.scrollTo({top:scroll,behavior:'instant'});});
-        transitionRef.current=transition;
-        transition.ready.catch(()=>{});
-        transition.finished.catch(() => {}).finally(() => { if(choice?.isConnected) choice.style.viewTransitionName='';if(cover?.isConnected)cover.style.viewTransitionName=''; });
-      } else perform();
+      if(url.pathname+url.search+url.hash===window.location.pathname+window.location.search+window.location.hash){transitionRoute({from:currentPathRef.current,to:currentPathRef.current,update:()=>setMenuOpen(false)});const behavior=motionPreference.simple?'instant':'smooth';if(!url.hash||!scrollToAnchor(url.hash,behavior))window.scrollTo({top:0,behavior});mainRef.current?.focus({preventScroll:true});return;}
+      history.pushState({scroll,url:url.pathname+url.search+url.hash,...(returnState?{workV4:returnState}:{}),...(workOrigin?{workOrigin}:{})},'',url.pathname+url.search+url.hash);
+      const perform=() => {setLocation(next);setMenuOpen(false);};
+      const cover=link.closest('[data-project-portal]');
+      if(cover&&innerWidth>=768)cover.style.viewTransitionName='project-cover';
+      transitionRoute({from:currentPathRef.current,to:url.pathname,update:perform,restore:()=>{
+        if(!returnState&&(!url.hash||!scrollToAnchor(url.hash)))window.scrollTo({top:scroll,behavior:'instant'});
+      }}).finally(()=>{if(cover?.isConnected)cover.style.viewTransitionName='';});
     }
-    function popstate() {setLocation({path:window.location.pathname,hash:window.location.hash,scroll:history.state?.scroll || 0,initial:false,restore:history.state?.url===window.location.pathname+window.location.search+window.location.hash});setMenuOpen(false);}
+    function popstate() {
+      const next={path:window.location.pathname,hash:window.location.hash,scroll:history.state?.scroll || 0,initial:false,restore:history.state?.url===window.location.pathname+window.location.search+window.location.hash};
+      transitionRoute({from:currentPathRef.current,to:next.path,update:()=>{setLocation(next);setMenuOpen(false);},restore:()=>{
+        if(next.restore)window.scrollTo({top:next.scroll,behavior:'instant'});
+        else if(!next.hash||!scrollToAnchor(next.hash))window.scrollTo({top:next.scroll,behavior:'instant'});
+      }});
+    }
     const oldRestoration=history.scrollRestoration;
     history.scrollRestoration='manual';
     document.addEventListener('click',navigate);window.addEventListener('popstate',popstate);
     return () => {document.removeEventListener('click',navigate);window.removeEventListener('popstate',popstate);history.scrollRestoration=oldRestoration;};
-  }, [language,motionPreference.simple]);
+  }, [language,motionPreference.simple,transitionRoute]);
 
   useEffect(() => {
     const metadata=routeMetadata(route,data,language);
@@ -156,7 +159,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
     const next=language === 'vi'?'en':'vi';setLanguage(next);try {localStorage.setItem('ptd-language',next);}catch{}
     const url=new URL(window.location.href);if(next === 'en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState({...history.state,url:url.pathname+url.search+url.hash},'',url.pathname+url.search+url.hash);
   }
-  return <><div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${motionPreference.simple?'is-simple':''} ${introVisible?'intro-covered':''} ${introRevealed?'intro-revealed':''}`} inert={introVisible?'':undefined} aria-hidden={introVisible?'true':undefined}>
+  return <><div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${motionPreference.simple?'is-simple':''} ${!location.initial?'route-visited':''} ${introVisible?'intro-covered':''} ${introRevealed?'intro-revealed':''}`} inert={introVisible?'':undefined} aria-hidden={introVisible?'true':undefined}>
     <AmbientMotion work={work} paused={menuOpen||introVisible}/>
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header" ref={headerRef}><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>

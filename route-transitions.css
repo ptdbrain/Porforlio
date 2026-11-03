@@ -1,0 +1,42 @@
+/* Work and Personal are two directions from the same Home. Keep the header
+   anchored while the reading surface changes; never animate layout or scroll. */
+html[data-route-motion="story"]{--route-enter-x:54px;--route-leave-x:-36px}
+html[data-route-motion="story"][data-route-direction="left"]{--route-enter-x:-54px;--route-leave-x:36px}
+html[data-route-motion="story"] .site-header{view-transition-name:site-navigation}
+html[data-route-motion="story"] .site-header,html[data-route-motion="story"] .site-header *{transition:none!important}
+html[data-route-motion="story"] .ambient-motion{view-transition-name:site-ambience}
+html[data-route-motion="story"] .reading-progress{view-transition-name:site-progress}
+html[data-route-motion="story"] .personal-collage{view-transition-name:none!important}
+html[data-route-motion]::view-transition{pointer-events:none}
+html[data-route-motion] .portfolio{overflow-anchor:none;transition:none}
+html[data-route-motion="story"]::view-transition-image-pair(root){isolation:isolate;background:var(--route-surface,#f5f3ed)}
+html[data-route-motion="story"]::view-transition-old(root){animation:story-page-out .42s cubic-bezier(.4,0,.2,1) both;mix-blend-mode:normal;transform-origin:50% 35%}
+html[data-route-motion="story"]::view-transition-new(root){animation:story-page-in .68s cubic-bezier(.22,1,.36,1) both;mix-blend-mode:normal;transform-origin:50% 35%}
+html[data-route-motion="story"]::view-transition-group(site-navigation),
+html[data-route-motion="story"]::view-transition-group(site-ambience),
+html[data-route-motion="story"]::view-transition-group(site-progress){animation:none;z-index:5}
+html[data-route-motion="story"]::view-transition-old(site-navigation),
+html[data-route-motion="story"]::view-transition-old(site-progress){animation:none;opacity:0}
+html[data-route-motion="story"]::view-transition-new(site-navigation),
+html[data-route-motion="story"]::view-transition-new(site-progress){animation:none;opacity:1}
+html[data-route-motion="story"]::view-transition-old(site-ambience){animation:fade-out .3s ease both}
+html[data-route-motion="story"]::view-transition-new(site-ambience){animation:fade-in .45s ease both}
+/* Capture readable content immediately. Observers settle behind the snapshot,
+   and intro-only animations stay disabled after SPA navigation completes. */
+.portfolio.route-visited :is(.home-hero,.personal-hero) :is(.intro-in,.intro-photo){animation:none!important;opacity:1;transform:none;clip-path:none}
+.portfolio.route-visited .v4-system g{animation:none!important;opacity:1;transform:none}
+html[data-route-motion] .portfolio [data-reveal],
+html[data-route-motion] .work-v4 [data-work-reveal]{opacity:1!important;transform:none!important;translate:none!important;transition:none!important}
+@keyframes story-page-out{from{opacity:1;transform:translate3d(0,0,0) scale(1)}to{opacity:0;transform:translate3d(var(--route-leave-x),-6px,0) scale(.985)}}
+@keyframes story-page-in{from{opacity:0;transform:translate3d(var(--route-enter-x),10px,0) scale(1.015)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@media(max-width:760px){
+  html[data-route-motion="story"]{--route-enter-x:24px;--route-leave-x:-16px}
+  html[data-route-motion="story"][data-route-direction="left"]{--route-enter-x:-24px;--route-leave-x:16px}
+  html[data-route-motion="story"]::view-transition-old(root){animation-duration:.3s}
+  html[data-route-motion="story"]::view-transition-new(root){animation-duration:.48s}
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-route-motion]::view-transition-group(*),
+  html[data-route-motion]::view-transition-old(*),
+  html[data-route-motion]::view-transition-new(*){animation:none!important}
+}
