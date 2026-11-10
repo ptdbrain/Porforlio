@@ -33,6 +33,7 @@ function LifeTimeline({ chapters, language, t }) {
       <EmptyText value={chapter.story} language={language} label={t.storyPending} />
       {chapter.location?.[language] && <p>{l(chapter.location, language)}</p>}
       {chapter.achievements.length > 0 && <ul>{chapter.achievements.map((achievement, i) => <li key={i}>{l(achievement, language)}</li>)}</ul>}
+      {chapter.links?.filter(link => link.href).map(link => <p key={link.href}><ExternalLink href={link.href} className="text-link">{l(link.label, language)}</ExternalLink></p>)}
       {chapter.gallery.length > 0 && <div className="chapter-gallery">{chapter.gallery.map((image, i) => <PersonalPhoto key={i} asset={image} label={l(chapter.label, language)} language={language} t={t} />)}</div>}
       {chapter.id === 'present' && <RouteLink className="text-link" href="/work">{t.exploreWork}<Arrow /></RouteLink>}
     </article>)}</div>
