@@ -63,7 +63,7 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
   const caption = localize(asset?.caption, language);
   const image = available ? <img src={asset.src} alt={localize(asset.alt, language) || label} width="1000" height="1200" decoding="async" style={{objectFit:fit||asset.fit||'cover',objectPosition:asset.position||'center'}} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} onError={()=>{setFailedSource(asset.src);setOpen(false);}} /> : null;
   const content = <>
-    {image || <div className="photo-empty"><span className="photo-cross" aria-hidden="true" /><span className="photo-number">{code || 'PTD / PHOTO'}</span><span className="photo-empty-label">{label}<small>{t.photoPending}</small></span><i className="photo-frame-corner" aria-hidden="true" /></div>}
+    {(image && asset.rotate === -90 ? <div className="photo-rotation">{image}</div> : image) || <div className="photo-empty"><span className="photo-cross" aria-hidden="true" /><span className="photo-number">{code || 'PTD / PHOTO'}</span><span className="photo-empty-label">{label}<small>{t.photoPending}</small></span><i className="photo-frame-corner" aria-hidden="true" /></div>}
     {image && <figcaption>{caption || label}<Arrow /></figcaption>}
   </>;
   const surface = available && interactive ? <button className="photo-button" onClick={() => setOpen(true)} aria-label={`${language==='vi'?'Xem ảnh':'View photo'}: ${label}`}>{content}</button> : content;
@@ -71,7 +71,7 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
     <figure className={`photo ${available ? 'has-photo' : 'is-empty'} ${className}`} data-photo-fit={fit||asset?.fit||'cover'} data-photo-motion={motion||undefined} style={motion?{'--photo-direction':motionIndex%2?-1:1}:undefined}>
       {motion ? <div className="photo-surface">{surface}</div> : surface}
     </figure>
-    {open && <Modal title={label} closeLabel={t.close} onClose={() => setOpen(false)}><img className="lightbox-image" src={asset.src} alt={localize(asset.alt, language) || label} decoding="async" /><h2>{label}</h2>{caption && <p>{caption}</p>}</Modal>}
+    {open && <Modal title={label} closeLabel={t.close} onClose={() => setOpen(false)}><div className={asset.rotate === -90 ? "photo-rotation photo-rotation-lightbox" : undefined}><img className="lightbox-image" src={asset.src} alt={localize(asset.alt, language) || label} decoding="async" /></div><h2>{label}</h2>{caption && <p>{caption}</p>}</Modal>}
   </>;
 }
 

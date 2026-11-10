@@ -32,48 +32,56 @@
   },
   "assets": {
     "hero": {
-      "src": "",
+      "src": "/anh/anhcanhandep.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
+      },
+      "fit": "cover",
+      "position": "50% 35%"
     },
     "work": {
-      "src": "",
+      "src": "/anh/venturex.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Cùng đội tại Venture X Demo Day.",
+        "en": "With the team at Venture X Demo Day."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Cùng đội tại Venture X Demo Day.",
+        "en": "With the team at Venture X Demo Day."
+      },
+      "fit": "contain",
+      "position": "center"
     },
     "personal": {
-      "src": "",
+      "src": "/anh/anhcanhandep.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
+      },
+      "fit": "cover",
+      "position": "50% 35%"
     },
     "contact": {
-      "src": "",
+      "src": "/anh/anhcanhandep.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
+      },
+      "fit": "cover",
+      "position": "50% 35%"
     },
     "future": {
       "src": "",
@@ -87,17 +95,17 @@
       }
     },
     "collageMain": {
-      "src": "/anh/thptchutichclbcaulong.jpg",
+      "src": "/anh/anhcanhandep.jpg",
       "alt": {
-        "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
-        "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
       },
       "caption": {
-        "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
-        "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+        "vi": "Một khoảnh khắc ngoài công việc.",
+        "en": "A moment away from work."
       },
-      "fit": "contain",
-      "position": "center"
+      "fit": "cover",
+      "position": "50% 35%"
     },
     "collageSport": {
       "src": "/anh/thpt1.jpg",
@@ -126,14 +134,14 @@
       "position": "center"
     },
     "collageStudy": {
-      "src": "/anh/thptthiroboticgiainhat.jpg",
+      "src": "/anh/anhsukiendontongbithuToLamoBachKhoa.jpg",
       "alt": {
-        "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
-        "en": "A team memory at Vietnam Robotics Challenge during high school."
+        "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+        "en": "A memory at the innovation space, Hanoi University of Science and Technology."
       },
       "caption": {
-        "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
-        "en": "A team memory at Vietnam Robotics Challenge during high school."
+        "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+        "en": "A memory at the innovation space, Hanoi University of Science and Technology."
       },
       "fit": "contain",
       "position": "center"
@@ -254,6 +262,32 @@
           },
           "fit": "contain",
           "position": "center"
+        },
+        {
+          "src": "/anh/giainhiquocgiakhkt.jpg",
+          "alt": {
+            "vi": "Lễ trao giải cuộc thi Khoa học Kỹ thuật cấp quốc gia 2023.",
+            "en": "Award ceremony at the 2023 national science and engineering competition."
+          },
+          "caption": {
+            "vi": "Lễ trao giải cuộc thi Khoa học Kỹ thuật cấp quốc gia 2023.",
+            "en": "Award ceremony at the 2023 national science and engineering competition."
+          },
+          "fit": "contain",
+          "position": "center"
+        },
+        {
+          "src": "/anh/thptaquanhocsinhtoannangcvpaward.jpg",
+          "alt": {
+            "vi": "Á quân Học sinh của năm · CVP Awards 2023.",
+            "en": "Runner-up, Student of the Year · CVP Awards 2023."
+          },
+          "caption": {
+            "vi": "Á quân Học sinh của năm · CVP Awards 2023.",
+            "en": "Runner-up, Student of the Year · CVP Awards 2023."
+          },
+          "fit": "contain",
+          "position": "center"
         }
       ]
     },
@@ -278,13 +312,33 @@
       },
       "achievements": [],
       "image": {
-        "src": "",
+        "src": "/anh/anhsukiendontongbithuToLamoBachKhoa.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+          "en": "A memory at the innovation space, Hanoi University of Science and Technology."
+        },
+        "caption": {
+          "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+          "en": "A memory at the innovation space, Hanoi University of Science and Technology."
+        },
+        "fit": "contain",
+        "position": "center"
       },
-      "gallery": []
+      "gallery": [
+        {
+          "src": "/anh/venturex.jpg",
+          "alt": {
+            "vi": "Cùng đội tại Venture X Demo Day.",
+            "en": "With the team at Venture X Demo Day."
+          },
+          "caption": {
+            "vi": "Cùng đội tại Venture X Demo Day.",
+            "en": "With the team at Venture X Demo Day."
+          },
+          "fit": "contain",
+          "position": "center"
+        }
+      ]
     },
     {
       "id": "present",
@@ -389,17 +443,39 @@
         "en": ""
       },
       "story": {
-        "vi": "Thông tin theo CV do tôi cung cấp.",
-        "en": "Recorded in my supplied CV."
+        "vi": "Giấy chứng nhận ghi Giải Nhì, lĩnh vực Kĩ thuật cơ khí, năm học 2022–2023.",
+        "en": "The certificate records Second Prize in Engineering Mechanics for the 2022–2023 school year."
       },
       "evidence": "/CV_PhanTrongDat.pdf",
       "image": {
-        "src": "",
+        "src": "/anh/giainhiquocgiakhkt.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
+          "vi": "Lễ trao giải cuộc thi Khoa học Kỹ thuật cấp quốc gia 2023.",
+          "en": "Award ceremony at the 2023 national science and engineering competition."
+        },
+        "caption": {
+          "vi": "Lễ trao giải cuộc thi Khoa học Kỹ thuật cấp quốc gia 2023.",
+          "en": "Award ceremony at the 2023 national science and engineering competition."
+        },
+        "fit": "contain",
+        "position": "center"
+      },
+      "gallery": [
+        {
+          "src": "/anh/giaychungnhandatgiainhikhktcapquocgia.jpg",
+          "alt": {
+            "vi": "Chứng nhận Giải Nhì KHKT quốc gia 2023, lĩnh vực Kĩ thuật cơ khí.",
+            "en": "Certificate of Second Prize in Engineering Mechanics at the 2023 national science and engineering competition."
+          },
+          "caption": {
+            "vi": "Chứng nhận Giải Nhì KHKT quốc gia 2023, lĩnh vực Kĩ thuật cơ khí.",
+            "en": "Certificate of Second Prize in Engineering Mechanics at the 2023 national science and engineering competition."
+          },
+          "fit": "contain",
+          "position": "center",
+          "rotate": -90
         }
-      }
+      ]
     },
     {
       "id": "venture-x-2026",
@@ -423,11 +499,17 @@
       },
       "evidence": "/CV_PhanTrongDat.pdf",
       "image": {
-        "src": "",
+        "src": "/anh/venturex.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Cùng đội tại Venture X Demo Day.",
+          "en": "With the team at Venture X Demo Day."
+        },
+        "caption": {
+          "vi": "Cùng đội tại Venture X Demo Day.",
+          "en": "With the team at Venture X Demo Day."
+        },
+        "fit": "contain",
+        "position": "center"
       }
     },
     {
@@ -518,6 +600,148 @@
         "caption": {
           "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
           "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+        },
+        "fit": "contain",
+        "position": "center"
+      }
+    },
+    {
+      "id": "provincial-science-2023",
+      "title": {
+        "vi": "Giải Nhất · KHKT cấp tỉnh",
+        "en": "First Prize · Provincial Science & Engineering Competition"
+      },
+      "date": "2023",
+      "organization": "Sở GD&ĐT Vĩnh Phúc",
+      "result": {
+        "vi": "Dự án “Hệ thống hỗ trợ tập vật lý trị liệu chi trên kết hợp trí tuệ nhân tạo”, lĩnh vực Kĩ thuật cơ khí.",
+        "en": "An AI-assisted upper-limb physical therapy system, in Engineering Mechanics."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo ảnh minh chứng tôi cung cấp.",
+        "en": "Details from the supporting image I supplied."
+      },
+      "evidence": "/anh/giainhatkhktcaptinh.jpg",
+      "image": {
+        "src": "/anh/giainhatkhktcaptinh.jpg",
+        "alt": {
+          "vi": "Chứng nhận Giải Nhất KHKT tỉnh Vĩnh Phúc, năm học 2022–2023.",
+          "en": "Certificate of First Prize in Vinh Phuc’s provincial science and engineering competition, 2022–2023."
+        },
+        "caption": {
+          "vi": "Chứng nhận Giải Nhất KHKT tỉnh Vĩnh Phúc, năm học 2022–2023.",
+          "en": "Certificate of First Prize in Vinh Phuc’s provincial science and engineering competition, 2022–2023."
+        },
+        "fit": "contain",
+        "position": "center",
+        "rotate": -90
+      }
+    },
+    {
+      "id": "informatics-2022",
+      "title": {
+        "vi": "Khuyến khích · Học sinh giỏi Tin học",
+        "en": "Encouragement Prize · Informatics Competition"
+      },
+      "date": "2022",
+      "organization": "Sở GD&ĐT Vĩnh Phúc",
+      "result": {
+        "vi": "Giải Khuyến khích môn Tin học lớp 11 trong kỳ thi học sinh giỏi cấp tỉnh năm học 2021–2022.",
+        "en": "Encouragement Prize in Grade 11 Informatics at the 2021–2022 provincial competition."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo ảnh minh chứng tôi cung cấp.",
+        "en": "Details from the supporting image I supplied."
+      },
+      "evidence": "/anh/giaikhuyenkhichhocsinhgioimontinhoc.jpg",
+      "image": {
+        "src": "/anh/giaikhuyenkhichhocsinhgioimontinhoc.jpg",
+        "alt": {
+          "vi": "Chứng nhận giải Khuyến khích học sinh giỏi Tin học lớp 11 cấp tỉnh, 2022.",
+          "en": "Certificate of an Encouragement Prize in the provincial Grade 11 Informatics competition, 2022."
+        },
+        "caption": {
+          "vi": "Chứng nhận giải Khuyến khích học sinh giỏi Tin học lớp 11 cấp tỉnh, 2022.",
+          "en": "Certificate of an Encouragement Prize in the provincial Grade 11 Informatics competition, 2022."
+        },
+        "fit": "contain",
+        "position": "center"
+      }
+    },
+    {
+      "id": "creative-youth-badge-2023",
+      "title": {
+        "vi": "Huy hiệu Tuổi trẻ sáng tạo",
+        "en": "Creative Youth Badge"
+      },
+      "date": "2023",
+      "organization": "Trung ương Đoàn TNCS Hồ Chí Minh",
+      "result": {
+        "vi": "Được tặng Huy hiệu Tuổi trẻ sáng tạo sau thành tích Giải Nhì cuộc thi KHKT cấp quốc gia năm học 2022–2023.",
+        "en": "Awarded the Creative Youth Badge following Second Prize at the 2022–2023 national science and engineering competition."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo ảnh minh chứng tôi cung cấp.",
+        "en": "Details from the supporting image I supplied."
+      },
+      "evidence": "/anh/huychuongtuoitresangtao.jpg",
+      "image": {
+        "src": "/anh/huychuongtuoitresangtao.jpg",
+        "alt": {
+          "vi": "Chứng nhận Huy hiệu Tuổi trẻ sáng tạo, 2023.",
+          "en": "Certificate for the Creative Youth Badge, 2023."
+        },
+        "caption": {
+          "vi": "Chứng nhận Huy hiệu Tuổi trẻ sáng tạo, 2023.",
+          "en": "Certificate for the Creative Youth Badge, 2023."
+        },
+        "fit": "contain",
+        "position": "center",
+        "rotate": -90
+      }
+    },
+    {
+      "id": "cvp-awards-2023",
+      "title": {
+        "vi": "Á quân · Học sinh của năm",
+        "en": "Runner-up · Student of the Year"
+      },
+      "date": "2023",
+      "organization": "CVP Awards",
+      "result": {
+        "vi": "Á quân hạng mục Học sinh của năm tại CVP Awards 2023.",
+        "en": "Runner-up in the Student of the Year category at CVP Awards 2023."
+      },
+      "role": {
+        "vi": "",
+        "en": ""
+      },
+      "story": {
+        "vi": "Thông tin theo ảnh minh chứng tôi cung cấp.",
+        "en": "Details from the supporting image I supplied."
+      },
+      "evidence": "/anh/thptaquanhocsinhtoannangcvpaward.jpg",
+      "image": {
+        "src": "/anh/thptaquanhocsinhtoannangcvpaward.jpg",
+        "alt": {
+          "vi": "Á quân Học sinh của năm · CVP Awards 2023.",
+          "en": "Runner-up, Student of the Year · CVP Awards 2023."
+        },
+        "caption": {
+          "vi": "Á quân Học sinh của năm · CVP Awards 2023.",
+          "en": "Runner-up, Student of the Year · CVP Awards 2023."
         },
         "fit": "contain",
         "position": "center"
