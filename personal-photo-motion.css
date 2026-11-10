@@ -44,3 +44,12 @@
   .personal-story .photo-surface,.personal-story .photo-surface img{transform:none!important;clip-path:none!important;box-shadow:none!important}
   .personal-story .photo-surface::after{display:none}
 }
+
+/* Preserve lettering and every person in supplied posters/group photos. */
+.personal-story .photo[data-photo-fit="contain"] figcaption{display:none}
+.personal-photo-motion .photo[data-photo-fit="contain"] img{transform:none!important}
+.personal-collage .collage-1.has-photo[data-photo-fit="contain"]{aspect-ratio:4/5;width:65%;margin-left:17.5%}
+.personal-story .sport-feature > .photo.has-photo{aspect-ratio:3/2}
+.personal-story :is(.sport-gallery,.chapter-gallery){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.personal-story :is(.sport-gallery,.chapter-gallery) .photo{aspect-ratio:1}
+@media(max-width:760px){.personal-story :is(.sport-gallery,.chapter-gallery){gap:12px}}

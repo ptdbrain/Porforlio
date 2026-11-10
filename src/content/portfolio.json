@@ -87,48 +87,56 @@
       }
     },
     "collageMain": {
-      "src": "",
+      "src": "/anh/thptchutichclbcaulong.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+        "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+        "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+      },
+      "fit": "contain",
+      "position": "center"
     },
     "collageSport": {
-      "src": "",
+      "src": "/anh/thpt1.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Cầu lông trong những năm THPT.",
+        "en": "Playing badminton during high school."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Cầu lông trong những năm THPT.",
+        "en": "Playing badminton during high school."
+      },
+      "fit": "contain",
+      "position": "center"
     },
     "collageFriends": {
-      "src": "",
+      "src": "/anh/thptvodichgiaicaulong.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Kỷ niệm vô địch giải cầu lông thời THPT.",
+        "en": "A memory of winning a high-school badminton tournament."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Kỷ niệm vô địch giải cầu lông thời THPT.",
+        "en": "A memory of winning a high-school badminton tournament."
+      },
+      "fit": "contain",
+      "position": "center"
     },
     "collageStudy": {
-      "src": "",
+      "src": "/anh/thptthiroboticgiainhat.jpg",
       "alt": {
-        "vi": "",
-        "en": ""
+        "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
+        "en": "A team memory at Vietnam Robotics Challenge during high school."
       },
       "caption": {
-        "vi": "",
-        "en": ""
-      }
+        "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
+        "en": "A team memory at Vietnam Robotics Challenge during high school."
+      },
+      "fit": "contain",
+      "position": "center"
     },
     "presentLearning": {
       "src": "",
@@ -186,11 +194,17 @@
       },
       "achievements": [],
       "image": {
-        "src": "",
+        "src": "/anh/thcs.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Kỷ niệm những năm THCS.",
+          "en": "A memory from secondary school."
+        },
+        "caption": {
+          "vi": "Kỷ niệm những năm THCS.",
+          "en": "A memory from secondary school."
+        },
+        "fit": "contain",
+        "position": "center"
       },
       "gallery": []
     },
@@ -215,13 +229,33 @@
       },
       "achievements": [],
       "image": {
-        "src": "",
+        "src": "/anh/thpt1.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Cầu lông trong những năm THPT.",
+          "en": "Playing badminton during high school."
+        },
+        "caption": {
+          "vi": "Cầu lông trong những năm THPT.",
+          "en": "Playing badminton during high school."
+        },
+        "fit": "contain",
+        "position": "center"
       },
-      "gallery": []
+      "gallery": [
+        {
+          "src": "/anh/thptthiroboticgiainhat.jpg",
+          "alt": {
+            "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
+            "en": "A team memory at Vietnam Robotics Challenge during high school."
+          },
+          "caption": {
+            "vi": "Kỷ niệm cùng đội thi tại Vietnam Robotics Challenge thời THPT.",
+            "en": "A team memory at Vietnam Robotics Challenge during high school."
+          },
+          "fit": "contain",
+          "position": "center"
+        }
+      ]
     },
     {
       "id": "university",
@@ -476,11 +510,17 @@
       },
       "evidence": "/CV_PhanTrongDat.pdf",
       "image": {
-        "src": "",
+        "src": "/anh/thptchutichclbcaulong.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+          "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+        },
+        "caption": {
+          "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+          "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+        },
+        "fit": "contain",
+        "position": "center"
       }
     }
   ],
@@ -622,13 +662,46 @@
         "en": "I served as Badminton Club President in 2022."
       },
       "image": {
-        "src": "",
+        "src": "/anh/thptvodichgiaicaulong.jpg",
         "alt": {
-          "vi": "",
-          "en": ""
-        }
+          "vi": "Kỷ niệm vô địch giải cầu lông thời THPT.",
+          "en": "A memory of winning a high-school badminton tournament."
+        },
+        "caption": {
+          "vi": "Kỷ niệm vô địch giải cầu lông thời THPT.",
+          "en": "A memory of winning a high-school badminton tournament."
+        },
+        "fit": "contain",
+        "position": "center"
       },
-      "gallery": []
+      "gallery": [
+        {
+          "src": "/anh/thptchutichclbcaulong.jpg",
+          "alt": {
+            "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+            "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+          },
+          "caption": {
+            "vi": "Phan Trọng Đạt · Chủ tịch CLB Cầu lông THPT Chuyên Vĩnh Phúc.",
+            "en": "Phan Trong Dat · President of the badminton club at Vinh Phuc High School for the Gifted."
+          },
+          "fit": "contain",
+          "position": "center"
+        },
+        {
+          "src": "/anh/thpt1.jpg",
+          "alt": {
+            "vi": "Cầu lông trong những năm THPT.",
+            "en": "Playing badminton during high school."
+          },
+          "caption": {
+            "vi": "Cầu lông trong những năm THPT.",
+            "en": "Playing badminton during high school."
+          },
+          "fit": "contain",
+          "position": "center"
+        }
+      ]
     }
   ],
   "hobbies": [
