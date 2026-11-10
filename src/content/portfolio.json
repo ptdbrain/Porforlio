@@ -188,28 +188,41 @@
         "en": "Secondary school"
       },
       "school": {
-        "vi": "",
-        "en": ""
+        "vi": "THCS Tam Dương",
+        "en": "Tam Duong Secondary School"
       },
-      "period": "",
+      "period": "2016 – 2020",
       "location": {
         "vi": "",
         "en": ""
       },
       "story": {
-        "vi": "",
-        "en": ""
+        "vi": "Những năm ở THCS Tam Dương, tôi dành nhiều thời gian cho đội tuyển Toán, đồng thời thử sức với Sinh học. Ngoài giờ học, tôi gắn bó với cầu lông và tích cực tham gia các hoạt động ngoại khóa, văn nghệ của trường.",
+        "en": "At Tam Duong Secondary School, I spent much of my time on the mathematics competition team while also exploring biology. Beyond the classroom, I played badminton and actively took part in school extracurricular activities and performances."
       },
-      "achievements": [],
+      "achievements": [
+        {
+          "vi": "Tham gia đội tuyển Toán; đạt một số giải học sinh giỏi môn Toán và Sinh học.",
+          "en": "Member of the mathematics competition team; earned prizes in mathematics and biology competitions."
+        },
+        {
+          "vi": "Hai giải Á quân cầu lông: đơn nam và đôi nam.",
+          "en": "Two badminton runner-up finishes: men's singles and men's doubles."
+        },
+        {
+          "vi": "Tích cực tham gia hoạt động ngoại khóa và văn nghệ.",
+          "en": "Active participation in extracurricular activities and school performances."
+        }
+      ],
       "image": {
         "src": "/anh/thcs.jpg",
         "alt": {
-          "vi": "Kỷ niệm những năm THCS.",
-          "en": "A memory from secondary school."
+          "vi": "Kỷ niệm những năm học tại THCS Tam Dương.",
+          "en": "A memory from my years at Tam Duong Secondary School."
         },
         "caption": {
-          "vi": "Kỷ niệm những năm THCS.",
-          "en": "A memory from secondary school."
+          "vi": "Kỷ niệm những năm học tại THCS Tam Dương.",
+          "en": "A memory from my years at Tam Duong Secondary School."
         },
         "fit": "contain",
         "position": "center"
