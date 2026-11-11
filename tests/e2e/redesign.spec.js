@@ -1,18 +1,18 @@
 const {test,expect}=require('@playwright/test');
 const data=require('../../src/content/portfolio.json');
 
-test('Home offers proof before the story choice and never autoplays the intro',async({page})=>{
+test('Home retains proof before story choices after dismissing the restored intro',async({page})=>{
  await page.emulateMedia({reducedMotion:'no-preference'});
  await page.addInitScript(()=>localStorage.setItem('ptd-motion','full'));
  const video=[];page.on('request',request=>{if(request.url().endsWith('.mp4'))video.push(request.url());});
- await page.goto('/');await expect(page.getByRole('dialog')).toHaveCount(0);
+ await page.goto('/');await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
  await expect(page.locator('.highlight-card')).toHaveCount(3);
  expect(await page.locator('#highlights').evaluate(node=>Boolean(node.compareDocumentPosition(document.querySelector('#two-stories'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
  await expect(page.locator('.hero-secondary a').first()).toHaveAttribute('href',data.identity.cv);
  await page.locator('.highlight-card[href="/projects/dpotm"]').click();
  await expect(page.locator('h1')).toContainText('LLMFeed');
  await expect(page.locator('#links a[href*="aclanthology.org"]').first()).toHaveAttribute('href',/aclanthology.org/);
- expect(video).toEqual([]);
+ expect(video.length).toBeGreaterThan(0);
 });
 
 test('Work presents featured evidence before experience and capabilities',async({page})=>{

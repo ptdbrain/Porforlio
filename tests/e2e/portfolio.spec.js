@@ -2,7 +2,7 @@ const {test,expect}=require('@playwright/test');
 const AxeBuilder=require('@axe-core/playwright').default;
 const data=require('../../src/content/portfolio.json');
 
-test.beforeEach(async({page})=>{await page.addInitScript(()=>sessionStorage.setItem('ptd-neural-intro-seen','1'));});
+test.beforeEach(async({page})=>{await page.addInitScript(()=>sessionStorage.setItem('ptd-neural-intro-v2-seen','1'));});
 
 async function openMenu(page){const menu=page.getByRole('button',{name:'Mở menu'});if(await menu.isVisible())await menu.click();}
 

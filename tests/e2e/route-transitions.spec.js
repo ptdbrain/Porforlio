@@ -3,7 +3,7 @@ const {test,expect}=require('@playwright/test');
 test.beforeEach(async({page})=>{
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.addInitScript(()=>{
-    localStorage.setItem('ptd-motion','full');sessionStorage.setItem('ptd-neural-intro-seen','1');
+    localStorage.setItem('ptd-motion','full');sessionStorage.setItem('ptd-neural-intro-v2-seen','1');
     window.transitionErrors=[];window.transitionCount=0;
     const original=document.startViewTransition?.bind(document);
     if(original)document.startViewTransition=callback=>{

@@ -1,5 +1,8 @@
 # PTD. — Cinematic Editorial × Technical Precision
 
+> Yêu cầu tiếp theo: video tự phát và các chuyển động đã được khôi phục. Xem [bản cập nhật intro/motion](../INTRO-MOTION-RESTORED.md). Các lựa chọn và số đo bên dưới mô tả bản `dd22444`.
+
+
 Implementation: 11 November 2026. Scope: local codebase, preserving PTD. and “Một con người. Hai câu chuyện.”
 
 ## Audit before implementation

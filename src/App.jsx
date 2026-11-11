@@ -10,6 +10,7 @@ import { Personal } from './components/editorial/Personal';
 import { CaseStudy } from './components/editorial/CaseStudy';
 import { Contact, CvLink, RouteLink } from './components/editorial/Shared';
 import { NeuralIntro } from './components/editorial/NeuralIntro';
+import { AmbientMotion } from './components/editorial/AmbientMotion';
 import { usePortfolioEvents } from './lib/usePortfolioEvents';
 import { useRouteTransition } from './components/editorial/useRouteTransition';
 import { useSiteMotion } from './lib/useSiteMotion';
@@ -50,7 +51,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   useEffect(()=>{
     const pending=document.documentElement.classList.contains('neural-intro-pending');
     if(location.path==='/'&&pending){
-      try{sessionStorage.setItem('ptd-neural-intro-seen','1');}catch{}
+      try{sessionStorage.setItem('ptd-neural-intro-v2-seen','1');}catch{}
       setIntroVisible(true);
     }else document.documentElement.classList.remove('neural-intro-pending');
   },[]);
@@ -168,6 +169,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   }
   return <><div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${motionPreference.simple?'is-simple':''} ${!location.initial?'route-visited':''} ${introVisible?'intro-covered':''} ${introRevealed?'intro-revealed':''}`} inert={introVisible?'':undefined} aria-hidden={introVisible?'true':undefined}>
 
+    <AmbientMotion work={work} paused={menuOpen||introVisible}/>
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header" ref={headerRef}><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>
       <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false],['/work#experience',language==='vi'?'Kinh nghiệm':'Experience',false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}<button className="motion-preference" type="button" aria-pressed={motionPreference.simple} disabled={motionPreference.systemReduced} title={motionPreference.systemReduced?c.auto:undefined} onClick={motionPreference.toggle}>{motionPreference.systemReduced?c.simple:motionPreference.simple?c.full:c.simple}</button></nav>

@@ -21,9 +21,6 @@ html[data-motion="full"] .portfolio:not(.is-simple):not(.intro-covered) > .ambie
 .ambient-motes{position:absolute;inset:120px 0 28px}
 .ambient-motes i{position:absolute;left:calc(19px + var(--mote) * 2px);top:calc(10% + var(--mote) * 14%);width:3px;height:3px;border-radius:50%;background:var(--ambient-color);opacity:0;animation:ambient-mote 8s ease-in-out infinite;animation-delay:calc(var(--mote) * -1.3s)}
 .ambient-motes i:nth-child(even){left:auto;right:22px}
-/* Reuse Work's existing signal only while its system map is in view. */
-.v4-motion .v4-system.is-revealed .v4-map-signal{animation:v4-signal 4.8s linear infinite}
-.v4-motion .v4-system.is-revealed .v4-system-orbit::after{animation:ambient-orbit 24s linear infinite}
 @keyframes ambient-stream{0%{transform:translateY(-90px);opacity:0}10%,85%{opacity:.65}100%{transform:translateY(var(--ambient-travel));opacity:0}}
 @keyframes ambient-wander{0%,100%{transform:translateY(5vh)}25%{transform:translateY(calc(var(--ambient-travel) * .45))}50%{transform:translateY(var(--ambient-travel))}75%{transform:translateY(calc(var(--ambient-travel) * .6))}}
 @keyframes ambient-bob{0%,100%{transform:translateX(-2px) rotate(-7deg)}50%{transform:translateX(2px) rotate(7deg)}}

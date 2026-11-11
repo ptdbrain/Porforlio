@@ -1,9 +1,7 @@
 const {test,expect}=require('@playwright/test');
 
-test('opt-in intro skips with keyboard and crossfades into Home',async({page})=>{
+test('first visit autoplays intro, skips with keyboard and does not repeat in this tab',async({page})=>{
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');
- await expect(page.getByRole('dialog')).toHaveCount(0);
- await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
  const dialog=page.getByRole('dialog',{name:'Video giới thiệu portfolio'});
  await expect(dialog).toBeVisible();
  await expect(page.locator('.neural-intro-video')).toHaveJSProperty('muted',true);
@@ -20,7 +18,6 @@ test('a stalled video cannot leave the visitor on a loading gate',async({page})=
  await page.emulateMedia({reducedMotion:'no-preference'});
  let held;await page.route('**/neural-intro.mp4',route=>{held=route;});
  await page.goto('/',{waitUntil:'domcontentloaded'});
- await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
  await expect(page.getByRole('dialog')).toBeVisible();
  await expect(page.getByRole('dialog')).toBeHidden({timeout:7000});
  await expect(page.locator('.portfolio')).not.toHaveAttribute('inert');
@@ -41,7 +38,7 @@ test('the video completes naturally and releases the page',async({page})=>{
    });
    observer.observe(document,{attributes:true,childList:true,subtree:true,attributeFilter:['data-exit']});
  });
- await page.goto('/');await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
+ await page.goto('/');
  await expect(page.getByRole('dialog')).toBeVisible();
  await expect.poll(()=>page.evaluate(()=>window.videoExitSample?.afterTime),{timeout:13000}).toBeGreaterThan(6.1);
  await expect(page.getByRole('dialog')).toBeHidden({timeout:3000});

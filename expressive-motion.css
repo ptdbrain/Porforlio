@@ -1,0 +1,58 @@
+/* Requested expressive layer. Keep scroll variables local and progress compositor-only. */
+html[data-motion="full"] .portfolio:not(.is-simple):not(.intro-covered)>.ambient-motion{display:block}
+.ambient-motion{isolation:isolate}.ambient-rail::before{opacity:.13}
+.ambient-companion{opacity:.85}.ambient-motes i{width:2px;height:2px}
+/* A light passes through the map only while it is on screen. */
+.v4-motion .v4-system.is-revealed::after{content:"";position:absolute;inset:14% 10%;border:1px solid #9ddcd340;border-radius:50%;pointer-events:none;animation:system-orbit 14s linear infinite}
+.v4-motion .v4-system.is-revealed .v4-map-signal{filter:none;animation:v4-signal 4.8s linear infinite!important}
+.v4-paused .v4-system::after,.page-hidden .v4-system::after,body:has(.modal-backdrop) .v4-system::after{animation-play-state:paused!important}
+/* Mask reveals belong to the inner image; cards keep their own hover/layout transform. */
+.v4-motion .featured-study.is-revealed .project-visual{animation:study-mask .78s var(--motion-ease) both}
+.motion-enabled .highlight-card.is-revealed .project-visual{animation:study-mask .78s var(--motion-ease) both}
+.featured-study:nth-child(even) .project-visual{animation-delay:90ms!important}
+.project-visual::after{content:"";position:absolute;inset:-50%;pointer-events:none;background:linear-gradient(110deg,transparent 42%,#fff2 50%,transparent 58%);transform:translateX(-90%) rotate(-8deg);opacity:0}
+.featured-study h3,.highlight-card h3{transition:transform .32s var(--motion-ease)}
+@media(hover:hover) and (pointer:fine){
+ .featured-study:hover .project-visual::after,.highlight-card:hover .project-visual::after,.next-project:hover .project-visual::after{animation:project-sheen .85s var(--motion-ease) both}
+ .featured-study:hover h3,.highlight-card:hover h3{transform:translateX(5px)}
+ .story-choice:hover{box-shadow:0 16px 38px #0002}
+}
+/* Restore distinct photo gestures, with smaller angles than the original version. */
+.personal-photo-motion [data-photo-motion] .photo-surface{transition:transform .3s var(--motion-ease),clip-path .3s var(--motion-ease)}
+.personal-photo-motion [data-photo-motion="hinge"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 14px)) rotateY(calc(var(--photo-fold) * -28deg))!important;transform-origin:left center}
+.personal-photo-motion [data-photo-motion="flip"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 14px)) rotateX(calc(var(--photo-fold) * 24deg))!important;transform-origin:center bottom}
+.personal-photo-motion [data-photo-motion="fan"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 18px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 7deg)) rotateY(calc(var(--photo-direction) * var(--photo-fold) * 12deg))!important}
+.personal-photo-motion [data-photo-motion="tilt"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 12px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 5deg)) rotateY(calc(var(--photo-fold) * 14deg))!important}
+.personal-photo-motion [data-photo-motion="unfold"] .photo-surface{transform:rotateX(calc(var(--photo-fold) * 14deg))!important;clip-path:inset(0 calc(var(--photo-fold) * 9%) round 4px)}
+.personal-photo-motion [data-photo-motion]:focus-within .photo-surface{transform:none!important;clip-path:none!important}
+.personal-photo-motion .timeline-photo-layer{transform:translateX(24px) rotateY(20deg);transition:transform .72s var(--motion-ease),opacity .5s ease,visibility 0s .72s}
+.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-20px) rotateY(-18deg)}
+.personal-photo-motion .timeline-photo-layer.is-active{transform:none;transition:transform .72s var(--motion-ease),opacity .5s ease,visibility 0s}
+html[data-route-motion="story"]::view-transition-old(root){animation:story-surface-out .22s ease both}
+html[data-route-motion="story"]::view-transition-new(root){animation:story-surface-in .56s var(--motion-ease) both}
+@keyframes study-mask{from{clip-path:inset(0 0 16% 0);opacity:.35}to{clip-path:inset(0);opacity:1}}
+@keyframes project-sheen{0%{opacity:0;transform:translateX(-65%) rotate(-8deg)}20%{opacity:.6}100%{opacity:0;transform:translateX(65%) rotate(-8deg)}}
+@keyframes system-orbit{to{transform:rotate(360deg)}}
+@keyframes story-surface-out{to{opacity:0;transform:translateX(var(--route-leave-x,-20px)) scale(.99)}}
+@keyframes story-surface-in{from{opacity:0;transform:translate(var(--route-enter-x,24px),8px)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+ .personal-photo-motion [data-photo-motion="hinge"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 9px)) rotateY(calc(var(--photo-fold) * -12deg))!important}
+ .personal-photo-motion [data-photo-motion="flip"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 9px)) rotateX(calc(var(--photo-fold) * 12deg))!important}
+ .personal-photo-motion [data-photo-motion="fan"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 10px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 3deg))!important}
+ .personal-photo-motion [data-photo-motion="tilt"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 8px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 3deg))!important}
+ .personal-photo-motion [data-photo-motion="unfold"] .photo-surface{transform:rotateX(calc(var(--photo-fold) * 8deg))!important;clip-path:inset(0 calc(var(--photo-fold) * 4%))}
+ html[data-route-motion="story"]::view-transition-new(root){animation-duration:.46s}
+}
+/* User/OS motion controls override the entire expressive layer immediately. */
+html[data-motion="simple"] .ambient-motion,.portfolio.is-simple>.ambient-motion{display:none!important}
+.portfolio.is-simple .v4-system::after,.portfolio.is-simple .project-visual::after{display:none!important}
+.portfolio.is-simple .v4-map-signal{animation:none!important}
+.portfolio.is-simple .personal-photo-motion .photo-surface{transform:none!important;clip-path:none!important}
+@media(prefers-reduced-motion:reduce){
+ html[data-motion] .portfolio>.ambient-motion{display:none!important}
+ .v4-system::after,.project-visual::after{display:none!important}
+ .personal-story .photo-surface{transform:none!important;clip-path:none!important}
+ .featured-study .project-visual,.highlight-card .project-visual,.v4-map-signal{animation:none!important;clip-path:none!important}
+}
+@media print{.ambient-motion{display:none!important}.personal-story .photo-surface{transform:none!important;clip-path:none!important}}
+.page-hidden .v4-map-signal,.v4-paused .v4-map-signal,body:has(.modal-backdrop) .v4-map-signal{animation-play-state:paused!important}

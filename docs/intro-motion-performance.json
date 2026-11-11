@@ -1,0 +1,554 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "run": 0,
+    "lcp": 444,
+    "cls": 0.0006938354324738512,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 372.6000000014901,
+        "value": 0.0006938354324738512,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "bytes": 429029,
+    "frames": {
+      "count": 186,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999272,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "run": 1,
+    "lcp": 436,
+    "cls": 0.0008089378074363425,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 366.20000000298023,
+        "value": 0.0008089378074363425,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "bytes": 429029,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "run": 2,
+    "lcp": 440,
+    "cls": 0.0008089378074363425,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 370.70000000298023,
+        "value": 0.0008089378074363425,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "bytes": 429029,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "run": 0,
+    "lcp": 500,
+    "cls": 0.000043408504533179004,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 380.8999999985099,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      },
+      {
+        "time": 455.1000000014901,
+        "value": 0.000042654046371313434,
+        "nodes": [
+          "button button-outline",
+          ""
+        ]
+      }
+    ],
+    "bytes": 488669,
+    "frames": {
+      "count": 186,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "run": 1,
+    "lcp": 508,
+    "cls": 0.000043408504533179004,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 370.4000000022352,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      },
+      {
+        "time": 473.1000000014901,
+        "value": 0.000042654046371313434,
+        "nodes": [
+          "button button-outline",
+          ""
+        ]
+      }
+    ],
+    "bytes": 488669,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "run": 2,
+    "lcp": 500,
+    "cls": 0.000043408504533179004,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 377.5,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      },
+      {
+        "time": 471.19999999925494,
+        "value": 0.000042654046371313434,
+        "nodes": [
+          "button button-outline",
+          ""
+        ]
+      }
+    ],
+    "bytes": 488669,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/personal",
+    "run": 0,
+    "lcp": 424,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 373.30000000074506,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 744047,
+    "frames": {
+      "count": 186,
+      "median": 16.699999999999818,
+      "p95": 16.800000000000182,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/personal",
+    "run": 1,
+    "lcp": 440,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 371.30000000074506,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 744047,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/personal",
+    "run": 2,
+    "lcp": 436,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 368.80000000074506,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 744047,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/projects/medtutor",
+    "run": 0,
+    "lcp": 236,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 354.8999999985099,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 350580,
+    "frames": {
+      "count": 186,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 1440,
+    "route": "/projects/medtutor",
+    "run": 1,
+    "lcp": 232,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 349.6000000014901,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 350580,
+    "frames": null
+  },
+  {
+    "width": 1440,
+    "route": "/projects/medtutor",
+    "run": 2,
+    "lcp": 228,
+    "cls": 7.544581618655693e-7,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 350.70000000298023,
+        "value": 7.544581618655693e-7,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 350580,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "run": 0,
+    "lcp": 336,
+    "cls": 0.00044633823994935103,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 368.30000000074506,
+        "value": 0.00032465020576131684,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "time": 387.6000000014901,
+        "value": 0.00012168803418803419,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 367815,
+    "frames": {
+      "count": 185,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "run": 1,
+    "lcp": 348,
+    "cls": 0.0004017988287432732,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 352.29999999701977,
+        "value": 0.000280110794555239,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "time": 402,
+        "value": 0.00012168803418803419,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 367815,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "run": 2,
+    "lcp": 344,
+    "cls": 0.0005236608697372586,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 407.1000000014901,
+        "value": 0.0005236608697372586,
+        "nodes": [
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "bytes": 367815,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "run": 0,
+    "lcp": 380,
+    "cls": 0.0002114494301994302,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 442.19999999925494,
+        "value": 0.0002114494301994302,
+        "nodes": [
+          "button button-outline",
+          null,
+          ""
+        ]
+      }
+    ],
+    "bytes": 362809,
+    "frames": {
+      "count": 187,
+      "median": 16.699999999999818,
+      "p95": 16.800000000000182,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "run": 1,
+    "lcp": 380,
+    "cls": 0.0002114494301994302,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 437.30000000074506,
+        "value": 0.0002114494301994302,
+        "nodes": [
+          "button button-outline",
+          null,
+          ""
+        ]
+      }
+    ],
+    "bytes": 362809,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "run": 2,
+    "lcp": 364,
+    "cls": 0.0002114494301994302,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 438.5,
+        "value": 0.0002114494301994302,
+        "nodes": [
+          "button button-outline",
+          null,
+          ""
+        ]
+      }
+    ],
+    "bytes": 362809,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/personal",
+    "run": 0,
+    "lcp": 344,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 395.69999999925494,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 476295,
+    "frames": {
+      "count": 186,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 390,
+    "route": "/personal",
+    "run": 1,
+    "lcp": 352,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 397,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 476295,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/personal",
+    "run": 2,
+    "lcp": 340,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 400.0999999977648,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 476295,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/projects/medtutor",
+    "run": 0,
+    "lcp": 288,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 357.5,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 315772,
+    "frames": {
+      "count": 185,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "over25ms": 0
+    }
+  },
+  {
+    "width": 390,
+    "route": "/projects/medtutor",
+    "run": 1,
+    "lcp": 308,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 373.30000000074506,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 315772,
+    "frames": null
+  },
+  {
+    "width": 390,
+    "route": "/projects/medtutor",
+    "run": 2,
+    "lcp": 296,
+    "cls": 0.000002697056030389364,
+    "tasks": [],
+    "shifts": [
+      {
+        "time": 358.4000000022352,
+        "value": 0.000002697056030389364,
+        "nodes": [
+          null
+        ]
+      }
+    ],
+    "bytes": 315772,
+    "frames": null
+  }
+]
