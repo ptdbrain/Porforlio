@@ -1,3 +1,5 @@
+import { useImageSequence } from './useImageSequence';
+import { GalleryStage } from './GalleryStage';
 import { responsiveImage } from '../../lib/images.mjs';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -66,22 +68,21 @@ export function Modal({ title, closeLabel=title, onClose, children, className = 
 
 export function Photo({ asset, label, code, language, t, className = '', priority = false, interactive = true, fit, motion, motionIndex=0, gallery=[] }) {
   const [open, setOpen] = useState(false);
-  const [galleryIndex,setGalleryIndex]=useState(0);
+  const sequence=useImageSequence(asset,gallery);
   const triggerRef=useRef(null),lightboxRef=useRef(null);
-  const images=gallery.filter(item=>item.src);
-  const shown=images.length>1 ? images[galleryIndex]||asset : asset;
+  const images=sequence.images,shown=sequence.current||asset;
   const [failedSource,setFailedSource]=useState(null);
   const available=asset?.src&&failedSource!==asset.src;
   const caption = localize(asset?.caption, language);
   const media=responsiveImage(asset?.src);
   const image = available ? <img ref={triggerRef} src={media.src} srcSet={media.srcSet} sizes="(max-width: 760px) 90vw, 48vw" alt={localize(asset.alt, language) || label} width={media.width||1000} height={media.height||1200} decoding="async" style={{objectFit:fit||asset.fit||'cover',objectPosition:asset.position||'center'}} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} onError={()=>{setFailedSource(asset.src);setOpen(false);}} /> : null;
   function openPhoto() {
-    setGalleryIndex(Math.max(0,images.findIndex(item=>item.src===asset.src)));setOpen(true);
+    sequence.reset(Math.max(0,images.findIndex(item=>item.src===asset.src)));setOpen(true);
     if(asset.rotate||matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.dataset.motion==='simple')return;
     const source=triggerRef.current?.getBoundingClientRect();
     requestAnimationFrame(()=>{const node=lightboxRef.current;if(!node||!source)return;const target=node.getBoundingClientRect();if(!target.width||!target.height)return;node.animate([{transform:`translate(${source.x-target.x}px,${source.y-target.y}px) scale(${source.width/target.width},${source.height/target.height})`,opacity:.4},{transform:'none',opacity:1}],{duration:420,easing:'cubic-bezier(.22,1,.36,1)'});});
   }
-  function movePhoto(direction) {if(images.length<2)return;setGalleryIndex(index=>(index+direction+images.length)%images.length);}
+  function movePhoto(direction) {sequence.move(direction);}
   const content = <>
     {image && (asset.rotate === -90 ? <div className="photo-rotation">{image}</div> : image)}
     {image && <figcaption>{caption || label}<Arrow /></figcaption>}
@@ -93,8 +94,9 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
       {motion ? <div className="photo-surface">{surface}</div> : surface}
     </figure>
     {open && <Modal title={label} closeLabel={t.close} onClose={() => setOpen(false)} className="image-lightbox" onKeyDown={event=>{if(event.key==='ArrowRight'){event.preventDefault();movePhoto(1);}if(event.key==='ArrowLeft'){event.preventDefault();movePhoto(-1);}}}><div>
-      <div className={shown.rotate === -90 ? "photo-rotation photo-rotation-lightbox" : undefined}><img key={shown.src} ref={lightboxRef} className="lightbox-image" width={responsiveImage(shown.src).width} height={responsiveImage(shown.src).height} src={shown.src} alt={localize(shown.alt, language) || label} decoding="async" /></div><h2>{label}</h2>{localize(shown.caption,language)&&<p>{localize(shown.caption,language)}</p>}
-      {images.length>1&&<div className="gallery-controls"><button onClick={()=>movePhoto(-1)} aria-label={language==='vi'?'Ảnh trước':'Previous image'}>←</button><span role="status">{galleryIndex+1} / {images.length}</span><button onClick={()=>movePhoto(1)} aria-label={language==='vi'?'Ảnh tiếp theo':'Next image'}>→</button></div>}
+      <GalleryStage sequence={sequence} imageRef={lightboxRef} label={label} language={language}/><h2>{label}</h2>{localize(shown.caption,language)&&<p>{localize(shown.caption,language)}</p>}
+      {sequence.error&&<p role="status">{language==='vi'?'Không tải được ảnh tiếp theo. Bạn có thể thử lại.':'The next image could not be loaded. Please try again.'}</p>}
+      {images.length>1&&<div className="gallery-controls"><button onClick={()=>movePhoto(-1)} aria-label={language==='vi'?'Ảnh trước':'Previous image'}>←</button><span role="status">{sequence.index+1} / {images.length}</span><button onClick={()=>movePhoto(1)} aria-label={language==='vi'?'Ảnh tiếp theo':'Next image'}>→</button></div>}
     </div></Modal>}
 
   </>;

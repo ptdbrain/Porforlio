@@ -20,3 +20,5 @@ else createRoot(root).render(app);
 import '../experience.css';
 import '../ambient-motion.css';
 import '../expressive-motion.css';
+
+import '../photo-choreography.css';

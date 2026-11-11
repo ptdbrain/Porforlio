@@ -1,0 +1,57 @@
+/* New scroll gestures: settle completely once the photograph is in view. */
+.personal-photo-motion [data-photo-motion]{--photo-effect-strength:1;--photo-fx:calc(var(--photo-fold,0) * var(--photo-effect-strength))}
+.personal-photo-motion [data-photo-motion="curtain"] .photo-surface{clip-path:inset(0 calc(var(--photo-fx) * 43%) round 3px);transform:scale(calc(1 - var(--photo-fx) * .06))!important}
+.personal-photo-motion [data-photo-motion="iris"] .photo-surface{clip-path:circle(calc(75% - var(--photo-fx) * 60%) at 50% 50%);transform:scale(calc(1 - var(--photo-fx) * .05))!important}
+.personal-photo-motion [data-photo-motion="shutter"] .photo-surface{clip-path:polygon(0 0,calc(100% - var(--photo-fx) * 85%) 0,calc(100% - var(--photo-fx) * 70%) 25%,calc(100% - var(--photo-fx) * 85%) 50%,calc(100% - var(--photo-fx) * 70%) 75%,calc(100% - var(--photo-fx) * 85%) 100%,0 100%);transform:translateY(calc(var(--photo-fx) * 14px))!important}
+.personal-photo-motion [data-photo-motion="page"] .photo-surface{clip-path:none;transform-origin:0 50%;transform:perspective(1200px) rotateY(calc(var(--photo-fx) * -42deg)) translateX(calc(var(--photo-fx) * -12px))!important}
+.personal-photo-motion [data-photo-motion="orbit"] .photo-surface{clip-path:none;transform:translate(calc(var(--photo-direction) * var(--photo-fx) * 12px),calc(var(--photo-fx) * 20px)) rotate(calc(var(--photo-direction) * var(--photo-fx) * 22deg)) scale(calc(1 - var(--photo-fx) * .14))!important;transform-origin:50% 80%}
+.personal-photo-motion [data-photo-motion="zoom"] .photo-surface{clip-path:inset(calc(var(--photo-fx) * 6%) round 4px);transform:translateY(calc(var(--photo-fx) * 16px)) scale(calc(1 - var(--photo-fx) * .12))!important}
+.personal-photo-motion [data-photo-motion="ribbon"] .photo-surface{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--photo-fx) * 58%),0 calc(100% - var(--photo-fx) * 86%));transform:translateY(calc(var(--photo-fx) * 16px)) rotate(calc(var(--photo-direction) * var(--photo-fx) * 4deg))!important}
+.personal-photo-motion [data-photo-motion]:focus-within .photo-surface{transform:none!important;clip-path:none!important}
+/* The gallery owns two layers with one stable footprint. Original files stay intact. */
+.gallery-stage{position:relative;isolation:isolate;overflow:hidden;width:100%;aspect-ratio:4/3;max-height:65vh;background:#302e2808;perspective:1400px;border-radius:4px;touch-action:pan-y pinch-zoom}
+.gallery-layer{position:absolute;inset:0;transform-origin:50% 50%;backface-visibility:hidden}
+.gallery-layer-current{z-index:2}.gallery-layer-previous{z-index:1;pointer-events:none}
+.image-lightbox .gallery-stage .lightbox-image{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;animation:none}
+.gallery-stage .photo-rotation .lightbox-image{inset:auto;left:50%;top:50%;width:100cqh!important;height:100cqw!important}
+.gallery-stage:not([data-step="0"]) .gallery-layer-current{animation:var(--gallery-in,gallery-slide-in) 620ms var(--motion-ease) both}
+.gallery-stage .gallery-layer-previous{animation:var(--gallery-out,gallery-slide-out) 620ms var(--motion-ease) both}
+.gallery-stage[data-transition="book"]{--gallery-in:gallery-book-in;--gallery-out:gallery-book-out}
+.gallery-stage[data-transition="iris"]{--gallery-in:gallery-iris-in;--gallery-out:gallery-dim-out}
+.gallery-stage[data-transition="curtain"]{--gallery-in:gallery-curtain-in;--gallery-out:gallery-dim-out}
+.gallery-stage[data-transition="zoom"]{--gallery-in:gallery-zoom-in;--gallery-out:gallery-zoom-out}
+.gallery-stage[data-transition="tilt"]{--gallery-in:gallery-tilt-in;--gallery-out:gallery-tilt-out}
+.gallery-loading{position:absolute;z-index:5;bottom:10px;left:calc(50% - 12px);width:24px;height:24px;border:2px solid #814b2930;border-top-color:#814b29;border-radius:50%;animation:gallery-loading .7s linear infinite;pointer-events:none}
+.gallery-loading[hidden]{display:none}.gallery-controls{margin-top:16px}
+@keyframes gallery-slide-in{from{opacity:0;transform:translateX(calc(var(--gallery-direction) * 12%)) scale(.97)}to{opacity:1;transform:none}}
+@keyframes gallery-slide-out{to{opacity:0;transform:translateX(calc(var(--gallery-direction) * -8%)) scale(.97)}}
+@keyframes gallery-book-in{from{opacity:.15;transform:translateX(calc(var(--gallery-direction) * 10%)) rotateY(calc(var(--gallery-direction) * 42deg))}to{opacity:1;transform:none}}
+@keyframes gallery-book-out{to{opacity:0;transform:translateX(calc(var(--gallery-direction) * -10%)) rotateY(calc(var(--gallery-direction) * -38deg))}}
+@keyframes gallery-iris-in{from{clip-path:circle(0% at 50% 50%);transform:scale(1.04)}to{clip-path:circle(75% at 50% 50%);transform:none}}
+@keyframes gallery-curtain-in{from{clip-path:inset(0 50%);transform:scale(1.04)}to{clip-path:inset(0);transform:none}}
+@keyframes gallery-dim-out{to{opacity:0;transform:scale(.98)}}
+@keyframes gallery-zoom-in{from{opacity:0;transform:scale(.84)}to{opacity:1;transform:none}}
+@keyframes gallery-zoom-out{to{opacity:0;transform:scale(1.12)}}
+@keyframes gallery-tilt-in{from{opacity:0;transform:translateY(8%) rotate(calc(var(--gallery-direction) * 10deg)) scale(.93)}to{opacity:1;transform:none}}
+@keyframes gallery-tilt-out{to{opacity:0;transform:translateY(-5%) rotate(calc(var(--gallery-direction) * -7deg)) scale(.96)}}
+@keyframes gallery-loading{to{transform:rotate(360deg)}}
+@media(max-width:760px){.personal-photo-motion [data-photo-motion]{--photo-effect-strength:.55}.gallery-stage{max-height:60vh}.gallery-stage:not([data-step="0"]) .gallery-layer-current,.gallery-stage .gallery-layer-previous{animation-duration:460ms}}
+html[data-motion="simple"] .gallery-layer,html[data-motion="simple"] .gallery-loading{animation:none!important;transform:none!important;clip-path:none!important}
+.portfolio.is-simple .photo-surface{transform:none!important;clip-path:none!important}
+@media(prefers-reduced-motion:reduce){.personal-story .photo-surface,.gallery-layer,.gallery-loading{animation:none!important;transform:none!important;clip-path:none!important}.gallery-layer-previous{display:none}}
+@media print{.personal-story .photo-surface{transform:none!important;clip-path:none!important}}
+.image-lightbox:has(.gallery-controls) p{min-height:3.8em}
+@media(max-width:760px){.image-lightbox:has(.gallery-controls) p{min-height:5.7em}}
+@media(max-width:760px){.personal-story{overflow-x:clip}}
+/* Alternate project-image entrances across the editorial grid. */
+.v4-motion .featured-study:nth-child(4n+1).is-revealed .project-visual{animation-name:project-curtain-reveal}
+.v4-motion .featured-study:nth-child(4n+2).is-revealed .project-visual{animation-name:project-diagonal-reveal}
+.v4-motion .featured-study:nth-child(4n+3).is-revealed .project-visual{animation-name:project-iris-reveal}
+.v4-motion .featured-study:nth-child(4n+4).is-revealed .project-visual{animation-name:project-depth-reveal}
+.motion-enabled .highlight-card:nth-child(3n+1).is-revealed .project-visual{animation-name:project-curtain-reveal}
+.motion-enabled .highlight-card:nth-child(3n).is-revealed .project-visual{animation-name:project-diagonal-reveal}
+.featured-study:focus-visible .project-visual,.highlight-card:focus-visible .project-visual{animation:none!important;clip-path:none!important}
+@keyframes project-curtain-reveal{from{clip-path:inset(0 48%);opacity:.3}to{clip-path:inset(0);opacity:1}}
+@keyframes project-diagonal-reveal{from{clip-path:polygon(0 0,25% 0,0 100%,0 100%);opacity:.5}to{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);opacity:1}}
+@keyframes project-iris-reveal{from{clip-path:circle(12% at 50% 50%);opacity:.5}to{clip-path:circle(75% at 50% 50%);opacity:1}}
+@keyframes project-depth-reveal{from{opacity:0;transform:perspective(1400px) rotateX(10deg) scale(.96)}to{opacity:1;transform:none}}
