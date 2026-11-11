@@ -21,8 +21,6 @@ export function useWorkMotion(root, simple) {
       for (const [section, rect] of positions) {
         const progress = clamp((height - rect.top) / (height + rect.height));
         section.style.setProperty('--work-progress', progress.toFixed(4));
-        section.style.setProperty('--work-drift', `${((progress - .5) * (innerWidth < 768 ? 24 : 60)).toFixed(2)}px`);
-        section.style.setProperty('--work-arrival', clamp((height - rect.top) / (height * .65)).toFixed(4));
       }
     }
     function schedule() {

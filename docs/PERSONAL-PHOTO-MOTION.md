@@ -1,5 +1,8 @@
 # Chuyển động ảnh Personal
 
+> Cập nhật 11/11/2026: tài liệu này mô tả phiên bản trước. Flow và chuyển động hiện tại được điều chỉnh theo [báo cáo redesign](redesign/DELIVERY.md): giảm hiệu ứng lật/3D, bỏ ambient loop, đưa featured work lên trước và bổ sung shared media transition.
+
+
 Các hiệu ứng dùng trực tiếp ảnh hoặc khung chờ ảnh trong `portfolio.json`, không yêu cầu thêm video hay ảnh biến thể.
 
 | Nhóm ảnh | Chuyển động |

@@ -1,0 +1,125 @@
+/* PTD. motion vocabulary: one owner per surface; native scroll throughout. */
+:root{--motion-fast:180ms;--motion-card:320ms;--motion-section:560ms;--motion-image:760ms;--motion-page:460ms;--motion-ease:cubic-bezier(.22,1,.36,1)}
+.portfolio{transition:none}.ambient-motion{display:none}
+.button,.text-link,.main-nav a,.copy-button{transition:background var(--motion-fast),border-color var(--motion-fast),color var(--motion-fast),transform var(--motion-fast)}
+a:focus-visible .arrow,button:focus-visible .arrow{transform:translate(3px,-3px)}
+input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+summary{cursor:pointer;min-height:48px}
+.split-headline .headline-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.split-headline .headline-line>span{display:block;animation:headline-line-in .65s var(--motion-ease) both}
+.split-headline .headline-line:nth-child(2)>span{animation-delay:90ms}.split-headline i{font-style:normal}
+.hero-secondary{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px}.hero-secondary .text-link{font-size:10px;border:0;color:var(--muted)}
+.hero-disciplines{line-height:2}.intro-replay{background:transparent}
+.hero-portrait{animation:editorial-mask var(--motion-image) var(--motion-ease) both}
+.hero-portrait>.photo{border-radius:2px 2px 64px 2px}
+.hero-portrait img{animation:editorial-image var(--motion-image) var(--motion-ease) both}
+.hero-portrait figcaption{display:none}.home-highlights{border-top:1px solid var(--line)}
+.home-highlights .section-title h2{max-width:20ch}.highlight-grid{display:grid;grid-template-columns:1fr .85fr 1fr;gap:28px}
+.highlight-card{display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--line);padding-top:20px;min-width:0}
+.highlight-card h3{font-size:clamp(22px,2.3vw,32px);display:flex;justify-content:space-between;gap:12px;line-height:1.3}
+.highlight-card p{font-size:14px;color:var(--muted);margin:0;line-height:1.8}.highlight-card .eyebrow{font-size:9px}
+.highlight-card .project-visual{margin-bottom:10px}.highlight-experience{background:var(--surface);padding:26px;border:0}.highlight-experience h3{font-size:34px}
+.highlight-organizations{font-size:clamp(23px,2.8vw,40px);letter-spacing:-.05em;line-height:1.5;margin-block:20px}.highlight-organizations span{display:block;color:var(--muted)}
+.highlight-experience .text-link{margin-top:auto;align-self:start}
+.project-visual{position:relative;overflow:hidden;aspect-ratio:5/3;background:#11181b;border:1px solid #ffffff18}
+.project-visual>img{width:100%;height:100%;object-fit:contain;transition:transform var(--motion-card) var(--motion-ease)}
+.project-visual>figcaption{position:absolute;bottom:0;left:0;background:#11181be8;color:#acbabc;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:7px 12px;letter-spacing:.015em}
+.cinema-frame>.project-visual{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}.cinema-type-poster small{display:none}
+.story-choice{transition:box-shadow var(--motion-card),border-color var(--motion-card)!important;flex:1!important}
+.story-choice>.photo img{transition:transform var(--motion-card) var(--motion-ease)}
+.story-choice-copy{transition:transform var(--motion-card) var(--motion-ease)}
+.story-choice:focus-visible .story-choice-copy{transform:translateY(-4px)}
+.story-choices{gap:24px}.two-stories .story-choice{min-height:530px}
+.work-hero-visual{position:relative;align-self:center;min-width:0}.work-hero-visual>.photo{aspect-ratio:4/3;width:100%;background:#151d20}
+.work-hero-visual>.photo figcaption{display:none}.work-hero-visual>.v4-system{position:absolute;width:42%;right:-14px;bottom:-38px;background:#10171af2;border:1px solid #3e5057;padding:8px;border-radius:4px}
+.work-hero-visual .v4-system p{font-size:7px;margin:0}.work-hero-visual .v4-system svg{max-height:135px}
+.v4-proof a{display:inline-flex;align-items:center;gap:10px}.v4-proof a:focus-visible{outline-color:var(--v4-lime)}
+.featured-studies{background:#101518}.featured-study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:60px 36px}
+.featured-study{min-width:0;border-bottom:1px solid var(--v4-line,#34413e);padding-bottom:32px}.featured-study:nth-child(even){padding-top:60px}
+.featured-study-copy{padding-top:26px}.featured-study h3{display:flex;justify-content:space-between;font-size:clamp(30px,3.6vw,52px);margin:12px 0 16px}
+.featured-study p{font-size:15px;line-height:1.8;max-width:55ch;color:#bac3bf}.featured-role{font-size:12px;line-height:1.8;max-width:58ch;color:#d5dbd5}.featured-role>span{display:block;color:#a6b2ad;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.featured-stack{font-family:'IBM Plex Mono',monospace;color:#a7b7b1;font-size:10px;margin-top:14px}.featured-study .text-link{color:var(--v4-lime);margin-top:20px}
+.v4-motion [data-work-reveal]{transition:opacity var(--motion-section) var(--motion-ease),translate var(--motion-section) var(--motion-ease),transform var(--motion-card) var(--motion-ease),border-color var(--motion-fast);--work-enter-y:20px}
+.v4-motion .v4-system svg{translate:0 0}.v4-motion .v4-system-orbit{transform:none}.v4-motion >section::after{translate:0 clamp(-10px,var(--work-drift,0px),10px)}
+.work-v4 .v4-map-signal,.work-v4 .v4-system rect,.v4-system g{animation-iteration-count:1!important}
+.work-v4 .v4-project-card{animation:none;min-width:0}.work-v4 .v4-project-grid{align-content:start;min-height:280px}
+.v4-filters button{transition:background var(--motion-fast),color var(--motion-fast),border-color var(--motion-fast)}
+.personal-photo-motion [data-photo-motion]{--photo-strength:.12!important}
+.personal-photo-motion [data-photo-motion] .photo-surface{box-shadow:none;clip-path:none;transform:translateY(clamp(-10px,calc(var(--photo-fold) * 14px),10px))!important;transition:transform var(--motion-section) var(--motion-ease)}
+.personal-photo-motion .photo-surface::after{display:none}.personal-photo-motion .photo-surface img{transform:none!important}
+.personal-photo-motion .timeline-photo-layer{transform:translateX(18px);transition:opacity .4s ease,transform var(--motion-section) var(--motion-ease),visibility 0s .56s}
+.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-18px)}
+.personal-photo-motion .timeline-photo-layer.is-active{transform:none;transition:opacity .4s ease,transform var(--motion-section) var(--motion-ease),visibility 0s}
+.timeline-photo-layer::after,.timeline-photo-stack::after{display:none!important}
+.personal-story .personal-collage{view-transition-name:none!important}.personal-hero h1{max-width:14ch}
+.achievement-grid.defining-moments{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px}.achievement-card>p{font-size:14px;line-height:1.8}
+.milestone-archive{margin-top:50px;border-block:1px solid var(--line);padding-block:10px}.milestone-archive>summary{font-size:20px;display:flex;align-items:center;justify-content:space-between;padding-block:15px}.milestone-archive>summary>span{font-family:'IBM Plex Mono',monospace;font-size:13px}
+.milestone-archive[open]>.achievement-grid{margin-top:35px}.training-card.text-only{display:block}.training-card.text-only .training-content{max-width:750px}
+.personal-story .dreams-section{padding-block:70px;background:var(--ink);color:var(--bg)}.dreams-section .journey-bridge{border-top:0;margin:0;padding:0}.dreams-section .dreams-grid:empty{display:none}
+.case-cover .cinema-frame{aspect-ratio:5/3}.case-cover .project-visual figcaption{font-size:11px}
+.theme-cinema .case-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:65px}
+.theme-cinema .case-toc{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:6px;padding:16px 0;border-block:1px solid var(--line);margin:0}
+.case-toc a{display:flex;gap:12px;padding:12px 5px;font-size:11px;color:var(--muted);transition:color var(--motion-fast)}.case-toc a[aria-current]{color:var(--accent)}.case-toc a>span{font-family:'IBM Plex Mono',monospace;font-size:9px}
+.case-mobile-toc{display:none}.case-content{min-width:0}.case-glance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;margin:30px 0 0;padding-top:25px;border-top:1px solid var(--line)}
+.case-glance dt{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.case-glance dd{margin:0;font-size:13px;line-height:1.8;color:var(--muted)}
+.architecture-nodes button{transition:background var(--motion-fast),border-color var(--motion-fast),transform var(--motion-fast)}.architecture-nodes button[aria-pressed=true]{border-color:var(--accent);background:#d9ff6112}
+.architecture-detail{min-height:100px;transition:opacity var(--motion-fast)}
+.theme-cinema .next-project{display:grid;grid-template-columns:minmax(0,.8fr) 1fr auto;gap:40px;align-items:center;padding-block:60px}.next-project strong{display:block;font-size:clamp(30px,4vw,60px);margin-top:16px}.next-project p{font-size:14px;line-height:1.7;color:var(--muted);max-width:50ch}.next-project .project-visual figcaption{font-size:8px}
+.lightbox-image{animation:lightbox-image-in var(--motion-card) var(--motion-ease) both}.image-lightbox .lightbox-image{width:100%;max-height:65vh;object-fit:contain}
+.gallery-controls{display:flex;align-items:center;justify-content:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:12px}.gallery-controls button{background:transparent;min-width:48px;min-height:48px;border:1px solid #c4c1b7;border-radius:50%;font-size:20px}
+html[data-route-motion="story"]::view-transition-old(root){animation:editorial-page-out .2s ease both}
+html[data-route-motion="story"]::view-transition-new(root){animation:editorial-page-in var(--motion-page) var(--motion-ease) both}
+::view-transition-group(project-cover),::view-transition-group(story-image){animation-duration:620ms;animation-timing-function:var(--motion-ease)}
+::view-transition-image-pair(project-cover),::view-transition-image-pair(story-image){overflow:hidden;isolation:isolate}
+::view-transition-old(project-cover),::view-transition-new(project-cover),::view-transition-old(story-image),::view-transition-new(story-image){height:100%;object-fit:contain;background:#11181b}
+@media(hover:hover) and (pointer:fine){.story-choice:hover>.photo img,.featured-study:hover .project-visual img,.highlight-card:hover .project-visual img,.next-project:hover .project-visual img{transform:scale(1.035)}.story-choice:hover .story-choice-copy{transform:translateY(-5px)}}
+@keyframes headline-line-in{from{opacity:.3;transform:translateY(105%)}to{opacity:1;transform:none}}
+@keyframes editorial-mask{from{clip-path:inset(12% 0 0 0)}to{clip-path:inset(0)}}
+@keyframes editorial-image{from{transform:scale(1.045)}to{transform:scale(1)}}
+@keyframes editorial-page-out{to{opacity:0}}
+@keyframes editorial-page-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes lightbox-image-in{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:1050px){.highlight-grid{gap:18px}.highlight-experience{padding:20px}.highlight-organizations{font-size:28px}.theme-cinema .case-layout{grid-template-columns:155px minmax(0,1fr);gap:28px}.case-glance{grid-template-columns:1fr}.featured-role{font-size:11px}.theme-cinema .next-project{gap:22px}}
+@media(max-width:760px){
+ .highlight-grid{grid-template-columns:1fr}.highlight-card{padding-bottom:24px;gap:12px}.highlight-card h3{font-size:27px}.highlight-experience{padding:26px}.highlight-organizations{margin-block:8px}.highlight-card p{font-size:14px}
+ .hero-secondary{gap:3px 16px}.hero-secondary .text-link{font-size:10px}.hero-copy h1{font-size:clamp(58px,14vw,84px)}.home-hero{max-height:none}.hero-portrait>.photo{border-radius:2px 2px 42px 2px}
+ .hero-portrait{animation-duration:560ms}.two-stories .story-choice{min-height:420px}.story-choices{gap:16px}
+ .work-hero-visual{margin:10px 0 25px}.work-hero-visual>.v4-system{width:35%;right:-5px;bottom:-25px}.work-hero-visual .v4-system p{display:none}
+ .featured-study-grid{grid-template-columns:1fr;gap:38px}.featured-study:nth-child(even){padding-top:0}.featured-study h3{font-size:34px}.featured-study p{font-size:14px}.featured-study-copy{padding-top:22px}
+ .project-visual>figcaption{font-size:8px;padding:5px 8px}.achievement-grid.defining-moments{grid-template-columns:1fr;gap:35px}.milestone-archive>summary{font-size:17px}
+ .theme-cinema .case-layout{display:block}.theme-cinema .case-toc{display:none}.case-mobile-toc{display:block;border-block:1px solid var(--line);margin:20px 0 45px}.case-mobile-toc summary{display:flex;align-items:center;justify-content:space-between;font-size:13px}.case-mobile-toc summary::after{content:'+'}.case-mobile-toc[open] summary::after{content:'−'}.case-mobile-toc nav{display:grid;gap:0;padding-bottom:16px}.case-mobile-toc nav a{display:flex;gap:15px;padding:13px 0;font-size:12px}.case-mobile-toc nav a[aria-current]{color:var(--accent)}
+ .case-glance{gap:22px}.theme-cinema .next-project{grid-template-columns:1fr auto;gap:25px}.next-project>.project-visual{grid-column:1/-1}.next-project p{font-size:13px}.image-lightbox .lightbox-image{max-height:60vh}
+ .personal-photo-motion [data-photo-motion] .photo-surface{transform:none!important}.personal-story .dreams-section{padding-block:45px}
+}
+/* Disable transformations in both the OS setting and the site's manual toggle. */
+.portfolio.is-simple .split-headline span,.portfolio.is-simple .hero-portrait,.portfolio.is-simple .hero-portrait img{animation:none!important;clip-path:none!important;transform:none!important}
+html[data-motion="simple"] .lightbox-image{animation:none!important}
+@media(prefers-reduced-motion:reduce){.split-headline span,.hero-portrait,.hero-portrait img{animation:none!important;clip-path:none!important;transform:none!important}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+@media print{.case-toc,.case-mobile-toc,.intro-replay{display:none}.theme-cinema .case-layout{display:block}}
+.theme-cinema .case-cover{view-transition-name:none;aspect-ratio:5/3}
+.hero-portrait>.photo{translate:var(--portrait-x,0px) var(--portrait-y,0px);transition:translate .3s var(--motion-ease)}
+.portfolio.route-visited .split-headline .headline-line>span{animation:none}
+.portfolio.is-simple .hero-portrait>.photo{translate:none!important}
+@media(prefers-reduced-motion:reduce){.hero-portrait>.photo{translate:none!important}}
+.portrait-intro{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;padding-block:70px;min-height:660px}
+.portrait-intro h1{font-size:clamp(48px,5.5vw,80px);max-width:12ch}.portrait-intro .personal-lead{max-width:45ch}.personal-intro-photo{aspect-ratio:4/5;border-radius:2px 2px 56px 2px;overflow:hidden;animation:editorial-mask var(--motion-image) var(--motion-ease) both}.personal-intro-photo figcaption{display:none}
+.personal-about .personal-collage .collage-1{grid-column:1/-1;aspect-ratio:4/3;rotate:-2deg;transform:none}.personal-about .personal-collage .collage-2,.personal-about .personal-collage .collage-3{aspect-ratio:1;rotate:0deg;transform:none;width:100%;margin:0;inset:auto}
+.personal-about .personal-collage .collage-2{grid-column:1}.personal-about .personal-collage .collage-3{grid-column:2}
+.theme-cinema .case-cover{padding:0;border:1px solid var(--line);background:#11181b}
+@media(max-width:760px){.portrait-intro{grid-template-columns:1fr;gap:32px;min-height:0;padding-block:50px}.portrait-intro h1{font-size:clamp(44px,11vw,70px)}.personal-intro-photo{width:90%;margin-inline:auto;max-height:500px}.personal-about .personal-collage{width:100%}}
+@media(prefers-reduced-motion:reduce){.personal-intro-photo{animation:none}}
+.portfolio.is-simple .personal-intro-photo{animation:none}
+.dreams-section .journey-bridge p{color:#f4efe6}
+.portfolio.intro-revealed .split-headline .headline-line>span{animation:none!important;transform:none;opacity:1}
+/* The video supplies the crossfade; its underlay must already be fully painted. */
+.portfolio.intro-covered.intro-revealed{opacity:1;transition:none}
+.personal-story .dreams-section{background:#40352a;color:#f4efe6}
+/* Profiled scroll fix: prevent a section signal from invalidating its subtree.
+   Reading progress writes the bar's transform directly, not an inherited root var. */
+@property --work-progress{syntax:'<number>';inherits:false;initial-value:0}
+.theme-cinema .site-header{backdrop-filter:none;background:#090b10}
+.v4-motion >section:not(:first-child)::before{transform:scaleX(0);opacity:.4;transition:transform var(--motion-section) var(--motion-ease)}
+.v4-motion >section.is-work-visible:not(:first-child)::before{transform:scaleX(1)}
+.v4-motion >section::after{translate:none;opacity:0;transition:opacity var(--motion-section)}
+.v4-motion >section.is-work-visible::after{opacity:1}
+.v4-motion .v4-section-heading>.v4-label::before{transform:none}

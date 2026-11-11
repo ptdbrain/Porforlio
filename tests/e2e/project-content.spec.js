@@ -26,7 +26,7 @@ test('CV-backed education, experience and downloadable PDF are available without
  await page.goto('/personal');
  await expect(page.locator('#chapter-high-school')).toContainText('THPT Chuyên Vĩnh Phúc');
  await expect(page.locator('#chapter-university')).toContainText('Đại học Bách khoa Hà Nội');
- await expect(page.locator('.achievement-grid')).toContainText('EMNLP 2026');
+ await expect(page.locator('.milestone-archive')).toContainText('EMNLP 2026');
  await page.goto('/work');
  await expect(page.locator('#experience')).toContainText('GeoIT VNPT');
  await expect(page.locator('#experience')).toContainText('BA GPS');

@@ -9,7 +9,7 @@ test('simple view persists and keeps Work content available across routes',async
  await page.reload();await expect(page.locator('.work-v4')).toHaveClass(/v4-simple/);
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
  await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
- await expect(page.locator('.life-chapter')).toHaveCount(4);
+ await expect(page.locator('.life-chapter')).toHaveCount(3);
  await page.goBack();await expect(page.locator('.v4-job-summary')).toHaveCount(3);
 });
 

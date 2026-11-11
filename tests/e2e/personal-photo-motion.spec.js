@@ -9,7 +9,7 @@ test('photo gestures follow scroll in both directions without changing layout',a
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto('/personal');
   await expect(page.locator('.personal-story')).toHaveClass(/personal-photo-motion/);
-  for(const selector of ['.collage-2','.training-card .photo','.achievement-card .photo','.hobby-grid [data-photo-motion="tilt"]','.future-photo']){
+  for(const selector of ['.collage-2','.achievement-card .photo','.sport-feature>.photo']){
     const photo=page.locator(selector).first();
     const fold=()=>photo.evaluate(n=>Number(n.style.getPropertyValue('--photo-fold')));
     await photo.evaluate(n=>scrollTo({top:n.getBoundingClientRect().top+scrollY-innerHeight+80,behavior:'instant'}));
@@ -34,20 +34,20 @@ test('timeline follows chapters forward and backward with one accessible photo l
     return;
   }
   const chapters=page.locator('[data-chapter]');
-  for(const index of [0,1,2,3,1,0]){
+  for(const index of [0,1,2,1,0]){
     await chapters.nth(index).evaluate(n=>scrollTo({top:n.getBoundingClientRect().top+scrollY-innerHeight*.3,behavior:'instant'}));
     const layer=page.locator('.timeline-photo-layer').nth(index);
     await expect(layer).toHaveClass(/is-active/);
     await expect(layer).toHaveCSS('opacity','1');
     await expect(page.locator('.timeline-photo-layer[aria-hidden="false"]')).toHaveCount(1);
-    await expect(page.locator('.timeline-photo-layer[inert]')).toHaveCount(3);
+    await expect(page.locator('.timeline-photo-layer[inert]')).toHaveCount(2);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }
 });
 
 test('reduced motion removes folding and restores neutral image surfaces immediately',async({page})=>{
   await page.goto('/personal');
-  await page.locator('.training-card').scrollIntoViewIfNeeded();
+  await page.locator('.sport-feature').scrollIntoViewIfNeeded();
   await page.emulateMedia({reducedMotion:'reduce'});
   await expect(page.locator('.personal-story')).not.toHaveClass(/personal-photo-motion/);
   for(const surface of await page.locator('.photo-surface').all()){

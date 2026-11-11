@@ -4,40 +4,48 @@ import { flushSync } from 'react-dom';
 const storyPaths = new Set(['/','/work','/personal']);
 
 export function useRouteTransition(mainRef, simple) {
-  const current = useRef({version:0, transition:null, animation:null});
+  const current = useRef({version:0, transition:null, animation:null, sharedTarget:null});
   useEffect(() => () => {
     current.current.version++;
     current.current.transition?.skipTransition();
     current.current.animation?.cancel();
+    if(current.current.sharedTarget?.isConnected)current.current.sharedTarget.style.viewTransitionName='';
     delete document.documentElement.dataset.routeMotion;
     delete document.documentElement.dataset.routeDirection;
     document.documentElement.style.removeProperty('--route-surface');
   }, [simple]);
 
-  return useCallback(({from,to,update,restore}) => {
+  return useCallback(({from,to,update,restore,sharedImage}) => {
     const state = current.current;
     const version = ++state.version;
     state.transition?.skipTransition();
     state.animation?.cancel();
+    if(state.sharedTarget?.isConnected)state.sharedTarget.style.viewTransitionName='';
+    state.sharedTarget=null;
     state.transition = null; state.animation = null;
     const html = document.documentElement;
     const story = from !== to && storyPaths.has(from) && storyPaths.has(to);
     const reduced = simple || matchMedia('(prefers-reduced-motion: reduce)').matches;
     const direction = to === '/work' || (to === '/' && from === '/personal') ? 'left' : 'right';
-    let committed = false;
+    let committed = false, sharedTarget;
     function commit() {
       if (version !== state.version || committed) return;
       committed = true;
       flushSync(update);
+      if(sharedImage&&!reduced){
+        sharedTarget=document.querySelector(to.startsWith('/projects/')?'.case-cover .project-visual':to==='/work'?'.work-hero-visual>.photo':'.personal-intro-photo');
+        if(sharedTarget){sharedTarget.style.viewTransitionName=sharedImage;state.sharedTarget=sharedTarget;}
+      }
       restore?.();
       if(html.dataset.routeMotion&&mainRef.current)html.style.setProperty('--route-surface',getComputedStyle(mainRef.current).getPropertyValue('--bg'));
     }
     function clean() {
       if (version !== state.version) return;
+      if(sharedTarget?.isConnected)sharedTarget.style.viewTransitionName='';
       delete html.dataset.routeMotion;
       delete html.dataset.routeDirection;
       html.style.removeProperty('--route-surface');
-      state.transition = null; state.animation = null;
+      state.transition = null; state.animation = null; state.sharedTarget=null;
     }
     if (reduced || from === to) {
       clean(); commit();

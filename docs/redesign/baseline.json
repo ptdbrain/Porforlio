@@ -1,0 +1,134 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "lcp": 604,
+    "cls": 0.0018251050826126327,
+    "long": 0,
+    "overflow": false,
+    "bytes": 1033448,
+    "dom": 162,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "lcp": 448,
+    "cls": 0.0034891685203269677,
+    "long": 74,
+    "overflow": false,
+    "bytes": 63692,
+    "dom": 534,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "route": "/personal",
+    "lcp": 436,
+    "cls": 0.0039438164437585735,
+    "long": 0,
+    "overflow": false,
+    "bytes": 587224,
+    "dom": 600,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "route": "/projects/medtutor",
+    "lcp": 452,
+    "cls": 0.009148148349086935,
+    "long": 0,
+    "overflow": false,
+    "bytes": 4800,
+    "dom": 253,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "route": "/",
+    "lcp": 300,
+    "cls": 0.0016985433133845228,
+    "long": 0,
+    "overflow": false,
+    "bytes": 1033448,
+    "dom": 162,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "route": "/work",
+    "lcp": 432,
+    "cls": 0.00031528471751731405,
+    "long": 177,
+    "overflow": false,
+    "bytes": 63692,
+    "dom": 534,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "route": "/personal",
+    "lcp": 532,
+    "cls": 0.010145510388437216,
+    "long": 90,
+    "overflow": false,
+    "bytes": 587224,
+    "dom": 600,
+    "errors": []
+  },
+  {
+    "width": 820,
+    "route": "/projects/medtutor",
+    "lcp": 344,
+    "cls": 0.0000021198434206564285,
+    "long": 0,
+    "overflow": false,
+    "bytes": 4800,
+    "dom": 253,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "lcp": 304,
+    "cls": 0.0021061894586894584,
+    "long": 0,
+    "overflow": false,
+    "bytes": 1033448,
+    "dom": 162,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "lcp": 364,
+    "cls": 0,
+    "long": 156,
+    "overflow": false,
+    "bytes": 28884,
+    "dom": 534,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "route": "/personal",
+    "lcp": 420,
+    "cls": 0,
+    "long": 156,
+    "overflow": false,
+    "bytes": 564472,
+    "dom": 600,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "route": "/projects/medtutor",
+    "lcp": 312,
+    "cls": 0.0016767919040835708,
+    "long": 0,
+    "overflow": false,
+    "bytes": 4200,
+    "dom": 253,
+    "errors": []
+  }
+]

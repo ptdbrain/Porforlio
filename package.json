@@ -9,7 +9,9 @@
     "test": "node --test tests/*.test.js",
     "preview": "vite preview --host 127.0.0.1",
     "test:e2e": "playwright test",
-    "lint": "eslint src/App.jsx src/main.jsx src/components/cinema src/components/editorial src/lib/useMotionPreference.js src/lib/useSiteMotion.js src/lib/workV4.mjs src/content/cinemaCopy.js src/content/workV4.mjs"
+    "lint": "eslint src/App.jsx src/main.jsx src/components/cinema src/components/editorial src/lib/useMotionPreference.js src/lib/useSiteMotion.js src/lib/usePortfolioEvents.js src/lib/images.mjs src/lib/workV4.mjs src/content/cinemaCopy.js src/content/workV4.mjs",
+    "assets:maps": "node scripts/project-maps.mjs",
+    "assets:photos": "python3 scripts/optimize-photos.py"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",

@@ -26,7 +26,7 @@ test('both photo choices link to the correct journeys',async({page})=>{
   await page.goto('/');
   await page.locator('.story-choice-personal').click();
   await expect(page).toHaveURL(/\/personal$/);
-  await expect(page.locator('.life-chapter')).toHaveCount(4);
+  await expect(page.locator('.life-chapter')).toHaveCount(3);
   await page.goto('/');await page.locator('.story-choice-work').click();
   await expect(page.locator('.v4-capabilities,.v4-experience,.v4-library')).toHaveCount(3);
 });
@@ -63,7 +63,7 @@ test('library combines problem, technology and repository aliases',async({page})
 test('case study is directly addressable and its architecture is interactive',async({page})=>{
   await page.goto('/projects/medtutor');
   await expect(page.locator('h1')).toHaveText('MedTutor.');
-  for(const id of ['problem','contribution','architecture','implementation','results','lessons','links'])await expect(page.locator(`#${id}`)).toBeAttached();
+  for(const id of ['problem','contribution','architecture','implementation','results','links'])await expect(page.locator(`#${id}`)).toBeAttached();
   await page.getByRole('button',{name:'02 Retrieve'}).click();
   await expect(page.locator('.architecture-detail')).toContainText('Dense + BM25');
   await expect(page.locator('.case-sources a').first()).toHaveAttribute('href',/github.com\/ptdbrain\/med-bot/);

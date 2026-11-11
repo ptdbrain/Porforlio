@@ -1,0 +1,86 @@
+{
+  "/anh/anhcanhandep.jpg": {
+    "src": "/media/anhcanhandep-1152.webp",
+    "srcSet": "/media/anhcanhandep-640.webp 640w, /media/anhcanhandep-1152.webp 1152w",
+    "width": 1152,
+    "height": 2048
+  },
+  "/anh/anhsukiendontongbithuToLamoBachKhoa.jpg": {
+    "src": "/media/anhsukiendontongbithuToLamoBachKhoa-1280.webp",
+    "srcSet": "/media/anhsukiendontongbithuToLamoBachKhoa-640.webp 640w, /media/anhsukiendontongbithuToLamoBachKhoa-1280.webp 1280w",
+    "width": 2048,
+    "height": 1536
+  },
+  "/anh/giaikhuyenkhichhocsinhgioimontinhoc.jpg": {
+    "src": "/media/giaikhuyenkhichhocsinhgioimontinhoc-1264.webp",
+    "srcSet": "/media/giaikhuyenkhichhocsinhgioimontinhoc-640.webp 640w, /media/giaikhuyenkhichhocsinhgioimontinhoc-1264.webp 1264w",
+    "width": 1264,
+    "height": 844
+  },
+  "/anh/giainhatkhktcaptinh.jpg": {
+    "src": "/media/giainhatkhktcaptinh-1280.webp",
+    "srcSet": "/media/giainhatkhktcaptinh-640.webp 640w, /media/giainhatkhktcaptinh-1280.webp 1280w",
+    "width": 1920,
+    "height": 2560
+  },
+  "/anh/giainhiquocgiakhkt.jpg": {
+    "src": "/media/giainhiquocgiakhkt-1230.webp",
+    "srcSet": "/media/giainhiquocgiakhkt-640.webp 640w, /media/giainhiquocgiakhkt-1230.webp 1230w",
+    "width": 1230,
+    "height": 922
+  },
+  "/anh/giaychungnhandatgiainhikhktcapquocgia.jpg": {
+    "src": "/media/giaychungnhandatgiainhikhktcapquocgia-1280.webp",
+    "srcSet": "/media/giaychungnhandatgiainhikhktcapquocgia-640.webp 640w, /media/giaychungnhandatgiainhikhktcapquocgia-1280.webp 1280w",
+    "width": 1920,
+    "height": 2560
+  },
+  "/anh/huychuongtuoitresangtao.jpg": {
+    "src": "/media/huychuongtuoitresangtao-1280.webp",
+    "srcSet": "/media/huychuongtuoitresangtao-640.webp 640w, /media/huychuongtuoitresangtao-1280.webp 1280w",
+    "width": 1920,
+    "height": 2560
+  },
+  "/anh/thcs.jpg": {
+    "src": "/media/thcs-206.webp",
+    "srcSet": "/media/thcs-206.webp 206w",
+    "width": 206,
+    "height": 206
+  },
+  "/anh/thpt1.jpg": {
+    "src": "/media/thpt1-206.webp",
+    "srcSet": "/media/thpt1-206.webp 206w",
+    "width": 206,
+    "height": 206
+  },
+  "/anh/thptaquanhocsinhtoannangcvpaward.jpg": {
+    "src": "/media/thptaquanhocsinhtoannangcvpaward-1280.webp",
+    "srcSet": "/media/thptaquanhocsinhtoannangcvpaward-640.webp 640w, /media/thptaquanhocsinhtoannangcvpaward-1280.webp 1280w",
+    "width": 2048,
+    "height": 2048
+  },
+  "/anh/thptchutichclbcaulong.jpg": {
+    "src": "/media/thptchutichclbcaulong-480.webp",
+    "srcSet": "/media/thptchutichclbcaulong-480.webp 480w",
+    "width": 480,
+    "height": 587
+  },
+  "/anh/thptthiroboticgiainhat.jpg": {
+    "src": "/media/thptthiroboticgiainhat-206.webp",
+    "srcSet": "/media/thptthiroboticgiainhat-206.webp 206w",
+    "width": 206,
+    "height": 206
+  },
+  "/anh/thptvodichgiaicaulong.jpg": {
+    "src": "/media/thptvodichgiaicaulong-1280.webp",
+    "srcSet": "/media/thptvodichgiaicaulong-640.webp 640w, /media/thptvodichgiaicaulong-1280.webp 1280w",
+    "width": 2048,
+    "height": 1365
+  },
+  "/anh/venturex.jpg": {
+    "src": "/media/venturex-1280.webp",
+    "srcSet": "/media/venturex-640.webp 640w, /media/venturex-1280.webp 1280w",
+    "width": 2048,
+    "height": 1536
+  }
+}

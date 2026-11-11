@@ -1,0 +1,14 @@
+// Documentation diagrams, never product screenshots or measured results.
+import {execFileSync} from 'node:child_process';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+const data=JSON.parse(await readFile('src/content/portfolio.json','utf8'));
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+await mkdir('public/project-maps',{recursive:true});
+await mkdir('public/og',{recursive:true});
+for(const p of data.projects){
+ const nodes=p.pipeline.slice(0,4);const colors=['#b7d6bf','#a7d4df','#d9ff61','#d7bca3'];const color=colors[data.projects.indexOf(p)%colors.length];
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">${escape(p.title)} — System map</title><desc id="desc">Documentation diagram: ${escape(nodes.map(n=>n.title).join(' → '))}</desc><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs><rect width="1200" height="720" fill="#11181b"/><rect width="1200" height="720" fill="url(#grid)"/><circle cx="1040" cy="120" r="250" fill="none" stroke="${color}" stroke-opacity=".12"/><circle cx="1040" cy="120" r="190" fill="none" stroke="${color}" stroke-opacity=".08"/><text x="64" y="76" font-family="monospace" font-size="16" fill="${color}" letter-spacing="3">PTD. / SYSTEM STUDY</text><text x="64" y="170" font-family="sans-serif" font-size="66" fill="#f3f4ed">${escape(p.title)}</text><text x="64" y="220" font-family="monospace" font-size="17" fill="#a3b1b4">${escape(p.stack.slice(0,4).join(' / '))}</text>${nodes.map((n,i)=>{const x=64+i*280;return `${i?`<path d="M${x-24} 400h24m-9-6 9 6-9 6" fill="none" stroke="${color}" stroke-width="2"/>`:''}<rect x="${x}" y="310" width="250" height="180" rx="4" fill="#192326" stroke="#405154"/><text x="${x+24}" y="350" font-family="monospace" font-size="15" fill="${color}">0${i+1}</text>${n.title.split(/\s+/).reduce((a,w)=>{if(!a.length||a[a.length-1].length+w.length>19)a.push(w);else a[a.length-1]+=' '+w;return a;},[]).slice(0,3).map((line,j)=>`<text x="${x+24}" y="${399+j*29}" font-family="sans-serif" font-size="22" fill="#edf0e9">${escape(line)}</text>`).join('')}`;}).join('')}<path d="M64 590H1136" stroke="#405154"/><text x="64" y="635" font-family="monospace" font-size="15" fill="#a3b1b4">DOCUMENTATION DIAGRAM / NOT A PRODUCT SCREENSHOT</text><text x="1136" y="635" text-anchor="end" font-family="monospace" font-size="15" fill="${color}">CODE → SYSTEM</text></svg>`;
+ await writeFile(`public/project-maps/${p.slug}.svg`,svg);
+ execFileSync('magick',['-background','#11181b',`public/project-maps/${p.slug}.svg`,`public/og/${p.slug}.png`]);
+}
+console.log(`Generated ${data.projects.length} diagrams from documented pipelines.`);

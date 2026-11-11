@@ -1,7 +1,9 @@
 const {test,expect}=require('@playwright/test');
 
-test('intro skips with keyboard, crossfades into Home and only plays once',async({page})=>{
+test('opt-in intro skips with keyboard and crossfades into Home',async({page})=>{
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');
+ await expect(page.getByRole('dialog')).toHaveCount(0);
+ await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
  const dialog=page.getByRole('dialog',{name:'Video giới thiệu portfolio'});
  await expect(dialog).toBeVisible();
  await expect(page.locator('.neural-intro-video')).toHaveJSProperty('muted',true);
@@ -18,6 +20,7 @@ test('a stalled video cannot leave the visitor on a loading gate',async({page})=
  await page.emulateMedia({reducedMotion:'no-preference'});
  let held;await page.route('**/neural-intro.mp4',route=>{held=route;});
  await page.goto('/',{waitUntil:'domcontentloaded'});
+ await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
  await expect(page.getByRole('dialog')).toBeVisible();
  await expect(page.getByRole('dialog')).toBeHidden({timeout:7000});
  await expect(page.locator('.portfolio')).not.toHaveAttribute('inert');
@@ -27,23 +30,26 @@ test('a stalled video cannot leave the visitor on a loading gate',async({page})=
 
 test('the video completes naturally and releases the page',async({page})=>{
  const errors=[];page.on('pageerror',error=>errors.push(error.message));
- await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ await page.addInitScript(()=>{
+   const observer=new MutationObserver(()=>{
+     const intro=document.querySelector('.neural-intro[data-exit="natural"]');
+     if(!intro||window.videoExitSample)return;
+     const video=intro.querySelector('video');
+     window.videoExitSample={time:video.currentTime,playing:!video.paused,opacity:getComputedStyle(document.querySelector('.portfolio')).opacity,width:document.querySelector('.home-hero').getBoundingClientRect().width};
+     setTimeout(()=>{window.videoExitSample.afterTime=video.currentTime;window.videoExitSample.afterVolume=video.volume;},200);
+   });
+   observer.observe(document,{attributes:true,childList:true,subtree:true,attributeFilter:['data-exit']});
+ });
+ await page.goto('/');await page.getByRole('button',{name:'Xem phim mở đầu'}).click();
  await expect(page.getByRole('dialog')).toBeVisible();
- const video=page.locator('.neural-intro-video');
- await expect(page.locator('.neural-intro')).toHaveAttribute('data-exit','natural',{timeout:10000});
- await expect(video).toHaveJSProperty('paused',false);
- await expect(page.locator('.portfolio')).toHaveCSS('opacity','1');
- await expect(page.locator('.hero-copy h1')).toHaveCSS('animation-name','none');
- const initialTime=await video.evaluate(node=>node.currentTime);
- const initialWidth=await page.locator('.home-hero').evaluate(node=>node.getBoundingClientRect().width);
- await page.waitForTimeout(200);
- expect(await video.evaluate(node=>node.currentTime)).toBeGreaterThan(initialTime);
- expect(await video.evaluate(node=>node.volume)).toBeLessThan(1);
- await expect(page.getByRole('dialog')).toBeHidden({timeout:12000});
+ await expect.poll(()=>page.evaluate(()=>window.videoExitSample?.afterTime),{timeout:13000}).toBeGreaterThan(6.1);
+ await expect(page.getByRole('dialog')).toBeHidden({timeout:3000});
+ const sample=await page.evaluate(()=>window.videoExitSample);
+ expect(sample.playing).toBe(true);expect(sample.opacity).toBe('1');expect(sample.afterTime).toBeGreaterThan(sample.time);expect(sample.afterVolume).toBeLessThan(1);
  await expect(page.locator('.portfolio')).not.toHaveAttribute('inert');
  await expect(page.locator('#home-title')).toBeVisible();
- await expect(page.locator('.hero-copy h1')).toHaveCSS('animation-name','none');
- expect(await page.locator('.home-hero').evaluate(node=>node.getBoundingClientRect().width)).toBeCloseTo(initialWidth,0);
+ expect(await page.locator('.home-hero').evaluate(node=>node.getBoundingClientRect().width)).toBeCloseTo(sample.width,0);
  expect(errors).toEqual([]);
 });
 
@@ -104,7 +110,7 @@ test('a sequence of case studies retains the originating Work filter',async({pag
 });
 
 test('achievement dialogs contain focus and restore the originating button',async({page})=>{
- await page.goto('/personal');const button=page.locator('.achievement-card .text-link').first();await button.click();
+ await page.goto('/personal');await page.locator('.milestone-archive summary').click();const button=page.locator('.milestone-archive .achievement-card').filter({has:page.getByRole('heading',{name:'LLMFeed · EMNLP 2026 Main Conference',exact:true})}).getByRole('button',{name:'Xem câu chuyện'});await button.click();
  const dialog=page.getByRole('dialog',{name:'LLMFeed · EMNLP 2026 Main Conference'});
  await expect(dialog).toBeVisible();await expect(page.locator('.portfolio')).toHaveAttribute('inert','');
  const close=dialog.getByRole('button',{name:'Đóng',exact:true});await expect(close).toBeFocused();
@@ -120,9 +126,10 @@ test('direct contact exposes a page heading and the case architecture announces 
  await expect(node).toHaveAttribute('aria-pressed','true');await expect(page.locator('#case-architecture-detail')).toContainText('Dense + BM25');
 });
 
-test('case-study table of contents moves keyboard focus to the chosen section',async({page})=>{
+test('case-study table of contents moves keyboard focus to the chosen section',async({page},info)=>{
  await page.goto('/projects/medtutor');
- const link=page.locator('.case-toc').getByRole('link',{name:/Triển khai/});
+ if(info.project.name==='mobile')await page.locator('.case-mobile-toc summary').click();
+ const link=page.locator(info.project.name==='mobile'?'.case-mobile-toc':'.case-toc').getByRole('link',{name:/Triển khai/});
  await link.focus();await page.keyboard.press('Enter');
  await expect(page.locator('#implementation')).toBeFocused();
  await expect.poll(()=>page.locator('#implementation').evaluate(node=>node.getBoundingClientRect().top)).toBeLessThan(150);

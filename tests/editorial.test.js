@@ -70,7 +70,7 @@ test('case-study metadata describes the specific project in either language', as
   assert.match(vi.title,/ParkingAI/);
   assert.equal(vi.type,'article');
   assert.notEqual(vi.description,en.description);
-  assert.equal(vi.image,data.assets.hero.src);
+  assert.equal(vi.image,'/og/parking-ai.png');
 });
 
 test('configured media use accessible descriptions, never empty img URLs', () => {

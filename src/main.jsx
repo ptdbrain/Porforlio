@@ -7,7 +7,6 @@ import '../work-v4.css';
 import '../neural-intro.css';
 import '../ux-polish.css';
 import '../work-motion.css';
-import '../ambient-motion.css';
 import '../personal-photo-motion.css';
 import '../route-transitions.css';
 
@@ -17,3 +16,5 @@ const prerendered = root.dataset.renderedPath === pathname;
 const app = <React.StrictMode><App {...(prerendered ? {initialPath: pathname, initialLanguage: document.documentElement.lang || 'vi', hydrating: true} : {})} /></React.StrictMode>;
 if (prerendered) hydrateRoot(root, app);
 else createRoot(root).render(app);
+
+import '../experience.css';

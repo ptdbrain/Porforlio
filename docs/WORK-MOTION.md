@@ -1,5 +1,8 @@
 # Work motion
 
+> Cập nhật 11/11/2026: tài liệu này mô tả phiên bản trước. Flow và chuyển động hiện tại được điều chỉnh theo [báo cáo redesign](redesign/DELIVERY.md): giảm hiệu ứng lật/3D, bỏ ambient loop, đưa featured work lên trước và bổ sung shared media transition.
+
+
 Work giữ bố cục V4, nội dung và luồng chọn dự án hiện tại. Chuyển động dùng navy, cyan và lime của trang; phần kinh nghiệm vẫn có nền kem.
 
 - Khi cuộn xuống hoặc quay lại phía trên, tiêu đề, kinh nghiệm, đào tạo và thẻ dự án trượt nhẹ vào khung nhìn. Các thẻ cùng hàng trên desktop xuất hiện lệch nhau 70 ms; mobile bỏ độ trễ này.

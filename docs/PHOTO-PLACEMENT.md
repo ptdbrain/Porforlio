@@ -10,7 +10,7 @@
 
 Ảnh gốc giữ tại `anh/`; bản phục vụ website nằm tại `public/anh/`, được tham chiếu trong `src/content/portfolio.json`. Hai bản giữ nguyên nội dung, không cắt hay chỉnh sửa ảnh gốc. Khi thay ảnh, cập nhật cả hai nơi.
 
-Ảnh dùng `fit: contain` để giữ toàn bộ người và chữ trong khung. Caption VI/EN nằm trong dữ liệu, xem được khi mở ảnh lớn; ảnh contain không có lớp caption phủ lên chữ có sẵn trong poster. Các hiệu ứng lật/mở khung vẫn hoạt động, nhưng không zoom cắt nội dung ảnh contain.
+Ảnh dùng `fit: contain` để giữ toàn bộ người và chữ trong khung. Caption VI/EN nằm trong dữ liệu, xem được khi mở ảnh lớn; ảnh contain không có lớp caption phủ lên chữ có sẵn trong poster. Bản redesign dùng chuyển động dịch/crossfade nhẹ, không zoom cắt nội dung ảnh contain. Website phục vụ bản WebP responsive ở `public/media/` qua `imageManifest.json`; lightbox và liên kết minh chứng vẫn dùng ảnh gốc.
 
 Ba ảnh `thcs.jpg`, `thpt1.jpg`, `thptthiroboticgiainhat.jpg` chỉ có kích thước 206×206 px. Nên thay bằng bản gốc nét hơn khi có, nhất là ảnh hành trình trên desktop.
 

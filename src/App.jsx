@@ -10,7 +10,7 @@ import { Personal } from './components/editorial/Personal';
 import { CaseStudy } from './components/editorial/CaseStudy';
 import { Contact, CvLink, RouteLink } from './components/editorial/Shared';
 import { NeuralIntro } from './components/editorial/NeuralIntro';
-import { AmbientMotion } from './components/editorial/AmbientMotion';
+import { usePortfolioEvents } from './lib/usePortfolioEvents';
 import { useRouteTransition } from './components/editorial/useRouteTransition';
 import { useSiteMotion } from './lib/useSiteMotion';
 import { workReturnKey } from './lib/workV4.mjs';
@@ -55,6 +55,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
     }else document.documentElement.classList.remove('neural-intro-pending');
   },[]);
   useSiteMotion(location.path,language,motionPreference.simple||introVisible);
+  usePortfolioEvents(location.path);
   useEffect(()=>{document.documentElement.dataset.motion=motionPreference.simple?'simple':'full';},[motionPreference.simple]);
   useEffect(()=>{if(initialLanguage)setLanguage(initialLang());},[initialLanguage]);
 
@@ -89,11 +90,15 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
       if(url.pathname+url.search+url.hash===window.location.pathname+window.location.search+window.location.hash){transitionRoute({from:currentPathRef.current,to:currentPathRef.current,update:()=>setMenuOpen(false)});const behavior=motionPreference.simple?'instant':'smooth';if(!url.hash||!scrollToAnchor(url.hash,behavior))window.scrollTo({top:0,behavior});mainRef.current?.focus({preventScroll:true});return;}
       history.pushState({scroll,url:url.pathname+url.search+url.hash,...(returnState?{workV4:returnState}:{}),...(workOrigin?{workOrigin}:{})},'',url.pathname+url.search+url.hash);
       const perform=() => {setLocation(next);setMenuOpen(false);};
-      const cover=link.closest('[data-project-portal]');
-      if(cover&&innerWidth>=768)cover.style.viewTransitionName='project-cover';
-      transitionRoute({from:currentPathRef.current,to:url.pathname,update:perform,restore:()=>{
+      const cover=link.querySelector('.project-visual')||link.closest('[data-project-portal]')?.querySelector('.project-visual');
+      const story=link.dataset.storyPortal;
+      const shared=cover||((story==='personal'||story==='work')?link.querySelector('.photo'):null);
+      const transitionName=cover?'project-cover':story?'story-image':null;
+      if(shared&&!motionPreference.simple)shared.style.viewTransitionName=transitionName;
+      if(transitionName)document.documentElement.dataset.sharedImage=transitionName;
+      transitionRoute({from:currentPathRef.current,to:url.pathname,update:perform,sharedImage:transitionName,restore:()=>{
         if(!returnState&&(!url.hash||!scrollToAnchor(url.hash)))window.scrollTo({top:scroll,behavior:'instant'});
-      }}).finally(()=>{if(cover?.isConnected)cover.style.viewTransitionName='';});
+      }}).finally(()=>{if(shared?.isConnected)shared.style.viewTransitionName='';delete document.documentElement.dataset.sharedImage;});
     }
     function popstate() {
       const next={path:window.location.pathname,hash:window.location.hash,scroll:history.state?.scroll || 0,initial:false,restore:history.state?.url===window.location.pathname+window.location.search+window.location.hash};
@@ -111,7 +116,7 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
   useEffect(() => {
     const metadata=routeMetadata(route,data,language);
     document.title=metadata.title;document.documentElement.lang=language;
-    const siteUrl=import.meta.env.VITE_SITE_URL || 'https://porforlio-delta.vercel.app';
+    const siteUrl=import.meta.env.VITE_SITE_URL || 'https://ptdbrain.vercel.app';
     const canonical=new URL(route.path,siteUrl).href+(language === 'en' ? '?lang=en' : '');
     const setMeta=(name,content,property=false) => {
       let node=document.head.querySelector(`meta[${property ? 'property' : 'name'}="${name}"]`);
@@ -144,7 +149,9 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
     function progress(){
       cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{
         const height=document.documentElement.scrollHeight-window.innerHeight;
-        document.documentElement.style.setProperty('--scroll-progress',height>0?String(Math.min(1,Math.max(0,window.scrollY/height))):'0');
+        const value=height>0?Math.min(1,Math.max(0,window.scrollY/height)):0;
+        const bar=document.querySelector('.reading-progress');
+        if(bar)bar.style.transform=`scaleX(${value})`;
         if(performance.now()-lastWrite>500){remember();lastWrite=performance.now();}
       });
     }
@@ -160,13 +167,13 @@ export default function App({ initialPath, initialLanguage, hydrating=false }) {
     const url=new URL(window.location.href);if(next === 'en')url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState({...history.state,url:url.pathname+url.search+url.hash},'',url.pathname+url.search+url.hash);
   }
   return <><div className={`portfolio theme-${work?'work':route.kind === 'personal'?'personal':'home'} ${work?'theme-cinema':''} ${motionPreference.simple?'is-simple':''} ${!location.initial?'route-visited':''} ${introVisible?'intro-covered':''} ${introRevealed?'intro-revealed':''}`} inert={introVisible?'':undefined} aria-hidden={introVisible?'true':undefined}>
-    <AmbientMotion work={work} paused={menuOpen||introVisible}/>
+
     <a className="skip-link" href="#main-content">{t.skip}</a><div className="reading-progress" aria-hidden="true" />
     <header className="site-header" ref={headerRef}><div className="header-inner page-width"><RouteLink href="/" className="wordmark" aria-label="PTD. Home">PTD<span>.</span></RouteLink><span className="header-caption">{t.themeCaption}</span>
       <nav className={`main-nav ${menuOpen?'is-open':''}`} id="main-navigation" aria-label={language==='vi'?'Điều hướng chính':'Main navigation'}>{[['/work',t.work,work],['/personal',t.personal,route.kind==='personal'],...(work?[['/work#archive',t.projects,false],['/work#experience',language==='vi'?'Kinh nghiệm':'Experience',false]]:[['/contact',t.contact,route.kind==='contact']])].map(([href,label,active]) => <RouteLink key={href} href={href} aria-current={active?'page':undefined}><span>{label}</span>{active&&<i aria-hidden="true" />}</RouteLink>)}{work&&<><CvLink identity={data.identity} t={t} className="text-cv"/><RouteLink href="/contact">{t.contact}</RouteLink></>}<button className="motion-preference" type="button" aria-pressed={motionPreference.simple} disabled={motionPreference.systemReduced} title={motionPreference.systemReduced?c.auto:undefined} onClick={motionPreference.toggle}>{motionPreference.systemReduced?c.simple:motionPreference.simple?c.full:c.simple}</button></nav>
       <div className="header-tools"><button className="language-toggle" type="button" onClick={changeLanguage} aria-label={language==='vi'?'Switch to English':'Chuyển sang tiếng Việt'}><span className={language==='vi'?'active':''}>VI</span><span>/</span><span className={language==='en'?'active':''}>EN</span></button><button ref={menuButtonRef} className="menu-toggle" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="main-navigation" aria-label={menuOpen?t.close:t.menu}><span /> <span /></button></div></div></header>
     <main id="main-content" ref={mainRef} tabIndex="-1" key={location.path}>
-      {route.kind==='home'&&<Home data={data} language={language} t={t} />}
+      {route.kind==='home'&&<Home data={data} language={language} t={t} onPlayIntro={motionPreference.simple?undefined:()=>{setIntroRevealed(false);setIntroVisible(true);}} />}
       {route.kind==='personal'&&<Personal data={data} language={language} t={t} simple={motionPreference.simple} />}
       {route.kind==='work'&&<Work data={data} language={language} t={t} simple={motionPreference.simple} />}
       {route.kind==='project'&&<CaseStudy key={route.project.slug} project={route.project} data={data} language={language} t={t} />}

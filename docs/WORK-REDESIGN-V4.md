@@ -1,5 +1,8 @@
 # Work V4 — Năng lực rõ ràng, bằng chứng có chiều sâu
 
+> Cập nhật 11/11/2026: tài liệu này mô tả phiên bản trước. Flow và chuyển động hiện tại được điều chỉnh theo [báo cáo redesign](redesign/DELIVERY.md): giảm hiệu ứng lật/3D, bỏ ambient loop, đưa featured work lên trước và bổ sung shared media transition.
+
+
 Kịch bản thiết kế ngày 01/11/2026, đã được triển khai vào route `/work`. Bản phác thảo ban đầu nằm ở `work-v4-preview.html` trong cùng thư mục. Nội dung Việt/Anh ở `src/content/workV4.mjs`, giao diện ở `src/components/editorial/Work.jsx`, style ở `work-v4.css`.
 
 ## 1. Câu chuyện của trang

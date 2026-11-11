@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 export function NeuralIntro({ language, onReveal, onComplete }) {
   const [muted, setMuted] = useState(true);
+  const [paused,setPaused]=useState(false);
   const [exiting, setExiting] = useState(false);
   const videoRef = useRef(null);
   const skipRef = useRef(null);
@@ -86,6 +87,7 @@ export function NeuralIntro({ language, onReveal, onComplete }) {
       <span className="neural-brand">PTD<span>.</span> / INTRO</span>
       <div className="neural-video-actions">
         <button className="neural-audio" type="button" aria-pressed={!muted} onClick={() => setMuted(value => !value)}>{muted ? (language === 'vi' ? 'Bật âm thanh' : 'Enable sound') : (language === 'vi' ? 'Tắt âm thanh' : 'Mute')}</button>
+        <button className="neural-audio" type="button" aria-pressed={paused} onClick={()=>{const video=videoRef.current;if(!video)return;if(video.paused){video.play()?.catch(()=>finish());setPaused(false);}else{video.pause();setPaused(true);}}}>{paused?(language==='vi'?'Tiếp tục':'Resume'):(language==='vi'?'Tạm dừng':'Pause')}</button>
         <button ref={skipRef} className="neural-skip" type="button" onClick={()=>finish()}>{language === 'vi' ? 'Bỏ qua' : 'Skip'} <span aria-hidden="true">↗</span></button>
       </div>
     </div>

@@ -10,7 +10,7 @@ const outDir=path.join(root,'dist');
 const cacheDir=path.join(root,'node_modules/.cache/ptd-prerender');
 await mkdir(cacheDir,{recursive:true});
 const rendererPath=path.join(cacheDir,'renderer.cjs');
-const siteUrl=(process.env.VITE_SITE_URL || 'https://porforlio-delta.vercel.app').replace(/\/$/,'');
+const siteUrl=(process.env.VITE_SITE_URL || 'https://ptdbrain.vercel.app').replace(/\/$/,'');
 await build({entryPoints:['src/prerender.jsx'],outfile:rendererPath,bundle:true,platform:'node',format:'cjs',jsx:'automatic',packages:'external',define:{'import.meta.env.VITE_SITE_URL':JSON.stringify(siteUrl)},logLevel:'warning'});
 const { render }=await import(pathToFileURL(rendererPath).href);
 const template=await readFile(path.join(outDir,'index.html'),'utf8');
