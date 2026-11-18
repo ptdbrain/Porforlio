@@ -1,3 +1,4 @@
+import { Capabilities } from './Capabilities';
 import { FeaturedProjects } from './FeaturedProjects';
 import { Photo } from './Shared';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -22,9 +23,9 @@ function SystemMap({copy}) {
 export function Work({data,language,t,simple=false}) {
   const c=workCopy[language];
   const [view,setView]=useState(initialWorkView),[ready,setReady]=useState(false),[restore,setRestore]=useState(null),[copyState,setCopyState]=useState('');
-  const root=useRef(null),tabs=useRef([]),cardPositions=useRef(new Map());
+  const root=useRef(null),cardPositions=useRef(new Map());
   useWorkMotion(root,simple);
-  const active=capabilities.find(cap=>cap.id===view.capability),projects=workProjects(data.projects,view);
+  const projects=workProjects(data.projects,view);
   const shown=view.expanded?projects:projects.slice(0,6);
   const technologies=[...new Set(data.projects.flatMap(project=>project.stack))].sort();
   const professional=['geoit-vnpt','ba-gps','robotics-mentor'].map(id=>data.experiences.find(entry=>entry.id===id)).filter(Boolean);
@@ -66,7 +67,6 @@ export function Work({data,language,t,simple=false}) {
       root.current.querySelectorAll('.v4-project-card').forEach(node=>cardPositions.current.set(node.dataset.workProject,node.getBoundingClientRect()));
     }
 setView(previous=>({...previous,...patch,expanded:false}));}
-  function chooseCapability(index,focus=false){setView(previous=>({...previous,capability:capabilities[index].id}));if(focus)tabs.current[index]?.focus();}
   function related(capability){
     changeFilter({filter:capability,query:'',technology:''});
     const target=root.current.querySelector('#archive');
@@ -95,17 +95,7 @@ setView(previous=>({...previous,...patch,expanded:false}));}
       <div className="v4-training" data-work-reveal><span className="v4-label">{c.training}</span><div><p>{l(data.training.title,language)} <span className="v4-training-status">{l(data.training.status,language)}</span></p><small>{data.training.organization}</small></div><div className="v4-training-links"><ExternalLink href={data.training.source}>{t.programSource}</ExternalLink>{data.training.evidence&&<ExternalLink href={data.training.evidence}>{t.evidence}</ExternalLink>}</div></div>
     </div></section>
 
-    <section className="v4-section v4-capabilities" id="capabilities" aria-labelledby="v4-cap-title"><span id="skills" className="v4-anchor"/><span id="manifesto" className="v4-anchor"/><div className="page-width">
-      <div className="v4-section-heading" data-work-reveal><span className="v4-label">{c.capLabel}</span><h2 id="v4-cap-title">{c.capTitle}</h2><p className="v4-lead">{c.capIntro}</p></div>
-      <div className="v4-tabs" data-work-reveal role="tablist" aria-label={c.capTabs}>{capabilities.map((cap,index)=><button key={cap.id} ref={node=>tabs.current[index]=node} className="v4-tab" role="tab" id={`v4-tab-${cap.id}`} aria-selected={cap.id===view.capability} aria-controls="v4-cap-panel" tabIndex={cap.id===view.capability?0:-1} onClick={()=>chooseCapability(index)} onKeyDown={event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();chooseCapability(event.key==='Home'?0:event.key==='End'?capabilities.length-1:(index+(event.key==='ArrowRight'?1:-1)+capabilities.length)%capabilities.length,true);}}}><span aria-hidden="true">0{index+1}</span>{l(cap.title,language)}</button>)}</div>
-      <div className="v4-cap-panel" data-work-reveal id="v4-cap-panel" role="tabpanel" tabIndex="0" aria-labelledby={`v4-tab-${active.id}`}>
-        {capabilities.map(cap=><div key={cap.id} className={`v4-cap-layer ${active.id===cap.id?'is-active':''}`} aria-hidden={active.id!==cap.id} inert={active.id!==cap.id?'':undefined}>
-          <div className="v4-cap-grid"><div><span className="v4-label">{c.work}</span><h3>{l(cap.heading,language)}</h3><p>{l(cap.work,language)}</p></div><div><span className="v4-label">{c.tools}</span><ul className="v4-tool-list">{cap.tools.map(tool=><li key={tool}>{tool}</li>)}</ul></div><div><span className="v4-label">{c.output}</span><p>{l(cap.output,language)}</p></div></div>
-          <div className="v4-cap-footer"><ol className="v4-cap-flow">{l(cap.flow,language).map((node,index)=><li key={node}>{index>0&&<span aria-hidden="true">→</span>}{node}</li>)}</ol><button className="button button-outline" onClick={()=>related(cap.id)}>{c.related}<Arrow/></button></div>
-        </div>)}
-      </div>
-      <p className="v4-process-note">{c.process}</p>
-    </div></section>
+    <Capabilities activeId={view.capability} language={language} copy={c} onChange={capability=>setView(previous=>({...previous,capability}))} onRelated={related}/>
 
     <section className="v4-section v4-library" id="archive" aria-labelledby="v4-library-title"><span id="selected-work" className="v4-anchor"/><div className="page-width">
       <div className="v4-section-heading" data-work-reveal><span className="v4-label">{c.libraryLabel}</span><h2 id="v4-library-title" tabIndex="-1">{c.libraryTitle}</h2><p className="v4-lead">{c.libraryIntro}</p></div>
