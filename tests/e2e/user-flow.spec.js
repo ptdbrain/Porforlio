@@ -98,11 +98,11 @@ test('Back restores a scrolled Personal fragment rather than jumping to its star
 });
 
 test('a sequence of case studies retains the originating Work filter',async({page})=>{
- await page.goto('/work');await page.locator('.v4-filters').getByRole('button',{name:'Computer Vision',exact:true}).click();
+ await page.goto('/work');await page.getByRole('tab',{name:'Computer Vision',exact:true}).click();await page.getByRole('button',{name:'Xem dự án liên quan'}).click();
  await page.locator('[data-work-project="advertest"]').click();
  await page.locator('.next-project').click();await expect(page).toHaveURL(/projects\/medtutor$/);
  await page.locator('.back-link').click();
- await expect(page.locator('.v4-filters').getByRole('button',{name:'Computer Vision',exact:true})).toHaveAttribute('aria-pressed','true');
+ await expect(page.locator('.v4-count')).toHaveAttribute('data-work-filter','vision');
  await expect(page.locator('[data-work-project="advertest"]')).toBeFocused();
 });
 

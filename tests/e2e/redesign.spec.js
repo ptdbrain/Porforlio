@@ -25,7 +25,7 @@ test('Work presents featured evidence before experience and capabilities',async(
  for(const image of await page.locator('.featured-study img').all()){
   await image.scrollIntoViewIfNeeded();await expect.poll(()=>image.evaluate(node=>node.complete&&node.naturalWidth>0)).toBe(true);
  }
- await page.locator('#archive').scrollIntoViewIfNeeded();await page.getByRole('button',{name:/Xem toàn bộ/}).click();
+ await page.locator('#archive').scrollIntoViewIfNeeded();await page.locator('.v4-project-index>summary').click();await page.getByRole('button',{name:/Xem toàn bộ/}).click();
  await expect(page.locator('.v4-project-card')).toHaveCount(23);
 });
 

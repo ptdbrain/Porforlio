@@ -2,7 +2,7 @@ import { capabilities, priorityProjects } from '../content/workV4.mjs';
 import { filterProjects } from './studio.mjs';
 
 export const workReturnKey = 'ptd-work-v4-return';
-export const initialWorkView = { capability:'rag', filter:'all', query:'', technology:'', expanded:false };
+export const initialWorkView = { capability:'rag', filter:'all', query:'', technology:'', expanded:false, libraryOpen:false };
 
 export function normalizeWorkView(value, projects) {
   const validId = id => capabilities.some(cap => cap.id === id);
@@ -13,6 +13,7 @@ export function normalizeWorkView(value, projects) {
     query:typeof view.query === 'string' ? view.query.slice(0, 250) : '',
     technology:projects.some(project => project.stack.includes(view.technology)) ? view.technology : '',
     expanded:view.expanded === true,
+    libraryOpen:view.libraryOpen === true || view.focusKind === 'archive',
   };
 }
 

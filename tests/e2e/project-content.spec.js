@@ -30,6 +30,7 @@ test('CV-backed education, experience and downloadable PDF are available without
  await page.goto('/work');
  await expect(page.locator('#experience')).toContainText('GeoIT VNPT');
  await expect(page.locator('#experience')).toContainText('BA GPS');
+ await page.locator('.v4-project-index>summary').click();
  const search=page.locator('#archive input[type=search]');await search.fill('medbot');
  await expect(page.locator('.v4-project-card')).toHaveCount(1);
  await expect(page.locator('.v4-project-card h3')).toContainText('MedTutor');

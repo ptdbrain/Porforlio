@@ -10,7 +10,7 @@ test('capability tabs support keyboard selection and filter the one project libr
  await page.keyboard.press('End');await expect(page.locator('.v4-cap-layer.is-active')).toContainText('Mixed precision');
  await page.keyboard.press('Home');await expect(page.locator('.v4-cap-layer.is-active')).toContainText('Qdrant');
  await page.getByRole('button',{name:'Xem dự án liên quan'}).click();
- await expect(page.locator('.v4-filters').getByRole('button',{name:'RAG & LLM',exact:true})).toHaveAttribute('aria-pressed','true');
+ await expect(page.locator('.v4-count')).toHaveAttribute('data-work-filter','rag');
  await expect(page.locator('.v4-project-card')).toHaveCount(3);
  await expect(page.locator('.v4-project-card h3')).toHaveText(['MedTutor','LabGuard','BrandFlow']);
  const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
@@ -18,7 +18,7 @@ test('capability tabs support keyboard selection and filter the one project libr
 });
 
 for(const back of ['browser','link'])test(`library restores expanded results, search and origin focus after ${back} return`,async({page})=>{
- await page.goto('/work');
+ await page.goto('/work');await page.locator('.v4-project-index>summary').click();
  const search=page.getByRole('searchbox',{name:'Tìm dự án'});
  await search.fill('medbot');
  const card=page.locator('[data-work-project="medtutor"]');await card.scrollIntoViewIfNeeded();
@@ -31,7 +31,7 @@ for(const back of ['browser','link'])test(`library restores expanded results, se
 });
 
 test('expanded archive remains expanded and has no duplicate gallery after browser back',async({page})=>{
- await page.goto('/work');await page.getByRole('button',{name:/Xem toàn bộ/}).click();
+ await page.goto('/work');await page.locator('.v4-project-index>summary').click();await page.getByRole('button',{name:/Xem toàn bộ/}).click();
  const total=await page.locator('.v4-project-card').count();
  await page.locator('[data-work-project="pathfinder"]').click();await expect(page).toHaveURL(/\/projects\/pathfinder$/);
  await page.goBack();await expect(page.locator('.v4-project-card')).toHaveCount(total);

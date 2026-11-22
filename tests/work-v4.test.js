@@ -14,6 +14,6 @@ test('Work filters combine capability, technology and repository aliases',async(
 test('saved library state rejects malformed fields while retaining valid selections',async()=>{
  const {normalizeWorkView,initialWorkView}=await import('../src/lib/workV4.mjs');
  assert.deepEqual(normalizeWorkView({filter:'missing',capability:null,query:[],technology:'missing',expanded:'true'},data.projects),initialWorkView);
- assert.deepEqual(normalizeWorkView({filter:'vision',capability:'research',query:'YOLO',technology:'Python',expanded:true},data.projects),{filter:'vision',capability:'research',query:'YOLO',technology:'Python',expanded:true});
+ assert.deepEqual(normalizeWorkView({filter:'vision',capability:'research',query:'YOLO',technology:'Python',expanded:true},data.projects),{filter:'vision',capability:'research',query:'YOLO',technology:'Python',expanded:true,libraryOpen:false});
  assert.equal(normalizeWorkView({query:'a'.repeat(500)},data.projects).query.length,250);
 });

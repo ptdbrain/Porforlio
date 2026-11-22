@@ -3,7 +3,7 @@ import { FeaturedProjects } from './FeaturedProjects';
 import { Photo } from './Shared';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { localize as l } from '../../content/copy';
-import { capabilities, experienceSummaries, projectSummaries, workCopy } from '../../content/workV4.mjs';
+import { capabilities, experienceSummaries, workCopy } from '../../content/workV4.mjs';
 import { initialWorkView, normalizeWorkView, workProjects, workReturnKey } from '../../lib/workV4.mjs';
 import { useWorkMotion } from './useWorkMotion';
 import { Arrow, CvLink, ExternalLink, RouteLink } from './Shared';
@@ -27,13 +27,13 @@ export function Work({data,language,t,simple=false}) {
   useWorkMotion(root,simple);
   const projects=workProjects(data.projects,view);
   const shown=view.expanded?projects:projects.slice(0,6);
-  const technologies=[...new Set(data.projects.flatMap(project=>project.stack))].sort();
   const professional=['geoit-vnpt','ba-gps','robotics-mentor'].map(id=>data.experiences.find(entry=>entry.id===id)).filter(Boolean);
   const research=data.projects.find(project=>project.slug==='dpotm');
 
   useEffect(()=>{
     const saved=history.state?.workV4;
-    if(saved){const scroll=Number.isFinite(history.state.scroll)?history.state.scroll:saved.scroll;setView(normalizeWorkView(saved,data.projects));if(Number.isFinite(scroll)&&scroll>=0)setRestore({scroll,focusSlug:saved.focusSlug,focusKind:saved.focusKind});}
+    if(saved){const scroll=Number.isFinite(history.state.scroll)?history.state.scroll:saved.scroll;setView({...normalizeWorkView(saved,data.projects),technology:'',libraryOpen:saved.libraryOpen===true||saved.focusKind==='archive'||location.hash==='#archive'});if(Number.isFinite(scroll)&&scroll>=0)setRestore({scroll,focusSlug:saved.focusSlug,focusKind:saved.focusKind});}
+    if(!saved&&location.hash==='#archive')setView(previous=>({...previous,libraryOpen:true}));
     setReady(true);
   },[data.projects]);
   useEffect(()=>{if(ready&&!restore)history.replaceState({...history.state,workV4:{...view,scroll:window.scrollY}},'');},[view,ready,restore]);
@@ -53,7 +53,7 @@ export function Work({data,language,t,simple=false}) {
   },[]);
 
   useBrowserLayoutEffect(()=>{
-    if(simple||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(!view.libraryOpen||simple||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const animations=[];
     root.current.querySelectorAll('.v4-project-card').forEach(node=>{
       const rect=node.getBoundingClientRect(),old=cardPositions.current.get(node.dataset.workProject);
@@ -61,14 +61,14 @@ export function Work({data,language,t,simple=false}) {
     });
     cardPositions.current.clear();
     return()=>animations.forEach(animation=>animation.cancel());
-  },[view.filter,view.query,view.technology,view.expanded,simple]);
+  },[view.filter,view.query,view.technology,view.expanded,view.libraryOpen,simple]);
   function changeFilter(patch){
     if(!simple&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
       root.current.querySelectorAll('.v4-project-card').forEach(node=>cardPositions.current.set(node.dataset.workProject,node.getBoundingClientRect()));
     }
 setView(previous=>({...previous,...patch,expanded:false}));}
   function related(capability){
-    changeFilter({filter:capability,query:'',technology:''});
+    changeFilter({filter:capability,query:'',technology:'',libraryOpen:true});
     const target=root.current.querySelector('#archive');
     target.scrollIntoView({behavior:simple||matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
     target.querySelector('h2')?.focus({preventScroll:true});
@@ -82,7 +82,7 @@ setView(previous=>({...previous,...patch,expanded:false}));}
 
   return <div className={`work-v4 ${simple?'v4-simple':''}`} ref={root}>
     <section className="v4-hero" id="intro"><div className="page-width">
-      <div className="v4-hero-layout"><div className="v4-hero-copy" data-work-reveal><span className="v4-label">{c.eyebrow}</span><h1>{c.headline[0]}<br/>{c.headline[1]} <span>{c.product}</span></h1><p className="v4-lead">{c.intro}</p><div className="v4-actions"><a href="#featured" className="button button-accent">{language==='vi'?'Xem dự án nổi bật':'Explore featured projects'}<span aria-hidden="true">↓</span></a><CvLink identity={data.identity} t={t}/></div><a className="v4-quiet" href="#archive">{c.directProjects}<Arrow/></a></div><div className="work-hero-visual"><Photo asset={data.assets.work} label={t.workPhoto} language={language} t={t} interactive={false} priority/><SystemMap copy={c}/></div></div>
+      <div className="v4-hero-layout"><div className="v4-hero-copy" data-work-reveal><span className="v4-label">{c.eyebrow}</span><h1>{c.headline[0]}<br/>{c.headline[1]} <span>{c.product}</span></h1><p className="v4-lead">{c.intro}</p><div className="v4-actions"><a href="#featured" className="button button-accent">{language==='vi'?'Xem dự án nổi bật':'Explore featured projects'}<span aria-hidden="true">↓</span></a><CvLink identity={data.identity} t={t}/></div><a className="v4-quiet" href="#archive" onClick={()=>setView(previous=>({...previous,libraryOpen:true}))}>{c.directProjects}<Arrow/></a></div><div className="work-hero-visual"><Photo asset={data.assets.work} label={t.workPhoto} language={language} t={t} interactive={false} priority/><SystemMap copy={c}/></div></div>
       <div className="v4-proof">{professional.slice(0,2).map((entry,index)=><div key={entry.id} data-work-reveal style={{'--work-delay':`${index*80}ms`}}><span>{c.proofLabels[index]}</span><a href="#experience"><strong>{entry.organization} · {l(entry.role,language)}</strong></a><small>{entry.period}</small></div>)}<div data-work-reveal style={{'--work-delay':'160ms'}}><span>{c.proofLabels[2]}</span><RouteLink href="/projects/dpotm"><strong>{c.proofResearch}</strong><Arrow/></RouteLink></div></div>
     </div></section>
 
@@ -97,13 +97,17 @@ setView(previous=>({...previous,...patch,expanded:false}));}
 
     <Capabilities activeId={view.capability} language={language} copy={c} onChange={capability=>setView(previous=>({...previous,capability}))} onRelated={related}/>
 
-    <section className="v4-section v4-library" id="archive" aria-labelledby="v4-library-title"><span id="selected-work" className="v4-anchor"/><div className="page-width">
-      <div className="v4-section-heading" data-work-reveal><span className="v4-label">{c.libraryLabel}</span><h2 id="v4-library-title" tabIndex="-1">{c.libraryTitle}</h2><p className="v4-lead">{c.libraryIntro}</p></div>
-      <div className="v4-library-tools" data-work-reveal><div className="v4-filters" role="group" aria-label={c.filters}>{[{id:'all',title:c.all},...capabilities].map(cap=><button key={cap.id} aria-pressed={view.filter===cap.id} onClick={()=>changeFilter({filter:cap.id})}>{l(cap.title,language)}</button>)}</div><div className="v4-search-tools"><label><span>{c.search}</span><input type="search" value={view.query} placeholder={c.placeholder} onChange={event=>changeFilter({query:event.target.value})}/></label><label><span>{c.technology}</span><select value={view.technology} onChange={event=>changeFilter({technology:event.target.value})}><option value="">{c.allTools}</option>{technologies.map(tool=><option key={tool}>{tool}</option>)}</select></label></div></div>
-      <p className="v4-count" role="status" aria-atomic="true">{c.showing} {shown.length} / {projects.length} {c.projects}</p>
-      <div className="v4-project-grid">{shown.map((project,index)=><RouteLink className="v4-project-card" key={project.slug} href={`/projects/${project.slug}`} data-work-project={project.slug} data-work-reveal style={{'--work-delay':`${(index%3)*70}ms`}} onClick={event=>rememberProject(event,project)}><span className="v4-card-status">{t[project.status]||project.status}</span><h3>{project.title}</h3><p className="v4-card-summary">{l(projectSummaries[project.slug]||project.description,language)}</p><ul className="v4-card-tags" aria-label={`${project.title} / Stack`}>{project.stack.slice(0,3).map(tool=><li key={tool}>{tool}</li>)}</ul>{l(project.role,language)&&<p className="v4-card-role"><span>{c.role}: </span>{l(project.role,language)}</p>}<span className="v4-card-link">{t.caseStudy}<Arrow/></span></RouteLink>)}</div>
-      {shown.length===0&&<div className="v4-empty"><p>{c.empty}</p><button className="button button-outline" onClick={()=>changeFilter({filter:'all',query:'',technology:''})}>{c.clear}<span aria-hidden="true">↺</span></button></div>}
-      {shown.length<projects.length&&<div className="v4-library-more" data-work-reveal><button className="button button-outline" onClick={()=>setView(previous=>({...previous,expanded:true}))}>{c.more} {projects.length} {c.projects}<span aria-hidden="true">↓</span></button></div>}
+    <section className="v4-section v4-library v4-library-compact" id="archive" aria-labelledby="v4-library-title"><span id="selected-work" className="v4-anchor"/><div className="page-width" data-work-reveal>
+      <details className="v4-project-index" open={view.libraryOpen} onToggle={event=>{const open=event.currentTarget.open;setView(previous=>previous.libraryOpen===open?previous:{...previous,libraryOpen:open});}}>
+        <summary><div><span className="v4-label">{c.libraryLabel}</span><h2 id="v4-library-title" tabIndex="-1">{c.libraryTitle}</h2><p>{c.libraryIntro}</p></div><span className="v4-index-toggle"><span>{data.projects.length} {c.projects}</span><i aria-hidden="true">+</i></span></summary>
+        <div className="v4-library-body">
+          <div className="v4-index-toolbar"><label className="v4-index-search"><span>{c.search}</span><input type="search" value={view.query} placeholder={c.placeholder} onChange={event=>changeFilter({query:event.target.value})}/></label><div className="v4-index-context"><span>{view.filter==='all'?c.all:l(capabilities.find(cap=>cap.id===view.filter)?.title,language)}</span>{(view.filter!=='all'||view.query)&&<button className="text-link" onClick={()=>changeFilter({filter:'all',query:'',technology:''})}>{c.clear}<span aria-hidden="true">↺</span></button>}</div></div>
+          <p className="v4-count" role="status" aria-atomic="true" data-work-filter={view.filter}>{c.showing} {shown.length} / {projects.length} {c.projects}</p>
+          <div className="v4-project-grid">{shown.map((project,index)=><RouteLink className="v4-project-card" key={project.slug} href={`/projects/${project.slug}`} data-work-project={project.slug} data-work-reveal onClick={event=>rememberProject(event,project)}><span className="v4-index-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span><h3>{project.title}</h3><p className="v4-card-role">{l(project.role,language)}</p><span className="v4-card-link">{t.caseStudy}<Arrow/></span></RouteLink>)}</div>
+          {shown.length===0&&<div className="v4-empty"><p>{c.empty}</p></div>}
+          {shown.length<projects.length&&<div className="v4-library-more"><button className="button button-outline" onClick={()=>setView(previous=>({...previous,expanded:true}))}>{c.more} {projects.length} {c.projects}<span aria-hidden="true">↓</span></button></div>}
+        </div>
+      </details>
     </div></section>
 
     <section className="v4-contact" id="contact"><div className="page-width" data-work-reveal><span className="v4-label">{c.contactLabel}</span><h2>{c.contactTitle}</h2><p className="v4-lead">{c.contactBody}</p><a className="v4-email" href={`mailto:${data.identity.email}`}>{data.identity.email}<Arrow/></a><button className="v4-copy" onClick={copyEmail}>{copyState==='success'?c.copied:c.copy}</button><p className="v4-copy-status" role="status">{copyState==='failed'?c.failed:copyState==='success'?c.copied:''}</p><div className="v4-contact-links"><CvLink className="v4-quiet" identity={data.identity} t={t}/><ExternalLink href={data.identity.github}>GitHub</ExternalLink><ExternalLink href={data.identity.linkedin}>LinkedIn</ExternalLink><RouteLink href="/personal">{c.personal}<Arrow/></RouteLink></div></div></section>

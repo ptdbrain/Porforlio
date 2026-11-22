@@ -43,16 +43,20 @@ test('language switch updates content, metadata and persists across routes and r
   await expect(page.locator('html')).toHaveAttribute('lang','vi');
 });
 
-test('library combines problem, technology and repository aliases',async({page})=>{
+test('optional project index combines work area and search without a technology dropdown',async({page})=>{
   await page.goto('/work');const archive=page.locator('#archive');
+  await expect(page.locator('.v4-project-index')).not.toHaveAttribute('open');
+  await archive.locator('summary').click();
   await expect(archive.locator('.v4-project-card')).toHaveCount(6);
   await archive.getByRole('button',{name:`Xem toàn bộ ${data.projects.length} dự án`}).click();
   await expect(archive.locator('.v4-project-card')).toHaveCount(data.projects.length);
-  await archive.getByRole('button',{name:'Nghiên cứu & tối ưu',exact:true}).click();
-  await archive.getByRole('combobox',{name:'Công nghệ',exact:true}).selectOption('MATLAB');
+  await page.getByRole('tab',{name:'Nghiên cứu & tối ưu',exact:true}).click();
+  await page.getByRole('button',{name:'Xem dự án liên quan'}).click();
+  await expect(archive.getByRole('combobox')).toHaveCount(0);
+  await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('MATLAB');
   await expect(archive.locator('.v4-project-card')).toHaveCount(1);
   await expect(archive.locator('h3')).toContainText('PSO-Optimize');
-  await archive.getByRole('combobox',{name:'Công nghệ',exact:true}).selectOption('FastAPI');
+  await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('FastAPI');
   await expect(archive.locator('.v4-project-card')).toHaveCount(0);
   await archive.getByRole('button',{name:'Xóa bộ lọc'}).click();
   await archive.getByRole('searchbox',{name:'Tìm dự án'}).fill('medbot');
