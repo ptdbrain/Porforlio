@@ -1,0 +1,63 @@
+/* Journey choreography. Finite inner reveals complement the existing photo
+   gestures; selection indicators interpolate transforms without scroll reads. */
+.motion-indicator{position:absolute;top:0;left:0;width:1px;height:1px;background:var(--accent);transform-origin:0 0;pointer-events:none;z-index:2;transition:transform 420ms var(--motion-ease)}
+.motion-indicator[hidden]{display:none}
+.main-nav{position:relative}
+.main-nav[data-indicator-ready] i{visibility:hidden}
+.capability-workspace .v4-tabs{position:relative}
+.capability-workspace .v4-tabs[data-indicator-ready] .v4-tab[aria-selected=true]{box-shadow:none}
+.capability-workspace .motion-indicator{background:#d9ff61}
+.case-toc[data-indicator-ready] a{padding-left:12px}
+.case-toc .motion-indicator{background:var(--accent)}
+/* Keep text available while giving the eye a clear order: title, explanation,
+   process, deliverable, action. Delays stay below a quarter of a second. */
+@media(prefers-reduced-motion:no-preference){
+ html[data-motion="full"] .motion-enabled .section-title.is-revealed>h2,
+ html[data-motion="full"] .v4-motion .v4-section-heading.is-revealed>h2{animation:journey-rise 620ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .section-title.is-revealed>p,
+ html[data-motion="full"] .v4-motion .v4-section-heading.is-revealed>p{animation:journey-rise 560ms 70ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .story-choices.is-revealed>.story-choice{animation:journey-rise 650ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .story-choices.is-revealed>.story-choice:nth-child(2){animation-delay:100ms}
+ html[data-motion="full"] .v4-motion .featured-study.is-revealed .project-flow-nodes>li{animation:journey-node 540ms var(--motion-ease) both}
+ html[data-motion="full"] .v4-motion .featured-study.is-revealed .project-flow-nodes>li:nth-child(2){animation-delay:60ms}
+ html[data-motion="full"] .v4-motion .featured-study.is-revealed .project-flow-nodes>li:nth-child(3){animation-delay:120ms}
+ html[data-motion="full"] .v4-motion .featured-study.is-revealed .project-flow-nodes>li:nth-child(4){animation-delay:180ms}
+ html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>:is(.capability-brief,.v4-cap-flow,.capability-delivery,.v4-cap-footer){animation:journey-rise 460ms var(--motion-ease) both}
+ html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.v4-cap-flow{animation-delay:55ms}
+ html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.capability-delivery{animation-delay:100ms}
+ html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.v4-cap-footer{animation-delay:145ms}
+ html[data-motion="full"] .personal-photo-motion .timeline-caption>strong{animation:journey-rise 400ms var(--motion-ease) both}
+ html[data-motion="full"] .architecture-detail>span{display:block;animation:journey-rise 300ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .contact-section.is-revealed .connection-line>i{animation:journey-line 800ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .contact-section.is-revealed .connection-line>i:first-child{transform-origin:right}
+ html[data-motion="full"] .motion-enabled .contact-section.is-revealed .connection-line>i:last-child{transform-origin:left}
+ html[data-motion="full"] .motion-enabled .contact-section.is-revealed :is(.contact-layout,.contact-bottom){animation:journey-rise 620ms 80ms var(--motion-ease) both}
+ html[data-motion="full"] .motion-enabled .contact-section.is-revealed .contact-bottom{animation-delay:160ms}
+}
+/* Focus interrupts choreography: nothing interactive waits for its entry. */
+.portfolio :is(.story-choice,.v4-cap-panel,.contact-section,.featured-study):focus-within,
+.portfolio :is(.story-choice,.v4-cap-panel,.contact-section,.featured-study):focus-within *{animation-delay:0ms!important}
+@keyframes journey-rise{from{opacity:.25;transform:translate3d(0,12px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes journey-node{from{opacity:.2;transform:translate3d(-8px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes journey-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:760px){
+ .main-nav{position:absolute}
+ .main-nav.is-open>a{animation:journey-menu 320ms var(--motion-ease) both}
+ .main-nav.is-open>a:nth-of-type(2){animation-delay:35ms}
+ .main-nav.is-open>a:nth-of-type(3){animation-delay:70ms}
+ .main-nav.is-open>a:nth-of-type(n+4){animation-delay:105ms}
+ .main-nav .motion-indicator{left:12px}
+}
+@keyframes journey-menu{from{opacity:.4;transform:translate3d(0,-8px,0)}to{opacity:1;transform:none}}
+html[data-motion="simple"] .motion-indicator{transition:none}
+html[data-motion="simple"] .main-nav>a{animation:none}
+@media(prefers-reduced-motion:reduce){.motion-indicator{transition:none}}
+@media print{.motion-indicator{display:none}}
+/* Give the nav marker its own snapshot so it can travel while the shared
+   header remains anchored. Other indicators keep their local CSS transition. */
+html[data-route-motion="story"] .main-nav>.motion-indicator:not([hidden]){view-transition-name:site-selection}
+html[data-route-motion="story"]::view-transition-group(site-selection){animation-duration:420ms;animation-timing-function:var(--motion-ease);z-index:6}
+html[data-route-motion="story"]::view-transition-old(site-selection),html[data-route-motion="story"]::view-transition-new(site-selection){mix-blend-mode:normal}
+/* Profiling: full-viewport backdrop blur repainted behind every gallery frame
+   on desktop. A deeper scrim preserves separation without that raster cost. */
+.modal-backdrop{backdrop-filter:none;background:#080d10e6}

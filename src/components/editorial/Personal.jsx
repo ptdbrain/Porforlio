@@ -25,9 +25,9 @@ function LifeTimeline({ chapters, language, t }) {
   return <div className="life-timeline" ref={root}>
     <div className="timeline-sticky"><div className="timeline-photo-stack">
       {chapters.map((chapter, index) => <div className={`timeline-photo-layer ${active === index ? 'is-active' : index < active ? 'is-past' : 'is-future'}`} aria-hidden={active !== index} inert={active !== index ? '' : undefined} key={chapter.id}><PersonalPhoto asset={chapter.image} label={l(chapter.label, language)} code={`${t.chapter} / 0${index + 1}`} language={language} t={t} interactive={false} motion={false} /></div>)}
-    </div><div className="timeline-caption"><span>{t.chapter} 0{active + 1}</span><strong>{l(chapters[active].label, language)}</strong></div></div>
+    </div><div className="timeline-caption"><span>{t.chapter} 0{active + 1}</span><strong key={`${active}:${language}`}>{l(chapters[active].label, language)}</strong></div></div>
     <div className="timeline-chapters">{chapters.map((chapter, index) => <article id={`chapter-${chapter.id}`} data-chapter={index} className={`life-chapter ${active === index ? 'is-active' : ''}`} key={chapter.id}>
-      <span className="chapter-dot" aria-hidden="true" /><span className="eyebrow">{t.chapter} / 0{index + 1}</span><h3>{l(chapter.label, language)}</h3>
+      <span className="chapter-dot" aria-hidden="true" /><span className="eyebrow">{t.chapter} / 0{index + 1}</span><h3 data-reveal>{l(chapter.label, language)}</h3>
       <div className="mobile-chapter-photo"><PersonalPhoto motion={["page","iris","curtain"][index%3]} asset={chapter.image} label={l(chapter.label, language)} code={`0${index + 1}`} language={language} t={t} /></div>
       <EmptyText value={chapter.school} language={language} label={t.schoolPending} className="chapter-school" />{chapter.period&&<span className="chapter-period">{chapter.period}</span>}
       <EmptyText value={chapter.story} language={language} label={t.storyPending} />

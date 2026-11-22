@@ -32,7 +32,9 @@ export function useWorkMotion(root, simple) {
         if (!isIntersecting) target.style.setProperty('--work-enter-y', boundingClientRect.bottom <= 0 ? '-24px' : '32px');
         target.classList.toggle('is-revealed', isIntersecting || target.contains(document.activeElement));
       }
-    }, {threshold: 0});
+    // Reveal before the viewport edge, retire after it has passed: this gives
+    // returning cards room to settle instead of flickering at the boundary.
+    }, {threshold: 0, rootMargin:'72px 0px'});
     const sectionObserver = new IntersectionObserver(entries => {
       for (const {target, isIntersecting} of entries) {
         if (isIntersecting) visibleSections.add(target);

@@ -24,3 +24,5 @@ import '../expressive-motion.css';
 import '../photo-choreography.css';
 
 import '../work-layout.css';
+
+import '../journey-motion.css';

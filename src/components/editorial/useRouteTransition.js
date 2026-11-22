@@ -5,6 +5,15 @@ const storyPaths = new Set(['/','/work','/personal']);
 
 export function useRouteTransition(mainRef, simple) {
   const current = useRef({version:0, transition:null, animation:null, sharedTarget:null});
+  const preference = useRef(simple);
+  preference.current = simple;
+  // Cancelling motion must not cancel the pending route update. Native skip
+  // still invokes its update callback, including during a preference change.
+  useEffect(() => {
+    if (!simple) return;
+    current.current.transition?.skipTransition();
+    current.current.animation?.cancel();
+  }, [simple]);
   useEffect(() => () => {
     current.current.version++;
     current.current.transition?.skipTransition();
@@ -13,7 +22,7 @@ export function useRouteTransition(mainRef, simple) {
     delete document.documentElement.dataset.routeMotion;
     delete document.documentElement.dataset.routeDirection;
     document.documentElement.style.removeProperty('--route-surface');
-  }, [simple]);
+  }, []);
 
   return useCallback(({from,to,update,restore,sharedImage}) => {
     const state = current.current;
@@ -25,14 +34,15 @@ export function useRouteTransition(mainRef, simple) {
     state.transition = null; state.animation = null;
     const html = document.documentElement;
     const story = from !== to && storyPaths.has(from) && storyPaths.has(to);
-    const reduced = simple || matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reducedNow = () => preference.current || matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reducedNow();
     const direction = to === '/work' || (to === '/' && from === '/personal') ? 'left' : 'right';
     let committed = false, sharedTarget;
     function commit() {
       if (version !== state.version || committed) return;
       committed = true;
       flushSync(update);
-      if(sharedImage&&!reduced){
+      if(sharedImage&&!reducedNow()){
         sharedTarget=document.querySelector(to.startsWith('/projects/')?'.case-cover .project-visual':to==='/work'?'.work-hero-visual>.photo':'.personal-intro-photo');
         if(sharedTarget){sharedTarget.style.viewTransitionName=sharedImage;state.sharedTarget=sharedTarget;}
       }
@@ -56,6 +66,7 @@ export function useRouteTransition(mainRef, simple) {
     function fallback() {
       commit();
       if (version !== state.version) return Promise.resolve();
+      if (reducedNow()) { clean(); return Promise.resolve(); }
       const main = mainRef.current;
       if (!main?.animate) { clean(); return Promise.resolve(); }
       const offset = (innerWidth < 768 ? 18 : 36) * (direction === 'left' ? -1 : 1);
@@ -69,9 +80,13 @@ export function useRouteTransition(mainRef, simple) {
     try {
       // Rendering is suspended inside the native callback: never wait for RAF
       // here. Commit and restore synchronously so the snapshot can be captured.
-      state.transition = document.startViewTransition(commit);
-      state.transition.ready.catch(()=>{});
-      return state.transition.finished.catch(()=>{}).finally(clean);
+      const transition = document.startViewTransition(commit);
+      state.transition = transition;
+      const finished = transition.finished.catch(()=>{});
+      return transition.ready.then(
+        () => finished.finally(clean),
+        () => transition.updateCallbackDone.then(fallback).catch(clean),
+      );
     } catch {
       return fallback();
     }

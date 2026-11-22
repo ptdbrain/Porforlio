@@ -1,6 +1,7 @@
 import {useRef} from 'react';
 import {localize as l} from '../../content/copy';
 import {capabilities} from '../../content/workV4.mjs';
+import {MotionIndicator} from './MotionIndicator';
 import {Arrow} from './Shared';
 
 export function Capabilities({activeId,language,copy,onChange,onRelated}) {
@@ -21,7 +22,7 @@ export function Capabilities({activeId,language,copy,onChange,onRelated}) {
       <div className="capability-layout" data-work-reveal>
         <div className="capability-selector"><span className="capability-selector-label">{vi?'CHỌN HƯỚNG TIẾP CẬN':'CHOOSE AN AREA'}</span><div className="v4-tabs" role="tablist" aria-label={copy.capTabs} aria-orientation="vertical">
           {capabilities.map((cap,index)=><button key={cap.id} ref={node=>tabs.current[index]=node} className="v4-tab" role="tab" id={`v4-tab-${cap.id}`} aria-selected={cap.id===active.id} aria-controls="v4-cap-panel" tabIndex={cap.id===active.id?0:-1} onClick={()=>onChange(cap.id)} onKeyDown={event=>keyboard(event,index)}><span aria-hidden="true">0{index+1}</span><strong>{l(cap.title,language)}</strong><Arrow/></button>)}
-        </div><p className="capability-selector-note">{vi?'Từ dữ liệu đầu vào đến đầu ra có thể kiểm tra.':'From input data to outputs you can inspect.'}</p></div>
+        <MotionIndicator selection={`${active.id}:${language}`} selector="[aria-selected=true]" rail/></div><p className="capability-selector-note">{vi?'Từ dữ liệu đầu vào đến đầu ra có thể kiểm tra.':'From input data to outputs you can inspect.'}</p></div>
         <div className="v4-cap-panel" id="v4-cap-panel" role="tabpanel" tabIndex="0" aria-labelledby={`v4-tab-${active.id}`}>
           {capabilities.map((cap,index)=><div key={cap.id} className={`v4-cap-layer ${active.id===cap.id?'is-active':''}`} aria-hidden={active.id!==cap.id} inert={active.id!==cap.id?'':undefined}>
             <div className="capability-brief"><span className="v4-label">0{index+1} / {vi?'BÀI TOÁN':'THE PROBLEM'}</span><h3>{l(cap.heading,language)}</h3><p>{l(cap.work,language)}</p></div>

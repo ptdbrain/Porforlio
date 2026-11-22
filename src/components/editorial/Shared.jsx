@@ -32,15 +32,17 @@ export function EmptyText({ value, language, label, className = '' }) {
 
 export function Modal({ title, closeLabel=title, onClose, children, className = '', onKeyDown }) {
   const ref = useRef(null);
-  const closing=useRef(false),closeRef=useRef(onClose);
+  const closing=useRef(false),closeRef=useRef(onClose),exit=useRef(null),mounted=useRef(false);
   closeRef.current=()=>{
     if(closing.current)return;
     if(document.documentElement.dataset.motion==='simple'||matchMedia('(prefers-reduced-motion: reduce)').matches||!ref.current?.animate){onClose();return;}
     closing.current=true;
     const animation=ref.current.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(8px)'}],{duration:140,easing:'ease-out',fill:'forwards'});
-    animation.finished.catch(()=>{}).then(onClose);
+    exit.current=animation;
+    animation.finished.catch(()=>{}).then(()=>{if(mounted.current)onClose();});
   };
   useEffect(() => {
+    mounted.current=true;closing.current=false;
     const previous = document.activeElement;
     const overflow = document.body.style.overflow;
     const app=document.querySelector('.portfolio'),wasInert=app?.inert;
@@ -57,7 +59,7 @@ export function Modal({ title, closeLabel=title, onClose, children, className = 
       }
     }
     document.addEventListener('keydown', keydown);
-    return () => { document.body.style.overflow = overflow;if(app)app.inert=wasInert;document.removeEventListener('keydown', keydown);if(previous?.isConnected)previous.focus({preventScroll:true}); };
+    return () => { mounted.current=false;exit.current?.cancel();document.body.style.overflow = overflow;if(app)app.inert=wasInert;document.removeEventListener('keydown', keydown);if(previous?.isConnected)previous.focus({preventScroll:true}); };
   }, []);
   return createPortal(<div className="modal-backdrop" onPointerDown={(event) => event.target === event.currentTarget && closeRef.current()}>
     <section className={`story-modal ${className}`} role="dialog" aria-modal="true" aria-label={title} ref={ref} onKeyDown={onKeyDown}>

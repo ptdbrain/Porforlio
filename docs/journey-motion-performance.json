@@ -1,0 +1,852 @@
+{
+  "environment": {
+    "date": "2026-11-22",
+    "browser": "Chrome 157.0.8103.38 headless",
+    "server": "Vite production preview on 127.0.0.1:4176",
+    "motion": "full",
+    "intro": "already seen in this tab; video excluded from load/scroll profiling",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "cpu": 1
+      },
+      {
+        "width": 390,
+        "height": 900,
+        "cpu": 4
+      }
+    ],
+    "network": {
+      "latencyMs": 40,
+      "downloadMbps": 10,
+      "uploadMbps": 2
+    },
+    "loadSamplesPerRoute": 3,
+    "scrollSamplesPerRoute": 1,
+    "note": "rAF intervals are a lab proxy, not measured GPU presentation FPS, INP or field Core Web Vitals."
+  },
+  "loadAndScroll": [
+    {
+      "width": 1440,
+      "route": "/",
+      "run": 0,
+      "lcp": 448,
+      "cls": 0.0006029651364508317,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 375.8999999910593,
+          "value": 0.0006029651364508317,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "bytes": 435518,
+      "frames": {
+        "count": 186,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000273,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "run": 1,
+      "lcp": 452,
+      "cls": 0.0008089378074363425,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 381.69999998807907,
+          "value": 0.0008089378074363425,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "bytes": 435518,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "run": 2,
+      "lcp": 448,
+      "cls": 0.0008089378074363425,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 376,
+          "value": 0.0008089378074363425,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "bytes": 435518,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/work",
+      "run": 0,
+      "lcp": 504,
+      "cls": 0.000043408504533179004,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 385.29999999701977,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        },
+        {
+          "time": 475.20000000298023,
+          "value": 0.000042654046371313434,
+          "nodes": [
+            "button button-outline",
+            ""
+          ]
+        }
+      ],
+      "bytes": 484368,
+      "frames": {
+        "count": 186,
+        "median": 16.699999999999818,
+        "p95": 16.799999999999727,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/work",
+      "run": 1,
+      "lcp": 508,
+      "cls": 0.000043408504533179004,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 387.20000000298023,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        },
+        {
+          "time": 474.8999999910593,
+          "value": 0.000042654046371313434,
+          "nodes": [
+            "button button-outline",
+            ""
+          ]
+        }
+      ],
+      "bytes": 484368,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/work",
+      "run": 2,
+      "lcp": 512,
+      "cls": 0.000043408504533179004,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 374.6000000089407,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        },
+        {
+          "time": 481.79999999701977,
+          "value": 0.000042654046371313434,
+          "nodes": [
+            "button button-outline",
+            ""
+          ]
+        }
+      ],
+      "bytes": 484368,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/personal",
+      "run": 0,
+      "lcp": 432,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 381.29999999701977,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 750536,
+      "frames": {
+        "count": 185,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/personal",
+      "run": 1,
+      "lcp": 432,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 382.8999999910593,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 750536,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/personal",
+      "run": 2,
+      "lcp": 424,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 374.29999999701977,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 750536,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/projects/medtutor",
+      "run": 0,
+      "lcp": 248,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 353.40000000596046,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 357069,
+      "frames": {
+        "count": 186,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/projects/medtutor",
+      "run": 1,
+      "lcp": 236,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 355.09999999403954,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 357069,
+      "frames": null
+    },
+    {
+      "width": 1440,
+      "route": "/projects/medtutor",
+      "run": 2,
+      "lcp": 248,
+      "cls": 7.544581618655693e-7,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 352.30000001192093,
+          "value": 7.544581618655693e-7,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 357069,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "run": 0,
+      "lcp": 356,
+      "cls": 0.0003975984290914846,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 418.29999999701977,
+          "value": 0.0003975984290914846,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "bytes": 374304,
+      "frames": {
+        "count": 185,
+        "median": 16.699999999999818,
+        "p95": 16.799999999999955,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "run": 1,
+      "lcp": 340,
+      "cls": 0.0004017988287432732,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 367.3999999910593,
+          "value": 0.000280110794555239,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "time": 441.29999999701977,
+          "value": 0.00012168803418803419,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 374304,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "run": 2,
+      "lcp": 328,
+      "cls": 0.0004017988287432732,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 361.69999998807907,
+          "value": 0.000280110794555239,
+          "nodes": [
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "time": 413.79999999701977,
+          "value": 0.00012168803418803419,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 374304,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "run": 0,
+      "lcp": 460,
+      "cls": 0.0002114494301994302,
+      "tasks": [
+        52,
+        65
+      ],
+      "shifts": [
+        {
+          "time": 446.70000000298023,
+          "value": 0.0002114494301994302,
+          "nodes": [
+            "button button-outline",
+            null,
+            ""
+          ]
+        }
+      ],
+      "bytes": 360730,
+      "frames": {
+        "count": 184,
+        "median": 16.699999999999818,
+        "p95": 16.799999999999955,
+        "over25ms": 3
+      }
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "run": 1,
+      "lcp": 412,
+      "cls": 0.0002114494301994302,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 445.29999999701977,
+          "value": 0.0002114494301994302,
+          "nodes": [
+            "button button-outline",
+            null,
+            ""
+          ]
+        }
+      ],
+      "bytes": 360730,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/work",
+      "run": 2,
+      "lcp": 412,
+      "cls": 0.0002114494301994302,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 439.59999999403954,
+          "value": 0.0002114494301994302,
+          "nodes": [
+            "button button-outline",
+            null,
+            ""
+          ]
+        }
+      ],
+      "bytes": 360730,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/personal",
+      "run": 0,
+      "lcp": 364,
+      "cls": 0.000002697056030389364,
+      "tasks": [
+        52
+      ],
+      "shifts": [
+        {
+          "time": 441.6000000089407,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 482784,
+      "frames": {
+        "count": 185,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000273,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 390,
+      "route": "/personal",
+      "run": 1,
+      "lcp": 376,
+      "cls": 0.000002697056030389364,
+      "tasks": [
+        52
+      ],
+      "shifts": [
+        {
+          "time": 444.70000000298023,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 482784,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/personal",
+      "run": 2,
+      "lcp": 360,
+      "cls": 0.000002697056030389364,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 388.59999999403954,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 482784,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/projects/medtutor",
+      "run": 0,
+      "lcp": 320,
+      "cls": 0.000002697056030389364,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 363.90000000596046,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 322261,
+      "frames": {
+        "count": 185,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "over25ms": 0
+      }
+    },
+    {
+      "width": 390,
+      "route": "/projects/medtutor",
+      "run": 1,
+      "lcp": 312,
+      "cls": 0.000002697056030389364,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 391.40000000596046,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 322261,
+      "frames": null
+    },
+    {
+      "width": 390,
+      "route": "/projects/medtutor",
+      "run": 2,
+      "lcp": 308,
+      "cls": 0.000002697056030389364,
+      "tasks": [],
+      "shifts": [
+        {
+          "time": 400.29999999701977,
+          "value": 0.000002697056030389364,
+          "nodes": [
+            null
+          ]
+        }
+      ],
+      "bytes": 322261,
+      "frames": null
+    }
+  ],
+  "interactionsBeforeBackdropFix": [
+    {
+      "width": 1440,
+      "flow": "Home → Work → Personal → Home",
+      "samples": 141,
+      "median": 16.699999999999818,
+      "p95": 33.19999999999982,
+      "max": 66.59999999999991,
+      "over25ms": 8,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "flow": "Capability selection ×4",
+      "samples": 128,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999955,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "flow": "Decoded gallery transitions ×6",
+      "samples": 130,
+      "median": 49.899999999999636,
+      "p95": 50.100000000000364,
+      "max": 83.29999999999973,
+      "over25ms": 115,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Home → Work → Personal → Home",
+      "samples": 124,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "max": 250,
+      "over25ms": 5,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Capability selection ×4",
+      "samples": 132,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Decoded gallery transitions ×6",
+      "samples": 305,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    }
+  ],
+  "interactionsAfter": [
+    {
+      "width": 1440,
+      "flow": "Home → Work → Personal → Home",
+      "samples": 138,
+      "median": 16.699999999999818,
+      "p95": 33.30000000000018,
+      "max": 83.39999999999986,
+      "over25ms": 8,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "flow": "Capability selection ×4",
+      "samples": 128,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "flow": "Decoded gallery transitions ×6",
+      "samples": 297,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "max": 33.399999999999636,
+      "over25ms": 2,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Home → Work → Personal → Home",
+      "samples": 125,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000273,
+      "max": 233.29999999999995,
+      "over25ms": 5,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Capability selection ×4",
+      "samples": 133,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "flow": "Decoded gallery transitions ×6",
+      "samples": 302,
+      "median": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "max": 16.800000000000182,
+      "over25ms": 0,
+      "errors": []
+    }
+  ],
+  "responsiveAudit": {
+    "motion": "reduced",
+    "network": "local without throttling; warm cache within viewport, not comparable to load profiling",
+    "checks": [
+      {
+        "width": 1440,
+        "route": "/",
+        "lcp": 72,
+        "cls": 0.0016377881462191358,
+        "long": 0,
+        "overflow": false,
+        "bytes": 435518,
+        "dom": 204,
+        "errors": []
+      },
+      {
+        "width": 1440,
+        "route": "/work",
+        "lcp": 68,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 173152,
+        "dom": 698,
+        "errors": []
+      },
+      {
+        "width": 1440,
+        "route": "/personal",
+        "lcp": 52,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 300012,
+        "dom": 437,
+        "errors": []
+      },
+      {
+        "width": 1440,
+        "route": "/projects/medtutor",
+        "lcp": 48,
+        "cls": 7.544581618655693e-7,
+        "long": 0,
+        "overflow": false,
+        "bytes": 5100,
+        "dom": 276,
+        "errors": []
+      },
+      {
+        "width": 820,
+        "route": "/",
+        "lcp": 64,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 420218,
+        "dom": 204,
+        "errors": []
+      },
+      {
+        "width": 820,
+        "route": "/work",
+        "lcp": 68,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 38708,
+        "dom": 698,
+        "errors": []
+      },
+      {
+        "width": 820,
+        "route": "/personal",
+        "lcp": 44,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 143560,
+        "dom": 437,
+        "errors": []
+      },
+      {
+        "width": 820,
+        "route": "/projects/medtutor",
+        "lcp": 40,
+        "cls": 0.0000021198434206564285,
+        "long": 0,
+        "overflow": false,
+        "bytes": 5100,
+        "dom": 276,
+        "errors": []
+      },
+      {
+        "width": 390,
+        "route": "/",
+        "lcp": 48,
+        "cls": 0.001311551123773346,
+        "long": 0,
+        "overflow": false,
+        "bytes": 374304,
+        "dom": 204,
+        "errors": []
+      },
+      {
+        "width": 390,
+        "route": "/work",
+        "lcp": 64,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 49514,
+        "dom": 698,
+        "errors": []
+      },
+      {
+        "width": 390,
+        "route": "/personal",
+        "lcp": 48,
+        "cls": 0,
+        "long": 0,
+        "overflow": false,
+        "bytes": 115506,
+        "dom": 437,
+        "errors": []
+      },
+      {
+        "width": 390,
+        "route": "/projects/medtutor",
+        "lcp": 36,
+        "cls": 0.000002697056030389364,
+        "long": 0,
+        "overflow": false,
+        "bytes": 4500,
+        "dom": 276,
+        "errors": []
+      }
+    ]
+  }
+}
