@@ -15,6 +15,12 @@
 
 `photo-choreography.css` chứa các hiệu ứng bổ sung. Góc và độ mở nhỏ hơn trên mobile. Hiệu ứng cuộn sử dụng observer và requestAnimationFrame hiện có; không thêm loop JavaScript khi trang đứng yên. Simple view/reduced motion hiển thị ảnh trực tiếp và bỏ các lớp chuyển cảnh.
 
+## Giới hạn chuyển động ở phần dấu mốc
+
+Ảnh thành tích có khung cắt riêng và chỉ dùng một lớp phối cảnh. Hiệu ứng lật ở ảnh đầu đổi từ góc 42° quanh mép sang 16° quanh tâm, kèm thu nhẹ để không phóng lớn ra ngoài khung. Section cũng giới hạn vùng vẽ để ảnh không che hành trình hoặc tiêu đề. Áp dụng cho cả bốn dấu mốc chính và kho lưu trữ.
+
+`usePersonalPhotoMotion.js` dùng smoothstep ở đầu/cuối tín hiệu cuộn để chuyển động bắt đầu và dừng nhẹ hơn. Khung giữ nguyên kích thước; mở ảnh, focus bàn phím và reduced motion vẫn hoạt động.
+
 ## Kiểm tra
 
 - Lint, build/prerender và 34 test tự động đã đạt.
@@ -24,4 +30,6 @@
 
 Không dùng lại số đo hiệu năng của các commit trước làm số đo của bản chuyển ảnh này.
 
-Lượt kiểm tra cuối: 26 test trình duyệt đạt trên desktop/mobile (gallery mới, ảnh Personal và luồng redesign). Đã kiểm tra hình hiển thị giấy chứng nhận xoay đúng chiều và chuyển gallery trong trình duyệt thực. Ảnh chụp kiểm tra tại `/tmp/ptd-new-gallery-certificate.png` và `/tmp/ptd-gallery-book.png`.
+Lượt kiểm tra sau sửa lỗi ảnh dấu mốc: build/prerender, lint, 34 test và **168/168 test trình duyệt đạt**. Thêm regression kiểm tra ảnh lật không vượt khung khi cuộn xuôi/ngược, không che nội dung phía trên, giữ kích thước và mở/đóng album bằng bàn phím.
+
+Kiểm tra hình ảnh trên Chrome headless ở 390, 820 và 1834px: cả 15 vị trí cuộn giữ ảnh lật trong khung, không tràn ngang hoặc lỗi JavaScript. Ảnh và số liệu lần kiểm tra này ở `/tmp/ptd-milestone-audit/`. Chưa đo FPS cho bản sửa này.

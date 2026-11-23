@@ -7,6 +7,7 @@ export function usePersonalPhotoMotion(root, simple) {
     const photos = [...element.querySelectorAll('[data-photo-motion]')];
     const visible = new Set();
     const clamp = value => Math.max(0, Math.min(1, value));
+    const smooth = value => value * value * (3 - 2 * value);
     let frame = 0;
     let disposed = false;
 
@@ -19,8 +20,8 @@ export function usePersonalPhotoMotion(root, simple) {
       for (const [photo, rect] of positions) {
         if (!rect.height) continue;
         const range = Math.min(rect.height, height) * .7;
-        const enter = clamp((height - rect.top) / range);
-        const leave = clamp((160 - rect.bottom) / range);
+        const enter = smooth(clamp((height - rect.top) / range));
+        const leave = smooth(clamp((160 - rect.bottom) / range));
         photo.style.setProperty('--photo-fold', (1 - enter + leave * .55).toFixed(4));
         photo.style.setProperty('--photo-travel', (clamp((height - rect.top) / (height + rect.height)) - .5).toFixed(4));
       }

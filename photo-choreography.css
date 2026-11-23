@@ -7,6 +7,11 @@
 .personal-photo-motion [data-photo-motion="orbit"] .photo-surface{clip-path:none;transform:translate(calc(var(--photo-direction) * var(--photo-fx) * 12px),calc(var(--photo-fx) * 20px)) rotate(calc(var(--photo-direction) * var(--photo-fx) * 22deg)) scale(calc(1 - var(--photo-fx) * .14))!important;transform-origin:50% 80%}
 .personal-photo-motion [data-photo-motion="zoom"] .photo-surface{clip-path:inset(calc(var(--photo-fx) * 6%) round 4px);transform:translateY(calc(var(--photo-fx) * 16px)) scale(calc(1 - var(--photo-fx) * .12))!important}
 .personal-photo-motion [data-photo-motion="ribbon"] .photo-surface{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--photo-fx) * 58%),0 calc(100% - var(--photo-fx) * 86%));transform:translateY(calc(var(--photo-fx) * 16px)) rotate(calc(var(--photo-direction) * var(--photo-fx) * 4deg))!important}
+/* Milestones own their image viewport: a turn must never cover the story above
+   or adjacent cards. Use one perspective and a centered, bounded gesture. */
+.personal-story .milestones-section{isolation:isolate;overflow:clip}
+.personal-photo-motion .achievement-card>[data-photo-motion]{perspective:none;overflow:hidden;isolation:isolate;background:var(--photo)}
+.personal-photo-motion .achievement-card [data-photo-motion="page"] .photo-surface{transform-origin:50% 50%;transform:perspective(1600px) rotateY(calc(var(--photo-fx) * -16deg)) scale(calc(1 - var(--photo-fx) * .06))!important}
 .personal-photo-motion [data-photo-motion]:focus-within .photo-surface{transform:none!important;clip-path:none!important}
 /* The gallery owns two layers with one stable footprint. Original files stay intact. */
 .gallery-stage{position:relative;isolation:isolate;overflow:hidden;width:100%;aspect-ratio:4/3;max-height:65vh;background:#302e2808;perspective:1400px;border-radius:4px;touch-action:pan-y pinch-zoom}
