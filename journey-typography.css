@@ -1,0 +1,68 @@
+/* Three editorial voices; text has a fixed, neutral reading position. */
+.journey-type-camera,.journey-text-camera{transform-origin:50% 20%;transition:transform 180ms var(--motion-ease)}
+.journey-timeline .journey-chapter-header h3{font-size:clamp(42px,4.2vw,66px);line-height:1.12;max-width:100%;letter-spacing:-.045em;margin-block:18px 24px}
+.journey-heading-word{display:inline-block;white-space:nowrap}
+.journey-glyph-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.2em .025em .14em;margin:-.2em -.025em -.14em}
+.journey-glyph{display:inline-block;transform-origin:50% 90%}
+.journey-milestone-index{display:none}
+/* THCS: an offset notebook, with a drop cap and a marginal rule. */
+[data-writing-layout="notes"] .journey-identity{border-left:2px solid var(--accent);padding-left:18px;margin-bottom:22px}
+[data-writing-layout="notes"] .journey-prose{margin-left:32px}
+[data-writing-layout="notes"] .journey-story::first-letter{float:left;font:500 3.4em/.9 Manrope,sans-serif;color:var(--accent);padding:9px 9px 0 0}
+[data-writing-layout="notes"] .journey-milestones{margin-left:32px!important}
+/* THPT: right-aligned title and numbered achievement notes, with ample room
+   for the actual text; the DOM keeps the original reading order. */
+[data-writing-layout="editorial"] .journey-chapter-header{padding-right:0;padding-left:22px;text-align:right}
+[data-writing-layout="editorial"] .journey-chapter-header h3{font-size:clamp(56px,6vw,86px);margin-left:auto}
+[data-writing-layout="editorial"] .journey-chapter-mark{right:auto;left:0}
+[data-writing-layout="editorial"] .journey-chapter-progress{margin-left:auto}
+[data-writing-layout="editorial"] .journey-identity{text-align:right;margin-bottom:22px}
+[data-writing-layout="editorial"] .journey-prose{border-left:1px solid var(--accent);padding-left:22px;margin-right:18px}
+[data-writing-layout="editorial"] .journey-milestones{display:grid;grid-template-columns:1fr;gap:0 22px}
+[data-writing-layout="editorial"] .journey-milestones>li{display:block;border-top:1px solid var(--line);padding:18px 0 22px!important}
+[data-writing-layout="editorial"] .journey-milestones>li>.journey-milestone-marker,[data-writing-layout="editorial"] .journey-milestones>li::after{display:none}
+[data-writing-layout="editorial"] .journey-milestone-index{display:block;font:10px/1.5 'IBM Plex Mono',monospace;color:var(--accent);margin-bottom:12px}
+[data-writing-layout="editorial"] .journey-milestones>li:nth-child(even){margin-left:18px!important}
+/* University: a centered title followed by a metadata / narrative spread. */
+[data-writing-layout="perspective"] .journey-chapter-header{text-align:center;padding-inline:0}
+[data-writing-layout="perspective"] .journey-chapter-mark{right:calc(50% - 50px);top:-26px}
+[data-writing-layout="perspective"] .journey-chapter-progress{margin-inline:auto}
+[data-writing-layout="perspective"] .journey-chapter-intro{display:grid;grid-template-columns:1fr;gap:6px 24px;margin-top:24px}
+[data-writing-layout="perspective"] .journey-identity .chapter-school{font-size:16px;line-height:1.75}
+[data-writing-layout="perspective"] .journey-prose{border-left:1px solid var(--line);padding-left:22px}
+[data-writing-layout="perspective"] .journey-story{font-size:16px;line-height:1.9}
+[data-writing-layout="perspective"] .journey-milestones>li:nth-child(even){margin-left:24px!important}
+@media(min-width:1200px){
+ [data-writing-layout="editorial"] .journey-milestones{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+ [data-writing-layout="editorial"] .journey-milestones>li:nth-child(even){margin:24px 0 0!important}
+ [data-writing-layout="perspective"] .journey-chapter-intro{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr)}
+ [data-writing-layout="perspective"] .journey-identity .chapter-school{margin-top:14px}
+}
+@media(prefers-reduced-motion:no-preference){
+ .journey-motion .is-journey-visible .journey-glyph{animation:journey-letter-rise 720ms var(--motion-ease) both;animation-delay:calc(var(--glyph-order) * 45ms)}
+ .journey-motion [data-writing-layout="editorial"] .is-journey-visible .journey-glyph{animation-name:journey-letter-turn}
+ .journey-motion [data-writing-layout="perspective"] .is-journey-visible .journey-glyph{animation-name:journey-letter-focus}
+ .journey-motion [data-journey-reveal="heading"]:not(.is-journey-visible) .journey-glyph{transform:translateY(105%)}
+ .journey-motion [data-journey-reveal="identity"]:not(.is-journey-visible){transform:translate3d(-22px,0,0)}
+ .journey-motion [data-journey-reveal="reflection"]:not(.is-journey-visible){transform:translate3d(24px,12px,0)}
+ .journey-timeline.journey-motion [data-writing-layout="editorial"] [data-journey-reveal="milestone"]:not(.is-journey-visible){transform:perspective(850px) translate3d(18px,16px,0) rotateX(8deg) rotate(var(--note-angle))}
+ .journey-timeline.journey-motion [data-writing-layout="perspective"] [data-journey-reveal="milestone"]:not(.is-journey-visible){transform:perspective(900px) translate3d(-16px,10px,0) rotateY(-7deg)}
+}
+@keyframes journey-letter-rise{from{transform:translateY(110%) rotate(-8deg)}to{transform:none}}
+@keyframes journey-letter-turn{from{opacity:.2;transform:perspective(600px) translateY(80%) rotateX(-70deg)}to{opacity:1;transform:none}}
+@keyframes journey-letter-focus{from{opacity:.15;transform:translateY(45%) scale(.65) rotate(7deg)}to{opacity:1;transform:none}}
+.journey-timeline :is(.journey-type-camera,.journey-text-camera):focus-within{transform:none!important;transition:none}
+.journey-timeline :focus-within .journey-glyph{animation-delay:0ms!important}
+.journey-timeline:not(.journey-motion) :is(.journey-type-camera,.journey-text-camera){transform:none!important;transition:none}
+@media(max-width:760px){
+ .journey-timeline .journey-chapter-header h3{font-size:42px}
+ [data-writing-layout="editorial"] .journey-chapter-header h3{font-size:62px}
+ [data-writing-layout="notes"] .journey-prose,[data-writing-layout="notes"] .journey-milestones{margin-left:16px!important}
+ [data-writing-layout="editorial"] .journey-prose{padding-left:16px;margin-right:0}
+ [data-writing-layout="editorial"] .journey-milestones>li:nth-child(even){margin-left:14px!important}
+ [data-writing-layout="perspective"] .journey-story{font-size:15px}
+ [data-writing-layout="perspective"] .journey-milestones>li:nth-child(even){margin-left:12px!important}
+ .journey-type-camera,.journey-text-camera{transition-duration:140ms}
+}
+@media(prefers-reduced-motion:reduce){.journey-glyph{transform:none!important;animation:none!important}.journey-type-camera,.journey-text-camera{transform:none!important;transition:none}}
+@media print{.journey-glyph,.journey-type-camera,.journey-text-camera{transform:none!important;animation:none!important}.journey-glyph-mask{overflow:visible}[data-writing-layout] .journey-prose,[data-writing-layout] .journey-milestones{margin-left:0!important}}

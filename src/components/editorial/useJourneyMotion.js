@@ -41,6 +41,17 @@ export function useJourneyMotion(root, onChapter, simple) {
       const bar=element.querySelector('.journey-stage-progress>i');
       if(bar)bar.style.transform=`scaleX(${progress.toFixed(4)})`;
       for(const {node,rect} of positions){
+        // Text only moves at the edges. The central reading zone is exactly
+        // neutral; article geometry never depends on these inner transforms.
+        const entry=clamp((rect.top-innerHeight*.12)/(innerHeight*.65));
+        const leave=clamp((innerHeight*.15-rect.bottom)/(innerHeight*.45));
+        const edge=entry-leave;
+        const side=Number(node.dataset.chapter)%2?-1:1;
+        const title=node.querySelector('.journey-type-camera');
+        const text=node.querySelector('.journey-text-camera');
+        const strength=mobile.matches ? .45 : 1;
+        if(title)title.style.transform=edge===0?'none':`perspective(900px) translate3d(${(edge*side*20*strength).toFixed(2)}px,${(entry*10*strength).toFixed(2)}px,0) rotateY(${(edge*side*-5*strength).toFixed(2)}deg)`;
+        if(text)text.style.transform=edge===0?'none':`perspective(1000px) translate3d(${(edge*side*-16*strength).toFixed(2)}px,${(edge*8*strength).toFixed(2)}px,0) rotateY(${(edge*side*2*strength).toFixed(2)}deg)`;
         const line=node.querySelector('.journey-chapter-progress>i');
         if(line)line.style.transform=`scaleX(${clamp((innerHeight*.7-rect.top)/Math.max(1,rect.height)).toFixed(4)})`;
       }
@@ -77,7 +88,7 @@ export function useJourneyMotion(root, onChapter, simple) {
       document.removeEventListener('visibilitychange',visibility);element.removeEventListener('focusin',focus);
       element.classList.remove('journey-motion','is-changing','is-journey-in-view');delete element.dataset.journeyDirection;
       revealed.forEach(node=>node.classList.remove('is-journey-visible'));
-      element.querySelectorAll('.journey-camera,.journey-orbit,.journey-stage-progress>i,.journey-chapter-progress>i').forEach(node=>node.style.removeProperty('transform'));
+      element.querySelectorAll('.journey-camera,.journey-orbit,.journey-stage-progress>i,.journey-chapter-progress>i,.journey-type-camera,.journey-text-camera').forEach(node=>node.style.removeProperty('transform'));
     };
   },[root,onChapter,simple]);
 }
