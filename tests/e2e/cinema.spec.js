@@ -10,7 +10,7 @@ test('simple view persists and keeps Work content available across routes',async
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
  await page.locator('.main-nav').getByRole('link',{name:'Cá nhân',exact:true}).click();
  await expect(page.locator('.life-chapter')).toHaveCount(3);
- await page.goBack();await expect(page.locator('.v4-job-summary')).toHaveCount(3);
+ await page.goBack();await expect(page.locator('.v4-job-summary')).toHaveCount(4);
 });
 
 test('normal motion settles to readable content and cleans up on route revisits',async({page},info)=>{

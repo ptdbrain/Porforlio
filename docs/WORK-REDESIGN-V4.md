@@ -87,8 +87,9 @@ Motion: tab active có nền/viền đổi nhẹ, panel crossfade 180–240 ms. 
 
 Heading: **Kinh nghiệm đi cùng phần việc thật.**
 
-Nền cream, chữ than; bố cục ba hàng lịch sử công việc. Mỗi hàng có thời gian, tổ chức, vai trò và một câu đóng góp luôn hiển thị:
+Nền cream, chữ than; chương trình đào tạo đứng đầu, tiếp đến ba hàng lịch sử công việc. Mỗi mục thể hiện tổ chức, vai trò/chương trình và mô tả; thời gian chỉ hiển thị khi đã có dữ liệu:
 
+- **VinUni × Vingroup — Chương trình Đào tạo Nhân tài AI Thực chiến:** Đã hoàn thành; có mô tả và liên kết chương trình chính thức.
 - **GeoIT VNPT — Software Engineer — 03–07/2026:** Phát triển backend và workflow xử lý dữ liệu địa không gian tích hợp AI.
 - **BA GPS — AI Intern — 06–12/2024:** Xây module phát hiện vật thể, khuôn mặt, bàn tay và tối ưu inference cho thiết bị nhúng.
 - **Vietnam Robotics Challenge — Developer & Mentor — 2021–2022:** Lập trình robot, tích hợp cảm biến và hướng dẫn đội học sinh.
@@ -97,7 +98,7 @@ Link **Xem phạm vi đóng góp** mới mở thông tin bổ sung về bối c�
 
 Bên dưới có một dòng nghiên cứu riêng: **LLMFeed · Đồng tác giả thứ hai · EMNLP 2026**. Mô tả ngắn: **Triển khai và đánh giá thực nghiệm cho hướng topic modeling dùng phản hồi LLM.** Có liên kết bài báo và case study.
 
-VinUni AI thực chiến hiển thị thành một dòng đào tạo gọn phía dưới. Giữ trạng thái hoàn thành do người dùng cung cấp; ảnh chứng nhận và mã xác thực chỉ xuất hiện khi có tài liệu thật.
+VinUni AI thực chiến dùng cùng bố cục với các mục kinh nghiệm, có nhãn **Đào tạo** và trạng thái hoàn thành do người dùng cung cấp. Mục này chỉ xuất hiện một lần trên Work; ảnh chứng nhận, thời gian và mã xác thực chỉ hiển thị khi có tài liệu thật.
 
 Motion: các hàng hiện opacity và y 10→0, lệch tối đa 60 ms. Không pin section và không biến lịch sử làm việc thành slideshow.
 
