@@ -11,14 +11,16 @@
 .journey-panorama .journey-chapter-header .eyebrow{font-size:8px}
 .journey-panorama .journey-title-flight .journey-chapter-intro{display:block;margin:0}
 .journey-panorama .journey-title-flight .journey-identity{padding:0;margin:0;border:0;text-align:left}
-.journey-panorama .journey-title-flight .chapter-school{font-size:20px;line-height:1.5;margin:0 0 8px;font-weight:500;color:var(--ink)}
+.journey-panorama .journey-title-flight .chapter-school{font-size:clamp(23px,2.1vw,28px);line-height:1.4;margin:0 0 12px;font-weight:700;letter-spacing:-.025em;color:var(--accent)}
 .journey-panorama .journey-title-flight .journey-prose{padding:0;margin:0;border:0}
-.journey-panorama .journey-title-flight .journey-story{font-size:16px;line-height:1.85;margin:0;color:var(--ink)}
+.journey-panorama .journey-title-flight .journey-story{font-size:18px;line-height:1.8;font-weight:500;margin:0;color:var(--ink);text-wrap:pretty}
 .journey-panorama .journey-title-flight .journey-story::first-letter{float:none;font:inherit;color:inherit;padding:0}
 .journey-panorama .journey-title-flight .journey-prose>p:last-child{margin-bottom:0}
-.journey-panorama .journey-reading{padding-block:22px 8px}
+.journey-panorama .journey-reading{padding:20px 24px 8px;margin-top:16px;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;background:color-mix(in srgb,var(--surface) 50%,var(--bg));color:var(--ink)}
 .journey-panorama .journey-copy-flight,.journey-panorama [data-writing-layout='editorial'] .journey-copy-flight,.journey-panorama [data-writing-layout='perspective'] .journey-copy-flight{width:100%;margin:0}
-.journey-panorama .journey-milestones>li{font-size:14px;padding-bottom:16px!important}
+.journey-panorama .journey-milestones>li{font-size:16px;line-height:1.8;font-weight:500;color:var(--ink);padding-bottom:16px!important}
+.journey-panorama .journey-milestone-index{font-size:11px;font-weight:600}
+.journey-panorama .journey-reading .text-link{font-weight:600}
 .journey-panorama [data-writing-layout='editorial'] .journey-board{grid-template-columns:70% 30%}
 .journey-panorama [data-writing-layout='editorial'] .journey-chapter-header{text-align:left}
 .journey-panorama [data-writing-layout='editorial'] .journey-milestones>li:nth-child(even){margin-top:16px!important}
@@ -43,7 +45,7 @@
 }
 @media(max-width:1050px){
  .journey-panorama .journey-title-flight{padding:18px}
- .journey-panorama .journey-title-flight .journey-story{font-size:15px}
+ .journey-panorama .journey-title-flight .journey-story{font-size:17px}
  .journey-panorama .journey-cinema-period{font-size:8px}
 }
 @media(max-width:760px){
@@ -54,11 +56,10 @@
  .journey-panorama .journey-chapter-header{display:block;padding:0 115px 14px 0;min-height:132px;text-align:left!important}
  .journey-panorama .journey-chapter-header h3{font-size:clamp(26px,calc(10vw * var(--title-factor,1)),38px);margin:12px 0 10px}
  .journey-panorama .journey-cinema-period{font-size:8px}
- .journey-panorama .journey-title-flight .chapter-school{font-size:18px}
- .journey-panorama .journey-title-flight .journey-story{font-size:14px;line-height:1.9}
- .journey-panorama .journey-title-flight .journey-prose p{font-size:14px}
- .journey-panorama .journey-reading{padding-block:16px 4px}
- .journey-panorama .journey-milestones>li{font-size:13px;padding-bottom:12px!important}
+ .journey-panorama .journey-title-flight .chapter-school{font-size:22px}
+ .journey-panorama .journey-title-flight .journey-story{font-size:16px;line-height:1.8}
+ .journey-panorama .journey-reading{padding:16px 14px 4px;margin-top:12px}
+ .journey-panorama .journey-milestones>li{font-size:15px;line-height:1.8;padding-bottom:14px!important}
  .journey-panorama .chapter-gallery{gap:12px}
  .journey-panorama .chapter-gallery>.photo{width:62vw;max-width:250px}
  @media(prefers-reduced-motion:no-preference){
