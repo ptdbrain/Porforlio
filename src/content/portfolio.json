@@ -361,17 +361,30 @@
       "image": {
         "src": "/anh/anhsukiendontongbithuToLamoBachKhoa.jpg",
         "alt": {
-          "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
-          "en": "A memory at the innovation space, Hanoi University of Science and Technology."
+          "vi": "Ảnh tập thể tại sự kiện khánh thành Không gian Đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+          "en": "Group photo at the opening of the Innovation Space, Hanoi University of Science and Technology."
         },
         "caption": {
-          "vi": "Kỷ niệm tại không gian đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
-          "en": "A memory at the innovation space, Hanoi University of Science and Technology."
+          "vi": "Sự kiện khánh thành Không gian Đổi mới sáng tạo · Đại học Bách khoa Hà Nội.",
+          "en": "Opening of the Innovation Space · Hanoi University of Science and Technology."
         },
         "fit": "contain",
         "position": "center"
       },
       "gallery": [
+        {
+          "src": "/anh/anhsukiendontongbithuToLamoBachKhoa.jpg",
+          "alt": {
+            "vi": "Ảnh tập thể tại sự kiện khánh thành Không gian Đổi mới sáng tạo, Đại học Bách khoa Hà Nội.",
+            "en": "Group photo at the opening of the Innovation Space, Hanoi University of Science and Technology."
+          },
+          "caption": {
+            "vi": "Sự kiện khánh thành Không gian Đổi mới sáng tạo · Đại học Bách khoa Hà Nội.",
+            "en": "Opening of the Innovation Space · Hanoi University of Science and Technology."
+          },
+          "fit": "contain",
+          "position": "center"
+        },
         {
           "src": "/anh/venturex.jpg",
           "alt": {

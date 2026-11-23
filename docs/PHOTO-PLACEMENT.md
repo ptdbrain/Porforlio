@@ -21,7 +21,7 @@ Người dùng đã xác nhận thành tích Quán quân Robotics Challenge th�
 | Ảnh | Vị trí |
 | --- | --- |
 | `anhcanhandep.jpg` | Hero Home, thẻ Personal, liên hệ và ảnh chính collage |
-| `anhsukiendontongbithuToLamoBachKhoa.jpg` | Chương Đại học và collage học tập; caption dựa trên nội dung sự kiện trong ảnh |
+| `anhsukiendontongbithuToLamoBachKhoa.jpg` | Ảnh chính và album sự kiện của chương Đại học, collage học tập; chú thích VI/EN về sự kiện khánh thành Không gian Đổi mới sáng tạo dựa trên banner trong ảnh |
 | `venturex.jpg` | Thành tích Venture X, thư viện Đại học và thẻ Work trên Home |
 | `giainhiquocgiakhkt.jpg` | Thành tích KHKT quốc gia 2023 và thư viện THPT |
 | `giaychungnhandatgiainhikhktcapquocgia.jpg` | Minh chứng trong hộp chi tiết thành tích KHKT quốc gia |
