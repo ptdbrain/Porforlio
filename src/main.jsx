@@ -34,3 +34,5 @@ import '../journey-scenes.css';
 import '../journey-typography.css';
 
 import '../journey-panorama.css';
+
+import '../journey-compact.css';

@@ -1,5 +1,7 @@
 # Personal: hành trình với chuyển động lớn
 
+> Bản thiết kế ban đầu. Bố cục hiện tại đã được thu gọn, bỏ thời gian giữ cảnh và đưa câu chuyện vào cùng khung ảnh: [JOURNEY-COMPACT.md](JOURNEY-COMPACT.md).
+
 Thay cấu trúc ảnh sticky bên trái và chữ chạy bên phải bằng **ba khung cảnh độc lập, rộng toàn phần hành trình**. Mỗi chương có ảnh, tiêu đề, vùng chuyển cảnh và phần nội dung riêng.
 
 - THCS: ảnh đi từ trái sang phải, tiêu đề đi từ phải sang trái và xuống thấp.

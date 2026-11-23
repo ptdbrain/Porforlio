@@ -17,7 +17,7 @@ test('chapters have distinct text compositions and one accessible name per anima
   const heading=chapters.nth(index).getByRole('heading',{name:label,exact:true});
   await expect(heading).toHaveCount(1);await expect(heading).toBeVisible();
   await expect(heading.locator('.journey-heading-visual')).toHaveAttribute('aria-hidden','true');
-  await expect(heading).toHaveCSS('text-align',index===1?'right':index===2?'center':'left');
+  await expect(heading).toHaveCSS('text-align','left');
  }
  const indexNumbers=page.locator('#chapter-high-school .journey-milestone-index');
  await expect(indexNumbers.first()).toHaveText('01');await expect(indexNumbers.first()).toBeVisible();
@@ -29,6 +29,8 @@ test('text moves at the viewport edge and settles exactly in the reading zone wi
  const article=page.locator('#chapter-high-school'),camera=article.locator('.journey-copy-flight');
  const size=await article.evaluate(node=>({width:node.offsetWidth,height:node.offsetHeight}));
  await article.locator('.journey-reading').evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-innerHeight*.6,behavior:'instant'}));await expect(camera).not.toHaveCSS('transform','none');
+ const bounds=await camera.evaluate(node=>{const text=node.getBoundingClientRect(),window=node.closest('.journey-reading').getBoundingClientRect();return{left:text.left-window.left,right:text.right-window.right};});
+ expect(bounds.left).toBeGreaterThanOrEqual(-1);expect(bounds.right).toBeLessThanOrEqual(1);
  await article.locator('.journey-reading').evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-innerHeight*.15,behavior:'instant'}));await expect(camera).toHaveCSS('transform','none');
  await expect(article.locator('.journey-type-camera')).toHaveCSS('transform','none');
  expect(await article.evaluate(node=>({width:node.offsetWidth,height:node.offsetHeight}))).toEqual(size);

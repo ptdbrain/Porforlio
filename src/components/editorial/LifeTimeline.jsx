@@ -40,18 +40,16 @@ export function LifeTimeline({chapters,language,t,simple=false}){
       <div className="journey-cinema"><div className="journey-board">
         <span className="journey-board-grid" aria-hidden="true"/>
         <span className="journey-stage-axis" aria-hidden="true"/>
-        <div className="journey-title-flight"><div className="journey-chapter-header" data-journey-reveal="heading"><span className="eyebrow">{t.chapter} / {String(index+1).padStart(2,'0')} — {String(chapters.length).padStart(2,'0')}</span><div className="journey-type-camera"><JourneyTitle value={l(chapter.label,language)}/></div>{chapter.period&&<span className="journey-cinema-period">{chapter.period}</span>}</div></div>
+        <div className="journey-title-flight"><div className="journey-chapter-header" data-journey-reveal="heading"><span className="eyebrow">{t.chapter} / {String(index+1).padStart(2,'0')} — {String(chapters.length).padStart(2,'0')}</span><div className="journey-type-camera"><JourneyTitle value={l(chapter.label,language)}/></div>{chapter.period&&<span className="journey-cinema-period">{chapter.period}</span>}</div><div className="journey-chapter-intro"><div className="journey-identity" data-journey-reveal="identity"><EmptyText value={chapter.school} language={language} className="chapter-school"/></div><div className="journey-prose" data-journey-reveal="reflection"><EmptyText value={chapter.story} language={language} className="journey-story"/>{chapter.location?.[language]&&<p>{l(chapter.location,language)}</p>}</div></div></div>
         <div className="journey-photo-flight"><Scene chapter={chapter} index={index} language={language} t={t}/></div>
-        <span className="journey-cinema-cue" aria-hidden="true">{language==='vi'?'CUỘN ĐỂ KHÁM PHÁ':'SCROLL TO EXPLORE'} <span>↓</span></span>
         <span className="journey-chapter-progress" aria-hidden="true"><i/></span>
       </div></div>
-      <div className="journey-reading"><div className="journey-copy-flight">
+      {(chapter.achievements.length>0||chapter.links?.some(link=>link.href))&&<div className="journey-reading"><div className="journey-copy-flight">
       <div className="journey-text-camera">
-        <div className="journey-chapter-intro"><div className="journey-identity" data-journey-reveal="identity"><EmptyText value={chapter.school} language={language} className="chapter-school"/>{chapter.period&&<span className="chapter-period">{chapter.period}</span>}</div><div className="journey-prose" data-journey-reveal="reflection"><EmptyText value={chapter.story} language={language} className="journey-story"/>{chapter.location?.[language]&&<p>{l(chapter.location,language)}</p>}</div></div>
         {chapter.achievements.length>0&&<ul className="journey-milestones">{chapter.achievements.map((achievement,i)=><li key={i} data-journey-reveal="milestone" style={{'--note-angle':`${i%2?1.5:-1.5}deg`}}><span className="journey-milestone-marker" aria-hidden="true"/><span className="journey-milestone-content"><span className="journey-milestone-index" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>{l(achievement,language)}</span></li>)}</ul>}
         {chapter.links?.filter(link=>link.href).map(link=><p key={link.href} data-journey-reveal="copy"><ExternalLink href={link.href} className="text-link">{l(link.label,language)}</ExternalLink></p>)}
       </div>
-      </div></div>
+      </div></div>}
       {chapter.gallery.length>0&&<div className="journey-gallery-window" role="region" tabIndex="0" aria-label={language==='vi'?`Ảnh kỷ niệm ${l(chapter.label,language)}`:`Memories from ${l(chapter.label,language)}`} onPointerDown={event=>event.currentTarget.dataset.manual='true'} onWheel={event=>{if(Math.abs(event.deltaX)>Math.abs(event.deltaY)||event.shiftKey)event.currentTarget.dataset.manual='true';}} onFocus={event=>event.currentTarget.dataset.manual='true'}><div className="chapter-gallery">{chapter.gallery.map((image,i)=><Photo motion={['zoom','curtain','iris'][i%3]} motionIndex={i} key={image.src} gallery={chapter.gallery} asset={image} label={l(chapter.label,language)} language={language} t={t}/>)}</div></div>}
       {chapter.id==='present'&&<RouteLink className="text-link" href="/work">{t.exploreWork}<Arrow/></RouteLink>}
     </article>)}</div>

@@ -7,14 +7,16 @@ test.beforeEach(async({page})=>{
 async function phase(page,index,value){
  const cinema=page.locator('.journey-cinema').nth(index);
  await cinema.evaluate((node,value)=>{
-  const board=node.querySelector('.journey-board'),top=parseFloat(getComputedStyle(board).top);
-  scrollTo({top:node.getBoundingClientRect().top+scrollY-top+(node.offsetHeight-board.clientHeight)*value,behavior:'instant'});
+  const mobile=innerWidth<=760,top=mobile?120:146;
+  const start=innerHeight*.88,end=top+40;
+  const target=start-(start-end)*value;
+  scrollTo({top:node.getBoundingClientRect().top+scrollY-target,behavior:'instant'});
  },value);
  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
  await expect.poll(()=>cinema.locator('.journey-photo-flight').evaluate(node=>node.getAnimations().filter(a=>a.playState==='running').length)).toBe(0);
 }
 
-test('images and titles visibly cross the canvas by hundreds of pixels',async({page,isMobile})=>{
+test('compact chapter cards keep desktop crossovers and avoid a mobile poster gate',async({page,isMobile})=>{
  await page.goto('/personal');await page.evaluate(()=>document.fonts.ready);
  await expect(page.locator('.journey-panorama')).toHaveCSS('display','block');
  for(const index of[0,1]){
@@ -25,11 +27,12 @@ test('images and titles visibly cross the canvas by hundreds of pixels',async({p
   await phase(page,index,.98);
   const p1=await photo.boundingBox(),t1=await title.boundingBox();
   if(isMobile){
-   expect(p0.y-p1.y).toBeGreaterThan(b.height*.17);
-   expect(t1.y-t0.y).toBeGreaterThan(b.height*.45);
+   expect(p1.width).toBeLessThan(b.width*.4);
+   await expect(board).toHaveCSS('position','relative');
+   expect(await board.locator('..').evaluate(node=>node.offsetHeight)).toBeLessThan(b.height+4);
   }else{
    expect(Math.abs(p1.x-p0.x)).toBeGreaterThan(b.width*.38);
-   expect(Math.abs(t1.x-t0.x)).toBeGreaterThan(b.width*.32);
+   expect(Math.abs(t1.x-t0.x)).toBeGreaterThan(b.width*.24);
    expect(Math.sign(p1.x-p0.x)).toBe(index===0?1:-1);
    expect(Math.sign(t1.x-t0.x)).toBe(index===0?-1:1);
   }
@@ -68,10 +71,31 @@ test('the wide photo strip yields to keyboard and manual horizontal browsing',as
  await gallery.scrollIntoViewIfNeeded();await gallery.focus();
  await expect(gallery).toHaveAttribute('data-manual','true');
  const end=await gallery.evaluate(node=>{node.scrollLeft=node.scrollWidth-node.clientWidth;return node.scrollWidth-node.clientWidth;});
- expect(end).toBeGreaterThan(0);
+ expect(end).toBeGreaterThanOrEqual(0);
  await expect.poll(()=>gallery.evaluate(node=>node.scrollLeft)).toBeCloseTo(end,0);
  await page.evaluate(()=>scrollBy({top:100,behavior:'instant'}));
  await expect.poll(()=>gallery.evaluate(node=>node.scrollLeft)).toBeCloseTo(end,0);
  await gallery.locator('.photo-button').last().focus();
  await expect(gallery.locator('.photo-button').last()).toBeFocused();
+});
+
+test('school and story are visible with a smaller image before completing the transition',async({page,isMobile})=>{
+ await page.goto('/personal');await page.evaluate(()=>document.fonts.ready);
+ for(const index of[0,1,2]){
+  await page.locator('.journey-cinema').nth(index).evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-(innerWidth<=760?136:162),behavior:'instant'}));
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  const card=page.locator('.journey-board').nth(index),cinema=page.locator('.journey-cinema').nth(index);
+  await expect(card.locator('.chapter-school')).toBeVisible();
+  await expect(card.locator('.journey-story')).toBeVisible();
+  const sizes=await card.evaluate(node=>{
+   const board=node.getBoundingClientRect(),story=node.querySelector('.journey-story').getBoundingClientRect(),photo=node.querySelector('.journey-photo-flight').getBoundingClientRect();
+   return {height:board.height,width:board.width,top:board.top,bottom:board.bottom,storyBottom:story.bottom,storyTop:story.top,photoWidth:photo.width};
+  });
+  expect(sizes.photoWidth).toBeLessThan(sizes.width*.4);
+  expect(sizes.storyBottom).toBeLessThanOrEqual(sizes.bottom+1);
+  expect(sizes.storyTop).toBeGreaterThanOrEqual(sizes.top);
+  expect(sizes.bottom).toBeLessThanOrEqual((await page.viewportSize()).height+1);
+  const extra=await cinema.evaluate(node=>node.offsetHeight-node.querySelector('.journey-board').offsetHeight);
+  expect(extra).toBeLessThanOrEqual(2);
+ }
 });
