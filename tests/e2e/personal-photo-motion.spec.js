@@ -25,22 +25,16 @@ test('photo gestures follow scroll in both directions without changing layout',a
   expect(errors).toEqual([]);
 });
 
-test('timeline follows chapters forward and backward with one accessible photo layer',async({page},info)=>{
+test('wide chapter scenes track forward and backward without a shared sticky photo column',async({page})=>{
   await page.goto('/personal');
-  if(info.project.name==='mobile'){
-    await page.locator('#chapter-university .photo').first().scrollIntoViewIfNeeded();
-    await expect(page.locator('#chapter-university .mobile-chapter-photo')).toBeVisible();
-    await expect(page.locator('.timeline-sticky')).toBeHidden();
-    return;
-  }
+  await expect(page.locator('.timeline-sticky,.timeline-photo-layer')).toHaveCount(0);
+  await expect(page.locator('.journey-board')).toHaveCount(3);
   const chapters=page.locator('[data-chapter]');
   for(const index of [0,1,2,1,0]){
     await chapters.nth(index).evaluate(n=>scrollTo({top:n.getBoundingClientRect().top+scrollY-innerHeight*.3,behavior:'instant'}));
-    const layer=page.locator('.timeline-photo-layer').nth(index);
-    await expect(layer).toHaveClass(/is-active/);
-    await expect(layer).toHaveCSS('opacity','1');
-    await expect(page.locator('.timeline-photo-layer[aria-hidden="false"]')).toHaveCount(1);
-    await expect(page.locator('.timeline-photo-layer[inert]')).toHaveCount(2);
+    await expect(chapters.nth(index)).toHaveClass(/is-active/);
+    await expect(chapters.nth(index).locator('.journey-board .photo img')).toBeVisible();
+    await expect(page.locator('.timeline-markers a[aria-current=step]')).toHaveCount(1);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }
 });

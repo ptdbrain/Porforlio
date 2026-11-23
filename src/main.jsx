@@ -32,3 +32,5 @@ import '../work-scope.css';
 import '../journey-scenes.css';
 
 import '../journey-typography.css';
+
+import '../journey-panorama.css';

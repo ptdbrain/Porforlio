@@ -9,15 +9,15 @@ async function chapter(page,index,offset=.3){
  await expect(page.locator('.life-chapter.is-active')).toHaveAttribute('data-chapter',String(index));
 }
 
-test('three distinct scenes stay coherent during forward, reverse and rapid chapter changes',async({page,isMobile})=>{
+test('three independent wide scenes stay coherent during forward, reverse and rapid chapter changes',async({page,isMobile})=>{
  const errors=[];page.on('pageerror',error=>errors.push(error.message));await page.goto('/personal');
  await expect(page.locator('.journey-timeline')).toHaveClass(/journey-motion/);
  const dimensions=await page.locator('[data-chapter]').evaluateAll(nodes=>nodes.map(n=>n.offsetHeight));
  for(const index of [0,1,2,1,0,2]){
   await chapter(page,index);
-  await expect(page.locator('.timeline-photo-layer[aria-hidden=false]')).toHaveCount(1);
-  await expect(page.locator('.timeline-photo-layer[inert]')).toHaveCount(2);
-  const scene=isMobile?page.locator('.life-chapter.is-active .mobile-chapter-photo .journey-scene'):page.locator('.timeline-photo-layer.is-active .journey-scene');
+  await expect(page.locator('.journey-board')).toHaveCount(3);
+  await expect(page.locator('.timeline-sticky,.timeline-photo-layer')).toHaveCount(0);
+  const scene=page.locator('.life-chapter.is-active .journey-scene');
   await expect(scene).toHaveAttribute('data-scene-effect',['assemble','aperture','portal'][index]);
   await expect(scene.locator('.journey-frame .photo img')).toBeVisible();
  }
@@ -31,11 +31,11 @@ test('chapter progress and photo camera respond to native scroll then stop offsc
  const progress=()=>page.locator('#chapter-high-school .journey-chapter-progress>i').evaluate(node=>new DOMMatrix(getComputedStyle(node).transform).a);
  const before=await progress();await page.evaluate(()=>scrollBy({top:180,behavior:'instant'}));
  await expect.poll(progress).toBeGreaterThan(before);
- const camera=page.locator(isMobile?'#chapter-high-school .journey-camera':'.timeline-photo-layer.is-active .journey-camera');
+ const camera=page.locator('#chapter-high-school .journey-photo-flight');
  await expect(camera).not.toHaveCSS('transform','none');
  await page.locator('#life-beyond-code').scrollIntoViewIfNeeded();
  await expect(page.locator('.journey-timeline')).not.toHaveClass(/is-journey-in-view/);
- expect(await page.locator('.journey-stage-axis').evaluate(node=>getComputedStyle(node,'::after').animationName)).toBe('none');
+ expect(await page.locator('.journey-stage-axis').evaluateAll(nodes=>nodes.every(node=>getComputedStyle(node,'::after').animationName==='none'))).toBe(true);
 });
 
 test('chapter milestones reveal with keyboard focus and reduced motion keeps every chapter readable',async({page})=>{
@@ -54,10 +54,9 @@ test('chapter milestones reveal with keyboard focus and reduced motion keeps eve
  await expect(page.locator('.journey-timeline')).toHaveClass(/journey-motion/);
 });
 
-test('mobile scene photos open the real chapter album and return focus',async({page,isMobile})=>{
- test.skip(!isMobile,'The inline scene is the mobile image control.');
+test('scene photos open the real chapter album and return focus',async({page})=>{
  await page.goto('/personal');await chapter(page,1);
- const trigger=page.locator('#chapter-high-school .mobile-chapter-photo .photo-button');
+ const trigger=page.locator('#chapter-high-school .journey-board .photo-button');
  await trigger.click();const dialog=page.getByRole('dialog');await expect(dialog).toBeVisible();
  await expect(dialog.locator('.gallery-controls [role=status]')).toHaveText('1 / 4');
  await page.keyboard.press('ArrowRight');await expect(dialog.locator('.gallery-controls [role=status]')).toHaveText('2 / 4');

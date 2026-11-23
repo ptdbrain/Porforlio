@@ -89,10 +89,10 @@ test('missing content stays intentional and contact links are actionable',async(
   expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe(data.identity.email);
 });
 
-test('personal retains the photo timeline while work has independent non-sticky showcases',async({page},info)=>{
-  test.skip(info.project.name==='mobile','Personal uses an ordinary vertical layout on mobile.');
+test('personal has chapter canvases while work has independent non-sticky showcases',async({page},info)=>{
   await page.goto('/personal');await page.locator('#chapter-university').scrollIntoViewIfNeeded();
-  await expect(page.locator('.timeline-caption')).toContainText('Đại học');
+  await expect(page.locator('#chapter-university .journey-board')).toBeVisible();
+  await expect(page.locator('.timeline-markers a[aria-current=step]')).toHaveAttribute('href','#chapter-university');
   await page.goto('/work');
   await expect(page.locator('.selected-showcase,.showcase-sticky,.skill-evidence')).toHaveCount(0);
   expect(await page.locator('main').evaluate(root=>[...root.querySelectorAll('*')].filter(node=>getComputedStyle(node).position==='sticky').length)).toBe(0);

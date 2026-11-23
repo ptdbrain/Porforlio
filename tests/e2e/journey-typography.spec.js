@@ -17,7 +17,7 @@ test('chapters have distinct text compositions and one accessible name per anima
   const heading=chapters.nth(index).getByRole('heading',{name:label,exact:true});
   await expect(heading).toHaveCount(1);await expect(heading).toBeVisible();
   await expect(heading.locator('.journey-heading-visual')).toHaveAttribute('aria-hidden','true');
-  await expect(heading).toHaveCSS('text-align',index===1?'right':index===2?'center':'start');
+  await expect(heading).toHaveCSS('text-align',index===1?'right':index===2?'center':'left');
  }
  const indexNumbers=page.locator('#chapter-high-school .journey-milestone-index');
  await expect(indexNumbers.first()).toHaveText('01');await expect(indexNumbers.first()).toBeVisible();
@@ -26,13 +26,13 @@ test('chapters have distinct text compositions and one accessible name per anima
 
 test('text moves at the viewport edge and settles exactly in the reading zone without reflow',async({page})=>{
  await page.goto('/personal');await page.evaluate(()=>document.fonts.ready);
- const article=page.locator('#chapter-high-school'),camera=article.locator('.journey-text-camera');
+ const article=page.locator('#chapter-high-school'),camera=article.locator('.journey-copy-flight');
  const size=await article.evaluate(node=>({width:node.offsetWidth,height:node.offsetHeight}));
- await place(page,1,.6);await expect(camera).not.toHaveCSS('transform','none');
- await place(page,1,0);await expect(camera).toHaveCSS('transform','none');
+ await article.locator('.journey-reading').evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-innerHeight*.6,behavior:'instant'}));await expect(camera).not.toHaveCSS('transform','none');
+ await article.locator('.journey-reading').evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-innerHeight*.15,behavior:'instant'}));await expect(camera).toHaveCSS('transform','none');
  await expect(article.locator('.journey-type-camera')).toHaveCSS('transform','none');
  expect(await article.evaluate(node=>({width:node.offsetWidth,height:node.offsetHeight}))).toEqual(size);
- await place(page,1,.6);await expect(camera).not.toHaveCSS('transform','none');
+ await article.locator('.journey-reading').evaluate(node=>scrollTo({top:node.getBoundingClientRect().top+scrollY-innerHeight*.6,behavior:'instant'}));await expect(camera).not.toHaveCSS('transform','none');
  await page.emulateMedia({reducedMotion:'reduce'});
  await expect(camera).toHaveCSS('transform','none');
  for(const glyph of await article.locator('.journey-glyph').all()){
@@ -44,7 +44,7 @@ test('keyboard focus keeps the text panel still and VI/EN reflows without overfl
  await page.goto('/personal');await place(page,1,.4);
  const link=page.locator('#chapter-high-school a[href*="odaychuyenvinhphuc"]');
  await link.focus();await expect(link).toBeFocused();
- await expect(page.locator('#chapter-high-school .journey-text-camera')).toHaveCSS('transform','none');
+ await expect(page.locator('#chapter-high-school .journey-copy-flight')).toHaveCSS('transform','none');
  await page.getByRole('button',{name:'Switch to English'}).click();
  await expect(page.locator('#chapter-university').getByRole('heading',{name:'University',exact:true})).toHaveCount(1);
  await page.setViewportSize({width:320,height:840});

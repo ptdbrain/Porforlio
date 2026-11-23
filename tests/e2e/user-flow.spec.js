@@ -88,7 +88,9 @@ test('mobile navigation restores focus on Escape and dismisses on outside intera
 
 test('Back restores a scrolled Personal fragment rather than jumping to its start',async({page})=>{
  await page.goto('/personal#chapter-university');await page.evaluate(()=>document.fonts.ready);
- await expect.poll(()=>page.locator('#chapter-university').evaluate(n=>n.getBoundingClientRect().top)).toBeLessThan(150);
+ const railBottom=await page.locator('.timeline-markers').evaluate(node=>node.getBoundingClientRect().bottom);
+ await expect.poll(()=>page.locator('#chapter-university').evaluate(n=>n.getBoundingClientRect().top)).toBeLessThan(railBottom+24);
+ await expect.poll(()=>page.locator('#chapter-university').evaluate(n=>n.getBoundingClientRect().top)).toBeGreaterThan(railBottom-1);
  await page.evaluate(()=>window.scrollBy({top:350,behavior:'instant'}));await page.waitForTimeout(250);
  const scroll=await page.evaluate(()=>scrollY);
  const menu=page.getByRole('button',{name:'Mở menu'});if(await menu.isVisible())await menu.click();

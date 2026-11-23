@@ -1,0 +1,347 @@
+{
+  "layout": [
+    {
+      "width": 1440,
+      "index": 0,
+      "phase": 0.02,
+      "photo": {
+        "x": 25.44650650024414,
+        "y": 198.557373046875,
+        "width": 692.3725852966309,
+        "height": 628.85400390625
+      },
+      "title": {
+        "x": 660.046875,
+        "y": 205.546875,
+        "width": 707.9375,
+        "height": 273.875
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "index": 0,
+      "phase": 0.98,
+      "photo": {
+        "x": 715.67431640625,
+        "y": 149.904541015625,
+        "width": 675.35693359375,
+        "height": 609.0396728515625
+      },
+      "title": {
+        "x": 56.98687744140625,
+        "y": 520.306884765625,
+        "width": 707.9375,
+        "height": 273.875
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "index": 1,
+      "phase": 0.02,
+      "photo": {
+        "x": 707.165283203125,
+        "y": 198.557373046875,
+        "width": 692.37255859375,
+        "height": 628.85400390625
+      },
+      "title": {
+        "x": 57,
+        "y": 205.546875,
+        "width": 707.9375,
+        "height": 273.875
+      },
+      "overflow": false,
+      "src": "/media/giainhiquocgiakhkt-1230.webp",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "index": 1,
+      "phase": 0.98,
+      "photo": {
+        "x": 33.95314025878906,
+        "y": 149.904541015625,
+        "width": 675.3569183349609,
+        "height": 609.0396728515625
+      },
+      "title": {
+        "x": 660.0599975585938,
+        "y": 520.306884765625,
+        "width": 707.9375610351562,
+        "height": 273.875
+      },
+      "overflow": false,
+      "src": "/media/giainhiquocgiakhkt-1230.webp",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "index": 2,
+      "phase": 0.02,
+      "photo": {
+        "x": 318.0463562011719,
+        "y": 310.8646545410156,
+        "width": 788.8760070800781,
+        "height": 514.0519714355469
+      },
+      "title": {
+        "x": 17.66998291015625,
+        "y": 165.296875,
+        "width": 812.8125,
+        "height": 250.359375
+      },
+      "overflow": false,
+      "src": "/media/anhsukiendontongbithuToLamoBachKhoa-1280.webp",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "index": 2,
+      "phase": 0.98,
+      "photo": {
+        "x": 115.11868286132812,
+        "y": 122.55672454833984,
+        "width": 1011.1913757324219,
+        "height": 627.1478042602539
+      },
+      "title": {
+        "x": 542.0700073242188,
+        "y": 593.516845703125,
+        "width": 812.8125610351562,
+        "height": 250.359375
+      },
+      "overflow": false,
+      "src": "/media/anhsukiendontongbithuToLamoBachKhoa-1280.webp",
+      "errors": []
+    },
+    {
+      "width": 820,
+      "index": 0,
+      "phase": 0.02,
+      "photo": {
+        "x": 4.408964157104492,
+        "y": 215.52099609375,
+        "width": 416.0570697784424,
+        "height": 594.9267578125
+      },
+      "title": {
+        "x": 373.25,
+        "y": 205.546875,
+        "width": 394.734375,
+        "height": 210.625
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 820,
+      "index": 0,
+      "phase": 0.98,
+      "photo": {
+        "x": 393.544677734375,
+        "y": 162.0362091064453,
+        "width": 398.025634765625,
+        "height": 584.7763519287109
+      },
+      "title": {
+        "x": 36.989990234375,
+        "y": 520.306884765625,
+        "width": 394.734375,
+        "height": 210.625
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 0,
+      "phase": 0.02,
+      "photo": {
+        "x": 6.323101043701172,
+        "y": 298.04913330078125,
+        "width": 346.0281867980957,
+        "height": 494.8548583984375
+      },
+      "title": {
+        "x": 41.8800048828125,
+        "y": 139.9375,
+        "width": 327.109375,
+        "height": 169.78125
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 0,
+      "phase": 0.98,
+      "photo": {
+        "x": 39.78185272216797,
+        "y": 122.261474609375,
+        "width": 338.27066802978516,
+        "height": 490.170166015625
+      },
+      "title": {
+        "x": 21,
+        "y": 621.2674560546875,
+        "width": 327.109375,
+        "height": 169.78125
+      },
+      "overflow": false,
+      "src": "/media/thcs-206.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 1,
+      "phase": 0.02,
+      "photo": {
+        "x": 6.323101043701172,
+        "y": 298.04913330078125,
+        "width": 346.0281867980957,
+        "height": 494.8548583984375
+      },
+      "title": {
+        "x": 41.8800048828125,
+        "y": 139.9375,
+        "width": 327.109375,
+        "height": 169.78125
+      },
+      "overflow": false,
+      "src": "/media/giainhiquocgiakhkt-1230.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 1,
+      "phase": 0.98,
+      "photo": {
+        "x": 39.78185272216797,
+        "y": 122.261474609375,
+        "width": 338.27066802978516,
+        "height": 490.170166015625
+      },
+      "title": {
+        "x": 21,
+        "y": 621.2674560546875,
+        "width": 327.109375,
+        "height": 169.78125
+      },
+      "overflow": false,
+      "src": "/media/giainhiquocgiakhkt-1230.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 2,
+      "phase": 0.02,
+      "photo": {
+        "x": 6.323101043701172,
+        "y": 298.04913330078125,
+        "width": 346.0281867980957,
+        "height": 494.8548583984375
+      },
+      "title": {
+        "x": 41.8800048828125,
+        "y": 139.9375,
+        "width": 327.109375,
+        "height": 158.21875
+      },
+      "overflow": false,
+      "src": "/media/anhsukiendontongbithuToLamoBachKhoa-1280.webp",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "index": 2,
+      "phase": 0.98,
+      "photo": {
+        "x": 39.78185272216797,
+        "y": 122.261474609375,
+        "width": 338.27066802978516,
+        "height": 490.170166015625
+      },
+      "title": {
+        "x": 21,
+        "y": 621.2674560546875,
+        "width": 327.109375,
+        "height": 158.21875
+      },
+      "overflow": false,
+      "src": "/media/anhsukiendontongbithuToLamoBachKhoa-1280.webp",
+      "errors": []
+    }
+  ],
+  "performance": {
+    "browser": "157.0.8103.38",
+    "network": {
+      "latencyMs": 40,
+      "downloadMbps": 10,
+      "uploadMbps": 2
+    },
+    "note": "One native scroll in each direction through all three chapters; rAF timing is a lab proxy, not GPU presentation FPS or field Web Vitals.",
+    "records": [
+      {
+        "width": 1440,
+        "cpu": 1,
+        "direction": "forward",
+        "samples": 540,
+        "median": 16.699999999999818,
+        "p95": 16.700000000000728,
+        "max": 50,
+        "over25ms": 2,
+        "overflow": false,
+        "active": "chapter-university",
+        "errors": []
+      },
+      {
+        "width": 1440,
+        "cpu": 1,
+        "direction": "backward",
+        "samples": 541,
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "max": 16.80000000000291,
+        "over25ms": 0,
+        "overflow": false,
+        "active": "chapter-secondary",
+        "errors": []
+      },
+      {
+        "width": 390,
+        "cpu": 4,
+        "direction": "forward",
+        "samples": 499,
+        "median": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 16.80000000000109,
+        "over25ms": 0,
+        "overflow": false,
+        "active": "chapter-university",
+        "errors": []
+      },
+      {
+        "width": 390,
+        "cpu": 4,
+        "direction": "backward",
+        "samples": 496,
+        "median": 16.69999999999891,
+        "p95": 16.700000000000728,
+        "max": 33.30000000000109,
+        "over25ms": 1,
+        "overflow": false,
+        "active": "chapter-secondary",
+        "errors": []
+      }
+    ]
+  }
+}
