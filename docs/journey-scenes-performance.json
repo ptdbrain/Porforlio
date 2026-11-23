@@ -1,0 +1,63 @@
+{
+  "browser": "157.0.8103.38",
+  "network": {
+    "latencyMs": 40,
+    "downloadMbps": 10,
+    "uploadMbps": 2
+  },
+  "note": "One native scroll in each direction through all three chapters; rAF timing is a lab proxy, not GPU presentation FPS or field Web Vitals.",
+  "records": [
+    {
+      "width": 1440,
+      "cpu": 1,
+      "direction": "forward",
+      "samples": 264,
+      "median": 16.699999999999818,
+      "p95": 16.800000000000182,
+      "max": 33.399999999999636,
+      "over25ms": 1,
+      "overflow": false,
+      "active": "chapter-university",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "cpu": 1,
+      "direction": "backward",
+      "samples": 262,
+      "median": 16.699999999999818,
+      "p95": 16.800000000000182,
+      "max": 16.80000000000109,
+      "over25ms": 0,
+      "overflow": false,
+      "active": "chapter-secondary",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "cpu": 4,
+      "direction": "forward",
+      "samples": 322,
+      "median": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "max": 33.30000000000018,
+      "over25ms": 2,
+      "overflow": false,
+      "active": "chapter-university",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "cpu": 4,
+      "direction": "backward",
+      "samples": 320,
+      "median": 16.69999999999891,
+      "p95": 16.700000000000728,
+      "max": 33.400000000000546,
+      "over25ms": 1,
+      "overflow": false,
+      "active": "chapter-secondary",
+      "errors": []
+    }
+  ]
+}

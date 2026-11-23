@@ -1,44 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import {LifeTimeline} from './LifeTimeline';
+import { useRef, useState } from 'react';
 import { usePersonalPhotoMotion } from './usePersonalPhotoMotion';
 import { localize as l } from '../../content/copy';
 import { Arrow, Contact, EmptyText, ExternalLink, Modal, Photo, RouteLink, SectionTitle, Training } from './Shared';
 
 function PersonalPhoto(props) {
   return <Photo motion="tilt" {...props} />;
-}
-
-function LifeTimeline({ chapters, language, t }) {
-  const [active, setActive] = useState(0);
-  const root = useRef(null);
-  useEffect(() => {
-    if (!('IntersectionObserver' in window)) return;
-    const visible=new Map();
-    const observer = new IntersectionObserver((entries) => {
-      for(const entry of entries){if(entry.isIntersecting)visible.set(entry.target,entry.intersectionRatio);else visible.delete(entry.target);}
-      const candidates=[...visible.keys()].map(node=>({node,rect:node.getBoundingClientRect()}));
-      const current=candidates.find(({rect})=>rect.top<=innerHeight*.45&&rect.bottom>=innerHeight*.45)||candidates.sort((a,b)=>Math.abs(a.rect.top-innerHeight*.45)-Math.abs(b.rect.top-innerHeight*.45))[0];
-      if(current)setActive(Number(current.node.dataset.chapter));
-    }, { rootMargin: '-20% 0px -35% 0px', threshold: [0, .2, .5] });
-    root.current.querySelectorAll('[data-chapter]').forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
-  return <div className="life-timeline" ref={root}>
-    <div className="timeline-sticky"><div className="timeline-photo-stack">
-      {chapters.map((chapter, index) => <div className={`timeline-photo-layer ${active === index ? 'is-active' : index < active ? 'is-past' : 'is-future'}`} aria-hidden={active !== index} inert={active !== index ? '' : undefined} key={chapter.id}><PersonalPhoto asset={chapter.image} label={l(chapter.label, language)} code={`${t.chapter} / 0${index + 1}`} language={language} t={t} interactive={false} motion={false} /></div>)}
-    </div><div className="timeline-caption"><span>{t.chapter} 0{active + 1}</span><strong key={`${active}:${language}`}>{l(chapters[active].label, language)}</strong></div></div>
-    <div className="timeline-chapters">{chapters.map((chapter, index) => <article id={`chapter-${chapter.id}`} data-chapter={index} className={`life-chapter ${active === index ? 'is-active' : ''}`} key={chapter.id}>
-      <span className="chapter-dot" aria-hidden="true" /><span className="eyebrow">{t.chapter} / 0{index + 1}</span><h3 data-reveal>{l(chapter.label, language)}</h3>
-      <div className="mobile-chapter-photo"><PersonalPhoto motion={["page","iris","curtain"][index%3]} asset={chapter.image} label={l(chapter.label, language)} code={`0${index + 1}`} language={language} t={t} /></div>
-      <EmptyText value={chapter.school} language={language} label={t.schoolPending} className="chapter-school" />{chapter.period&&<span className="chapter-period">{chapter.period}</span>}
-      <EmptyText value={chapter.story} language={language} label={t.storyPending} />
-      {chapter.location?.[language] && <p>{l(chapter.location, language)}</p>}
-      {chapter.achievements.length > 0 && <ul>{chapter.achievements.map((achievement, i) => <li key={i}>{l(achievement, language)}</li>)}</ul>}
-      {chapter.links?.filter(link => link.href).map(link => <p key={link.href}><ExternalLink href={link.href} className="text-link">{l(link.label, language)}</ExternalLink></p>)}
-      {chapter.gallery.length > 0 && <div className="chapter-gallery">{chapter.gallery.map((image, i) => <PersonalPhoto motion={["shutter","ribbon","orbit"][i%3]} motionIndex={i} key={i} gallery={chapter.gallery} asset={image} label={l(chapter.label, language)} language={language} t={t} />)}</div>}
-      {chapter.id === 'present' && <RouteLink className="text-link" href="/work">{t.exploreWork}<Arrow /></RouteLink>}
-    </article>)}</div>
-    <nav className="timeline-markers" aria-label={t.timeline}>{chapters.map((chapter, index) => <a href={`#chapter-${chapter.id}`} onClick={()=>setActive(index)} className={active === index ? 'active' : ''} aria-current={active === index ? 'step' : undefined} key={chapter.id} aria-label={l(chapter.label, language)}><span>0{index + 1}</span><i /></a>)}</nav>
-  </div>;
 }
 
 function AchievementCard({ item, language, t, index=0 }) {
@@ -61,7 +28,7 @@ export function Personal({ data, language, t, simple=false }) {
     <section className="personal-about page-width section-space"><div className="personal-about-copy" data-reveal><span className="eyebrow">{t.aboutLabel}</span><EmptyText value={data.identity.personalBio} language={language} label={t.bioPending} className="personal-bio" />{data.identity.traits.length > 0 && <div className="trait-list">{data.identity.traits.map((trait, index) => <span key={index}>{l(trait, language)}</span>)}</div>}</div>
       <div className="personal-collage">{[['collageStudy',t.collageStudy],['collageSport',t.collageSport],['collageFriends',t.collageFriends]].map(([key,label],index) => <PersonalPhoto motion={["curtain","orbit","ribbon"][index%3]} motionIndex={index} asset={data.assets[key]} label={label} code={`LIFE / 0${index + 1}`} key={key} className={`collage-${index + 1}`} language={language} t={t} />)}</div>
     </section>
-    <section className="page-width section-space" id="life-timeline"><SectionTitle eyebrow={t.timelineEyebrow} title={t.timeline} /><LifeTimeline chapters={chapters} language={language} t={t} /></section>
+    <section className="page-width section-space" id="life-timeline"><SectionTitle eyebrow={t.timelineEyebrow} title={t.timeline} /><LifeTimeline chapters={chapters} language={language} t={t} simple={simple} /></section>
     <section className="milestones-section section-space"><div className="page-width"><SectionTitle eyebrow={t.archiveEyebrow} title={t.archiveTitle} /><div className="achievement-grid defining-moments">{moments.map((item,index)=><AchievementCard index={index} item={item} language={language} t={t} key={item.id}/>)}</div><details className="milestone-archive"><summary>{language==='vi'?'Những cột mốc khác':'More milestones'} <span>{archive.length} ↗</span></summary><div className="achievement-grid">{archive.map((item,index)=><AchievementCard index={index+1} item={item} language={language} t={t} key={item.id}/>)}</div><Training data={data.training} language={language} t={t}/></details></div></section>
     <section className="page-width section-space" id="life-beyond-code"><SectionTitle eyebrow={t.sportsEyebrow} title={t.sportsTitle} />{data.sports.map((sport,index) => <article className="sport-feature" key={index} data-reveal><PersonalPhoto motion="curtain" asset={sport.image} label={l(sport.title,language) || t.sportName} code={`SPORT / 0${index + 1}`} language={language} t={t} /><div className="sport-story"><span className="eyebrow">0{index + 1} / {t.collageSport}</span><h3>{l(sport.title,language) || '—'}</h3><EmptyText value={sport.story} language={language} label={t.sportsStory} /></div>{sport.gallery.length > 0 && <div className="sport-gallery">{sport.gallery.map((image,i) => <PersonalPhoto motion={["shutter","iris","orbit"][i%3]} motionIndex={i} gallery={[sport.image,...sport.gallery]} asset={image} key={i} label={l(sport.title,language)} language={language} t={t} />)}</div>}</article>)}
       {hobbies.length>0&&<><h3 className="subsection-heading" data-reveal>{t.hobbies}</h3><div className="hobby-grid">{hobbies.map((hobby,index) => <article data-reveal key={index}><PersonalPhoto motion={["tilt","hinge","flip"][index%3]} motionIndex={index} asset={hobby.image} label={l(hobby.title,language)} code={`JOURNAL / 0${index + 1}`} language={language} t={t} /><h4>{l(hobby.title,language)}</h4>{l(hobby.caption,language) && <p>{l(hobby.caption,language)}</p>}</article>)}</div></>}

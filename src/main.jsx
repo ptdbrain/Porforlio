@@ -28,3 +28,5 @@ import '../work-layout.css';
 import '../journey-motion.css';
 
 import '../work-scope.css';
+
+import '../journey-scenes.css';
