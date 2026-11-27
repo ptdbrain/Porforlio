@@ -6,3 +6,9 @@ node_modules/
 
 playwright-report/
 test-results/
+
+# Local working files kept out of the repo (deployed copies live in public/)
+/anh/
+/CV_PhanTrongDat.pdf
+/.tmp-*.png
+/gemini_generated_video_*.mp4

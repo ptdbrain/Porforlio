@@ -25,9 +25,6 @@ html[data-motion="full"] .portfolio:not(.is-simple):not(.intro-covered)>.ambient
 .personal-photo-motion [data-photo-motion="tilt"] .photo-surface{transform:translateY(calc(var(--photo-fold) * 12px)) rotate(calc(var(--photo-direction) * var(--photo-fold) * 5deg)) rotateY(calc(var(--photo-fold) * 14deg))!important}
 .personal-photo-motion [data-photo-motion="unfold"] .photo-surface{transform:rotateX(calc(var(--photo-fold) * 14deg))!important;clip-path:inset(0 calc(var(--photo-fold) * 9%) round 4px)}
 .personal-photo-motion [data-photo-motion]:focus-within .photo-surface{transform:none!important;clip-path:none!important}
-.personal-photo-motion .timeline-photo-layer{transform:translateX(24px) rotateY(20deg);transition:transform .72s var(--motion-ease),opacity .5s ease,visibility 0s .72s}
-.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-20px) rotateY(-18deg)}
-.personal-photo-motion .timeline-photo-layer.is-active{transform:none;transition:transform .72s var(--motion-ease),opacity .5s ease,visibility 0s}
 html[data-route-motion="story"]::view-transition-old(root){animation:story-surface-out .22s ease both}
 html[data-route-motion="story"]::view-transition-new(root){animation:story-surface-in .56s var(--motion-ease) both}
 @keyframes study-mask{from{clip-path:inset(0 0 16% 0);opacity:.35}to{clip-path:inset(0);opacity:1}}

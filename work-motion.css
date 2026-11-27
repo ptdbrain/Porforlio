@@ -31,12 +31,8 @@
 .v4-motion .v4-proof > div.is-revealed::before{transform:scaleX(1)}
 
 /* Both capability layers retain their grid footprint during the crossfade. */
-.work-v4 .v4-cap-layer.is-active .v4-cap-grid{animation:none}
 .v4-motion .v4-cap-layer{opacity:0;translate:0 -8px;transition:opacity .14s ease,translate .32s var(--v4-ease),visibility 0s .14s}
 .v4-motion .v4-cap-layer.is-active{opacity:1;translate:0 0;transition:opacity .3s ease .1s,translate .45s var(--v4-ease) .1s,visibility 0s}
-.v4-motion .v4-cap-layer.is-active .v4-cap-grid > div{animation:work-panel-content .5s var(--v4-ease) .12s both}
-.v4-motion .v4-cap-layer.is-active .v4-cap-grid > div:nth-child(2){animation-delay:.18s}
-.v4-motion .v4-cap-layer.is-active .v4-cap-grid > div:nth-child(3){animation-delay:.24s}
 .v4-motion .v4-tab{position:relative;overflow:hidden}
 .v4-motion .v4-tab::after{content:"";position:absolute;inset:auto 16px 0;height:2px;background:var(--v4-lime);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--v4-ease)}
 .v4-motion .v4-tab[aria-selected=true]::after{transform:scaleX(1)}

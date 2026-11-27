@@ -3,7 +3,7 @@ const {test,expect}=require('@playwright/test');
 test('simple view persists and keeps Work content available across routes',async({page},info)=>{
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/work');
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
- await page.getByRole('button',{name:'Simple view',exact:true}).click();
+ await page.getByRole('button',{name:'Giảm chuyển động',exact:true}).click();
  await expect(page.locator('.work-v4')).toHaveClass(/v4-simple/);
  await expect(page.locator('.v4-map-signal')).toBeHidden();
  await page.reload();await expect(page.locator('.work-v4')).toHaveClass(/v4-simple/);

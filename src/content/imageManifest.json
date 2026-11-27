@@ -48,10 +48,10 @@
     "height": 206
   },
   "/anh/thpt1.jpg": {
-    "src": "/media/thpt1-206.webp",
-    "srcSet": "/media/thpt1-206.webp 206w",
-    "width": 206,
-    "height": 206
+    "src": "/media/thpt1-838.webp",
+    "srcSet": "/media/thpt1-640.webp 640w, /media/thpt1-838.webp 838w",
+    "width": 838,
+    "height": 1280
   },
   "/anh/thptaquanhocsinhtoannangcvpaward.jpg": {
     "src": "/media/thptaquanhocsinhtoannangcvpaward-1280.webp",

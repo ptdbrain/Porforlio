@@ -28,7 +28,7 @@ export function Home({ data, language, t, onPlayIntro }) {
       <p className="stories-intro" data-reveal>{t.heroBody}</p>
       <div className="story-choices" data-reveal>
         {[{ href: '/work', type: 'work', number: '01', eyebrow: t.builder, title: t.workCard, body: t.workCardBody, label: t.workPhoto, cta: t.exploreWork }, { href: '/personal', type: 'personal', number: '02', eyebrow: t.human, title: t.personalCard, body: t.personalCardBody, label: t.personalPhoto, cta: t.explorePersonal }].map((item) => <RouteLink href={item.href} data-story-portal={item.type} className={`story-choice story-choice-${item.type}`} key={item.type}>
-          <Photo asset={data.assets[item.type]} label={item.label} code={`STORY / ${item.number}`} language={language} t={t} interactive={false} />
+          <Photo asset={data.assets[item.type]} label={item.label} code={`STORY / ${item.number}`} language={language} t={t} interactive={false} showCaption={false} />
           <div className="story-choice-copy"><span className="eyebrow">{item.number} / {item.eyebrow}</span><h3>{item.title}</h3><p>{item.body}</p><span className="story-cta">{item.cta}<Arrow /></span></div>
         </RouteLink>)}
       </div>

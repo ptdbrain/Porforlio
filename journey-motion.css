@@ -26,7 +26,6 @@
  html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.v4-cap-flow{animation-delay:55ms}
  html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.capability-delivery{animation-delay:100ms}
  html[data-motion="full"] .v4-motion .capability-layout.is-revealed .is-active>.v4-cap-footer{animation-delay:145ms}
- html[data-motion="full"] .personal-photo-motion .timeline-caption>strong{animation:journey-rise 400ms var(--motion-ease) both}
  html[data-motion="full"] .architecture-detail>span{display:block;animation:journey-rise 300ms var(--motion-ease) both}
  html[data-motion="full"] .motion-enabled .contact-section.is-revealed .connection-line>i{animation:journey-line 800ms var(--motion-ease) both}
  html[data-motion="full"] .motion-enabled .contact-section.is-revealed .connection-line>i:first-child{transform-origin:right}

@@ -17,16 +17,6 @@
 
 /* Desktop timeline: the outgoing page closes as the next page opens.
    All layers keep the same footprint and only the active one is accessible. */
-.personal-photo-motion .timeline-photo-stack{perspective:1600px;isolation:isolate}
-.personal-photo-motion .timeline-photo-layer{transform-origin:0% 50%;backface-visibility:hidden;visibility:hidden;z-index:0;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .65s ease,visibility 0s .95s;transform:translateX(12%) rotateY(65deg) scale(.94)}
-.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-8%) rotateY(-68deg) scale(.96)}
-.personal-photo-motion .timeline-photo-layer.is-active{transform:translateX(0) rotateY(0) scale(1);visibility:visible;opacity:1;z-index:2;transition:transform .95s cubic-bezier(.22,1,.36,1),opacity .65s ease,visibility 0s}
-.personal-photo-motion .timeline-photo-layer .photo{border-radius:4px;box-shadow:0 20px 45px #49352318}
-.personal-photo-motion .timeline-photo-layer::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#49352333,transparent 25%,#fff7);opacity:.65;transition:opacity .85s ease}
-.personal-photo-motion .timeline-photo-layer.is-active::after{opacity:0}
-.personal-photo-motion .timeline-photo-stack::after{content:"";position:absolute;inset:8px -7px -8px 9px;border:1px solid var(--line);border-radius:4px;background:var(--surface);z-index:-1;rotate:1.5deg;pointer-events:none}
-.personal-photo-motion .timeline-caption{position:relative}
-.personal-photo-motion .timeline-caption::before{content:"";position:absolute;left:0;top:0;width:44px;height:1px;background:var(--accent)}
 
 @media(max-width:760px){
   .personal-photo-motion [data-photo-motion]{--photo-strength:.55;perspective:900px}
@@ -38,7 +28,6 @@
 @media(prefers-reduced-motion:reduce){
   .personal-story .photo-surface,.personal-story .photo-surface img{transform:none!important;clip-path:none!important;transition:none!important}
   .personal-story .photo-surface::after{display:none}
-  .personal-story .timeline-photo-layer{transform:none!important;transition:none!important}
 }
 @media print{
   .personal-story .photo-surface,.personal-story .photo-surface img{transform:none!important;clip-path:none!important;box-shadow:none!important}
@@ -57,6 +46,5 @@
 /* Rotate the display only; original certificate files remain untouched. */
 .photo-rotation{position:absolute;inset:0;container-type:size;overflow:hidden}
 .photo-rotation img{position:absolute!important;left:50%;top:50%;width:100cqh!important;height:100cqw!important;max-width:none!important;max-height:none!important;translate:-50% -50%;rotate:-90deg;transform:none!important;object-fit:contain!important}
-.photo-rotation-lightbox{position:relative;inset:auto;width:100%;aspect-ratio:4/3;margin-bottom:20px}
 .achievement-evidence-photo{aspect-ratio:4/3;margin:22px 0}
 .achievement-evidence-photo figcaption{display:none}

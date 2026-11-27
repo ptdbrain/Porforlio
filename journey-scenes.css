@@ -1,13 +1,4 @@
 /* Personal journey: three scene languages share a still, readable article. */
-.journey-timeline .timeline-sticky{top:clamp(105px,14vh,140px)}
-.journey-stage-meta{display:flex;align-items:center;gap:14px;font:9px/1.6 'IBM Plex Mono',monospace;color:var(--muted);margin-bottom:14px}
-.journey-stage-meta>span:last-child{margin-left:auto}
-.journey-number-window{display:block;height:34px;overflow:hidden;min-width:42px}
-.journey-number-window>b{display:block;font:500 32px/34px Manrope,sans-serif;color:var(--accent)}
-.journey-stage{position:relative;isolation:isolate}
-.journey-timeline .timeline-photo-stack{width:100%;height:clamp(300px,38vw,520px);max-height:54svh;aspect-ratio:auto;perspective:none}
-.journey-timeline .timeline-photo-layer,.personal-photo-motion.journey-timeline .timeline-photo-layer{transform:none!important;clip-path:none;opacity:0;visibility:hidden;transition:opacity .32s ease,visibility 0s .8s;backface-visibility:visible}
-.journey-timeline .timeline-photo-layer.is-active{opacity:1;visibility:visible;transition:opacity .32s ease,visibility 0s;z-index:2}
 .journey-scene{position:relative;width:100%;height:100%}
 .journey-camera{position:relative;width:100%;height:100%;transition:transform 130ms linear}
 .journey-frame{position:absolute;inset:9% 7% 8%;overflow:hidden;border:5px solid #fbf7ef;box-shadow:0 12px 32px #49352315;z-index:2;background:var(--photo);transform-origin:50% 65%}
@@ -17,15 +8,11 @@
 .journey-satellite{position:absolute;z-index:3;width:29%;aspect-ratio:4/3;overflow:hidden;border:4px solid #fbf7ef;background:var(--photo);box-shadow:0 8px 20px #4935231a;pointer-events:none}
 .journey-satellite img{width:100%;height:100%;display:block}
 .satellite-0{left:-1%;bottom:1%;rotate:-9deg}.satellite-1{right:-1%;top:1%;rotate:8deg}
-.journey-orbit{position:absolute;inset:10% -2%;border:1px dashed #9b795b50;border-radius:50%;pointer-events:none;transition:transform 140ms linear;z-index:-1}
-.journey-orbit::before{content:'';position:absolute;top:12%;right:12%;width:7px;height:7px;border:1px solid var(--accent);border-radius:50%;background:var(--bg);box-shadow:0 0 0 6px #9b795b0b}
 .journey-stage-axis{position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#9b795b50,transparent);pointer-events:none;overflow:hidden}
 .journey-stage-axis::after{content:'';position:absolute;width:20%;height:100%;background:var(--accent);transform:translateX(-110%);opacity:.3}
-.journey-stage-progress,.journey-chapter-progress{display:block;height:1px;background:var(--line);overflow:hidden}
-.journey-stage-progress{margin-top:18px}
-.journey-stage-progress>i,.journey-chapter-progress>i{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.journey-chapter-progress{display:block;height:1px;background:var(--line);overflow:hidden}
+.journey-chapter-progress>i{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
 .journey-chapter-header{position:relative;padding-right:25px}
-.journey-chapter-mark{position:absolute;right:0;top:-22px;width:100px;height:100px;fill:none;stroke:var(--accent);stroke-width:1;opacity:.18;pointer-events:none}
 .journey-chapter-header h3{position:relative;max-width:14ch}
 .journey-chapter-progress{width:70px;margin-bottom:27px}
 .journey-chapter-intro p{font-size:15px;line-height:1.95;color:var(--muted);margin-block:14px}
@@ -46,19 +33,17 @@
  .journey-motion .journey-milestones>li:not(.is-journey-visible)::after{transform:scaleY(0)}
  .journey-motion .journey-milestone-marker{transition:transform .5s var(--motion-ease),background .5s}
  .journey-motion .is-journey-visible>.journey-milestone-marker{background:var(--accent);transform:scale(1.12)}
- .journey-motion .journey-number-window>b{animation:journey-counter .6s var(--motion-ease) both}
- .journey-motion.is-changing .is-active .journey-frame,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo .journey-frame{animation:journey-assemble-base 1s var(--motion-ease) both}
- .journey-motion.is-changing .is-active [data-scene-effect="assemble"] .journey-shards,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo [data-scene-effect="assemble"] .journey-shards{display:block}
+ .journey-motion.is-changing .is-active .journey-frame{animation:journey-assemble-base 1s var(--motion-ease) both}
+ .journey-motion.is-changing .is-active [data-scene-effect="assemble"] .journey-shards{display:block}
  .journey-motion.is-changing .journey-shard{animation:journey-shard-assemble .9s var(--motion-ease) both;animation-delay:calc(var(--shard-index) * 35ms)}
- .journey-motion.is-changing .is-active [data-scene-effect="aperture"] .journey-frame,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo [data-scene-effect="aperture"] .journey-frame{animation:journey-aperture-frame .9s var(--motion-ease) both}
- .journey-motion.is-changing .is-active [data-scene-effect="aperture"] .journey-aperture,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo [data-scene-effect="aperture"] .journey-aperture{display:block;background:var(--surface);animation:journey-aperture-open .85s var(--motion-ease) both;transform-origin:top}
- .journey-motion.is-changing .is-active [data-scene-effect="portal"] .journey-frame,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo [data-scene-effect="portal"] .journey-frame{animation:journey-portal-frame .95s var(--motion-ease) both}
- .journey-motion.is-changing .is-active [data-scene-effect="portal"] .journey-portal,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo [data-scene-effect="portal"] .journey-portal{display:block;inset:4%;border:1px solid #fbf7efc0;border-radius:50%;animation:journey-portal-ring .95s var(--motion-ease) both}
- .journey-motion.is-changing .is-active .satellite-0,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo .satellite-0{animation:journey-satellite-left .85s 120ms var(--motion-ease) both}
- .journey-motion.is-changing .is-active .satellite-1,.journey-motion.is-changing .life-chapter.is-active .mobile-chapter-photo .satellite-1{animation:journey-satellite-right .85s 180ms var(--motion-ease) both}
+ .journey-motion.is-changing .is-active [data-scene-effect="aperture"] .journey-frame{animation:journey-aperture-frame .9s var(--motion-ease) both}
+ .journey-motion.is-changing .is-active [data-scene-effect="aperture"] .journey-aperture{display:block;background:var(--surface);animation:journey-aperture-open .85s var(--motion-ease) both;transform-origin:top}
+ .journey-motion.is-changing .is-active [data-scene-effect="portal"] .journey-frame{animation:journey-portal-frame .95s var(--motion-ease) both}
+ .journey-motion.is-changing .is-active [data-scene-effect="portal"] .journey-portal{display:block;inset:4%;border:1px solid #fbf7efc0;border-radius:50%;animation:journey-portal-ring .95s var(--motion-ease) both}
+ .journey-motion.is-changing .is-active .satellite-0{animation:journey-satellite-left .85s 120ms var(--motion-ease) both}
+ .journey-motion.is-changing .is-active .satellite-1{animation:journey-satellite-right .85s 180ms var(--motion-ease) both}
  .journey-motion.is-journey-in-view .journey-stage-axis::after{animation:journey-scan 6s linear infinite}
 }
-@keyframes journey-counter{from{transform:translateY(105%);opacity:.2}to{transform:none;opacity:1}}
 @keyframes journey-assemble-base{from{transform:scale(.92) rotate(-3deg)}to{transform:none}}
 @keyframes journey-shard-assemble{0%{opacity:.9;transform:translate3d(calc((var(--shard-index) - 2) * 30px),calc(var(--shard-side) * 70px),0) rotate(calc(var(--shard-side) * 12deg))}65%{opacity:1;transform:none}100%{opacity:0;transform:none}}
 @keyframes journey-aperture-frame{from{clip-path:inset(0 46%);transform:scale(1.08)}to{clip-path:inset(0);transform:none}}
@@ -69,25 +54,15 @@
 @keyframes journey-satellite-right{from{opacity:0;transform:translate3d(24px,-24px,0) rotate(12deg) scale(.85)}to{opacity:1;transform:none}}
 @keyframes journey-scan{0%{transform:translateX(-110%)}60%,100%{transform:translateX(610%)}}
 .journey-timeline [data-journey-reveal]:focus-within,.journey-timeline .journey-camera:focus-within{opacity:1!important;transform:none!important;clip-path:none!important}
-.journey-timeline:not(.journey-motion) .journey-orbit,.journey-timeline:not(.journey-motion) .journey-stage-axis{display:none}
+.journey-timeline:not(.journey-motion) .journey-stage-axis{display:none}
 .journey-timeline:not(.journey-motion) .journey-camera{transform:none!important;transition:none}
 .page-hidden .journey-stage-axis::after,body:has(.modal-backdrop) .journey-stage-axis::after{animation-play-state:paused!important}
-@media(max-width:1050px){.journey-frame{inset:10% 6%}.journey-satellite{width:32%;border-width:3px}.journey-stage-meta{gap:8px;font-size:8px}}
+@media(max-width:1050px){.journey-frame{inset:10% 6%}.journey-satellite{width:32%;border-width:3px}}
 @media(max-width:760px){
- .journey-timeline .mobile-chapter-photo{position:relative;margin-block:14px 26px}
- .mobile-chapter-photo .journey-scene{height:auto;aspect-ratio:4/4.6}
- .mobile-chapter-photo .journey-frame{inset:7% 5% 8%;border-width:4px}
- .mobile-chapter-photo .journey-frame .photo{height:100%;aspect-ratio:auto}
- .mobile-chapter-photo .journey-satellite{width:28%;border-width:3px}
- .mobile-chapter-photo .satellite-0{left:0;bottom:0}.mobile-chapter-photo .satellite-1{right:0;top:0}
- .journey-chapter-header{padding-right:14px}.journey-chapter-mark{width:80px;height:80px;top:-10px}
+ .journey-chapter-header{padding-right:14px}
  .journey-chapter-intro p{font-size:14px}.journey-chapter-intro .chapter-school{font-size:17px}
  .journey-milestones>li{font-size:13px;gap:10px;padding-bottom:16px!important}
  .journey-motion .journey-camera{transition-duration:180ms}
 }
-@media(prefers-reduced-motion:reduce){.journey-camera{transform:none!important;transition:none}.journey-timeline [data-journey-reveal]{opacity:1!important;transform:none!important}.journey-orbit,.journey-stage-axis{display:none}}
-@media print{.journey-orbit,.journey-stage-axis,.journey-frame-echo,.journey-satellite{display:none}.journey-timeline [data-journey-reveal]{opacity:1!important;transform:none!important}.journey-camera{transform:none!important}.journey-frame{inset:0}.mobile-chapter-photo .journey-scene{aspect-ratio:4/3}}
-@media(prefers-reduced-motion:no-preference){
- .journey-motion .timeline-photo-layer.is-past .journey-camera{transform:translate3d(-22px,-8px,0) rotate(-3deg) scale(.96)!important;transition-duration:600ms}
- .journey-motion .timeline-photo-layer.is-future .journey-camera{transform:translate3d(22px,8px,0) rotate(3deg) scale(1.02)!important;transition-duration:600ms}
-}
+@media(prefers-reduced-motion:reduce){.journey-camera{transform:none!important;transition:none}.journey-timeline [data-journey-reveal]{opacity:1!important;transform:none!important}.journey-stage-axis{display:none}}
+@media print{.journey-stage-axis,.journey-frame-echo,.journey-satellite{display:none}.journey-timeline [data-journey-reveal]{opacity:1!important;transform:none!important}.journey-camera{transform:none!important}.journey-frame{inset:0}}

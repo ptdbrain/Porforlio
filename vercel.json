@@ -18,5 +18,27 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/projects/background-removal",
+      "destination": "/work",
+      "permanent": false
+    },
+    {
+      "source": "/projects/image-collection-tools",
+      "destination": "/work",
+      "permanent": false
+    },
+    {
+      "source": "/projects/ai-exam",
+      "destination": "/work",
+      "permanent": false
+    },
+    {
+      "source": "/projects/face-vision",
+      "destination": "/work",
+      "permanent": false
+    }
   ]
 }

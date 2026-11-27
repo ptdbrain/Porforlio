@@ -16,8 +16,6 @@
 .journey-panorama .journey-chapter-header h3{font-size:clamp(52px,calc(10vw * var(--title-factor,1)),150px);line-height:1.02;margin:22px 0;max-width:100%;text-align:inherit;letter-spacing:-.065em}
 .journey-panorama .journey-type-camera{transform:none;transition:none}
 .journey-cinema-period{display:block;font:10px/1.7 'IBM Plex Mono',monospace;color:var(--muted)}
-.journey-cinema-cue{position:absolute;left:26px;bottom:25px;display:none;font:8px/1.5 'IBM Plex Mono',monospace;letter-spacing:.1em;color:var(--muted);z-index:4}
-.journey-cinema-cue>span{font-size:15px;margin-left:12px}
 .journey-board-grid{position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent 49.9%,var(--line) 50%,transparent 50.1%),linear-gradient(transparent 49.9%,var(--line) 50%,transparent 50.1%);opacity:.22}
 .journey-panorama .journey-stage-axis{left:5%;right:5%;top:50%;z-index:-1}
 .journey-panorama .journey-chapter-progress{position:absolute;inset:auto 0 0;width:100%;height:2px;margin:0;background:transparent;z-index:5}
@@ -56,7 +54,6 @@
  .journey-panorama.journey-cinematic .journey-photo-flight{position:absolute;inset:12% auto auto 0;width:48%;height:76%;aspect-ratio:auto;transition:transform 110ms linear}
  .journey-panorama.journey-cinematic .journey-title-flight{position:absolute;inset:8% auto auto 46%;width:54%;transition:transform 110ms linear}
  .journey-panorama.journey-cinematic .journey-chapter-header{background:linear-gradient(115deg,var(--bg) 88%,transparent);border-radius:5px}
- .journey-panorama.journey-cinematic .journey-cinema-cue{display:block}
  .journey-panorama.journey-cinematic [data-writing-layout='editorial'] .journey-photo-flight{left:52%}
  .journey-panorama.journey-cinematic [data-writing-layout='editorial'] .journey-title-flight{left:0}
  .journey-panorama.journey-cinematic [data-writing-layout='perspective'] .journey-photo-flight{left:15%;top:20%;width:70%;height:75%}
@@ -88,7 +85,6 @@
  .journey-panorama .journey-chapter-header{padding:18px}
  .journey-panorama .journey-chapter-header h3{font-size:clamp(42px,calc(18vw * var(--title-factor,1)),78px);line-height:1.03;margin-block:15px}
  .journey-cinema-period{font-size:9px}
- .journey-cinema-cue{left:16px;bottom:16px;font-size:6px}
  .journey-panorama .journey-reading{padding-block:32px 12px}
  .journey-copy-flight,.journey-panorama [data-writing-layout='editorial'] .journey-copy-flight,.journey-panorama [data-writing-layout='perspective'] .journey-copy-flight{width:100%;margin:0}
  .journey-panorama .journey-chapter-intro{display:block;margin-bottom:24px}

@@ -35,7 +35,7 @@ export function LifeTimeline({chapters,language,t,simple=false}){
   useJourneyMotion(root,setActive,simple);
   if(!chapters.length)return null;
   return <div className={`life-timeline journey-timeline journey-panorama ${simple?'':'journey-cinematic'}`} ref={root}>
-    <nav className="timeline-markers" aria-label={t.timeline}>{chapters.map((chapter,index)=><a href={`#chapter-${chapter.id}`} className={active===index?'active':''} aria-current={active===index?'step':undefined} key={chapter.id} aria-label={l(chapter.label,language)}><span>0{index+1}</span><strong>{l(chapter.label,language)}</strong><i aria-hidden="true"/></a>)}</nav>
+    <nav className="timeline-markers" aria-label={t.timeline}>{chapters.map((chapter,index)=><a href={`#chapter-${chapter.id}`} className={active===index?'active':''} aria-current={active===index?'step':undefined} key={chapter.id}><span aria-hidden="true">0{index+1}</span><strong>{l(chapter.label,language)}</strong><i aria-hidden="true"/></a>)}</nav>
     <div className="timeline-chapters">{chapters.map((chapter,index)=><article id={`chapter-${chapter.id}`} data-chapter={index} data-writing-layout={['notes','editorial','perspective'][index%3]} className={`life-chapter ${active===index?'is-active':''}`} key={chapter.id}>
       <div className="journey-cinema"><div className="journey-board">
         <span className="journey-board-grid" aria-hidden="true"/>

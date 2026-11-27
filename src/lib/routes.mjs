@@ -25,7 +25,8 @@ export function routeMetadata(route, data, language = 'vi') {
   return {
     title: `${route.project?.title || titles[route.kind]} | ${suffix}`,
     description: route.project ? route.project.description[language] : descriptions[route.kind],
-    image: route.project ? (route.project.media.cover || `/og/${route.project.slug}.png`) : data.assets.hero.src || '',
+    image: route.project ? (route.project.media.cover || `/og/${route.project.slug}.png`) : '/og/home.jpg',
+    imageSize: route.project ? (route.project.media.cover ? null : [1200, 720]) : [1200, 630],
     type: route.kind === 'project' ? 'article' : 'website',
     path: route.path,
   };

@@ -50,8 +50,6 @@
 .capability-delivery{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:26px 32px 30px;align-items:start}
 .capability-delivery .v4-label{font-size:9px;letter-spacing:.1em;color:#97a9ae;margin-bottom:12px}
 .capability-delivery p{font-size:13px;line-height:1.85;color:#b8c6cc}
-.capability-workspace .v4-tool-list{gap:6px}
-.capability-workspace .v4-tool-list>li{font-size:10px;padding:4px 7px;border-radius:3px;border-color:#354a4e;color:#c2d1d4}
 .capability-workspace .v4-cap-footer{padding:20px 32px;gap:20px;align-items:center;border-top:1px solid #344247}
 .capability-workspace .v4-cap-footer>span{font-size:11px;color:#97a9ae;line-height:1.8;max-width:28ch}
 .capability-workspace .v4-cap-footer .button{font-size:11px;padding:10px 14px;min-height:44px;gap:16px}

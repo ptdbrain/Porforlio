@@ -9,4 +9,3 @@ export function filterProjects(projects, {category='all',technology='',query=''}
   });
 }
 export function getCategories(projects) {return [...new Set(projects.flatMap(p=>Array.isArray(p.category)?p.category:[p.category]))];}
-export function capabilityProjects(capability,projects) {return projects.filter(project=>capability.projects.includes(project.slug));}

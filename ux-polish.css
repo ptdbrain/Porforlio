@@ -23,21 +23,18 @@ input:focus-visible,summary:focus-visible,[tabindex="-1"]:focus-visible{outline:
 .story-choices:has(.story-choice:hover) .story-choice,.story-choices .story-choice:hover{flex:1}
 .personal-collage{view-transition-name:none}.personal-collage:has(.has-photo){view-transition-name:journey}
 .photo.has-photo img{transition:transform .4s var(--ease)}
-.photo-empty-label small{font-size:10px;opacity:.85}.photo-number{font-size:10px}
 .life-chapter{min-height:55svh;padding-block:45px 65px}
 .life-chapter h3{font-size:38px;line-height:1.25;margin-bottom:25px}
 .life-chapter>p,.life-chapter>ul{font-size:15px;color:var(--muted);line-height:1.9}
 .life-chapter .chapter-school{font-size:18px;color:var(--ink)}
 .chapter-period{font-size:11px}
 .timeline-markers{height:auto;gap:5px}.timeline-markers a{min-height:44px;min-width:44px;font-size:10px}
-.timeline-caption{font-size:12px}.timeline-caption>span{font-size:10px}
 .achievement-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 25px;margin-top:45px}
 .achievement-card{min-width:0}.achievement-card .photo{aspect-ratio:16/11;margin-bottom:22px}
 .achievement-card h3{font-size:24px;line-height:1.35}.achievement-card>p{font-size:14px;color:var(--muted)}
 .achievement-card>.eyebrow{font-size:10px;letter-spacing:.04em}
 .training-content>p,.hobby-grid p,.dreams-grid p{font-size:14px}
 .training-org{font-size:12px}.training-top .eyebrow,.status-pill{font-size:10px}
-.present-grid .empty-text{min-height:80px}.empty-text small{font-size:12px}
 .contact-layout :is(h1,h2){font-size:clamp(38px,5.2vw,70px);line-height:1.2;max-width:15ch;margin-top:24px}
 .contact-lead{font-size:14px;line-height:1.9}.copy-button{min-height:44px;font-size:12px}.copy-status{font-size:12px}
 .contact-links{gap:12px 24px}.site-footer p{font-size:10px;line-height:1.8}
@@ -61,7 +58,7 @@ input:focus-visible,summary:focus-visible,[tabindex="-1"]:focus-visible{outline:
 .story-modal a{align-items:center;min-height:44px;font-size:13px}.story-modal p{font-size:14px;line-height:1.9}
 .portfolio.is-simple .intro-in,.portfolio.is-simple .intro-photo{animation:none!important;clip-path:none;transform:none}
 .portfolio.is-simple [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
-.portfolio.is-simple .timeline-photo-layer,.portfolio.is-simple .photo img,.portfolio.is-simple .story-choice{transition:none!important}
+.portfolio.is-simple .photo img,.portfolio.is-simple .story-choice{transition:none!important}
 .portfolio.is-simple .story-choice:hover,.portfolio.is-simple .photo.has-photo:hover img{transform:none!important}
 html[data-motion="simple"] .modal-backdrop,html[data-motion="simple"] .story-modal{animation:none!important;transition:none!important}
 ::view-transition-old(root){animation:fade-out .18s ease both}
@@ -85,7 +82,6 @@ html[data-motion="simple"] .modal-backdrop,html[data-motion="simple"] .story-mod
   .achievement-grid{grid-template-columns:1fr;gap:35px}.achievement-card h3{font-size:24px}.achievement-card .photo{aspect-ratio:16/10}
   .training-content>p,.hobby-grid p,.sport-story p{font-size:14px}
   .training-content .inline-links a{font-size:12px}.training-top .eyebrow{font-size:10px}
-  .photo-empty-label small{font-size:10px}.photo-number{font-size:9px}
   .contact-layout :is(h1,h2){font-size:clamp(34px,8.6vw,48px);line-height:1.3}.contact-lead{font-size:14px}
   .contact-links>a{font-size:13px}.site-footer p{font-size:10px}
   .theme-cinema .case-hero h1{font-size:clamp(40px,9.7vw,65px)}
@@ -107,3 +103,9 @@ html[data-motion="simple"] .modal-backdrop,html[data-motion="simple"] .story-mod
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
 @media print{.achievement-grid{grid-template-columns:1fr 1fr}.achievement-card{break-inside:avoid}.case-content>section>p{font-size:12px}.life-chapter{min-height:0}}
+
+/* Review fixes (2026-11) */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+html:has(.theme-cinema),html:has(.theme-cinema) body{background:#090b10;color-scheme:dark}
+@media (max-width:760px){.home-hero .hero-actions{align-items:stretch}.home-hero .hero-actions .button{flex:1 1 0;min-width:0}}
+@media print{html:has(.theme-cinema),html:has(.theme-cinema) body{background:#fff;color-scheme:light}}

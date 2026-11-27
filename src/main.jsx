@@ -1,6 +1,8 @@
 import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.jsx';
+
+// Stylesheets cascade in this order; later files refine earlier ones.
 import '../editorial.css';
 import '../cinema.css';
 import '../work-v4.css';
@@ -9,6 +11,17 @@ import '../ux-polish.css';
 import '../work-motion.css';
 import '../personal-photo-motion.css';
 import '../route-transitions.css';
+import '../experience.css';
+import '../ambient-motion.css';
+import '../expressive-motion.css';
+import '../photo-choreography.css';
+import '../work-layout.css';
+import '../journey-motion.css';
+import '../work-scope.css';
+import '../journey-scenes.css';
+import '../journey-typography.css';
+import '../journey-panorama.css';
+import '../journey-compact.css';
 
 const root = document.getElementById('root');
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -16,23 +29,3 @@ const prerendered = root.dataset.renderedPath === pathname;
 const app = <React.StrictMode><App {...(prerendered ? {initialPath: pathname, initialLanguage: document.documentElement.lang || 'vi', hydrating: true} : {})} /></React.StrictMode>;
 if (prerendered) hydrateRoot(root, app);
 else createRoot(root).render(app);
-
-import '../experience.css';
-import '../ambient-motion.css';
-import '../expressive-motion.css';
-
-import '../photo-choreography.css';
-
-import '../work-layout.css';
-
-import '../journey-motion.css';
-
-import '../work-scope.css';
-
-import '../journey-scenes.css';
-
-import '../journey-typography.css';
-
-import '../journey-panorama.css';
-
-import '../journey-compact.css';

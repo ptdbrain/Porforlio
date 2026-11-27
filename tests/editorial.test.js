@@ -12,7 +12,8 @@ test('public case studies have unique routes and traceable first-party sources',
     const route = resolveRoute(`/projects/${project.slug}`, data.projects);
     assert.equal(route.project.title, project.title);
     assert.ok(project.sources.length>0);
-    if(project.repo)assert.equal(project.links.github, `https://github.com/ptdbrain/${project.repo}`);
+    if(project.repositoryReview?.access==='local-checkout')assert.equal(project.links.github, '', `${project.slug} is private and must not link to a 404`);
+    else if(project.repo)assert.equal(project.links.github, `https://github.com/ptdbrain/${project.repo}`);
     else assert.equal(project.source,data.identity.cv);
     assert.ok(project.pipeline.length >= 3);
     for (const key of ['description','problem','implementation','result','constraints']) {

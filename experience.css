@@ -24,7 +24,7 @@ summary{cursor:pointer;min-height:48px}
 .project-visual{position:relative;overflow:hidden;aspect-ratio:5/3;background:#11181b;border:1px solid #ffffff18}
 .project-visual>img{width:100%;height:100%;object-fit:contain;transition:transform var(--motion-card) var(--motion-ease)}
 .project-visual>figcaption{position:absolute;bottom:0;left:0;background:#11181be8;color:#acbabc;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:7px 12px;letter-spacing:.015em}
-.cinema-frame>.project-visual{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}.cinema-type-poster small{display:none}
+.cinema-frame>.project-visual{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
 .story-choice{transition:box-shadow var(--motion-card),border-color var(--motion-card)!important;flex:1!important}
 .story-choice>.photo img{transition:transform var(--motion-card) var(--motion-ease)}
 .story-choice-copy{transition:transform var(--motion-card) var(--motion-ease)}
@@ -43,14 +43,9 @@ summary{cursor:pointer;min-height:48px}
 .v4-motion .v4-system svg{translate:0 0}.v4-motion .v4-system-orbit{transform:none}.v4-motion >section::after{translate:0 clamp(-10px,var(--work-drift,0px),10px)}
 .work-v4 .v4-map-signal,.work-v4 .v4-system rect,.v4-system g{animation-iteration-count:1!important}
 .work-v4 .v4-project-card{animation:none;min-width:0}.work-v4 .v4-project-grid{align-content:start;min-height:280px}
-.v4-filters button{transition:background var(--motion-fast),color var(--motion-fast),border-color var(--motion-fast)}
 .personal-photo-motion [data-photo-motion]{--photo-strength:.12!important}
 .personal-photo-motion [data-photo-motion] .photo-surface{box-shadow:none;clip-path:none;transform:translateY(clamp(-10px,calc(var(--photo-fold) * 14px),10px))!important;transition:transform var(--motion-section) var(--motion-ease)}
 .personal-photo-motion .photo-surface::after{display:none}.personal-photo-motion .photo-surface img{transform:none!important}
-.personal-photo-motion .timeline-photo-layer{transform:translateX(18px);transition:opacity .4s ease,transform var(--motion-section) var(--motion-ease),visibility 0s .56s}
-.personal-photo-motion .timeline-photo-layer.is-past{transform:translateX(-18px)}
-.personal-photo-motion .timeline-photo-layer.is-active{transform:none;transition:opacity .4s ease,transform var(--motion-section) var(--motion-ease),visibility 0s}
-.timeline-photo-layer::after,.timeline-photo-stack::after{display:none!important}
 .personal-story .personal-collage{view-transition-name:none!important}.personal-hero h1{max-width:14ch}
 .achievement-grid.defining-moments{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px}.achievement-card>p{font-size:14px;line-height:1.8}
 .milestone-archive{margin-top:50px;border-block:1px solid var(--line);padding-block:10px}.milestone-archive>summary{font-size:20px;display:flex;align-items:center;justify-content:space-between;padding-block:15px}.milestone-archive>summary>span{font-family:'IBM Plex Mono',monospace;font-size:13px}

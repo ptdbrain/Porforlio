@@ -12,7 +12,7 @@ test('capability tabs support keyboard selection and filter the one project libr
  await page.getByRole('button',{name:'Xem dự án liên quan'}).click();
  await expect(page.locator('.v4-count')).toHaveAttribute('data-work-filter','rag');
  await expect(page.locator('.v4-project-card')).toHaveCount(3);
- await expect(page.locator('.v4-project-card h3')).toHaveText(['MedTutor','LabGuard','BrandFlow']);
+ await expect(page.locator('.v4-project-card h3')).toHaveText(['MedTutor','LabGuard','BrainFlow']);
  const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
  expect(audit.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
 });

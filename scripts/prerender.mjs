@@ -15,6 +15,7 @@ await build({entryPoints:['src/prerender.jsx'],outfile:rendererPath,bundle:true,
 const { render }=await import(pathToFileURL(rendererPath).href);
 const template=await readFile(path.join(outDir,'index.html'),'utf8');
 const escape=(text) => String(text).replace(/[&<>"']/g,char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const person={'@context':'https://schema.org','@type':'Person',name:data.identity.name,alternateName:data.identity.englishName,url:siteUrl+'/',image:siteUrl+'/og/home.jpg',jobTitle:data.identity.currentRole.en,email:`mailto:${data.identity.email}`,address:{'@type':'PostalAddress',addressLocality:'Hanoi',addressCountry:'VN'},alumniOf:{'@type':'CollegeOrUniversity',name:'Hanoi University of Science and Technology'},sameAs:[data.identity.github,data.identity.linkedin].filter(Boolean)};
 const paths=['/','/work','/personal','/contact',...data.projects.map(p=>`/projects/${p.slug}`),'/404'];
 for(const pathname of paths){
   const route=resolveRoute(pathname,data.projects);
@@ -29,7 +30,13 @@ for(const pathname of paths){
     `<meta name="robots" content="${route.kind==='not-found'?'noindex, follow':'index, follow'}" />`,
     `<meta name="theme-color" content="${route.kind==='work'||route.kind==='project'?'#090b10':'#f5f3ed'}" />`,
     `<link rel="canonical" href="${escape(canonical)}" />`,
+    route.kind==='not-found'?'':`<link rel="alternate" hreflang="vi" href="${escape(canonical)}" />\n    <link rel="alternate" hreflang="en" href="${escape(canonical)}?lang=en" />\n    <link rel="alternate" hreflang="x-default" href="${escape(canonical)}" />`,
     meta.image?`<meta property="og:image" content="${escape(new URL(meta.image,siteUrl).href)}" />`:'',
+    meta.imageSize?`<meta property="og:image:width" content="${meta.imageSize[0]}" />\n    <meta property="og:image:height" content="${meta.imageSize[1]}" />`:'',
+    `<meta property="og:site_name" content="PTD. · Phan Trọng Đạt" />`,
+    `<meta property="og:locale" content="vi_VN" />`,
+    `<meta property="og:locale:alternate" content="en_US" />`,
+    pathname==='/'?`<script type="application/ld+json">${JSON.stringify(person).replace(/</g,'\\u003c')}</script>`:'',
   ].filter(Boolean).join('\n    ');
   const html=template.replace(/<title>[^<]*<\/title>/,`<title>${escape(meta.title)}</title>`).replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/,`<meta name="description" content="${escape(meta.description)}" />`).replace('</head>',`${tags}\n  </head>`).replace('<div id="root"></div>',`<div id="root" data-rendered-path="${escape(pathname)}">${render(pathname)}</div>`);
   const filename=pathname==='/'?'index.html':pathname==='/404'?'404.html':pathname.slice(1)+'.html';

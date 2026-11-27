@@ -1,8 +1,8 @@
 {
   "checkedAt": "2026-10-30",
   "publicRepositoryCount": 49,
-  "projectsInPortfolio": 23,
-  "scope": "All substantive non-lab projects, plus CV-only hardware work. Teaching labs, a generic starter kit and name-only repositories excluded.",
+  "projectsInPortfolio": 19,
+  "scope": "Substantive non-lab projects, plus CV-only hardware work. Teaching labs, a generic starter kit, name-only repositories and small utility/experiment scripts are excluded.",
   "repositories": [
     {
       "repo": "AdverTest",
@@ -44,8 +44,7 @@
       "repo": "AI-exam",
       "url": "https://github.com/ptdbrain/AI-exam",
       "commit": "3b86c9ca5bfb94c774d253e28d427762755d4e34",
-      "disposition": "included",
-      "slug": "ai-exam",
+      "disposition": "excluded-small-utility",
       "filesReviewed": [
         "README.md",
         "keypointdetect/test.py",
@@ -236,8 +235,7 @@
       "repo": "face-detection",
       "url": "https://github.com/ptdbrain/face-detection",
       "commit": "cb78a0fae56e61d1bb3079431d33d67a82267a23",
-      "disposition": "included",
-      "slug": "face-vision",
+      "disposition": "excluded-small-utility",
       "filesReviewed": [
         "code/b3.py",
         "code/codemau.py",
@@ -532,8 +530,7 @@
       "repo": "remove-background-tool",
       "url": "https://github.com/ptdbrain/remove-background-tool",
       "commit": "ef943a2c69a3b8d5aedf35aa7e3d930bf94aadfa",
-      "disposition": "included",
-      "slug": "background-removal",
+      "disposition": "excluded-small-utility",
       "filesReviewed": [
         "xoanen.py"
       ],
@@ -543,8 +540,7 @@
       "repo": "tool",
       "url": "https://github.com/ptdbrain/tool",
       "commit": "4c94b8d2431b9d648cd022bb93f48b4e86a30157",
-      "disposition": "included",
-      "slug": "image-collection-tools",
+      "disposition": "excluded-small-utility",
       "filesReviewed": [
         "tooltaianh...py",
         "tooltaianhok.py",

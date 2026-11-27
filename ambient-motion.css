@@ -28,7 +28,6 @@ html[data-motion="full"] .portfolio:not(.is-simple):not(.intro-covered) > .ambie
 @keyframes ambient-wings{from{transform:scaleY(.65) rotate(-12deg)}to{transform:scaleY(1) rotate(12deg)}}
 @keyframes ambient-blink{0%,43%,47%,100%{transform:scaleY(1)}45%{transform:scaleY(.12)}}
 @keyframes ambient-mote{0%,100%{transform:translateY(12px);opacity:0}30%,65%{opacity:.45}80%{transform:translateY(-24px);opacity:0}}
-@keyframes ambient-orbit{to{transform:rotate(360deg)}}
 .ambient-motion[data-paused="true"] *,.ambient-motion[data-paused="true"] *::after,
 .page-hidden .ambient-motion *,.page-hidden .ambient-motion *::after,
 body:has(.modal-backdrop) .ambient-motion *{animation-play-state:paused!important}

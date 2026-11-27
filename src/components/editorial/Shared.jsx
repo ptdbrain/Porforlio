@@ -68,7 +68,7 @@ export function Modal({ title, closeLabel=title, onClose, children, className = 
   </div>, document.body);
 }
 
-export function Photo({ asset, label, code, language, t, className = '', priority = false, interactive = true, fit, motion, motionIndex=0, gallery=[] }) {
+export function Photo({ asset, label, code, language, t, className = '', priority = false, interactive = true, fit, motion, motionIndex=0, gallery=[], showCaption = true, sizes = '(max-width: 760px) 90vw, 48vw' }) {
   const [open, setOpen] = useState(false);
   const sequence=useImageSequence(asset,gallery);
   const triggerRef=useRef(null),lightboxRef=useRef(null);
@@ -77,7 +77,10 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
   const available=asset?.src&&failedSource!==asset.src;
   const caption = localize(asset?.caption, language);
   const media=responsiveImage(asset?.src);
-  const image = available ? <img ref={triggerRef} src={media.src} srcSet={media.srcSet} sizes="(max-width: 760px) 90vw, 48vw" alt={localize(asset.alt, language) || label} width={media.width||1000} height={media.height||1200} decoding="async" style={{objectFit:fit||asset.fit||'cover',objectPosition:asset.position||'center'}} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} onError={()=>{setFailedSource(asset.src);setOpen(false);}} /> : null;
+  // Inside the view button the caption already names the photo; avoid reading it twice.
+  const altText=localize(asset?.alt, language) || label;
+  const imageAlt=interactive && showCaption && caption && caption===altText ? '' : altText;
+  const image = available ? <img ref={triggerRef} src={media.src} srcSet={media.srcSet} sizes={sizes} alt={imageAlt} width={media.width||1000} height={media.height||1200} decoding="async" style={{objectFit:fit||asset.fit||'cover',objectPosition:asset.position||'center'}} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} onError={()=>{setFailedSource(asset.src);setOpen(false);}} /> : null;
   function openPhoto() {
     sequence.reset(Math.max(0,images.findIndex(item=>item.src===asset.src)));setOpen(true);
     if(asset.rotate||matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.dataset.motion==='simple')return;
@@ -87,9 +90,9 @@ export function Photo({ asset, label, code, language, t, className = '', priorit
   function movePhoto(direction) {sequence.move(direction);}
   const content = <>
     {image && (asset.rotate === -90 ? <div className="photo-rotation">{image}</div> : image)}
-    {image && <figcaption>{caption || label}<Arrow /></figcaption>}
+    {image && showCaption && <figcaption>{caption || label}<Arrow /></figcaption>}
   </>;
-  const surface = available && interactive ? <button className="photo-button" onClick={openPhoto} aria-label={`${language==='vi'?'Xem ảnh':'View photo'}: ${label}`}>{content}</button> : content;
+  const surface = available && interactive ? <button className="photo-button" onClick={openPhoto} aria-label={`${language==='vi'?'Xem ảnh':'View photo'}: ${(showCaption&&caption)||label}`}>{content}</button> : content;
   if(!available)return null;
   return <>
     <figure className={`photo ${available ? 'has-photo' : 'is-empty'} ${className}`} data-photo-fit={fit||asset?.fit||'cover'} data-photo-motion={motion||undefined} style={motion?{'--photo-direction':motionIndex%2?-1:1}:undefined}>

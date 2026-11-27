@@ -22,7 +22,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 
 - [Rà soát user flow và tối ưu UX](docs/UX-FLOW-REVIEW.md).
 - [Ảnh và thông tin cần bổ sung theo ưu tiên](docs/ASSETS-CONTENT-CHECKLIST.md).
-- [Nội dung dự án từ GitHub và CV](docs/PROJECT-CONTENT-REVIEW.md) · 23 case study, bỏ qua repo bài lab.
+- [Nội dung dự án từ GitHub và CV](docs/PROJECT-CONTENT-REVIEW.md) · 19 case study; bỏ qua repo bài lab và các script/thử nghiệm nhỏ (Background Removal, Image Collection, AI Exam, Face Vision — URL cũ chuyển hướng về `/work`).
 - [Kịch bản Work V4 đã triển khai](docs/WORK-REDESIGN-V4.md) · [Bản phác thảo ban đầu](docs/work-v4-preview.html).
 - [Bản cập nhật hai section Work V3](docs/WORK-SECTIONS-V3.md).
 - [Bản cập nhật Kinetic Cinema V2](docs/KINETIC-CINEMA-UPDATE.md).
@@ -31,7 +31,8 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 - [Phân tích bản cũ, đối chiếu từng phần của plan và giới hạn kiểm tra](docs/IMPLEMENTATION-REVIEW.md).
 - Dữ liệu chính: `src/content/portfolio.json`.
 - Nhãn Việt/Anh: `src/content/copy.js`.
-- File ảnh: `public/images/`; CV/báo cáo: `public/documents/`.
+- Ảnh gốc: `public/anh/` → chạy `npm run assets:photos` để tạo bản WebP trong `public/media/` và cập nhật `src/content/imageManifest.json`. Thư mục `anh/` ở gốc chỉ là nơi để ảnh tạm, không được commit.
+- CV: `public/CV_PhanTrongDat.pdf`. Ảnh chia sẻ trang chủ: `public/og/home.jpg` (1200×630); ảnh OG từng dự án sinh bằng `npm run assets:maps`.
 
 Để chuỗi `""` hoặc mảng `[]` khi chưa có nội dung. Ảnh chưa có hiển thị khung trống; CV chưa có không tạo link tải giả. Mỗi case study có đường dẫn nguồn README công khai; trường đóng góp/số liệu cá nhân cần chủ portfolio bổ sung.
 
@@ -43,7 +44,7 @@ E2E dùng Google Chrome đã cài (`channel: chrome`), tự build và chạy pre
 - `/projects/[slug]`: case study riêng cho từng dự án trong dữ liệu.
 - `/contact`: liên hệ.
 
-History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Work có nút Simple view, reduced-motion/thiết bị yếu fallback, reveal bằng IntersectionObserver và sơ đồ SVG. Thư viện giữ bộ lọc, tìm kiếm và trạng thái mở rộng khi quay lại từ case study bằng Back hoặc liên kết Trở lại Work; focus quay về card đã chọn và khôi phục vị trí cuộn. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
+History API hỗ trợ chuyển trang và Back; View Transition là progressive enhancement. Work có nút Giảm chuyển động (Simple view), reduced-motion/thiết bị yếu fallback, reveal bằng IntersectionObserver và sơ đồ SVG. Thư viện giữ bộ lọc, tìm kiếm và trạng thái mở rộng khi quay lại từ case study bằng Back hoặc liên kết Trở lại Work; focus quay về card đã chọn và khôi phục vị trí cuộn. Build prerender HTML cho từng route, metadata/OG/canonical riêng, `sitemap.xml`, `robots.txt` và `404.html`. Nội dung chính vẫn đọc được khi tắt JavaScript. UI tương tác cần JavaScript.
 
 ## Cấu trúc
 
@@ -54,9 +55,9 @@ src/content/portfolio.json       Nội dung và asset slots
 src/content/workV4.mjs           Nội dung V4 Việt/Anh, nhóm năng lực, tóm tắt
 src/lib/workV4.mjs               Lọc, thứ tự ưu tiên và kiểm tra trạng thái Work
 work-v4.css                     Giao diện Work V4, responsive và reduced motion
-src/content/cinema.json          Scene formats, manifesto, experiments, career
-src/components/cinema/           Cold open, orbit, project worlds và các scene
-cinema.css                       Kinetic Cinema, responsive và low-motion
+src/content/cinema.json          Định dạng trình bày case study
+src/components/cinema/           CinemaFrame (khung ảnh bìa case study)
+cinema.css                       Theme tối cho Work/case study, responsive và low-motion
 src/content/copy.js              Nhãn Việt/Anh
 src/lib/routes.mjs               Route resolution, metadata
 src/lib/useSiteMotion.js         Reveal theo viewport và tùy chọn chuyển động
@@ -67,10 +68,10 @@ editorial.css                    Design system, responsive, motion
 public/fonts/                    Be Vietnam Pro, Manrope, IBM Plex Mono + OFL
 ```
 
-Giao diện cũ (`BrainIntro.jsx`, `PortfolioHome.jsx`, `styles.css`, `src/data/`) và các scene Work V2/V3 được giữ để tham khảo. Work V4 không render các scene cũ; case study vẫn dùng CinemaFrame và theme đã có. Intro trang chủ dùng `public/neural-intro.mp4` cùng poster, có nút bỏ qua và bật/tắt âm thanh.
+Giao diện cũ (`BrainIntro.jsx`, `PortfolioHome.jsx`, `styles.css`, `src/data/`, các scene Work V2/V3) đã được gỡ khỏi mã nguồn; xem lại trong lịch sử git nếu cần. Ghi chú ý tưởng và brief thiết kế nằm trong `docs/notes/`. Intro trang chủ dùng `public/neural-intro.mp4` (khoảng 1,1 MB) cùng poster, có nút bỏ qua và bật/tắt âm thanh.
 
 ## Triển khai Vercel
 
 Cấu hình hiện tại dùng `npm run build`, output `dist`, `cleanUrls: true`. Build tạo `/work.html`, `/personal.html`, `/projects/<slug>.html` và custom 404; Vercel phục vụ đường dẫn không có `.html`.
 
-Nếu dùng domain khác, đặt **`VITE_SITE_URL=https://your-domain.example`** trong môi trường build để canonical và sitemap dùng đúng domain. Mặc định là `https://porforlio-delta.vercel.app` từ metadata repo công khai. Sau khi cập nhật nội dung hoặc ảnh, build và triển khai lại để metadata tĩnh được cập nhật.
+Nếu dùng domain khác, đặt **`VITE_SITE_URL=https://your-domain.example`** trong môi trường build để canonical, sitemap, ảnh OG và JSON-LD dùng đúng domain. Mặc định là `https://ptdbrain.vercel.app`. Sau khi cập nhật nội dung hoặc ảnh, build và triển khai lại để metadata tĩnh được cập nhật.

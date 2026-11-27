@@ -15,7 +15,7 @@ test('decorative motion stays in gutters and never blocks the reading surface',a
 test('manual motion preference persists across both stories',async({page},info)=>{
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/personal');
  if(info.project.name==='mobile')await page.getByRole('button',{name:'Mở menu'}).click();
- await page.getByRole('button',{name:'Simple view',exact:true}).click();
+ await page.getByRole('button',{name:'Giảm chuyển động',exact:true}).click();
  await expect(page.locator('.ambient-motion')).toBeHidden();
  await expect(page.locator('.portfolio')).toHaveClass(/is-simple/);
  await page.locator('.main-nav').getByRole('link',{name:'Công việc',exact:true}).click();
